@@ -22,11 +22,15 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Legion HQ</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="container1">
+      <div id="container2">
+        <div id="root"></div>
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -38,4 +42,56 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #303030;
+    }
+    .loginButton {
+      opacity: 0.75
+    }
+    #container1 {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    #container2 {
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      padding-right: 17px;
+    }
+    #react-select-2-input {
+      color: white !important;
+    }
+    #react-select-3-input {
+      color: white !important;
+    }
+    @font-face {
+      font-family: 'Aero Matics Display Regular';
+      src: url('/fonts/Aero%20Matics%20Display%20Regular.ttf') format('truetype')
+    }
+    @font-face {
+      font-family: 'Aero Matics Regular';
+      src: url('/fonts/Aero%20Matics%20Regular.ttf') format('truetype')
+    }
+    @font-face {
+      font-family: 'Aero Matics Display Bold';
+      src: url('/fonts/Aero%20Matics%20Display%20Bold.ttf') format('truetype')
+    }
+    @font-face {
+      font-family: 'Aero Matics Bold';
+      src: url('/fonts/Aero%20Matics%20Bold.ttf') format('truetype')
+    }
+    @font-face {
+      font-family: 'Aero Matics Display Light';
+      src: url('/fonts/Aero%20Matics%20Display%20Light.ttf') format('truetype')
+    }
+    @font-face {
+      font-family: 'Aero Matics Light';
+      src: url('/fonts/Aero%20Matics%20Light.ttf') format('truetype')
+    }
+  </style>
 </html>
