@@ -1,6 +1,22 @@
 # Legion-HQ 2.0
 List builder, inventory manager, card database, event tracker for FFG's Star Wars Legion game.
 
+# Major Additional Features
+General changes:
+- Major redesign of interface with a focus for mobile users
+- Image optimization for decreased load time
+- Code splitting for decreased load time per page
+List building changes:
+- List URL sharing for users who are not logged in (URL will be in Tabletop Admiral format)
+- Improved image generation for sharing your list via image
+- Option of labeling list as "Competitive" to enable certain features
+- List suggestions based off lists currently in the database
+New pages:
+- Card database browser
+- Inventory manager for signed-in users
+- A page dedicated towards showing statistics for all lists in the database (i.e. trends and commonalities for lists that are marked as "Competitive")
+- Event tracking page (a la List Fortress for X-Wing)
+
 # Pages
 
 ## Home: The home page
@@ -39,22 +55,3 @@ List builder, inventory manager, card database, event tracker for FFG's Star War
 ## Settings: Adjust user settings and inventory
 
 ## Info: Information about the builder
-
-
-# Major Planned Changes from 1.0
-
-1. Major refactor of code (~75%)
-2. Major redesign of interface
-3. Upgrading Material-UI from 3.0 to 4.0
-4. Card Database browser feature
-5. Route based code splitting
-6. Image optimization (Convert all PNGs to JPGs when necessary)
-7. Inventory feature so users can see what they lists they are able to build
-8. Suggestion feature that looks at a subset of lists in the database
-9. Statistical analysis of all lists in the database to show trends and commonalities
-10. Mobile focused web page
-11. Event feature (a la List Fortress for X-Wing)
-12. Various QoL features
-13. List sharing in Tabletop Admiral format
-14. List sharing in Legion HQ format
-15. Interfacing with mobile app being developed by the guy who made the iOS app (maybe?)
