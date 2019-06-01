@@ -1,6 +1,5 @@
 import React from 'react';
 import MultiSelect from 'react-select';
-import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -11,6 +10,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
+import Tooltip from '@material-ui/core/Tooltip';
 // import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -18,46 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 // import FilterListIcon from '@material-ui/icons/FilterList';
 // import SortIcon from '@material-ui/icons/Sort';
 import CancelIcon from '@material-ui/icons/Cancel';
-
-const styles = {
-  root: {
-    flexGrow: 1,
-    height: 250
-  },
-  input: {
-    display: 'flex',
-    padding: 0
-  },
-  valueContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    flex: 1,
-    alignItems: 'center',
-    overflow: 'hidden'
-  },
-  chip: {
-    marginRight: 4,
-    marginBottom: 4
-  },
-  noOptionsMessage: {
-    padding: 8
-  },
-  singleValue: {
-    fontSize: 16
-  },
-  placeholder: {
-    position: 'absolute',
-    left: 2,
-    fontSize: 16
-  },
-  paper: {
-    position: 'absolute',
-    zIndex: 1,
-    marginTop: 2,
-    left: 0,
-    right: 0
-  }
-};
+import DataContext from '../components/DataContext';
 
 function NoOptionsMessage(props) {
   return (
@@ -131,18 +92,29 @@ function SingleValue(props) {
 }
 
 function ValueContainer(props) {
-  return <div className={props.selectProps.classes.valueContainer}>{props.children}</div>;
+  return <div className={props.selectProps.classes.valueContainer} style={{ alignItems: 'flex-end' }}>{props.children}</div>;
 }
 
 function MultiValue(props) {
+  const { data } = props;
+  const { label, tooltip } = data;
   return (
-    <Chip
-      tabIndex={-1}
-      label={props.children}
-      onDelete={props.removeProps.onClick}
-      className={props.selectProps.classes.chip}
-      deleteIcon={<CancelIcon {...props.removeProps} />}
-    />
+    <Tooltip
+      title={(
+        <Typography variant="body1">
+          {tooltip ? tooltip : 'No definition found.'}
+        </Typography>
+      )}
+    >
+      <Chip
+        tabIndex={-1}
+        label={label}
+        onDelete={props.removeProps.onClick}
+        className={props.selectProps.classes.chip}
+        deleteIcon={<CancelIcon {...props.removeProps} />}
+        style={{ cursor: 'help' }}
+      />
+    </Tooltip>
   );
 }
 
@@ -166,6 +138,9 @@ const components = {
 };
 
 class CardsContainer extends React.Component {
+
+  static contextType = DataContext;
+
   state = {
     single: null,
     multi: null
@@ -180,46 +155,45 @@ class CardsContainer extends React.Component {
       rankFilter,
       upgradeTypeFilter
     } = this.props;
-    let cardTypes = false;
-    let cardName = false;
-    let keywords = false;
-    let factions = false;
-    let ranks = false;
-    let upgradeTypes = false;
+    let cardTypesFound = false;
+    let cardNameFound = false;
+    let keywordsFound = false;
+    let factionsFound = false;
+    let ranksFound = false;
+    let upgradeTypesFound = false;
 
-    if (cardTypeFilter.length === 0) cardTypes = true;
+    if (cardTypeFilter.length === 0) cardTypesFound = true;
     else {
-      cardTypes = false;
-      if (cardTypeFilter.includes('Units') && card.cardType === 'unit') cardTypes = true;
-      if (cardTypeFilter.includes('Upgrades') && card.cardType === 'upgrade') cardTypes = true;
-      if (cardTypeFilter.includes('Commands') && card.cardType === 'commmand') cardTypes = true;
-      if (cardTypeFilter.includes('Battle') && card.cardType === 'battle') cardTypes = true;
+      cardTypesFound = false;
+      if (cardTypeFilter.includes('Units') && card.cardType === 'unit') cardTypesFound = true;
+      if (cardTypeFilter.includes('Upgrades') && card.cardType === 'upgrade') cardTypesFound = true;
+      if (cardTypeFilter.includes('Commands') && card.cardType === 'commmand') cardTypesFound = true;
+      if (cardTypeFilter.includes('Battle') && card.cardType === 'battle') cardTypesFound = true;
     }
 
-    if (!cardNameFilter) cardName = true;
-    else if (cardNameFilter.value && cardNameFilter.value.includes(card.cardName)) cardName = true;
-    else cardName = false;
+    if (!cardNameFilter) cardNameFound = true;
+    else if (cardNameFilter.value && cardNameFilter.value.includes(card.cardName)) cardNameFound = true;
+    else cardNameFound = false;
 
-    if (keywordFilter.length === 0) keywords = true;
-    else if (keywordFilter.some(k => card.keywords.includes(k.value))) keywords = true;
-    else keywords = false;
+    if (keywordFilter.length === 0) keywordsFound = true;
+    else if (keywordFilter.some(k => card.keywords.includes(k.value))) keywordsFound = true;
+    else keywordsFound = false;
 
-    if (factionFilter.length === 0) factions = true;
-    else if (!card.faction && factionFilter.length === 4) factions = true;
-    else if (!card.faction && factionFilter.length > 0) factions = false;
-    else if (factionFilter.includes(card.faction)) factions = true;
-    else factions = false;
+    if (factionFilter.length === 0) factionsFound = true;
+    else if (!card.faction && factionFilter.length === 4) factionsFound = true;
+    else if (!card.faction && factionFilter.length > 0) factionsFound = false;
+    else if (factionFilter.includes(card.faction)) factionsFound = true;
+    else factionsFound = false;
 
-    if (rankFilter.length === 0) ranks = true;
-    else if (!card.rank) ranks = false;
-    else if (rankFilter.includes(card.rank)) ranks = true;
-    else ranks = false;
+    if (rankFilter.length === 0) ranksFound = true;
+    else if (!card.rank) ranksFound = false;
+    else if (rankFilter.includes(card.rank)) ranksFound = true;
+    else ranksFound = false;
 
-    if (upgradeTypeFilter.length === 0) upgradeTypes = true;
-    else if (upgradeTypeFilter.includes(card.cardSubtype)) upgradeTypes = true;
-    else upgradeTypes = false;
-
-    const visible = cardTypes && cardName && keywords && factions && ranks && upgradeTypes;
+    if (upgradeTypeFilter.length === 0) upgradeTypesFound = true;
+    else if (upgradeTypeFilter.includes(card.cardSubtype)) upgradeTypesFound = true;
+    else upgradeTypesFound = false;
+    const visible = cardTypesFound && cardNameFound && keywordsFound && factionsFound && ranksFound && upgradeTypesFound;
     return visible ? { display: 'block' } : { display: 'none' };
   }
 
@@ -227,27 +201,26 @@ class CardsContainer extends React.Component {
     const {
       classes,
       keywords,
+      allCards,
+      cardTypes,
+      factions,
+      ranks,
+      upgradeTypes
+    } = this.context;
+    const {
       keywordFilter,
       setKeywordFilter,
       cardNameFilter,
       setCardNameFilter,
-      cards,
-      cardTypes,
       cardTypeFilter,
       setCardTypeFilter,
-      factions,
       factionFilter,
       setFactionFilter,
-      ranks,
       rankFilter,
       setRankFilter,
-      upgradeTypes,
       upgradeTypeFilter,
       setUpgradeTypeFilter
     } = this.props;
-    const {
-      allCards
-    } = cards;
     const names = Object.keys(allCards).map(cardId => ({
       label: allCards[cardId].cardName,
       value: allCards[cardId].cardName
@@ -278,7 +251,7 @@ class CardsContainer extends React.Component {
             marginBottom: 8
           }}
         >
-          <Grid item style={{ minWidth: 300, maxWidth: '90vw', marginRight: 4  }}>
+          <Grid item style={{ minWidth: 300, maxWidth: '90vw', marginRight: 4 }}>
             <MultiSelect
               classes={classes}
               styles={selectStyles}
@@ -307,7 +280,8 @@ class CardsContainer extends React.Component {
               }}
               options={Object.keys(keywords).map(keyword => ({
                 value: keyword,
-                label: keyword
+                label: keyword,
+                tooltip: keywords[keyword]
               }))}
               components={components}
               value={keywordFilter}
@@ -521,9 +495,7 @@ class CardsContainer extends React.Component {
                             alt={`${upgradeType} icon`}
                             src={upgradeTypes[upgradeType].iconLocation}
                             style={{
-                              marginTop: 5,
-                              marginBottom: -5,
-                              marginRight: 5,
+                              marginTop: 0,
                               width: 25,
                               height: 25,
                               padding: 1,
@@ -586,4 +558,4 @@ class CardsContainer extends React.Component {
   }
 }
 
-export default withStyles(styles)(CardsContainer);
+export default CardsContainer;
