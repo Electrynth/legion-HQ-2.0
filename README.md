@@ -41,18 +41,20 @@ List builder, inventory manager, and card database for FFG's Star Wars Legion ga
 ## Info: Information about the builder
 
 
-# Major Changes from 1.0
+# Major Planned Changes from 1.0
 
 1. Major refactor of code (~75%)
-2. Minor redesign of interface
-3. Upgrading Material-UI from ~3.0 to 4.0
-4. Move from file based data to 100% database
-5. Card Database browser feature
-6. Code splitting
-7. Image optimization (Convert all PNGs to JPGs)
-8. Inventory feature so users can see what they lists they are able to build
-9. Suggestion feature that looks at a subset of lists in the database
-10. Statistical analysis of units and upgrades (Importing and then integrating a CSV)
-11. Mobile app (React Native)
-12. Event feature (a la List Fortress for X-Wing)
-13. Various QoL features
+2. Major redesign of interface
+3. Upgrading Material-UI from 3.0 to 4.0
+4. Card Database browser feature
+5. Route based code splitting
+6. Image optimization (Convert all PNGs to JPGs when necessary)
+7. Inventory feature so users can see what they lists they are able to build
+8. Suggestion feature that looks at a subset of lists in the database
+9. Statistical analysis of all lists in the database to show trends and commonalities
+10. Mobile focused web page
+11. Event feature (a la List Fortress for X-Wing)
+12. Various QoL features
+13. List sharing in Tabletop Admiral format
+14. List sharing in Legion HQ format
+15. Interfacing with mobile app being developed by the guy who made the iOS app (maybe?)
