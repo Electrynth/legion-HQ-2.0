@@ -2,16 +2,17 @@
 List builder, inventory manager, card database, event tracker for FFG's Star Wars Legion game.
 
 # Major Additional Features
-General changes:
+### General changes
 - Major redesign of interface with a focus for mobile users
 - Image optimization for decreased load time
 - Code splitting for decreased load time per page
-List building changes:
+### List building changes
 - List URL sharing for users who are not logged in (URL will be in Tabletop Admiral format)
 - Improved image generation for sharing your list via image
 - Option of labeling list as "Competitive" to enable certain features
 - List suggestions based off lists currently in the database
-New pages:
+- Each unit/upgrade/command card will have link(s) to relevant blogs/articles if applicable
+### New pages
 - Card database browser
 - Inventory manager for signed-in users
 - A page dedicated towards showing statistics for all lists in the database (i.e. trends and commonalities for lists that are marked as "Competitive")
