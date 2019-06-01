@@ -1,5 +1,5 @@
 # Legion-HQ 2.0
-List builder, inventory manager, and card database for FFG's Star Wars Legion game.
+List builder, inventory manager, card database, event tracker for FFG's Star Wars Legion game.
 
 # Pages
 
