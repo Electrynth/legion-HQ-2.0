@@ -98,7 +98,6 @@ class CardImage extends React.Component {
             />
           </CardActionArea>
           <CardActions>
-
           </CardActions>
         </Card>
       </div>

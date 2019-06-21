@@ -115,19 +115,6 @@ class Home extends React.Component {
               />
               {testLists.map((testList, i) => {
                 if (testList.faction === factionName) {
-                  let commanderIcon = undefined;
-                  if (allCards[testList.units[0]._id]) {
-                    commanderIcon = <img
-                      alt={allCards[testList.units[0]._id].cardName}
-                      src={allCards[testList.units[0]._id].iconLocation}
-                      style={{
-                        borderRadius: 15,
-                        height: 28,
-                        width: 42,
-                        marginLeft: 0
-                      }}
-                    />
-                  }
                   if (testList.notes === '') {
                     return (
                       <Chip
@@ -135,7 +122,6 @@ class Home extends React.Component {
                         clickable
                         variant="outlined"
                         label={<Typography>{`${testList.title} - ${testList.pointTotal}`}</Typography>}
-                        icon={commanderIcon}
                         onDelete={() => console.log('deleted')}
                         style={{ border: `${factions[factionName].color} solid 2px`, marginRight: 4 }}
                         onClick={() => handleFactionClick(factionName)}
@@ -151,7 +137,6 @@ class Home extends React.Component {
                           clickable
                           variant="outlined"
                           label={<Typography>{`${testList.title} - ${testList.pointTotal}`}</Typography>}
-                          icon={commanderIcon}
                           onDelete={() => console.log('deleted')}
                           style={{ border: `${factions[factionName].color} solid 2px`, marginRight: 4 }}
                           onClick={() => handleFactionClick(factionName)}
