@@ -75,8 +75,7 @@ class Home extends React.Component {
   render() {
     const {
       classes,
-      factions,
-      allCards
+      factions
     } = this.context;
     const {
       userId,
@@ -93,12 +92,16 @@ class Home extends React.Component {
         alignItems="center"
       >
         <Grid item style={{ marginTop: 60 }}>
-          <Typography variant="h4">
+          <Typography variant="h4" color="primary">
             Legion HQ
           </Typography>
         </Grid>
         <Grid item style={{ maxWidth: '90vw', marginBottom: 16 }}>
-          <Typography variant="caption" className={classes.textAlignCenter}>
+          <Typography
+            variant="caption"
+            color="primary"
+            className={classes.textAlignCenter}
+          >
             An unofficial tool and resource for Fantasy Flight Games: Star Wars™: Legion.
           </Typography>
         </Grid>
@@ -108,10 +111,17 @@ class Home extends React.Component {
               <Chip
                 clickable
                 variant="outlined"
-                label={<Typography>{factions[factionName].longName}</Typography>}
                 icon={<AddIcon />}
-                style={{ border: `${factions[factionName].color} solid 2px`, marginRight: 4 }}
                 onClick={() => handleFactionClick(factionName)}
+                style={{
+                  border: `${factions[factionName].color} solid 2px`,
+                  marginRight: 4
+                }}
+                label={(
+                  <Typography variant="subtitle1">
+                    {factions[factionName].longName}
+                  </Typography>
+                )}
               />
               {testLists.map((testList, i) => {
                 if (testList.faction === factionName) {

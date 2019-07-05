@@ -18,6 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 // import FilterListIcon from '@material-ui/icons/FilterList';
 // import SortIcon from '@material-ui/icons/Sort';
 import CancelIcon from '@material-ui/icons/Cancel';
+import CardImage from '../components/CardImage';
 import DataContext from '../components/DataContext';
 
 function NoOptionsMessage(props) {
@@ -137,7 +138,7 @@ const components = {
   ValueContainer
 };
 
-class CardsContainer extends React.Component {
+class CardsContainer extends React.PureComponent {
 
   static contextType = DataContext;
 
@@ -146,7 +147,7 @@ class CardsContainer extends React.Component {
     multi: null
   }
 
-  getCardVisibility = (card) => {
+  getCardVisibility(card) {
     const {
       cardTypeFilter,
       cardNameFilter,
@@ -167,32 +168,33 @@ class CardsContainer extends React.Component {
       cardTypesFound = false;
       if (cardTypeFilter.includes('Units') && card.cardType === 'unit') cardTypesFound = true;
       if (cardTypeFilter.includes('Upgrades') && card.cardType === 'upgrade') cardTypesFound = true;
-      if (cardTypeFilter.includes('Commands') && card.cardType === 'commmand') cardTypesFound = true;
+      if (cardTypeFilter.includes('Commands') && card.cardType === 'command') cardTypesFound = true;
       if (cardTypeFilter.includes('Battle') && card.cardType === 'battle') cardTypesFound = true;
+      if (!cardTypesFound) return { display: 'none' };
     }
-
     if (!cardNameFilter) cardNameFound = true;
     else if (cardNameFilter.value && cardNameFilter.value.includes(card.cardName)) cardNameFound = true;
-    else cardNameFound = false;
+    else return { display: 'none' };
 
-    if (keywordFilter.length === 0) keywordsFound = true;
+    if (keywordFilter && keywordFilter.length === 0) keywordsFound = true;
     else if (keywordFilter.some(k => card.keywords.includes(k.value))) keywordsFound = true;
-    else keywordsFound = false;
+    else return { display: 'none' };
 
-    if (factionFilter.length === 0) factionsFound = true;
+    if (factionFilter && factionFilter.length === 0) factionsFound = true;
     else if (!card.faction && factionFilter.length === 4) factionsFound = true;
     else if (!card.faction && factionFilter.length > 0) factionsFound = false;
     else if (factionFilter.includes(card.faction)) factionsFound = true;
-    else factionsFound = false;
+    else return { display: 'none' };
 
-    if (rankFilter.length === 0) ranksFound = true;
+    if (rankFilter && rankFilter.length === 0) ranksFound = true;
     else if (!card.rank) ranksFound = false;
     else if (rankFilter.includes(card.rank)) ranksFound = true;
-    else ranksFound = false;
+    else return { display: 'none' };
 
-    if (upgradeTypeFilter.length === 0) upgradeTypesFound = true;
+    if (upgradeTypeFilter && upgradeTypeFilter.length === 0) upgradeTypesFound = true;
     else if (upgradeTypeFilter.includes(card.cardSubtype)) upgradeTypesFound = true;
-    else upgradeTypesFound = false;
+    else return { display: 'none' };
+
     const visible = cardTypesFound && cardNameFound && keywordsFound && factionsFound && ranksFound && upgradeTypesFound;
     return visible ? { display: 'block' } : { display: 'none' };
   }
@@ -200,7 +202,7 @@ class CardsContainer extends React.Component {
   render() {
     const {
       classes,
-      keywords,
+      keywordDict,
       allCards,
       cardTypes,
       factions,
@@ -221,10 +223,13 @@ class CardsContainer extends React.Component {
       upgradeTypeFilter,
       setUpgradeTypeFilter
     } = this.props;
-    const names = Object.keys(allCards).map(cardId => ({
+    const names = [];
+    /*
+    Object.keys(allCards).map(cardId => ({
       label: allCards[cardId].cardName,
       value: allCards[cardId].cardName
     }));
+    */
     const selectStyles = {
       input: base => ({
         ...base,
@@ -233,6 +238,23 @@ class CardsContainer extends React.Component {
         }
       })
     };
+    const filteredCards = Object.keys(allCards).map((cardId) => {
+      const card = allCards[cardId];
+      names.push({
+        label: allCards[cardId].cardName,
+        value: allCards[cardId].cardName
+      })
+      return (
+        <Grid item key={cardId} style={{ marginRight: 4, marginBottom: 4, maxWidth: '95vw', ...this.getCardVisibility(card) }}>
+          <CardImage
+            showKeywords={true}
+            size="small"
+            cardId={cardId}
+            key={cardId}
+          />
+        </Grid>
+      );
+    });
     return (
       <Grid
         container
@@ -278,10 +300,10 @@ class CardsContainer extends React.Component {
                   shrink: true
                 }
               }}
-              options={Object.keys(keywords).map(keyword => ({
+              options={Object.keys(keywordDict).map(keyword => ({
                 value: keyword,
                 label: keyword,
-                tooltip: keywords[keyword]
+                tooltip: keywordDict[keyword]
               }))}
               components={components}
               value={keywordFilter}
@@ -394,9 +416,6 @@ class CardsContainer extends React.Component {
                         }}
                       />
                     </ListItemAvatar>
-                    <ListItemText>
-                      {factions[factionName].shortName}
-                    </ListItemText>
                   </MenuItem>
                 ))}
               </Select>
@@ -542,17 +561,14 @@ class CardsContainer extends React.Component {
           direction="row"
           justify="center"
           alignItems="flex-start"
+          style={{
+            overflowY: 'scroll',
+            maxHeight: '100vh'
+          }}
         >
-          {Object.keys(allCards).map((cardId) => {
-            const card = allCards[cardId];
-            return (
-              <Grid item key={cardId} style={{ marginRight: 4, marginBottom: 4, maxWidth: '95vw', ...this.getCardVisibility(card) }}>
-                <img src={card.imageLocation} alt={card.displayName} style={{ maxWidth: '95vw' }} />
-              </Grid>
-            );
-          })}
+          {filteredCards}
+          <Grid item style={{ height: '30rem' }} />
         </Grid>
-        <Grid item style={{ marginTop: 24 }} />
       </Grid>
     );
   }

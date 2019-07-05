@@ -74,7 +74,7 @@ class App extends Component {
 
   setCardNameFilter = value => this.setState({ cardNameFilter: value });
 
-  setKeywordFilter = value => this.setState({ keywordFilter: value });
+  setKeywordFilter = value => this.setState({ keywordFilter: value === null ? [] : value });
 
   setCardTypeFilter = event => this.setState({ cardTypeFilter: event.target.value });
 
@@ -187,12 +187,9 @@ class App extends Component {
       upgradeTypeFilter
     } = this.state;
     const {
-      classes,
-      width
+      classes
     } = this.props;
-    const mobile = width === 'sm' || width === 'xs';
     const commonProps = {
-      mobile,
       classes,
       factions,
       keywords,

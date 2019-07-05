@@ -2,25 +2,56 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Chip from '@material-ui/core/Chip';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
+import DataContext from '../components/DataContext';
 
-class CardImage extends React.Component {
+class CardImage extends React.PureComponent {
+
+  static contextType = DataContext;
+
   state = {};
+
+  generateKeywordChips(cardKeywords) {
+    const { keywordDict, classes } = this.context;
+    const keywordChips = [];
+    cardKeywords.forEach((cardKeyword) => {
+      keywordChips.push(
+        <Tooltip
+          key={cardKeyword}
+          title={(
+            <Typography variant="body1">
+              {keywordDict[cardKeyword] ? keywordDict[cardKeyword] : 'No definition found.'}
+            </Typography>
+          )}
+        >
+          <Chip
+            label={cardKeyword}
+            className={classes.keywordChip}
+            style={{ cursor: 'help' }}
+          />
+        </Tooltip>
+      );
+    });
+    return keywordChips;
+  }
 
   render() {
     const {
-      cardType,
+      allCards,
+      classes
+    } = this.context;
+    const {
+      cardId,
       size,
-      alt,
-      src,
       additionalStyles,
       showKeywords,
-      handleClick
+      handleClick,
+      isDisabled
     } = this.props;
+    const cardData = allCards[cardId];
     const cardSizes = {
       unit: {
         small: {
@@ -52,30 +83,30 @@ class CardImage extends React.Component {
       },
       command: {
         small: {
-          height: '250px',
-          width: '350px'
+          width: '250px',
+          height: '350px'
         },
         medium: {
-          height: '275px',
-          width: '385px'
+          width: '275px',
+          height: '385px'
         },
         large: {
-          height: '300px',
-          width: '420px'
+          width: '300px',
+          height: '420px'
         }
       },
       battle: {
         small: {
-          height: '350px',
-          width: '250px'
+          width: '350px',
+          height: '250px'
         },
         medium: {
-          height: '385px',
-          width: '275px'
+          width: '385px',
+          height: '275px'
         },
         large: {
-          height: '420px',
-          width: '300px'
+          width: '420px',
+          height: '300px'
         }
       }
     };
@@ -83,22 +114,34 @@ class CardImage extends React.Component {
       marginRight: 5,
       marginBottom: 5,
       borderRadius: 10,
-      cursor: 'pointer',
-      ...cardSizes[cardType][size],
+      cursor: isDisabled ? 'not-allowed' : 'pointer',
+      opacity: isDisabled ? 0.5 : 1,
+      ...cardSizes[cardData.cardType][size],
       ...additionalStyles
     };
     return (
       <div>
-        <Card>
+        <Card
+          className={classes.cardImage}
+          style={{
+            width: cardSizes[cardData.cardType][size].width
+          }}
+        >
           <CardActionArea>
             <CardMedia
-              title={alt}
-              image={src}
+              title={cardData.cardName}
+              image={cardData.imageLocation}
               style={{ ...styles }}
+              onClick={handleClick ? () => handleClick(cardId) : undefined}
             />
           </CardActionArea>
-          <CardActions>
-          </CardActions>
+          <div style={{ margin: '-2px' }}>
+            {showKeywords && (
+              <CardActions disableSpacing className={classes.cardAction}>
+                {this.generateKeywordChips(cardData.keywords)}
+              </CardActions>
+            )}
+          </div>
         </Card>
       </div>
     );

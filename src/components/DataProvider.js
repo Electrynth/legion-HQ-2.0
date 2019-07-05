@@ -9,6 +9,8 @@ import {
 import withWidth from '@material-ui/core/withWidth';
 import DataContext from './DataContext';
 
+// input: marginTop: '-0.875rem !important'
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -16,8 +18,7 @@ const styles = theme => ({
   },
   input: {
     display: 'inline-flex !important',
-    padding: 0,
-    marginTop: '-0.875rem !important'
+    padding: 0
   },
   valueContainer: {
     display: 'inline-flex',
@@ -30,6 +31,13 @@ const styles = theme => ({
     marginRight: 4,
     marginBottom: 2,
     height: 'auto !important'
+  },
+  keywordChip: {
+    marginRight: 4,
+    height: 'auto !important'
+  },
+  cardAction: {
+    display: 'inline-block !important'
   },
   noOptionsMessage: {
     padding: 8,
@@ -85,6 +93,9 @@ const styles = theme => ({
     position: 'absolute',
     top: 75,
     right: 25
+  },
+  cardImage: {
+    margin: 5
   }
 });
 
@@ -222,7 +233,7 @@ class DataProvider extends React.Component {
     upgradeCardsById: [],
     commandCardsById: [],
     battleCardsById: [],
-    keywords: {},
+    keywordDict: {},
     tabRoutes: {
       0: '/',
       1: '/list',
@@ -243,7 +254,7 @@ class DataProvider extends React.Component {
     Axios.get('/cards').then((cardsResponse) => {
       Axios.get('/keywords.json').then((keywordsResponse) => {
         this.setState({
-          keywords: { ...keywordsResponse.data },
+          keywordDict: { ...keywordsResponse.data },
           loadingCards: false,
           ...cardsResponse.data
         });
@@ -258,7 +269,11 @@ class DataProvider extends React.Component {
     } = this.props;
     return (
       <DataContext.Provider
-        value={{ width, classes, ...this.state }}
+        value={{
+          width,
+          classes,
+          ...this.state
+        }}
       >
         <MuiThemeProvider theme={theme}>
           {this.props.children}
