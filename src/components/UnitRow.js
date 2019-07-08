@@ -210,11 +210,11 @@ class UnitRow extends React.Component {
         <div
           style={{
             marginTop: 1,
-            display: 'flex'
+            display: 'flex',
+            marginLeft: 12
           }}
         >
-          
-          <div style={{ marginRight: 4 }}>
+          <div>
             {upgradeActionBar}
           </div>
           <div style={{ flexGrow: 1 }} />
