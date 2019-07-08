@@ -206,7 +206,7 @@ class DataProvider extends React.Component {
     upgradeTypes: {
       'heavy weapon': {
         displayName: 'Heavy Weapon',
-        iconLocation: '/images/upgradeTypeIcons/Heavy%20Weapon.png'
+        iconLocation: '/images/upgradeTypeIcons/heavy%20weapon.png'
       },
       personnel: {
         displayName: 'Personnel',
