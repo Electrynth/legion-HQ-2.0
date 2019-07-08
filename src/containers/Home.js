@@ -109,28 +109,32 @@ class Home extends React.Component {
             </Grid>
           ))}
         </div>
-        <Grid item className={classes.googleButtonContainer}>
-          {userId ? (
-            <GoogleLogout
-              buttonText="Sign out"
-              onLogoutSuccess={handleGoogleLogout}
-              className="loginButton"
-            />
-          ) : (
-            <GoogleLogin
-              isSignedIn
-              buttonText="Sign in with Google"
-              clientId="112890447494-ls135bmon2jbaj0mh3k0fnukugp9upkk.apps.googleusercontent.com"
-              onSuccess={handleGoogleLoginSuccess}
-              onFailure={handleGoogleLoginFailure}
-              className="loginButton"
-            />
-          )}
-        </Grid>
+        <Grid item />
         <Grid item style={{ marginTop: 48 }} />
       </Grid>
     );
   }
 }
+
+/*
+<Grid item className={classes.googleButtonContainer}>
+  {userId ? (
+    <GoogleLogout
+      buttonText="Sign out"
+      onLogoutSuccess={handleGoogleLogout}
+      className="loginButton"
+    />
+  ) : (
+    <GoogleLogin
+      isSignedIn
+      buttonText="Sign in with Google"
+      clientId="112890447494-ls135bmon2jbaj0mh3k0fnukugp9upkk.apps.googleusercontent.com"
+      onSuccess={handleGoogleLoginSuccess}
+      onFailure={handleGoogleLoginFailure}
+      className="loginButton"
+    />
+  )}
+</Grid>
+*/
 
 export default Home;

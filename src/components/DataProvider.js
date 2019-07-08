@@ -7,6 +7,7 @@ import {
   MuiThemeProvider
 } from '@material-ui/core/styles';
 import withWidth from '@material-ui/core/withWidth';
+import Data from '../data.json';
 import DataContext from './DataContext';
 
 // input: marginTop: '-0.875rem !important'
@@ -279,15 +280,16 @@ class DataProvider extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('/cards').then((cardsResponse) => {
-      Axios.get('/keywords.json').then((keywordsResponse) => {
-        this.setState({
-          keywordDict: { ...keywordsResponse.data },
-          loadingCards: false,
-          ...cardsResponse.data
-        });
-      });
-    });
+    this.setState({ ...Data });
+    // Axios.get('/cards').then((cardsResponse) => {
+    //   Axios.get('/keywords.json').then((keywordsResponse) => {
+    //     this.setState({
+    //       keywordDict: { ...keywordsResponse.data },
+    //       loadingCards: false,
+    //       ...cardsResponse.data
+    //     });
+    //   });
+    // });
   }
 
   render() {
@@ -295,6 +297,7 @@ class DataProvider extends React.Component {
       width,
       classes
     } = this.props;
+    console.log(this.state);
     return (
       <DataContext.Provider
         value={{
