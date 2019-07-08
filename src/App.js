@@ -30,9 +30,21 @@ scum: {
 }
 */
 
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+  return result;
+};
+
 class App extends Component {
 
   static contextType = DataContext;
+
+  constructor(props) {
+    super(props);
+    this.onDragEnd = this.onDragEnd.bind(this);
+  }
 
   state = {
     activeTab: 0,
@@ -72,6 +84,22 @@ class App extends Component {
     });
   }
 
+  onDragEnd(result) {
+    const {
+      currentList
+    } = this.state;
+
+    if (!result.destination) return;
+
+    currentList.units = reorder(
+      currentList.units,
+      result.source.index,
+      result.destination.index
+    );
+
+    this.setState({ currentList });
+  }
+
   setCardNameFilter = value => this.setState({ cardNameFilter: value });
 
   setKeywordFilter = value => this.setState({ keywordFilter: value === null ? [] : value });
@@ -103,6 +131,21 @@ class App extends Component {
     const { history } = this.props;
     this.setState({
       activeTab: 1,
+      currentList: {
+        mode: 'standard',
+        userId: '',
+        title: '',
+        faction,
+        notes: '',
+        pointTotal: 0,
+        competitive: false,
+        units: [],
+        commandCards: [],
+        objectiveCards: [],
+        conditionCards: [],
+        deploymentCards: [],
+        uniques: []
+      }
     }, history.push(`/list/${faction}`));
   }
 
@@ -210,6 +253,7 @@ class App extends Component {
       currentList,
       changeCurrentList: this.changeCurrentList,
       changeActiveTab: this.changeActiveTab,
+      onDragEnd: this.onDragEnd,
       ...commonProps
     };
     const cardsProps = {

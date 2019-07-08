@@ -1,13 +1,14 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 
 class InfoContainer extends React.Component {
   state = {}
 
   render() {
     return (
-      <div>
-        This builder is unofficial and is not affiliated with Fantasy Flight Games or Disney.
-      </div>
+      <Typography variant="h6" color="primary" style={{ marginTop: 60 }}>
+        Under Construction
+      </Typography>
     );
   }
 }

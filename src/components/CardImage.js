@@ -54,6 +54,10 @@ class CardImage extends React.PureComponent {
     const cardData = allCards[cardId];
     const cardSizes = {
       unit: {
+        vsmall: {
+          height: '217px',
+          width: '304px'
+        },
         small: {
           height: '250px',
           width: '350px'
@@ -68,20 +72,28 @@ class CardImage extends React.PureComponent {
         }
       },
       upgrade: {
+        vsmall: {
+          height: '217px',
+          width: '140px'
+        },
         small: {
+          height: '248px',
+          width: '160px'
+        },
+        medium: {
           height: '310px',
           width: '200px'
         },
-        medium: {
+        large: {
           height: '340px',
           width: '220px'
-        },
-        large: {
-          height: '420px',
-          width: '270px'
         }
       },
       command: {
+        vsmall: {
+          height: '217px',
+          width: '304px'
+        },
         small: {
           width: '250px',
           height: '350px'
@@ -96,6 +108,10 @@ class CardImage extends React.PureComponent {
         }
       },
       battle: {
+        vsmall: {
+          height: '217px',
+          width: '304px'
+        },
         small: {
           width: '350px',
           height: '250px'
@@ -117,14 +133,14 @@ class CardImage extends React.PureComponent {
       cursor: isDisabled ? 'not-allowed' : 'pointer',
       opacity: isDisabled ? 0.5 : 1,
       ...cardSizes[cardData.cardType][size],
-      ...additionalStyles
     };
     return (
       <div>
         <Card
           className={classes.cardImage}
           style={{
-            width: cardSizes[cardData.cardType][size].width
+            width: cardSizes[cardData.cardType][size].width,
+            ...additionalStyles
           }}
         >
           <CardActionArea>
@@ -132,7 +148,7 @@ class CardImage extends React.PureComponent {
               title={cardData.cardName}
               image={cardData.imageLocation}
               style={{ ...styles }}
-              onClick={handleClick ? () => handleClick(cardId) : undefined}
+              onClick={handleClick ? () => handleClick() : undefined}
             />
           </CardActionArea>
           <div style={{ margin: '-2px' }}>

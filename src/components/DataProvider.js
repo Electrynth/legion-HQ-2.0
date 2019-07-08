@@ -96,6 +96,34 @@ const styles = theme => ({
   },
   cardImage: {
     margin: 5
+  },
+  grayHoverOver: {
+    display: 'flex',
+    cursor: 'pointer',
+    borderRadius: 5,
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.1)'
+    }
+  },
+  disabledUpgradeTypeButton: {
+    width: 25,
+    height: 25,
+    marginTop: 4,
+    marginRight: 4,
+    opacity: 0.5,
+    '&:hover': {
+      opacity: 0.25
+    }
+  },
+  upgradeTypeButton: {
+    width: 25,
+    height: 25,
+    marginTop: 4,
+    marginRight: 4,
+    cursor: 'pointer',
+    '&:hover': {
+      opacity: 0.8
+    }
   }
 });
 

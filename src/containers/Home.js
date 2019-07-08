@@ -14,62 +14,7 @@ class Home extends React.Component {
   static contextType = DataContext;
 
   state = {
-    testLists: [
-      {
-        mode: 'standard',
-        title: 'Rebel list 1',
-        faction: 'rebels',
-        notes: '',
-        pointTotal: 795,
-        competitive: true,
-        units: [
-          {
-            _id: '5c88a2e88f63424d32d13b8b'
-          }
-        ],
-        comandCards: [],
-        objectiveCards: [],
-        conditionCards: [],
-        deploymentCards: [],
-        uniques: []
-      },
-      {
-        mode: 'grand army',
-        title: 'Rebel list 2',
-        faction: 'rebels',
-        notes: '',
-        pointTotal: 1599,
-        competitive: true,
-        units: [
-          {
-            _id: '5c88a2e88f63424d32d13b89'
-          }
-        ],
-        comandCards: [],
-        objectiveCards: [],
-        conditionCards: [],
-        deploymentCards: [],
-        uniques: []
-      },
-      {
-        mode: 'standard',
-        title: 'Empire list 1',
-        faction: 'empire',
-        notes: 'blah blah blah',
-        pointTotal: 799,
-        competitive: true,
-        units: [
-          {
-            _id: '5c88a2e88f63424d32d13b9b'
-          }
-        ],
-        comandCards: [],
-        objectiveCards: [],
-        conditionCards: [],
-        deploymentCards: [],
-        uniques: []
-      }
-    ]
+    testLists: []
   }
 
   render() {
@@ -115,7 +60,8 @@ class Home extends React.Component {
                 onClick={() => handleFactionClick(factionName)}
                 style={{
                   border: `${factions[factionName].color} solid 2px`,
-                  marginRight: 4
+                  marginRight: 4,
+                  marginBottom: 4
                 }}
                 label={(
                   <Typography variant="subtitle1">
@@ -133,7 +79,11 @@ class Home extends React.Component {
                         variant="outlined"
                         label={<Typography>{`${testList.title} - ${testList.pointTotal}`}</Typography>}
                         onDelete={() => console.log('deleted')}
-                        style={{ border: `${factions[factionName].color} solid 2px`, marginRight: 4 }}
+                        style={{
+                          border: `${factions[factionName].color} solid 2px`,
+                          marginRight: 4,
+                          marginBottom: 4
+                        }}
                         onClick={() => handleFactionClick(factionName)}
                       />
                     );
