@@ -53,7 +53,7 @@ class Home extends React.Component {
             An unofficial tool and resource for Fantasy Flight Games: Star Wars™: Legion.
           </Typography>
         </Grid>
-        <Grid item style={{ marginTop: 16 }}>
+        <Grid item style={{ marginTop: 8 }}>
           <WarningIcon color="primary" />
         </Grid>
         <Grid item style={{ maxWidth: '90vw' }}>
@@ -75,7 +75,7 @@ class Home extends React.Component {
             <OpenInNewIcon color="primary" />
           </IconButton>
         </Grid>
-        <div style={{ marginTop: 32}} className={classes.factionListsContainer}>
+        <div style={{ marginTop: '100px' }} className={classes.factionListsContainer}>
           {Object.keys(factions).map(factionName => (
             <Grid item key={factionName} style={{ marginTop: 36 }}>
               <Chip
