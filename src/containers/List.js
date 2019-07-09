@@ -325,6 +325,7 @@ class ListContainer extends React.Component {
       currentList,
       changeCurrentList
     } = this.props;
+    this.changeViewFilter({ type: '' });
     const unitObject = currentList.units[unitsIndex];
     currentList.pointTotal -= unitObject.totalUnitCost;
     if (unitObject.hasUniques) {
