@@ -21,7 +21,8 @@ class UpgradeRow extends React.PureComponent {
       classes,
       equippedUpgradeId,
       handleClick,
-      removeUpgrade
+      removeUpgrade,
+      changeViewFilter
     } = this.props;
     const {
       showUpgradeActionBar
@@ -74,6 +75,7 @@ class UpgradeRow extends React.PureComponent {
             height: 36,
             borderRadius: 5
           }}
+          onClick={() => changeViewFilter({ type: 'view card', cardId: equippedUpgradeId })}
         />
         <Typography
           variant="h6"

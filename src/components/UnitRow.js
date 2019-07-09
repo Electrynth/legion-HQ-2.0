@@ -160,6 +160,7 @@ class UnitRow extends React.Component {
                 marginLeft: 12.5,
                 marginTop: -25
               }}
+              onClick={() => changeViewFilter({ type: 'view card', cardId: unitObject.unitId })}
             />
           </div>
           <div style={{ marginLeft: 16, marginTop: 4 }}>
@@ -196,6 +197,7 @@ class UnitRow extends React.Component {
                 key={equippedUpgradeId}
                 classes={classes}
                 equippedUpgradeId={equippedUpgradeId}
+                changeViewFilter={changeViewFilter}
                 removeUpgrade={() => removeUpgrade(unitsIndex, i)}
                 handleClick={() => changeViewFilter({
                   type: 'add upgrade',

@@ -645,6 +645,25 @@ class ListContainer extends React.Component {
 
     } else if (viewFilter.type === 'add condition') {
 
+    } else if (viewFilter.type === 'view card') {
+      content = (
+        <Grid
+          item
+          container
+          direction="row"
+          justify="flex-start"
+          alignItems="flex-start"
+        >
+          <Grid item>
+            <CardImage
+              showKeywords={true}
+              size="large"
+              cardId={viewFilter.cardId}
+              key={viewFilter.cardId}
+            />
+          </Grid>
+        </Grid>
+      );
     } else {
       content = currentList.units.map((unitObject, i) => {
         return (

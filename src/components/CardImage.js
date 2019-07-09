@@ -148,21 +148,20 @@ class CardImage extends React.PureComponent {
           <div
             style={{
               backgroundColor: 'transparent',
-              width: 20,
-              height: 100,
-              zIndex: 9999,
+              width: 18,
+              height: '217px',
               borderRadius: 5,
               border: `2px solid ${cardData.faction ? factions[cardData.faction].color : 'rgba(255, 255, 255, 0.23)'}`,
               display: unitCount > 1 ? 'inline-block' : 'none'
             }}
           >
             <Typography
-              variant="subtitle2"
+              variant="subtitle1"
               color="primary"
               style={{
                 position: 'relative',
-                top: 40,
-                left: 7
+                top: '90px',
+                left: 4
               }}
             >
               {unitCount}
