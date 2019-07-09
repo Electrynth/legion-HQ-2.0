@@ -3,8 +3,11 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Tooltip from '@material-ui/core/Tooltip';
+import IconButton from '@material-ui/core/IconButton';
 // import Avatar from '@material-ui/core/Avatar';
 import AddIcon from '@material-ui/icons/Add';
+import WarningIcon from '@material-ui/icons/Warning';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 // import DeleteIcon from '@material-ui/icons/Delete';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import DataContext from '../components/DataContext';
@@ -50,7 +53,29 @@ class Home extends React.Component {
             An unofficial tool and resource for Fantasy Flight Games: Star Wars™: Legion.
           </Typography>
         </Grid>
-        <div className={classes.factionListsContainer}>
+        <Grid item style={{ marginTop: 16 }}>
+          <WarningIcon color="primary" />
+        </Grid>
+        <Grid item style={{ maxWidth: '90vw' }}>
+          <Typography
+            variant="body1"
+            color="primary"
+            className={classes.textAlignCenter}
+          >
+            This is a prototype builder. Link to thread with more information is below...
+          </Typography>
+        </Grid>
+        <Grid item style={{ maxWidth: '90vw' }}>
+          <IconButton
+            color="primary"
+            size="medium"
+            target="_blank"
+            href="https://community.fantasyflightgames.com/topic/297265-legion-hq-list-builder-update/"
+          >
+            <OpenInNewIcon color="primary" />
+          </IconButton>
+        </Grid>
+        <div style={{ marginTop: 32}} className={classes.factionListsContainer}>
           {Object.keys(factions).map(factionName => (
             <Grid item key={factionName} style={{ marginTop: 36 }}>
               <Chip
