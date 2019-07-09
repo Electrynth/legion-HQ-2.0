@@ -139,7 +139,9 @@
       "by",
       "bz",
       "bp",
-      "bu"
+      "bu",
+      "im",
+      "in"
    ],
    "upgradeCardsById":[
       "eu",
@@ -2703,7 +2705,8 @@
          "faction":"empire",
          "imageLocation":"/images/commandCards/Maximum%20Firepower.jpeg",
          "keywords":[
-
+           "Impact",
+           "Immune"
          ],
          "_id":{
             "$oid":"5c88a2e88f63424d32d13bb7"
