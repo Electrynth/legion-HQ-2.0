@@ -297,7 +297,6 @@ class DataProvider extends React.Component {
       width,
       classes
     } = this.props;
-    console.log(this.state);
     return (
       <DataContext.Provider
         value={{

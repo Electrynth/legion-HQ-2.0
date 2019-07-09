@@ -187,7 +187,7 @@ class UnitRow extends React.Component {
             </Typography>
           </div>
         </div>
-        <div style={{ marginTop: 1 }}>
+        <div style={{ marginTop: 2 }}>
           {unitObject.upgradesEquipped.map((equippedUpgradeId, i) => {
             if (!equippedUpgradeId) return undefined;
             const upgradeType = allCards[equippedUpgradeId].cardSubtype;

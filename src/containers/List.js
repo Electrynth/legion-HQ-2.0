@@ -1,5 +1,6 @@
 import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import copy from 'clipboard-copy';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -11,9 +12,14 @@ import Badge from '@material-ui/core/Badge';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import CloseIcon from '@material-ui/icons/Close';
+import LinkIcon from '@material-ui/icons/Link';
+import PrintIcon from '@material-ui/icons/Print';
+import ListAltIcon from '@material-ui/icons/ListAlt';
+import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
+import SaveIcon from '@material-ui/icons/Save';
+import ImageIcon from '@material-ui/icons/Image';
 import CardImage from '../components/CardImage';
 import UnitRow from '../components/UnitRow';
-import LinkGenerator from '../components/LinkGenerator';
 import DataContext from '../components/DataContext';
 
 const entouragePairs = {
@@ -60,6 +66,7 @@ class ListContainer extends React.Component {
   static contextType = DataContext;
 
   state = {
+    loadingList: false,
     unitStackSize: 1,
     viewFilter: {
       type: ''
@@ -74,6 +81,103 @@ class ListContainer extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const { factions, allCards } = this.context;
+    const {
+      match,
+      currentList,
+      changeActiveTab,
+      changeCurrentList
+    } = this.props;
+    const { unitCounts } = this.state;
+    if (factions[match.params.id]) {
+      changeCurrentList({ ...currentList, faction: match.params.id });
+    } else {
+      this.setState({ loadingList: true });
+      const listCode = match.params.id;
+      let invalidFormat = false;
+      let faction = '';
+      let unitObjects = [];
+      let urlStrings = listCode.split(',');
+      urlStrings.forEach((urlString, i) => {
+        if (urlString.charAt(0) && urlString.charAt(1) && urlString.charAt(2)) {
+          let unitCount = urlString.charAt(0);
+          let unitId = `${urlString.charAt(1)}${urlString.charAt(2)}`;
+          if (unitCount > 0 && unitCount < 13 && allCards[unitId] && allCards[unitId].cardType === 'unit') {
+            if (currentList.uniques.includes(unitId)) {
+              invalidFormat = true;
+            } else if (allCards[unitId].isUnique) {
+              currentList.uniques.push(unitId)
+            }
+            if (!invalidFormat) {
+              let unitObject = {
+                unitId,
+                count: unitCount,
+                upgradesEquipped: new Array(allCards[unitId].upgradeBar.length).fill(undefined),
+                hasUniques: allCards[unitId].isUnique,
+                totalUnitCost: allCards[unitId].cost * unitCount
+              };
+              if (!faction) faction = allCards[unitId].faction;
+              else if (allCards[unitId].faction !== faction) invalidFormat = true;
+              let upgradeIds = [];
+              for (let i = 3; i < urlString.length; i += 1) {
+                if (urlString.charAt(i) !== '0' && urlString.charAt(i + 1)) {
+                  upgradeIds.push(`${urlString.charAt(i)}${urlString.charAt(i + 1)}`);
+                  i += 1;
+                } else {
+                  upgradeIds.push(undefined);
+                }
+              }
+              let upgradesEquipped = [];
+              upgradeIds.forEach((upgradeId, i) => {
+                if (upgradeId && !invalidFormat) {
+                  if (currentList.uniques.includes(upgradeId) || upgradesEquipped.includes(upgradeId)) {
+                    // if upgrade is in uniques list or is already equipped => invalidate
+                    invalidFormat = true;
+                  } else if (allCards[upgradeId].cardSubtype !== allCards[unitId].upgradeBar[i]) {
+                    // if upgrade is not the right type for that particular slot => invalidate
+                    invalidFormat = true;
+                  } else if (allCards[upgradeId].faction && (allCards[upgradeId].faction !== allCards[unitId].faction)) {
+                    // if upgrade has a faction and that faction is not the same as the unit => invalidate
+                    invalidFormat = true;
+                  } else if (allCards[upgradeId].isUnique) {
+                    unitObject.hasUniques = true;
+                    currentList.uniques.push(upgradeId);
+                  }
+                  if (!invalidFormat) {
+                    unitObject.totalUnitCost += allCards[upgradeId].cost * unitCount;
+                    upgradesEquipped.push(upgradeId);
+                  }
+                } else upgradesEquipped.push(undefined);
+              });
+              unitObject.upgradesEquipped = upgradesEquipped;
+              if (!invalidFormat) {
+                unitObjects.push(unitObject);
+                currentList.pointTotal += unitObject.totalUnitCost;
+              }
+            }
+          } else invalidFormat = true;
+        } else invalidFormat = true;
+        if (invalidFormat) return;
+      });
+      if (invalidFormat) {
+        currentList.units = [];
+        currentList.faction = 'rebels';
+        alert('Invalid List Format');
+      } else {
+        unitObjects.forEach((unitObject) => {
+          unitCounts[allCards[unitObject.unitId].rank] += Number.parseInt(unitObject.count);
+        });
+        currentList.units = unitObjects;
+        currentList.faction = faction;
+      }
+      this.setState({
+        loadingList: false
+      }, changeCurrentList({ ...currentList, unitCounts }));
+    }
+    changeActiveTab(1);
+  }
+
   incrementUnitStackSize = () => {
     const { unitStackSize } = this.state;
     if (unitStackSize < 11) this.setState({ unitStackSize: unitStackSize + 1 });
@@ -82,23 +186,6 @@ class ListContainer extends React.Component {
   decrementUnitStackSize = () => {
     const { unitStackSize } = this.state;
     if (unitStackSize > 1) this.setState({ unitStackSize: unitStackSize - 1 });
-  }
-
-  componentDidMount() {
-    const { factions } = this.context;
-    const {
-      match,
-      currentList,
-      changeActiveTab,
-      changeCurrentList
-    } = this.props;
-    if (factions[match.params.id]) {
-      changeCurrentList({ ...currentList, faction: match.params.id });
-    } else {
-      console.log(match.params.id);
-      changeCurrentList({ ...currentList, faction: 'rebels' });
-    }
-    changeActiveTab(1);
   }
 
   getBadgeColor = (rank) => {
@@ -177,23 +264,13 @@ class ListContainer extends React.Component {
     });
   }
 
-  getCurrentListPointTotal = () => {
-    const { allCards } = this.context;
-    const { currentList } = this.props;
-    let pointTotal = 0;
-    currentList.units.forEach((unitObject) => {
-      pointTotal += allCards[unitObject.unitId] * unitObject.count;
-      unitObject.upgradesEquipped.forEach((upgradeId) => {
-        pointTotal += allCards[upgradeId].cost * unitObject.count;
-      });
-    });
-    return pointTotal;
-  }
-
   incrementUnitCount = (unitsIndex) => {
     const { allCards } = this.context;
     const {
       currentList,
+      changeCurrentList
+    } = this.props;
+    const {
       unitCounts
     } = this.state;
     if (!currentList.units[unitsIndex].hasUniques) {
@@ -202,16 +279,20 @@ class ListContainer extends React.Component {
       currentList.units[unitsIndex].count += 1;
       unitCounts[allCards[currentList.units[unitsIndex].unitId].rank] += 1;
     }
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     this.setState({
-      currentList,
       unitCounts
-    });
+    }, changeCurrentList(currentList));
   }
 
   decrementUnitCount = (unitsIndex) => {
     const { allCards } = this.context;
     const {
       currentList,
+      changeCurrentList
+    } = this.props;
+    const {
       unitCounts
     } = this.state;
     if (currentList.units[unitsIndex].count === 1) {
@@ -225,10 +306,11 @@ class ListContainer extends React.Component {
       currentList.units[unitsIndex].count -= 1;
       unitCounts[allCards[currentList.units[unitsIndex].unitId].rank] -= 1;
     }
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     this.setState({
-      unitCounts,
-      currentList
-    });
+      unitCounts
+    }, changeCurrentList(currentList));
   }
 
   removeUnit = (unitsIndex) => {
@@ -236,9 +318,12 @@ class ListContainer extends React.Component {
       allCards
     } = this.context;
     const {
-      currentList,
       unitCounts
     } = this.state;
+    const {
+      currentList,
+      changeCurrentList
+    } = this.props;
     const unitObject = currentList.units[unitsIndex];
     currentList.pointTotal -= unitObject.totalUnitCost;
     if (unitObject.hasUniques) {
@@ -246,17 +331,21 @@ class ListContainer extends React.Component {
         currentList.uniques.splice(currentList.uniques.indexOf(unitObject.unitId), 1)
       }
       unitObject.upgradesEquipped.forEach((upgradeEquipped, i) => {
-        if (upgradeEquipped && allCards[upgradeEquipped.upgradeId].isUnique) {
+        if (upgradeEquipped && allCards[upgradeEquipped.upgradeId] && allCards[upgradeEquipped.upgradeId].isUnique) {
           currentList.uniques.splice(i, 1);
         }
       });
     }
     currentList.units.splice(unitsIndex, 1);
     unitCounts[allCards[unitObject.unitId].rank] -= 1 * unitObject.count;
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     this.setState({
-      unitCounts,
-      currentList
-    }, this.changeViewFilter({ type: '' }));
+      unitCounts
+    }, () => {
+      changeCurrentList(currentList);
+      this.changeViewFilter({ type: '' });
+    });
   }
 
   addUpgradeCard = (upgradeCardId, unitsIndex, upgradesIndex) => {
@@ -264,7 +353,8 @@ class ListContainer extends React.Component {
       allCards
     } = this.context;
     const {
-      currentList
+      currentList,
+      changeCurrentList
     } = this.props;
     const currentUpgradeCardId = currentList.units[unitsIndex].upgradesEquipped[upgradesIndex];
     if (currentUpgradeCardId) this.removeUpgrade(unitsIndex, upgradesIndex);
@@ -273,7 +363,10 @@ class ListContainer extends React.Component {
     currentList.pointTotal += upgradeCard.cost * currentList.units[unitsIndex].count;
     if (upgradeCard.isUnique) currentList.uniques.push(upgradeCardId);
     currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = upgradeCardId;
-    this.setState({ currentList }, this.changeViewFilter({ type: '' }));
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
+    changeCurrentList(currentList);
+    this.changeViewFilter({ type: '' });
   }
 
   removeUpgrade = (unitsIndex, upgradesIndex) => {
@@ -281,7 +374,8 @@ class ListContainer extends React.Component {
       allCards
     } = this.context;
     const {
-      currentList
+      currentList,
+      changeCurrentList
     } = this.props;
     const upgradeCardId = currentList.units[unitsIndex].upgradesEquipped[upgradesIndex];
     const upgradeCard = allCards[upgradeCardId];
@@ -291,24 +385,10 @@ class ListContainer extends React.Component {
       currentList.uniques.splice(currentList.uniques.indexOf(upgradeCardId), 1);
     }
     currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = undefined;
-    this.setState({
-      currentList
-    }, this.changeViewFilter({ type: '' }));
-  }
-
-  applyEntourage = () => {
-    const {
-      allCards
-    } = this.context;
-    const {
-      unitCounts
-    } = this.state;
-    const {
-      currentList
-    } = this.props;
-    currentList.units.forEach((unitObject) => {
-
-    });
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
+    changeCurrentList(currentList);
+    this.changeViewFilter({ type: '' });
   }
 
   addUnitCard = (unitId) => {
@@ -320,7 +400,8 @@ class ListContainer extends React.Component {
       unitStackSize
     } = this.state;
     const {
-      currentList
+      currentList,
+      changeCurrentList
     } = this.props;
     const unitCard = allCards[unitId];
     const unitObject = {
@@ -328,7 +409,7 @@ class ListContainer extends React.Component {
       hasUniques: false,
       totalUnitCost: unitCard.cost,
       additionalUpgradeSlots: [],
-      upgradesEquipped: new Array(unitCard.upgradeBar.length)
+      upgradesEquipped: new Array(unitCard.upgradeBar.length).fill(undefined)
     };
     if (currentList.uniques.includes(unitId)) {
       return
@@ -351,12 +432,53 @@ class ListContainer extends React.Component {
     //   currentList.unitsContained.push(unitObject.unitId);
     // }
     this.setState({
-      currentList,
       unitCounts
     }, () => {
+      changeCurrentList(currentList);
       this.changeViewFilter({ type: '' })
       // this.applyEntourage();
     });
+  }
+
+  copyTextToClipboard = () => {
+    const {
+      allCards
+    } = this.context;
+    const {
+      currentList
+    } = this.props;
+    let listString = '';
+    listString += `${currentList.title}\n`;
+    listString += `${currentList.pointTotal}/${currentList.mode === 'standard' ? 800 : 1600}\n`;
+    listString += '\n';
+    currentList.units.forEach((unitObject) => {
+      const unitCard = allCards[unitObject.unitId];
+      Array.from({ length: unitObject.count }).forEach((i) => {
+        listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
+        unitObject.upgradesEquipped.forEach((upgradeId) => {
+          if (upgradeId) listString += `- ${allCards[upgradeId].cardName}\n`;
+        });
+      });
+    });
+    copy(listString);
+  }
+
+  copyLinkToClipboard = (linkType) => {
+    const {
+      currentList
+    } = this.props;
+    const urlStrings = [];
+    if (linkType === 'Legion HQ Link') {
+      currentList.units.forEach((unitObject) => {
+        let urlString = `${unitObject.count}${unitObject.unitId}`;
+        unitObject.upgradesEquipped.forEach((upgradeId) => {
+          if (upgradeId) urlString += upgradeId;
+          else urlString += '0';
+        });
+        urlStrings.push(urlString);
+      });
+    }
+    copy(`legion-hq.herokuapp.com/list/${urlStrings.join(',')}`);
   }
 
   generateRightPaneContent(viewFilter, currentList) {
@@ -539,6 +661,7 @@ class ListContainer extends React.Component {
                 size="vsmall"
                 cardId={unitObject.unitId}
                 key={unitObject.unitId}
+                unitCount={unitObject.count}
               />
             </Grid>
             {unitObject.upgradesEquipped.map((upgradeCardId) => {
@@ -582,12 +705,11 @@ class ListContainer extends React.Component {
     } = this.state;
     const {
       currentList,
-      onDragEnd
+      onDragEnd,
+      handleChangeTitle,
+      handleOpenSnackbar
     } = this.props;
     const mobile = width === 'xs' || width === 'sm';
-    console.log('allCards:', allCards);
-    console.log('currentList:', currentList);
-
     const leftPane = (
       <Grid
         item
@@ -624,6 +746,7 @@ class ListContainer extends React.Component {
               fullWidth
               placeholder="Untitled"
               helperText={currentList.mode}
+              onChange={handleChangeTitle}
             />
           </Grid>
           <Grid item>
@@ -720,6 +843,7 @@ class ListContainer extends React.Component {
 
             <Grid item>
               <Button
+                disabled
                 fullWidth
                 variant="outlined"
                 size="medium"
@@ -740,21 +864,21 @@ class ListContainer extends React.Component {
                 size="medium"
                 style={{ marginBottom: 10 }}
               >
-                <Button onClick={() => this.changeViewFilter({ type: 'add objective' })}>
+                <Button disabled onClick={() => this.changeViewFilter({ type: 'add objective' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
                   />
                   Objective
                 </Button>
-                <Button onClick={() => this.changeViewFilter({ type: 'add deployment' })}>
+                <Button disabled onClick={() => this.changeViewFilter({ type: 'add deployment' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
                   />
                   Deployment
                 </Button>
-                <Button onClick={() => this.changeViewFilter({ type: 'add condition' })}>
+                <Button disabled onClick={() => this.changeViewFilter({ type: 'add condition' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
@@ -763,17 +887,101 @@ class ListContainer extends React.Component {
                 </Button>
               </ButtonGroup>
             </Grid>
+            <div
+              style={{
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+              }}
+            />
             <Grid
               item
               container
               direction="row"
               justify="center"
               alignItems="center"
+              style={{ marginTop: 10 }}
             >
-              <Grid item>
-                <LinkGenerator
-                  currentList={currentList}
-                />
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  color="primary"
+                  onClick={() => {
+                    this.copyLinkToClipboard('Legion HQ Link');
+                    handleOpenSnackbar('Copied link to clipboard!');
+                  }}
+                >
+                  <LinkIcon style={{ marginRight: 5 }} />
+                  Legion HQ Link
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  disabled
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                >
+                  <LinkIcon style={{ marginRight: 5 }} />
+                  Tabletop Admiral Link
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  disabled
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                >
+                  <ImageIcon style={{ marginRight: 5 }} />
+                  Image Export
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                  onClick={() => {
+                    this.copyTextToClipboard();
+                    handleOpenSnackbar('Copied text to clipboard!');
+                  }}
+                >
+                  <ListAltIcon style={{ marginRight: 5 }} />
+                  Text Export
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  disabled
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                >
+                  <PrintIcon style={{ marginRight: 5 }} />
+                  Print
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  disabled
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                >
+                  <SaveIcon style={{ marginRight: 5 }} />
+                  Save
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  disabled
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                >
+                  <ZoomOutMapIcon style={{ marginRight: 5 }} />
+                  Display Mode
+                </Button>
               </Grid>
             </Grid>
             <Grid item>
