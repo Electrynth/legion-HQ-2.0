@@ -567,7 +567,7 @@ class CardsContainer extends React.PureComponent {
           }}
         >
           {filteredCards}
-          <Grid item style={{ height: '30rem' }} />
+          <Grid item style={{ height: '45rem' }} />
         </Grid>
       </Grid>
     );

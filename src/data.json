@@ -3679,7 +3679,7 @@
       "hj":{
          "displayName":"",
          "cardName":"Hello There!",
-         "cardSubtype":"3",
+         "cardSubtype":"1",
          "iconLocation":"/images/commandIcons/Hello%20There!.jpeg",
          "commander":"Obi-Wan Kenobi",
          "cardType":"command",
@@ -3689,7 +3689,7 @@
          "faction":"republic",
          "imageLocation":"/images/commandCards/Hello%20There!.jpeg",
          "keywords":[
-
+           "Nimble"
          ],
          "_id":{
             "$oid":"5cb2a773b7248d0749c5424d"
@@ -3709,7 +3709,7 @@
          "faction":"separatists",
          "imageLocation":"/images/commandCards/Supreme%20Commander.jpeg",
          "keywords":[
-
+           "Guardian"
          ],
          "_id":{
             "$oid":"5cb2a7c6b7248d0749c5424e"
@@ -5839,6 +5839,42 @@
         "requirements":[
           "General Grievous"
         ]
+      },
+      "im": {
+        "displayName":"",
+        "cardName":"Trained In Your Jedi Arts",
+        "cardSubtype":"1",
+        "iconLocation":"/images/commandIcons/Trained%20In%20Your%20Jedi%20Arts.jpeg",
+        "commander":"General Grievous",
+        "cardType":"command",
+        "products":[
+
+        ],
+        "faction":"separatists",
+        "imageLocation":"/images/commandCards/Trained%20In%20Your%20Jedi%20Arts.jpeg",
+        "keywords":[
+          "Disengage",
+          "Suppressive",
+          "Versatile"
+        ],
+        "id":"im"
+      },
+      "in": {
+        "displayName":"",
+        "cardName":"Knowledge and Defense",
+        "cardSubtype":"2",
+        "iconLocation":"/images/commandIcons/Knowledge%20and%20Defense.jpeg",
+        "commander":"Obi-Wan Kenobi",
+        "cardType":"command",
+        "products":[
+
+        ],
+        "faction":"republic",
+        "imageLocation":"/images/commandCards/Knowledge%20and%20Defense.jpeg",
+        "keywords":[
+          "Guardian"
+        ],
+        "id":"in"
       }
    }
 }
