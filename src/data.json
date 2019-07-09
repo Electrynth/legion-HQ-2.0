@@ -3523,7 +3523,7 @@
       },
       "hp":{
          "displayName":"",
-         "iconLocation":"/images/upgradeIcons/Z-6%20Phase%20I%20Trooper.jpeg",
+         "iconLocation":"/images/upgradeIcons/Z-6%20Phase%20I%20Clone%20Trooper.jpeg",
          "cardName":"Z-6 Phase I Trooper",
          "cardSubtype":"heavy weapon",
          "isUnique":false,
@@ -3533,7 +3533,7 @@
 
          ],
          "faction":"republic",
-         "imageLocation":"/images/upgradeCards/Z-6%20Phase%20I%20Trooper.jpeg",
+         "imageLocation":"/images/upgradeCards/Z-6%20Phase%20I%20Clone%20Trooper.jpeg",
          "keywords":[
 
          ],
@@ -3547,7 +3547,7 @@
       },
       "hq":{
          "displayName":"",
-         "iconLocation":"/images/upgradeIcons/DC-15%20Phase%20I%20Trooper.jpeg",
+         "iconLocation":"/images/upgradeIcons/DC-15%20Phase%20I%20Clone%20Trooper.jpeg",
          "cardName":"DC-15 Phase I Trooper",
          "cardSubtype":"heavy weapon",
          "isUnique":false,
@@ -3557,7 +3557,7 @@
 
          ],
          "faction":"republic",
-         "imageLocation":"/images/upgradeCards/DC-15%20Phase%20I%20Trooper.jpeg",
+         "imageLocation":"/images/upgradeCards/DC-15%20Phase%20I%20Clone%20Trooper.jpeg",
          "keywords":[
            "Critical"
          ],
