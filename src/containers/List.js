@@ -478,7 +478,7 @@ class ListContainer extends React.Component {
         urlStrings.push(urlString);
       });
     }
-    copy(`legion-hq.herokuapp.com/list/${urlStrings.join(',')}`);
+    copy(`https://legion-hq.herokuapp.com/list/${urlStrings.join(',')}`);
   }
 
   generateRightPaneContent(viewFilter, currentList) {
