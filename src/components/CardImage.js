@@ -90,6 +90,24 @@ class CardImage extends React.PureComponent {
         large: {
           height: '340px',
           width: '220px'
+        },
+        doubleSided: {
+          vsmall: {
+            height: '217px',
+            width: '280px'
+          },
+          small: {
+            height: '248px',
+            width: '320px'
+          },
+          medium: {
+            height: '310px',
+            width: '400px'
+          },
+          large: {
+            height: '340px',
+            width: '440px'
+          },
         }
       },
       command: {
@@ -129,14 +147,18 @@ class CardImage extends React.PureComponent {
         }
       }
     };
-    const styles = {
+    let styles = {
       marginRight: 5,
       marginBottom: 5,
       borderRadius: 10,
       cursor: isDisabled ? 'not-allowed' : 'pointer',
       opacity: isDisabled ? 0.5 : 1,
-      ...cardSizes[cardData.cardType][size],
     };
+    let cardStyles = cardSizes[cardData.cardType][size];
+    if (cardData.cardType === 'upgrade' && cardData.keywords.includes('Reconfigure')) {
+      cardStyles = cardSizes[cardData.cardType]['doubleSided'][size];
+    }
+    styles = { ...styles, ...cardStyles };
     return (
       <Grid
         container
@@ -172,7 +194,7 @@ class CardImage extends React.PureComponent {
           <Card
             className={classes.cardImage}
             style={{
-              width: cardSizes[cardData.cardType][size].width,
+              width: cardStyles.width,
               ...additionalStyles
             }}
           >
