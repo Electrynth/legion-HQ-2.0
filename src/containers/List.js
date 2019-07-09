@@ -89,7 +89,7 @@ class ListContainer extends React.Component {
       changeActiveTab,
       changeCurrentList
     } = this.props;
-    console.log('all cards:', allCards);
+    const { unitCounts } = this.state;
     if (factions[match.params.id]) {
       changeCurrentList({ ...currentList, faction: match.params.id });
     } else {
@@ -153,7 +153,6 @@ class ListContainer extends React.Component {
               unitObject.upgradesEquipped = upgradesEquipped;
               if (!invalidFormat) {
                 unitObjects.push(unitObject);
-                console.log(unitObject);
                 currentList.pointTotal += unitObject.totalUnitCost;
               }
             }
@@ -166,12 +165,15 @@ class ListContainer extends React.Component {
         currentList.faction = 'rebels';
         alert('Invalid List Format');
       } else {
+        unitObjects.forEach((unitObject) => {
+          unitCounts[allCards[unitObject.unitId].rank] += Number.parseInt(unitObject.count);
+        });
         currentList.units = unitObjects;
         currentList.faction = faction;
       }
       this.setState({
         loadingList: false
-      }, changeCurrentList({ ...currentList }));
+      }, changeCurrentList({ ...currentList, unitCounts }));
     }
     changeActiveTab(1);
   }
@@ -308,9 +310,11 @@ class ListContainer extends React.Component {
       allCards
     } = this.context;
     const {
-      currentList,
       unitCounts
     } = this.state;
+    const {
+      currentList
+    } = this.props;
     const unitObject = currentList.units[unitsIndex];
     currentList.pointTotal -= unitObject.totalUnitCost;
     if (unitObject.hasUniques) {
@@ -462,7 +466,6 @@ class ListContainer extends React.Component {
     if (linkType === 'Legion HQ Link') {
       currentList.units.forEach((unitObject) => {
         let urlString = `${unitObject.count}${unitObject.unitId}`;
-        console.log(unitObject.upgradesEquipped);
         unitObject.upgradesEquipped.forEach((upgradeId) => {
           if (upgradeId) urlString += upgradeId;
           else urlString += '0';
@@ -470,7 +473,6 @@ class ListContainer extends React.Component {
         urlStrings.push(urlString);
       });
     }
-    console.log(urlStrings);
     copy(`legion-hq.herokuapp.com/list/${urlStrings.join(',')}`);
   }
 
@@ -654,6 +656,7 @@ class ListContainer extends React.Component {
                 size="vsmall"
                 cardId={unitObject.unitId}
                 key={unitObject.unitId}
+                unitCount={unitObject.count}
               />
             </Grid>
             {unitObject.upgradesEquipped.map((upgradeCardId) => {
@@ -702,7 +705,6 @@ class ListContainer extends React.Component {
       handleOpenSnackbar
     } = this.props;
     const mobile = width === 'xs' || width === 'sm';
-    console.log('current list:', currentList);
     const leftPane = (
       <Grid
         item

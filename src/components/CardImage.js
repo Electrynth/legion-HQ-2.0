@@ -4,6 +4,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 import Chip from '@material-ui/core/Chip';
+import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import DataContext from '../components/DataContext';
@@ -41,11 +42,13 @@ class CardImage extends React.PureComponent {
   render() {
     const {
       allCards,
-      classes
+      classes,
+      factions
     } = this.context;
     const {
       cardId,
       size,
+      unitCount,
       additionalStyles,
       showKeywords,
       handleClick,
@@ -135,31 +138,63 @@ class CardImage extends React.PureComponent {
       ...cardSizes[cardData.cardType][size],
     };
     return (
-      <div>
-        <Card
-          className={classes.cardImage}
-          style={{
-            width: cardSizes[cardData.cardType][size].width,
-            ...additionalStyles
-          }}
-        >
-          <CardActionArea>
-            <CardMedia
-              title={cardData.cardName}
-              image={cardData.imageLocation}
-              style={{ ...styles }}
-              onClick={handleClick ? () => handleClick() : undefined}
-            />
-          </CardActionArea>
-          <div style={{ margin: '-2px' }}>
-            {showKeywords && (
-              <CardActions disableSpacing className={classes.cardAction}>
-                {this.generateKeywordChips(cardData.keywords)}
-              </CardActions>
-            )}
+      <Grid
+        container
+        direction="row"
+        justify="flex-start"
+        alignItems="center"
+      >
+        <Grid item>
+          <div
+            style={{
+              backgroundColor: 'transparent',
+              width: 20,
+              height: 100,
+              zIndex: 9999,
+              borderRadius: 5,
+              border: `2px solid ${cardData.faction ? factions[cardData.faction].color : 'rgba(255, 255, 255, 0.23)'}`,
+              display: unitCount > 1 ? 'inline-block' : 'none'
+            }}
+          >
+            <Typography
+              variant="subtitle2"
+              color="primary"
+              style={{
+                position: 'relative',
+                top: 40,
+                left: 7
+              }}
+            >
+              {unitCount}
+            </Typography>
           </div>
-        </Card>
-      </div>
+        </Grid>
+        <Grid item>
+          <Card
+            className={classes.cardImage}
+            style={{
+              width: cardSizes[cardData.cardType][size].width,
+              ...additionalStyles
+            }}
+          >
+            <CardActionArea>
+              <CardMedia
+                title={cardData.cardName}
+                image={cardData.imageLocation}
+                style={{ ...styles }}
+                onClick={handleClick ? () => handleClick() : undefined}
+              />
+            </CardActionArea>
+            <div style={{ margin: '-2px' }}>
+              {showKeywords && (
+                <CardActions disableSpacing className={classes.cardAction}>
+                  {this.generateKeywordChips(cardData.keywords)}
+                </CardActions>
+              )}
+            </div>
+          </Card>
+        </Grid>
+      </Grid>
     );
   }
 }
