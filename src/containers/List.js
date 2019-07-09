@@ -18,6 +18,7 @@ import ListAltIcon from '@material-ui/icons/ListAlt';
 import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
 import SaveIcon from '@material-ui/icons/Save';
 import ImageIcon from '@material-ui/icons/Image';
+import CallSplitIcon from '@material-ui/icons/CallSplit';
 import CardImage from '../components/CardImage';
 import UnitRow from '../components/UnitRow';
 import DataContext from '../components/DataContext';
@@ -970,6 +971,17 @@ class ListContainer extends React.Component {
                 >
                   <SaveIcon style={{ marginRight: 5 }} />
                   Save
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  disabled
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                >
+                  <CallSplitIcon style={{ marginRight: 5 }} />
+                  Fork List
                 </Button>
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
