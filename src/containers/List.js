@@ -268,6 +268,9 @@ class ListContainer extends React.Component {
     const { allCards } = this.context;
     const {
       currentList,
+      changeCurrentList
+    } = this.props;
+    const {
       unitCounts
     } = this.state;
     if (!currentList.units[unitsIndex].hasUniques) {
@@ -277,15 +280,17 @@ class ListContainer extends React.Component {
       unitCounts[allCards[currentList.units[unitsIndex].unitId].rank] += 1;
     }
     this.setState({
-      currentList,
       unitCounts
-    });
+    }, changeCurrentList(currentList));
   }
 
   decrementUnitCount = (unitsIndex) => {
     const { allCards } = this.context;
     const {
       currentList,
+      changeCurrentList
+    } = this.props;
+    const {
       unitCounts
     } = this.state;
     if (currentList.units[unitsIndex].count === 1) {
@@ -300,9 +305,8 @@ class ListContainer extends React.Component {
       unitCounts[allCards[currentList.units[unitsIndex].unitId].rank] -= 1;
     }
     this.setState({
-      unitCounts,
-      currentList
-    });
+      unitCounts
+    }, changeCurrentList(currentList));
   }
 
   removeUnit = (unitsIndex) => {
@@ -313,7 +317,8 @@ class ListContainer extends React.Component {
       unitCounts
     } = this.state;
     const {
-      currentList
+      currentList,
+      changeCurrentList
     } = this.props;
     const unitObject = currentList.units[unitsIndex];
     currentList.pointTotal -= unitObject.totalUnitCost;
@@ -330,9 +335,11 @@ class ListContainer extends React.Component {
     currentList.units.splice(unitsIndex, 1);
     unitCounts[allCards[unitObject.unitId].rank] -= 1 * unitObject.count;
     this.setState({
-      unitCounts,
-      currentList
-    }, this.changeViewFilter({ type: '' }));
+      unitCounts
+    }, () => {
+      changeCurrentList(currentList);
+      this.changeViewFilter({ type: '' });
+    });
   }
 
   addUpgradeCard = (upgradeCardId, unitsIndex, upgradesIndex) => {
@@ -340,7 +347,8 @@ class ListContainer extends React.Component {
       allCards
     } = this.context;
     const {
-      currentList
+      currentList,
+      changeCurrentList
     } = this.props;
     const currentUpgradeCardId = currentList.units[unitsIndex].upgradesEquipped[upgradesIndex];
     if (currentUpgradeCardId) this.removeUpgrade(unitsIndex, upgradesIndex);
@@ -349,7 +357,8 @@ class ListContainer extends React.Component {
     currentList.pointTotal += upgradeCard.cost * currentList.units[unitsIndex].count;
     if (upgradeCard.isUnique) currentList.uniques.push(upgradeCardId);
     currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = upgradeCardId;
-    this.setState({ currentList }, this.changeViewFilter({ type: '' }));
+    changeCurrentList(currentList);
+    this.changeViewFilter({ type: '' });
   }
 
   removeUpgrade = (unitsIndex, upgradesIndex) => {
@@ -357,7 +366,8 @@ class ListContainer extends React.Component {
       allCards
     } = this.context;
     const {
-      currentList
+      currentList,
+      changeCurrentList
     } = this.props;
     const upgradeCardId = currentList.units[unitsIndex].upgradesEquipped[upgradesIndex];
     const upgradeCard = allCards[upgradeCardId];
@@ -367,24 +377,8 @@ class ListContainer extends React.Component {
       currentList.uniques.splice(currentList.uniques.indexOf(upgradeCardId), 1);
     }
     currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = undefined;
-    this.setState({
-      currentList
-    }, this.changeViewFilter({ type: '' }));
-  }
-
-  applyEntourage = () => {
-    const {
-      allCards
-    } = this.context;
-    const {
-      unitCounts
-    } = this.state;
-    const {
-      currentList
-    } = this.props;
-    currentList.units.forEach((unitObject) => {
-
-    });
+    changeCurrentList(currentList);
+    this.changeViewFilter({ type: '' });
   }
 
   addUnitCard = (unitId) => {
@@ -396,7 +390,8 @@ class ListContainer extends React.Component {
       unitStackSize
     } = this.state;
     const {
-      currentList
+      currentList,
+      changeCurrentList
     } = this.props;
     const unitCard = allCards[unitId];
     const unitObject = {
@@ -427,9 +422,9 @@ class ListContainer extends React.Component {
     //   currentList.unitsContained.push(unitObject.unitId);
     // }
     this.setState({
-      currentList,
       unitCounts
     }, () => {
+      changeCurrentList(currentList);
       this.changeViewFilter({ type: '' })
       // this.applyEntourage();
     });
