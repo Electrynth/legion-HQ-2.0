@@ -143,12 +143,11 @@ class CardImage extends React.PureComponent {
             ...additionalStyles
           }}
         >
-          <CardActionArea>
+          <CardActionArea onClick={handleClick ? () => handleClick() : undefined}>
             <CardMedia
               title={cardData.cardName}
               image={cardData.imageLocation}
               style={{ ...styles }}
-              onClick={handleClick ? () => handleClick() : undefined}
             />
           </CardActionArea>
           <div style={{ margin: '-2px' }}>
