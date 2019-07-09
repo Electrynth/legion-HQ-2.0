@@ -138,29 +138,6 @@ class CardImage extends React.PureComponent {
       ...cardSizes[cardData.cardType][size],
     };
     return (
-<<<<<<< HEAD
-      <div>
-        <Card
-          className={classes.cardImage}
-          style={{
-            width: cardSizes[cardData.cardType][size].width,
-            ...additionalStyles
-          }}
-        >
-          <CardActionArea onClick={handleClick ? () => handleClick() : undefined}>
-            <CardMedia
-              title={cardData.cardName}
-              image={cardData.imageLocation}
-              style={{ ...styles }}
-            />
-          </CardActionArea>
-          <div style={{ margin: '-2px' }}>
-            {showKeywords && (
-              <CardActions disableSpacing className={classes.cardAction}>
-                {this.generateKeywordChips(cardData.keywords)}
-              </CardActions>
-            )}
-=======
       <Grid
         container
         direction="row"
@@ -190,7 +167,6 @@ class CardImage extends React.PureComponent {
             >
               {unitCount}
             </Typography>
->>>>>>> 6554f5de69236b31a7dc9cf18e8f4282280ea75c
           </div>
         </Grid>
         <Grid item>
@@ -201,12 +177,11 @@ class CardImage extends React.PureComponent {
               ...additionalStyles
             }}
           >
-            <CardActionArea>
+            <CardActionArea onClick={handleClick ? () => handleClick() : undefined}>
               <CardMedia
                 title={cardData.cardName}
                 image={cardData.imageLocation}
                 style={{ ...styles }}
-                onClick={handleClick ? () => handleClick() : undefined}
               />
             </CardActionArea>
             <div style={{ margin: '-2px' }}>
