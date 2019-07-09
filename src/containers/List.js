@@ -279,6 +279,8 @@ class ListContainer extends React.Component {
       currentList.units[unitsIndex].count += 1;
       unitCounts[allCards[currentList.units[unitsIndex].unitId].rank] += 1;
     }
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     this.setState({
       unitCounts
     }, changeCurrentList(currentList));
@@ -304,6 +306,8 @@ class ListContainer extends React.Component {
       currentList.units[unitsIndex].count -= 1;
       unitCounts[allCards[currentList.units[unitsIndex].unitId].rank] -= 1;
     }
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     this.setState({
       unitCounts
     }, changeCurrentList(currentList));
@@ -334,6 +338,8 @@ class ListContainer extends React.Component {
     }
     currentList.units.splice(unitsIndex, 1);
     unitCounts[allCards[unitObject.unitId].rank] -= 1 * unitObject.count;
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     this.setState({
       unitCounts
     }, () => {
@@ -357,6 +363,8 @@ class ListContainer extends React.Component {
     currentList.pointTotal += upgradeCard.cost * currentList.units[unitsIndex].count;
     if (upgradeCard.isUnique) currentList.uniques.push(upgradeCardId);
     currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = upgradeCardId;
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     changeCurrentList(currentList);
     this.changeViewFilter({ type: '' });
   }
@@ -377,6 +385,8 @@ class ListContainer extends React.Component {
       currentList.uniques.splice(currentList.uniques.indexOf(upgradeCardId), 1);
     }
     currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = undefined;
+    if (currentList.pointTotal > 900) currentList.mode = 'grand army';
+    else currentList.mode = 'standard';
     changeCurrentList(currentList);
     this.changeViewFilter({ type: '' });
   }
