@@ -8,6 +8,10 @@ import { Helmet } from 'react-helmet';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
 import ListIcon from '@material-ui/icons/List';
 import SearchIcon from '@material-ui/icons/Search';
@@ -47,6 +51,8 @@ class App extends Component {
   }
 
   state = {
+    snackbarMessage: '',
+    isSnackbarOpen: false,
     activeTab: 0,
     userId: '',
     cardNameFilter: '',
@@ -83,6 +89,10 @@ class App extends Component {
       loadingCards: true
     });
   }
+
+  handleOpenSnackbar = (snackbarMessage) => this.setState({ isSnackbarOpen: true, snackbarMessage });
+
+  handleCloseSnackbar = () => this.setState({ isSnackbarOpen: false, snackbarMessage: '' });
 
   onDragEnd(result) {
     const {
@@ -185,6 +195,14 @@ class App extends Component {
     }
   }
 
+  handleChangeTitle = (event) => {
+    const { currentList } = this.state;
+    if (event.target.value.length < 26) {
+      currentList.title = event.target.value;
+      this.setState({ currentList });
+    }
+  }
+
   handleGoogleLoginFailure = (googleResponse) => {
     alert(`Login Error: ${googleResponse.error}`);
   }
@@ -227,7 +245,9 @@ class App extends Component {
       factions,
       factionFilter,
       upgradeTypes,
-      upgradeTypeFilter
+      upgradeTypeFilter,
+      isSnackbarOpen,
+      snackbarMessage
     } = this.state;
     const {
       classes
@@ -239,7 +259,10 @@ class App extends Component {
       cards,
       ranks,
       upgradeTypes,
-      cardTypes
+      cardTypes,
+      handleChangeTitle: this.handleChangeTitle,
+      handleOpenSnackbar: this.handleOpenSnackbar,
+      handleCloseSnackbar: this.handleCloseSnackbar
     };
     const homeProps = {
       userId,
@@ -309,6 +332,35 @@ class App extends Component {
             )}
           </AppBar>
         </div>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+          }}
+          open={isSnackbarOpen}
+          autoHideDuration={3000}
+          onClose={this.handleCloseSnackbar}
+          ContentProps={{
+            'aria-describedby': 'message-id'
+          }}
+          message={
+            <Typography id="message-id" variant="h6" color="inherit">
+              {snackbarMessage}
+            </Typography>
+          }
+          action={[
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              onClick={this.handleCloseSnackbar}
+            >
+              <CloseIcon />
+            </IconButton>
+          ]}
+        >
+
+        </Snackbar>
         <Switch>
           <Route exact path="/" render={(props) => <AsyncHome {...homeProps} {...props} />} />
           <Route path="/list/:id" render={(props) => <AsyncList {...listProps} {...props} />} />
