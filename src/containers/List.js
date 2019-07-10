@@ -1022,6 +1022,7 @@ class ListContainer extends React.Component {
             <Grid item>
               <Button
                 fullWidth
+                disabled
                 variant="outlined"
                 size="medium"
                 style={{ marginTop: 10, marginBottom: 10 }}
@@ -1051,7 +1052,7 @@ class ListContainer extends React.Component {
                 size="medium"
                 style={{ marginBottom: 10 }}
               >
-                <Button onClick={() => this.changeViewFilter({ type: 'add objective' })}>
+                <Button disabled onClick={() => this.changeViewFilter({ type: 'add objective' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
@@ -1062,7 +1063,7 @@ class ListContainer extends React.Component {
                     style={{ marginLeft: 5, color: 'rgb(36, 37, 128)' }}
                   />
                 </Button>
-                <Button onClick={() => this.changeViewFilter({ type: 'add deployment' })}>
+                <Button disabled onClick={() => this.changeViewFilter({ type: 'add deployment' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
@@ -1073,7 +1074,7 @@ class ListContainer extends React.Component {
                     style={{ marginLeft: 5, color: 'rgb(129, 47, 49)' }}
                   />
                 </Button>
-                <Button onClick={() => this.changeViewFilter({ type: 'add condition' })}>
+                <Button disabled onClick={() => this.changeViewFilter({ type: 'add condition' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
