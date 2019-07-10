@@ -9,6 +9,10 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import Badge from '@material-ui/core/Badge';
+import LooksOneIcon from '@material-ui/icons/LooksOne';
+import LooksTwoIcon from '@material-ui/icons/LooksTwo';
+import Looks3Icon from '@material-ui/icons/Looks3';
+import Looks4Icon from '@material-ui/icons/Looks4';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import CloseIcon from '@material-ui/icons/Close';
@@ -16,6 +20,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import PrintIcon from '@material-ui/icons/Print';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
+import Brightness1Icon from '@material-ui/icons/Brightness1'
 import SaveIcon from '@material-ui/icons/Save';
 import ImageIcon from '@material-ui/icons/Image';
 import CallSplitIcon from '@material-ui/icons/CallSplit';
@@ -108,7 +113,8 @@ class ListContainer extends React.Component {
             if (currentList.uniques.includes(unitId)) {
               invalidFormat = true;
             } else if (allCards[unitId].isUnique) {
-              currentList.uniques.push(unitId)
+              currentList.uniques.push(unitId);
+              currentList.commanders.push(unitId);
             }
             if (!invalidFormat) {
               let unitObject = {
@@ -330,7 +336,10 @@ class ListContainer extends React.Component {
     currentList.pointTotal -= unitObject.totalUnitCost;
     if (unitObject.hasUniques) {
       if (currentList.uniques.includes(unitObject.unitId)) {
-        currentList.uniques.splice(currentList.uniques.indexOf(unitObject.unitId), 1)
+        currentList.uniques.splice(currentList.uniques.indexOf(unitObject.unitId), 1);
+        if (allCards[unitObject.unitId].rank === 'commander') {
+          currentList.commanders.splice(currentList.commanders.indexOf(unitObject.unitId), 1);
+        }
       }
       unitObject.upgradesEquipped.forEach((upgradeEquipped, i) => {
         if (upgradeEquipped && allCards[upgradeEquipped.upgradeId] && allCards[upgradeEquipped.upgradeId].isUnique) {
@@ -422,6 +431,7 @@ class ListContainer extends React.Component {
       unitCounts[unitCard.rank] += 1; // add +1 to rank
       currentList.units.push(unitObject); // add unit to list of units
       currentList.pointTotal += unitCard.cost;
+      if (unitCard.rank === 'commander') currentList.commanders.push(unitId);
     } else {
       unitObject.count = unitStackSize; // stack size
       unitCounts[unitCard.rank] += unitStackSize; // add +X to rank
@@ -440,6 +450,25 @@ class ListContainer extends React.Component {
       this.changeViewFilter({ type: '' })
       // this.applyEntourage();
     });
+  }
+
+  addCommandCard = (commandId) => {
+    const {
+      currentList,
+      changeCurrentList
+    } = this.props;
+    currentList.commandCards.push(commandId);
+    changeCurrentList(currentList);
+    this.changeViewFilter({ type: '' });
+  }
+
+  removeCommand = (commandIndex) => {
+    const {
+      currentList,
+      changeCurrentList
+    } = this.props;
+    currentList.commandCards.splice(commandIndex, 1);
+    changeCurrentList(currentList);
   }
 
   copyTextToClipboard = () => {
@@ -639,7 +668,88 @@ class ListContainer extends React.Component {
       });
       content = [...equippedUpgrades, ...enabledUpgrades, ...disabledUpgrades];
     } else if (viewFilter.type === 'add command') {
-
+      content = [];
+      let equippedCommands = [];
+      let enabledCommands = [];
+      let disabledCommands = [];
+      commandCardsById.filter((commandCardId) => {
+        const commandCard = allCards[commandCardId];
+        if (commandCard.faction === '' || commandCard.faction === currentList.faction) return true;
+        return false;
+      }).forEach((commandCardId) => {
+        const commandCard = allCards[commandCardId];
+        if (currentList.commandCards.includes(commandCardId)) equippedCommands.push(commandCardId);
+        else if (!commandCard.commander || currentList.commanders.includes(commandCard.commander)) {
+          let pipCount = 0;
+          currentList.commandCards.forEach((currentCommandId) => {
+            if (allCards[currentCommandId].cardSubtype === commandCard.cardSubtype) pipCount += 1;
+          });
+          if (pipCount >= 2) disabledCommands.push(commandCardId);
+          else enabledCommands.push(commandCardId);
+        } else disabledCommands.push(commandCardId);
+      });
+      equippedCommands = equippedCommands.map((commandCardId) => {
+        return (
+          <div
+            key={commandCardId}
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'text-top'
+            }}
+          >
+            <CardImage
+              showKeywords={true}
+              size="small"
+              cardId={commandCardId}
+              key={commandCardId}
+              isDisabled={true}
+              additionalStyles={{
+                border: '2px solid lightblue'
+              }}
+            />
+          </div>
+        );
+      });
+      enabledCommands = enabledCommands.map((commandCardId) => {
+        return (
+          <div
+            key={commandCardId}
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'text-top'
+            }}
+          >
+            <CardImage
+              showKeywords={true}
+              size="small"
+              cardId={commandCardId}
+              key={commandCardId}
+              isDisabled={false}
+              handleClick={() => this.addCommandCard(commandCardId)}
+            />
+          </div>
+        );
+      });
+      disabledCommands = disabledCommands.map((commandCardId) => {
+        return (
+          <div
+            key={commandCardId}
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'text-top'
+            }}
+          >
+            <CardImage
+              showKeywords={true}
+              size="small"
+              cardId={commandCardId}
+              key={commandCardId}
+              isDisabled={true}
+            />
+          </div>
+        );
+      });
+      content = [...equippedCommands, ...enabledCommands, ...disabledCommands];
     } else if (viewFilter.type === 'add objective') {
 
     } else if (viewFilter.type === 'add deployment') {
@@ -731,6 +841,54 @@ class ListContainer extends React.Component {
       handleOpenSnackbar
     } = this.props;
     const mobile = width === 'xs' || width === 'sm';
+    const commandRows = [];
+    currentList.commandCards.forEach((commandId) => {
+      const commandCard = allCards[commandId];
+      commandRows.push(
+        <div key={commandId} className={classes.grayHoverOver} style={{ marginBottom: 2 }}>
+          <div
+            style={{
+              marginTop: 7.5,
+              zIndex: 9999
+            }}
+          >
+            {commandCard.cardSubtype === '1' && (
+              <LooksOneIcon size="small" color="primary" />
+            )}
+            {commandCard.cardSubtype === '2' && (
+              <LooksTwoIcon size="small" color="primary" />
+            )}
+            {commandCard.cardSubtype === '3' && (
+              <Looks3Icon size="small" color="primary" />
+            )}
+            {commandCard.cardSubtype === '4' && (
+              <Looks4Icon size="small" color="primary" />
+            )}
+          </div>
+          <img
+            src={allCards[commandId].iconLocation}
+            alt={allCards[commandId].cardName}
+            style={{
+              width: 60,
+              height: 40,
+              borderRadius: 5,
+              left: -10,
+              position: 'relative'
+            }}
+            onClick={() => this.changeViewFilter({ type: 'view card', cardId: commandId })}
+          />
+          <Typography variant="h6" color="primary" style={{ marginLeft: 4, marginTop: 4 }}>
+            {commandCard.cardName}
+          </Typography>
+          <div style={{ flexGrow: 1 }} />
+          <CloseIcon
+            size="small"
+            color="primary"
+            style={{ marginLeft: 10, marginTop: 7.5, marginRight: 5 }}
+          />
+        </div>
+      );
+    });
     const leftPane = (
       <Grid
         item
@@ -861,10 +1019,8 @@ class ListContainer extends React.Component {
                 )}
               </Droppable>
             </DragDropContext>
-
             <Grid item>
               <Button
-                disabled
                 fullWidth
                 variant="outlined"
                 size="medium"
@@ -878,6 +1034,16 @@ class ListContainer extends React.Component {
                 Command
               </Button>
             </Grid>
+            <Grid
+              item
+              container
+              direction="column"
+              justify="flex-start"
+              alignItems="center"
+              style={{ marginBottom: 2 }}
+            >
+              {commandRows}
+            </Grid>
             <Grid item>
               <ButtonGroup
                 fullWidth
@@ -885,26 +1051,38 @@ class ListContainer extends React.Component {
                 size="medium"
                 style={{ marginBottom: 10 }}
               >
-                <Button disabled onClick={() => this.changeViewFilter({ type: 'add objective' })}>
+                <Button onClick={() => this.changeViewFilter({ type: 'add objective' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
                   />
                   Objective
+                  <Brightness1Icon
+                    fontSize="inherit"
+                    style={{ marginLeft: 5, color: 'rgb(36, 37, 128)' }}
+                  />
                 </Button>
-                <Button disabled onClick={() => this.changeViewFilter({ type: 'add deployment' })}>
+                <Button onClick={() => this.changeViewFilter({ type: 'add deployment' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
                   />
                   Deployment
+                  <Brightness1Icon
+                    fontSize="inherit"
+                    style={{ marginLeft: 5, color: 'rgb(129, 47, 49)' }}
+                  />
                 </Button>
-                <Button disabled onClick={() => this.changeViewFilter({ type: 'add condition' })}>
+                <Button onClick={() => this.changeViewFilter({ type: 'add condition' })}>
                   <AddIcon
                     size="small"
                     style={{ marginRight: 5 }}
                   />
                   Condition
+                  <Brightness1Icon
+                    fontSize="inherit"
+                    style={{ marginLeft: 5, color: 'rgb(53, 101, 58)' }}
+                  />
                 </Button>
               </ButtonGroup>
             </Grid>
@@ -1024,7 +1202,6 @@ class ListContainer extends React.Component {
       </Grid>
     );
     let rightPaneMessage = undefined;
-
     if (viewFilter.type === 'add upgrade'
       && currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex]) {
       const upgradeTypeIcon = (

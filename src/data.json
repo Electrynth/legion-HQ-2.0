@@ -22,10 +22,12 @@
       "Deflect":"While defending, if you spend a dodge token, any defense surge results are converted to block results; if it's a ranged attack, the attacker suffers 1 wound for each defense surge rolled.",
       "Detonate":"After a unit controlled by any player performs an action, you may detonate X of the friendly specified charge tokens.",
       "Disciplined":"When you are issued an order, you may remove up to X suppression tokens.",
+      "Disengage": "You may exit engagement with a standard move.",
+      "Droid": "Droids do not lose actions and do not gain cover from suppression. Droids can still become panicked due to suppression, however.",
       "Enrage":"While you have 4 or more wound tokens, treat your courage as \"-\" and gain CHARGE.",
       "Entourage":"While building an army, ignore the rank of 1 X unit. During the Command Phase, you may issue an order to a friendly X unit at range 1-2.",
       "Expert Climber":"While clambering, do not roll defense dice or suffer wounds.",
-      "Fire Support": "When another friendly unit performs a ranged attack, if you have a faceup order token, each mini in your unit may add an eligible weapon to the attack pool. If you do, flip your order token facedown. Limit 1 FIRE SUPPORT per attack pool.",
+      "Fire Support": "When another friendly unit performs a ranged attack, if you have a faceup order token, each mini in your unit may add an eligible weapon to the attack pool. If you do, flip your order token facedown. Limit 1 FIRE SUPPORT per attack pool. Note: Can still be used even if a unit would panic during its activation. Only the main unit attacking determines cover, LoS, and surges.",
       "Fixed":"The defender must be inside your X arc(s).",
       "Full Pivot":"When you pivot, you can pivot up to 360 degrees.",
       "Generator": "During the End Phase, flip X inactive shield token(s).",
@@ -39,7 +41,7 @@
       "Indomitable":"During your Rally step, roll red defense dice instead of white.",
       "Infiltrate":"You may deploy anywhere beyond range 3 of all enemy units.",
       "Inspire":"After your Rally step, remove up to X suppression tokens from another friendly unit at range 1-2.",
-      "Ion":"A vehicle wounded by an attack that includes this weapon gains X ion tokens.",
+      "Ion":"A vehicle or droid wounded by an attack that includes this weapon gains X ion tokens. Droids lose 1 action per ion token.",
       "Jedi Hunter": "While attacking a unit that has a Force upgrade icon, you gain surge to crit.",
       "Jump":"Perform a move during which you ignore terrain that is height 1 or lower. This is treated as a move action.",
       "Leader":"This mini is your unit leader.",
@@ -75,6 +77,7 @@
       "Stationary":"You cannot perform moves, except pivots.",
       "Steady":"After you perform a move action, you may perform a free ranged attack action.",
       "Suppressive":"After you perform an attack, the defender that this weapon was used against gains 1 suppression token.",
+      "Surge Token": "Spending one or more surge tokens will convert the same number of surges to blocks while defending or using using GUARDIAN, and to hits while attacking.",
       "Tactical":"After you perform a standard move, gain X aim tokens.",
       "Take Cover":"Choose X friendly trooper units at range 1. That unit gains a dodge token.",
       "Target":"After you are issued an order, gain X aim tokens.",
@@ -87,7 +90,7 @@
       "Unhindered":"You ignore the effects of difficult terrain.",
       "Versatile": "You can perform ranged attacks using this weapon while engaged.",
       "Weak Point":"While defending, if the attacker's unit leader is inside your X arc(s), the attack pool gains IMPACT 1.",
-      "Wheel Mode": "When you activate, you may increase your maximum speed to 3. If you do, until the end of the round, you gain COVER 2 and cannot attack or flip active shield tokens."
+      "Wheel Mode": "When you activate, you may increase your maximum speed to 3. If you do, until the end of the round, you gain COVER 2 and cannot attack or flip active shield tokens. This is a free action that can only be done at the start of this unit's activation."
    },
    "commandCardsById":[
       "bl",
@@ -600,7 +603,7 @@
          "displayName":"",
          "iconLocation":"/images/unitIcons/B1%20Battle%20Droids.jpeg",
          "cardName":"B1 Battle Droids",
-         "cardSubtype":"trooper",
+         "cardSubtype":"droid trooper",
          "isUnique":false,
          "rank":"corps",
          "cardType":"unit",
@@ -614,7 +617,8 @@
          "imageLocation":"/images/unitCards/B1%20Battle%20Droids.jpeg",
          "keywords":[
             "AI",
-            "Coordinate"
+            "Coordinate",
+            "Droid"
          ],
          "upgradeBar":[
             "heavy weapon",
@@ -3452,7 +3456,7 @@
          "faction":"",
          "imageLocation":"/images/upgradeCards/Force%20Guidance.jpeg",
          "keywords":[
-
+           "Surge Token"
          ],
          "requirements":[
 

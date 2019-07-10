@@ -77,7 +77,8 @@ class App extends Component {
       objectiveCards: [],
       conditionCards: [],
       deploymentCards: [],
-      uniques: []
+      uniques: [],
+      commanders: []
     }
   }
 
@@ -154,7 +155,8 @@ class App extends Component {
         objectiveCards: [],
         conditionCards: [],
         deploymentCards: [],
-        uniques: []
+        uniques: [],
+        commanders: []
       }
     }, history.push(`/list/${faction}`));
   }
