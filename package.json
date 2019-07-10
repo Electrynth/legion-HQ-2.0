@@ -19,15 +19,16 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
     "react-select": "^3.0.4",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "serve": "^11.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
