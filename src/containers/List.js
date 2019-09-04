@@ -1512,7 +1512,7 @@ class ListContainer extends React.Component {
               onClick={toggleListMode}
             >
               <Typography variant="subtitle2" color="primary">
-                {`${currentList.mode} - ${pointTotalString}`}
+                {pointTotalString}
               </Typography>
             </Button>
           </Grid>
@@ -1731,17 +1731,6 @@ class ListContainer extends React.Component {
                 >
                   <LinkIcon style={{ marginRight: 5 }} />
                   Legion HQ Link
-                </Button>
-              </Grid>
-              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
-                <Button
-                  disabled
-                  size="small"
-                  variant="outlined"
-                  color="primary"
-                >
-                  <LinkIcon style={{ marginRight: 5 }} />
-                  Tabletop Admiral Link
                 </Button>
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
