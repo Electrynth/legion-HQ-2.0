@@ -1,0 +1,5446 @@
+{
+  "keywordDict": {
+    "Low Profile": "While defending, if you have light cover, improve your cover by 1.",
+    "Generator": "During the End Phase, flip X inactive shield token(s).",
+    "Agile": "After you perform a standard move, gain X dodge token(s). Note: climbing, clambering, embarking, disembarking, pivoting, and reversing are not standard moves. This effect does not trigger abilities that occur after dodge actions are performed.",
+    "Compel": "After another friendly unit at range 1-2 rallies, if it is suppressed but not panicked, it may gain 1 suppression token to perform a free move action.",
+    "Transport: Closed": "You may transport up to X friendly trooper units.",
+    "Immune": "X cannot be used against you.",
+    "Creature Trooper": "You can: obscure other minis and provide light cover while doing so, pivot and reverse, displace troopers when moving through them. You do not: improve your cover while you have 1 or more suppression tokens, get cover from barricades, embark or disembark, use CLAIM/SABOTAGE/REPAIR abilities, be displaced",
+    "Vehicle": "You can: pivot, block line of sight. Ground vehicles can: reverse, move through repulsor vehicles, perform the standby action, obscure other minis and provide cover. Repuslor vehicles: can move through troopers and vehicles.",
+    "Surge Token": "Spending one or more surge tokens will convert the same number of surges to blocks while defending or using using GUARDIAN, and to hits while attacking.",
+    "Speeder": "While moving, ignore terrain that is height X or lower. When you activate, perform a compulsory move.",
+    "Heavy Weapon Team": "You must equip a Heavy Weapon upgrade card. The mini added by that card is your unit leader.",
+    "Nimble": "After defending, if you spent 1 or more dodge tokens, gain 1 dodge token.",
+    "Versatile": "You can perform ranged attacks using this weapon while engaged.",
+    "Cunning": "When your commander-specific command cards are played, if there would be a tie for priority, treat your command card as though it had 1 fewer pip.",
+    "Reposition": "Either before or after you perform a standard move, you may perform a free pivot action.",
+    "Sidearm": "While performing a melee attack, this mini can only use the weapon on this card.",
+    "Enrage": "While you have 4 or more wound tokens, treat your courage as \"-\" and gain CHARGE.",
+    "Fixed": "The defender must be inside your X arc(s).",
+    "Full Pivot": "When you pivot, you can pivot up to 360 degrees.",
+    "Entourage": "While building an army, ignore the rank of 1 X unit. During the Command Phase, you may issue an order to a friendly X unit at range 1-2.",
+    "Ion Token": "At the start of a unit's activation, if it has 1 or more ion tokens, it loses one action for each ion token. At the end of a unit's activation, it removes any ion tokens it has. A unit may still perform free actions if it loses both of its actions due to ion tokens.",
+    "Ram": "While you perform an attack, during the \"Modify Attack Dice\" step, you may change X attack die results to crit results if you performed at least 1 full standard move at max speed during the same activation as the attack.",
+    "Spotter": "Choose X friendly unit at range 1. That unit gains an aim token.",
+    "Sentinel": "Your standby range is 1-3.",
+    "Arm": "Place X of the specified charge tokens within range 1 and in line of sight of your unit leader.",
+    "Recharge": "When you recover, flip up to X inactive shield tokens to their active side.",
+    "Impact": "While attacking a unit that has ARMOR, change up to X hit results to crit results.",
+    "Gunslinger": "After you perform a ranged attack, you may perform an additional ranged attack against a different unit.",
+    "Regenerate": "At the end of your activation, roll 1 white defense die for each wound token you have, up to X. For each defense surge or block result, remove 1 wound token.",
+    "Danger Sense": "You may choose not to remove your suppression tokens. While defending against a ranged attack, roll 1 extra defense die for each suppression token you have, adding up to X extra dice.",
+    "Demoralize": "After your Rally step, an enemy unit at range 1-2 gains up to X suppression tokens.",
+    "Emplacement Trooper": "You can: obscure other minis and provided light cover when doing so, pivot. You cannot: climb or clamber, use CLAIM/SABOTAGE/REPAIR, be displaced, be moved through by ground vehicles.",
+    "Graffiti Token": "During the Rally step of a friendly unit's activation: if it has line of sight to a friendly graffiti token at range 1-2, it may roll 1 additional die; if it has line of sight to an enemy graffiti token at range 1-2, it must roll 1 fewer die, to a minimum of 1.",
+    "Uncanny Luck": "While defending, you may reroll up to X defense dice.",
+    "Ion": "A vehicle or droid wounded by an attack that includes this weapon gains X ion tokens. At the start of the Roll Defense Dice step, before any other effects, if the attack pool has ION X, for each hit or critical result, up to X, the defender must flip an active shield token without resolving its effect, if able.",
+    "Indomitable": "During your Rally step, roll red defense dice instead of white.",
+    "Soresu Master": "While defending or using GUARDIAN, if you spend a dodge token, you gain surge to block and the attacker suffers 1 wound for each surge rolled.",
+    "Spur": "While performing a move, you may gain 1 suppression token to increase your maximum speed by 1.",
+    "Pulling the Strings": "Choose a friendly trooper unit at range 1-2. That unit may perform a free attack action or a free move action.",
+    "Target": "After you are issued an order, gain X aim tokens.",
+    "Cover": "While defending against a ranged attack, improve your cover by X.",
+    "Weak Point": "While defending, if the attacker's unit leader is inside your X arc(s), the attack pool gains IMPACT 1.",
+    "Ready": "After you perform a standby action, gain 1 aim token.",
+    "Smoke": "Place X smoke token(s) within range 1 and in line of sight of your unit leader.",
+    "Stationary": "You cannot perform moves, except pivots.",
+    "Block": "While defending, if you spend a dodge token, you gain surge to block.",
+    "Precise": "When you spend an aim token, reroll up to X additional dice.",
+    "Disengage": "You may perform moves while engaged with 1 unit.",
+    "Inspire": "After your Rally step, remove up to X suppression tokens from another friendly unit at range 1-2.",
+    "Arsenal": "While attacking, each mini in this unit can use up to X of its weapons.",
+    "Jump": "Perform a move during which you ignore terrain that is height 1 or lower. This is treated as a move action.",
+    "Jedi Hunter": "While attacking a unit that has a Force upgrade icon, you gain surge to crit.",
+    "Shield Token": "While defending against a ranged attack, during the Roll Defense Dice step, before rolling defense dice, you may flip any number of active shield tokens. For each shield token flipped this way, the defender adds 1 block result and rolls 1 fewer defense die.",
+    "Dauntless": "After you rally, if you are suppressed but not panicked, you may gain 1 suppression token to perform a free move action.",
+    "Defend": "When you are issued an order, you may gain X dodge tokens.",
+    "Critical": "While converting attack surges, you may convert up to X surge results to critical results.",
+    "Treat": "Place a wound token on this card to choose a friendly trooper unit at range 1 and in line of sight and remove up to X wound or poison tokens from that unit or restore up to X miniatures to that unit. Limit Y tokens.",
+    "Suppressive": "After you perform an attack, the defender that this weapon was used against gains 1 suppression token.",
+    "Leader": "This mini is your unit leader.",
+    "Guardian": "While a friendly trooper unit at range 1 and in line of sight is defending against a ranged attack, you may cancel up to X hit results. For each result canceled, roll 1 of your defense dice. Convert any surges, then suffer 1 wound for each blank result.",
+    "Armor": "While defending, cancel up to X hit results.",
+    "Scout": "After you deploy, you may perform a speed-X move.",
+    "Wheel Mode": "When you activate, you may increase your maximum speed to 3. If you do, until the end of the round, you gain COVER 2 and cannot attack or flip active shield tokens. This is a free action that can only be done at the start of this unit's activation.",
+    "Unhindered": "You ignore the effects of difficult terrain.",
+    "Expert Climber": "While clambering, do not roll defense dice or suffer wounds.",
+    "Blast": "Ignore cover.",
+    "Steady": "After you perform a move action, you may perform a free ranged attack action.",
+    "Detonate": "After a unit controlled by any player performs an action, you may detonate X of the friendly specified charge tokens.",
+    "Tactical": "After you perform a standard move, gain X aim tokens.",
+    "Coordinate": "After you are issued an order, you may issue an order to a friendly unit with the name or type specified by X at range 1.",
+    "Scatter": "Unknown.",
+    "Repair": "Place a wound token on this card to remove up to X wound, ion, or vehicle damage tokens from a friendly vehicle at range 1 and in line of sight. Limit Y tokens.",
+    "Droid Trooper": "Droid troopers do not lose actions and do not gain cover from suppression. Droids can still become panicked due to suppression, however.",
+    "Tow Cable": "After a vehicle is wounded by an attack that includes this weapon, perform a pivot with that vehicle.",
+    "Light Transport: Closed": "You may transport X friendly trooper units that consists of exactly 1 small base mini.",
+    "Disciplined": "When you are issued an order, you may remove up to X suppression tokens.",
+    "Plodding": "During your activation, you can perform only 1 standard move.",
+    "Poison Token": "At the end of a unit's activation, it suffers 1 wound for each poison token it has, then discards each poison token it has. Vehicles and droid trooper units cannot gain poison tokens.",
+    "Charge": "After you perform a move action, you may perform a free melee attack action.",
+    "Teamwork": "While you are at range 1-2 of X, when you or X gains an aim or dodge token, the other unit gains a token of the same type.",
+    "Bounty": "After setup, place a victory token on an enemy commander or operative. If you defeat a unit with a victory token, move that token to your. At the end of the game, if you have a victory token, gain that token.",
+    "Master of the Force": "During the End Phase, you may ready X of your Force upgrade cards.",
+    "Deflect": "While defending, if you spend a dodge token, any defense surge results are converted to block results; if it's a ranged attack, the attacker suffers 1 wound for each defense surge rolled.",
+    "Spray": "Add this weapon's dice to the attack pool one time for each mini in the defending unit to which line of sight is not blocked.",
+    "Detachment": "During army building, you may only be included if a unit that has the name or type specified by X is also included in your army. Each unit with the DETACHMENT keyword requires a corresponding unit that matches the unit name or type specified.",
+    "Reconfigure": "When you recover, you may flip this card.",
+    "Infiltrate": "You may deploy anywhere beyond range 3 of all enemy units.",
+    "Pierce": "While attacking, cancel up to X block results.",
+    "Shielded": "You have X shield tokens.",
+    "Sharpshooter": "While performing a ranged attack, reduce the defneder's cover by X.",
+    "Take Cover": "Choose X friendly trooper units at range 1. That unit gains a dodge token.",
+    "Relentless": "After you perform a move action, you may perform 1 free attack action.",
+    "Impervious": "While defending, if the attack pool has PIERCE X, roll X additional defense dice.",
+    "Noncombatant": "This mini cannot use any weapons and wounds must be assigned to other non-unit leader minis first.",
+    "Transport: Open": "You may transport up to X friendly trooper units. After defending, if you suffered 1 or more wounds, each unit you are transporting suffers 1 wound.",
+    "High Velocity": "While attacking, if each weapon in your attack pool has HIGH VELOCITY, the defender cannot spend dodge tokens.",
+    "Climbing Vehicle": "You are treated as a trooper for the purposes of vertical movement.",
+    "Quick Thinking": "Gain 1 aim token and 1 dodge token.",
+    "AI": "Unless you have a faceup order token, your first action must be one of the following, if able: X",
+    "Light Transport: Open": "You may transport X friendly trooper units that consists of exactly 1 small base mini. After defending, if you suffered 1 or more wounds, each unit you are transporting suffers 1 wound.",
+    "Cumbersome": "You cannot use this weapon and move during the same activation.",
+    "Fire Support": "When another friendly unit performs a ranged attack, if you have a faceup order token, each mini in your unit may add an eligible weapon to the attack pool. If you do, flip your order token facedown. Limit 1 FIRE SUPPORT per attack pool. Note: Can still be used even if a unit would panic during its activation. Only the main unit attacking determines cover, LoS, and surges."
+  },
+  "communityLinks": {
+    "Blogs": [
+      {
+        "url": "https://imperialdiscipline.blog",
+        "name": "Imperial Discipline"
+      },
+      {
+        "url": "https://www.legionacademy.net/",
+        "name": "Legion Academy"
+      },
+      {
+        "url": "http://empirelegion.com/",
+        "name": "New Ways to Motivate Them"
+      },
+      {
+        "url": "https://thefifthtrooper.com/blog/",
+        "name": "The Fifth Trooper"
+      },
+      {
+        "url": "https://thejedhajournal.home.blog/",
+        "name": "The Jedha Journal"
+      }
+    ],
+    "YouTube": [
+      {
+        "url": "https://www.youtube.com/channel/UCt9cO9QooyLopZmu2XT4T0w",
+        "name": "Crabbok"
+      },
+      {
+        "url": "https://www.youtube.com/channel/UC8Qun7vCxcyDbatJN86lJfA",
+        "name": "MOTF"
+      },
+      {
+        "url": "https://www.youtube.com/channel/UCfmdCCJ9Usa686sLnlnVN6Q",
+        "name": "On the Table Gaming"
+      },
+      {
+        "url": "https://www.youtube.com/channel/UC2sw3SVD5Yj0OWyxZ6PtAUw",
+        "name": "Tabletop Oddity"
+      },
+      {
+        "url": "https://www.youtube.com/channel/UCd0GhVw1I14cjsEqPCvVb2Q",
+        "name": "The Fifth Trooper"
+      },
+      {
+        "url": "https://www.youtube.com/channel/UC_PSSkPl3uNAR1Y_QyK7VsQ",
+        "name": "War Corgi"
+      }
+    ],
+    "Dice Simulators": [
+      {
+        "url": "https://thefifthtrooper.com/attack-dice-simulator/",
+        "name": "The Fifth Trooper Simulator"
+      },
+      {
+        "url": "https://swlegion.github.io/rollcrits/index.html",
+        "name": "RollCrits"
+      }
+    ],
+    "Podcasts": [
+      {
+        "url": "https://podnews.net/podcast/1455435482",
+        "name": "Legion Academy"
+      },
+      {
+        "url": "http://legionoutriders.libsyn.com/",
+        "name": "Legion Outriders"
+      },
+      {
+        "url": "https://thefifthtrooper.com/notorious-scoundrels-podcast/",
+        "name": "Notorious Scoundrels"
+      },
+      {
+        "url": "http://renegadefleetcommand.libsyn.com/",
+        "name": "Renegade Fleet Command"
+      },
+      {
+        "url": "https://swstabcast.podbean.com/",
+        "name": "STABCast"
+      },
+      {
+        "url": "https://dbmsrcr1.podbean.com/",
+        "name": "The 82nd Legion"
+      },
+      {
+        "url": "https://thefifthtrooper.com/the-fifth-trooper-podcast/",
+        "name": "The Fifth Trooper"
+      }
+    ]
+  },
+  "additionalKeywords": {
+    "Creature Trooper Movement": "You can move through, but not displace: friendly/enemy repulsor vehicle minis; but not: friendly/enemy ground vehicle minis. You can displace by moving through: friendly/enemy trooper minis; but not: a trooper mini that is engaged. You cannot move through or displace: emplacement or creature trooper minis. While you are engaged, you do not have to withdraw to perform moves and can displace non-creature, non-emplacement trooper units with which they are engaged while doing so.",
+    "Emplacement Trooper Movement": "You can move through: friendly/enemy non-creature trooper minis and repulsor vehicle minis; but not: friendly/enemy ground vehicles minis, or creature trooper minis. You can: pivot, embark, and disembark; but cannot: climb, clamber, or reverse."
+  },
+  "allCards": {
+    "gw": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Obi-Wan Kenobi",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Obi-Wan%20Kenobi.jpeg",
+      "cost": 175,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/unitCards/Obi-Wan%20Kenobi.jpeg",
+      "keywords": [
+        "Jump",
+        "Charge",
+        "Guardian",
+        "Immune",
+        "Master of the Force",
+        "Soresu Master",
+        "Critical",
+        "Impact",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "force",
+        "force",
+        "command",
+        "training"
+      ],
+      "id": "gw"
+    },
+    "gv": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "block surge",
+        "hit surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Rebel Veterans"
+          ],
+          "blogName": "Legion Academy",
+          "urls": [
+            "https://www.legionacademy.net/2019/07/09/rebel-veterans/"
+          ]
+        },
+        {
+          "titles": [
+            "Rebel Veterans - Quick and Dirty"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/rebel-veterans-quick-and-dirty/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Rebel Veterans",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Rebel%20Veterans.jpeg",
+      "cost": 48,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Rebel%20Veterans.jpeg",
+      "keywords": [
+        "Defend",
+        "Coordinate"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "training",
+        "gear",
+        "grenades"
+      ],
+      "id": "gv"
+    },
+    "gu": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Rebel Veteran",
+      "iconLocation": "/images/upgradeIcons/Rebel%20Veteran.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 12,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Rebel%20Veteran.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Rebel Veterans"
+      ],
+      "id": "gu"
+    },
+    "gt": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Pao",
+      "iconLocation": "/images/upgradeIcons/Pao.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 22,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Pao.jpeg",
+      "keywords": [
+        "Inspire",
+        "Leader"
+      ],
+      "requirements": [
+        "Rebel Pathfinders"
+      ],
+      "id": "gt"
+    },
+    "gs": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Bistan",
+      "iconLocation": "/images/upgradeIcons/Bistan.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 32,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Bistan.jpeg",
+      "keywords": [
+        "Impact",
+        "Ion",
+        "Ion Token"
+      ],
+      "requirements": [
+        "Rebel Pathfinders"
+      ],
+      "id": "gs"
+    },
+    "gr": {
+      "displayName": "Rifle Gunner",
+      "cardSubtype": "crew",
+      "cardName": "A-300 Rifle Gunner",
+      "iconLocation": "/images/upgradeIcons/A-300%20Rifle%20Gunner.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 9,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/A-300%20Rifle%20Gunner.jpeg",
+      "keywords": [],
+      "requirements": [
+        "X-34 Landspeeder"
+      ],
+      "id": "gr"
+    },
+    "gq": {
+      "displayName": "Rocket Gunner",
+      "cardSubtype": "crew",
+      "cardName": "RPS-6 Rocket Gunner",
+      "iconLocation": "/images/upgradeIcons/RPS-6%20Rocket%20Gunner.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 36,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/RPS-6%20Rocket%20Gunner.jpeg",
+      "keywords": [
+        "Impact"
+      ],
+      "requirements": [
+        "X-34 Landspeeder"
+      ],
+      "id": "gq"
+    },
+    "gp": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "Outer Rim Speeder Jockey",
+      "iconLocation": "/images/upgradeIcons/Outer%20Rim%20Speeder%20Jockey.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Outer%20Rim%20Speeder%20Jockey.jpeg",
+      "keywords": [
+        "Cover"
+      ],
+      "requirements": [
+        "repulsor vehicle"
+      ],
+      "id": "gp"
+    },
+    "gz": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "First Sergeant Arbmab",
+      "iconLocation": "/images/upgradeIcons/First%20Sergeant%20Arbmab.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/First%20Sergeant%20Arbmab.jpeg",
+      "keywords": [
+        "Tactical"
+      ],
+      "requirements": [
+        "ground vehicle"
+      ],
+      "id": "gz"
+    },
+    "gy": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Phase I Clone Troopers",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Phase%20I%20Clone%20Troopers.jpeg",
+      "cost": 52,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/unitCards/Phase%20I%20Clone%20Troopers.jpeg",
+      "keywords": [
+        "Fire Support"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "gear",
+        "grenades"
+      ],
+      "id": "gy"
+    },
+    "gx": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense"
+      ],
+      "cardSubtype": "droid trooper",
+      "cardName": "B1 Battle Droids",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/B1%20Battle%20Droids.jpeg",
+      "cost": 36,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/unitCards/B1%20Battle%20Droids.jpeg",
+      "keywords": [
+        "AI",
+        "Coordinate",
+        "Droid Trooper"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "comms",
+        "gear"
+      ],
+      "id": "gx"
+    },
+    "gg": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Reptilian Rampage",
+      "cardType": "command",
+      "commander": "Bossk",
+      "iconLocation": "/images/commandIcons/Reptilian%20Rampage.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Reptilian%20Rampage.jpeg",
+      "keywords": [],
+      "id": "gg"
+    },
+    "gf": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Merciless Munitions",
+      "cardType": "command",
+      "commander": "Bossk",
+      "iconLocation": "/images/commandIcons/Merciless%20Munitions.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Merciless%20Munitions.jpeg",
+      "keywords": [
+        "Arm",
+        "Detonate",
+        "Poison Token"
+      ],
+      "id": "gf"
+    },
+    "ge": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Deploy the Garrison",
+      "cardType": "command",
+      "commander": "Director Orson Krennic",
+      "iconLocation": "/images/commandIcons/Deploy%20the%20Garrison.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Deploy%20the%20Garrison.jpeg",
+      "keywords": [],
+      "id": "ge"
+    },
+    "gd": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Annihilation Looms",
+      "cardType": "command",
+      "commander": "Director Orson Krennic",
+      "iconLocation": "/images/commandIcons/Annihilation%20Looms.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Annihilation%20Looms.jpeg",
+      "keywords": [],
+      "id": "gd"
+    },
+    "gc": {
+      "additionalTags": [],
+      "displayName": "AAT Battle Tank",
+      "iconLocation": "/images/unitIcons/AAT%20Trade%20Federation%20Battle%20Tank.jpeg",
+      "links": [],
+      "cardName": "AAT Trade Federation Battle Tank",
+      "cardSubtype": "repulsor vehicle",
+      "isUnique": false,
+      "rank": "heavy",
+      "cardType": "unit",
+      "cost": 170,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/unitCards/AAT%20Trade%20Federation%20Battle%20Tank.jpeg",
+      "keywords": [
+        "AI",
+        "Armor",
+        "Barrage",
+        "Hover",
+        "Weak Point",
+        "Fixed",
+        "Critical",
+        "High Velocity",
+        "Impact"
+      ],
+      "upgradeBar": [
+        "pilot",
+        "comms"
+      ],
+      "id": "gc"
+    },
+    "gb": {
+      "cardType": "unit",
+      "displayName": "Saber Fighter Tank",
+      "links": [],
+      "cardSubtype": "repulsor vehicle",
+      "faction": "republic",
+      "cardName": "TX-130 Saber-Class Fighter Tank",
+      "isUnique": false,
+      "rank": "heavy",
+      "iconLocation": "/images/unitIcons/TX-130%20Saber-Class%20Fighter%20Tank.jpeg",
+      "cost": 170,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/TX-130%20Saber-Class%20Fighter%20Tank.jpeg",
+      "keywords": [
+        "Armor",
+        "Arsenal",
+        "Hover",
+        "Outmaneuver",
+        "Weak Point",
+        "Critical",
+        "Impact",
+        "Fixed"
+      ],
+      "upgradeBar": [
+        "pilot",
+        "hardpoint",
+        "comms"
+      ],
+      "id": "gb"
+    },
+    "ga": {
+      "displayName": "",
+      "iconLocation": "/images/unitIcons/B2%20Super%20Battle%20Droids.jpeg",
+      "links": [],
+      "cardName": "B2 Super Battle Droids",
+      "faction": "separatists",
+      "isUnique": false,
+      "rank": "corps",
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "comms"
+      ],
+      "cardType": "unit",
+      "cost": 48,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/B2%20Super%20Battle%20Droids.jpeg",
+      "keywords": [
+        "AI",
+        "Armor"
+      ],
+      "cardSubtype": "droid trooper",
+      "id": "ga"
+    },
+    "go": {
+      "displayName": "Imperial Hammers Pilot",
+      "cardSubtype": "pilot",
+      "cardName": "Imperial Hammers Elite Armor Pilot",
+      "iconLocation": "/images/upgradeIcons/Imperial%20Hammers%20Elite%20Armor%20Pilot.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Imperial%20Hammers%20Elite%20Armor%20Pilot.jpeg",
+      "keywords": [],
+      "requirements": [
+        "ground vehicle"
+      ],
+      "id": "go"
+    },
+    "gn": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "E-11D Configuration",
+      "iconLocation": "/images/upgradeIcons/E-11D%20Configuration.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 8,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/E-11D%20Configuration.jpeg",
+      "keywords": [
+        "Blast",
+        "Suppressive",
+        "Reconfigure"
+      ],
+      "requirements": [
+        "Imperial Death Troopers"
+      ],
+      "id": "gn"
+    },
+    "gm": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "DLT-19D Trooper",
+      "iconLocation": "/images/upgradeIcons/DLT-19D%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 34,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/DLT-19D%20Trooper.jpeg",
+      "keywords": [
+        "Impact"
+      ],
+      "requirements": [
+        "Imperial Death Troopers"
+      ],
+      "id": "gm"
+    },
+    "gl": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "DT-F16",
+      "iconLocation": "/images/upgradeIcons/DT-F16.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 22,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/DT-F16.jpeg",
+      "keywords": [
+        "Compel",
+        "Leader"
+      ],
+      "requirements": [
+        "Imperial Death Troopers"
+      ],
+      "id": "gl"
+    },
+    "gk": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Personal Combat Shield",
+      "iconLocation": "/images/upgradeIcons/Personal%20Combat%20Shield.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Personal%20Combat%20Shield.jpeg",
+      "keywords": [
+        "Shield Token",
+        "Shielded",
+        "Recharge"
+      ],
+      "requirements": [
+        "Sabine Wren"
+      ],
+      "id": "gk"
+    },
+    "gj": {
+      "displayName": "",
+      "cardSubtype": "training",
+      "cardName": "Overwatch",
+      "iconLocation": "/images/upgradeIcons/Overwatch.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 4,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Overwatch.jpeg",
+      "keywords": [
+        "Sentinel"
+      ],
+      "requirements": [],
+      "id": "gj"
+    },
+    "gi": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Symbol of Rebellion",
+      "cardType": "command",
+      "commander": "Sabine Wren",
+      "iconLocation": "/images/commandIcons/Symbol%20of%20Rebellion.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Symbol%20of%20Rebellion.jpeg",
+      "keywords": [
+        "Graffiti Token"
+      ],
+      "id": "gi"
+    },
+    "gh": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Explosions!",
+      "cardType": "command",
+      "commander": "Sabine Wren",
+      "iconLocation": "/images/commandIcons/Explosions!.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Explosions!.jpeg",
+      "keywords": [
+        "Arm",
+        "Detonate"
+      ],
+      "id": "gh"
+    },
+    "aj": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "hit surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Wookiee Warriors",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Wookiee%20Warriors.jpeg",
+      "cost": 75,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Wookiee%20Warriors.jpeg",
+      "keywords": [
+        "Charge",
+        "Expert Climber",
+        "Indomitable",
+        "Unhindered"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "training",
+        "gear",
+        "grenades"
+      ],
+      "id": "aj"
+    },
+    "dn": {
+      "displayName": "",
+      "cardSubtype": "comms",
+      "cardName": "Comms Jammer",
+      "iconLocation": "/images/upgradeIcons/Comms%20Jammer.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Comms%20Jammer.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dn"
+    },
+    "do": {
+      "displayName": "",
+      "cardSubtype": "comms",
+      "cardName": "Long-Range Comlink",
+      "iconLocation": "/images/upgradeIcons/Long-Range%20Comlink.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Long-Range%20Comlink.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "do"
+    },
+    "dl": {
+      "displayName": "",
+      "cardSubtype": "grenades",
+      "cardName": "Concussion Grenades",
+      "iconLocation": "/images/upgradeIcons/Concussion%20Grenades.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Concussion%20Grenades.jpeg",
+      "keywords": [
+        "Blast"
+      ],
+      "requirements": [],
+      "id": "dl"
+    },
+    "dm": {
+      "displayName": "",
+      "cardSubtype": "comms",
+      "cardName": "HQ Uplink",
+      "iconLocation": "/images/upgradeIcons/HQ%20Uplink.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/HQ%20Uplink.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dm"
+    },
+    "dj": {
+      "displayName": "",
+      "cardSubtype": "grenades",
+      "cardName": "Fragmentation Grenades",
+      "iconLocation": "/images/upgradeIcons/Fragmentation%20Grenades.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Fragmentation%20Grenades.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dj"
+    },
+    "dk": {
+      "displayName": "",
+      "cardSubtype": "grenades",
+      "cardName": "Impact Grenades",
+      "iconLocation": "/images/upgradeIcons/Impact%20Grenades.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Impact%20Grenades.jpeg",
+      "keywords": [
+        "Impact"
+      ],
+      "requirements": [],
+      "id": "dk"
+    },
+    "dh": {
+      "displayName": "",
+      "cardSubtype": "training",
+      "cardName": "Duck and Cover",
+      "iconLocation": "/images/upgradeIcons/Duck%20and%20Cover.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 8,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Duck%20and%20Cover.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dh"
+    },
+    "di": {
+      "displayName": "",
+      "cardSubtype": "training",
+      "cardName": "Endurance",
+      "iconLocation": "/images/upgradeIcons/Endurance.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 6,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Endurance.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "di"
+    },
+    "df": {
+      "displayName": "",
+      "cardSubtype": "training",
+      "cardName": "Tenacity",
+      "iconLocation": "/images/upgradeIcons/Tenacity.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 4,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Tenacity.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "df"
+    },
+    "dg": {
+      "displayName": "",
+      "cardSubtype": "training",
+      "cardName": "Hunter",
+      "iconLocation": "/images/upgradeIcons/Hunter.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 6,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Hunter.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dg"
+    },
+    "dd": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Grappling Hooks",
+      "iconLocation": "/images/upgradeIcons/Grappling%20Hooks.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 3,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Grappling%20Hooks.jpeg",
+      "keywords": [
+        "Expert Climber"
+      ],
+      "requirements": [],
+      "id": "dd"
+    },
+    "Od": {
+      "displayName": "Recover Supplies",
+      "cardSubtype": "objective",
+      "cardName": "Recover the Supplies",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Recover%20the%20Supplies.jpeg",
+      "keywords": [
+        "Claim"
+      ],
+      "id": "Od"
+    },
+    "db": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Emergency Stims",
+      "iconLocation": "/images/upgradeIcons/Emergency%20Stims.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 8,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Emergency%20Stims.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "db"
+    },
+    "dc": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Targeting Scopes",
+      "iconLocation": "/images/upgradeIcons/Targeting%20Scopes.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 6,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Targeting%20Scopes.jpeg",
+      "keywords": [
+        "Precise"
+      ],
+      "requirements": [],
+      "id": "dc"
+    },
+    "Oa": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Breakthrough",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Breakthrough.jpeg",
+      "keywords": [],
+      "id": "Oa"
+    },
+    "da": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Recon Intel",
+      "iconLocation": "/images/upgradeIcons/Recon%20Intel.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 2,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Recon%20Intel.jpeg",
+      "keywords": [
+        "Scout"
+      ],
+      "requirements": [],
+      "id": "da"
+    },
+    "ay": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "hit surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Stormtroopers"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/stormtroopers/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Stormtroopers",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Stormtroopers.jpeg",
+      "cost": 44,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Stormtroopers.jpeg",
+      "keywords": [
+        "Precise"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "gear",
+        "grenades"
+      ],
+      "id": "ay"
+    },
+    "dz": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "A-180 Configuration",
+      "iconLocation": "/images/upgradeIcons/A-180%20Configuration.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 0,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/A-180%20Configuration.jpeg",
+      "keywords": [
+        "Pierce",
+        "Reconfigure"
+      ],
+      "requirements": [
+        "Jyn Erso"
+      ],
+      "id": "dz"
+    },
+    "dx": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Anger",
+      "iconLocation": "/images/upgradeIcons/Anger.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Anger.jpeg",
+      "keywords": [],
+      "requirements": [
+        "dark side"
+      ],
+      "id": "dx"
+    },
+    "dy": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Force Choke",
+      "iconLocation": "/images/upgradeIcons/Force%20Choke.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Force%20Choke.jpeg",
+      "keywords": [],
+      "requirements": [
+        "dark side"
+      ],
+      "id": "dy"
+    },
+    "dv": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Saber Throw",
+      "iconLocation": "/images/upgradeIcons/Saber%20Throw.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Saber%20Throw.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dv"
+    },
+    "dw": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Jedi Mind Trick",
+      "iconLocation": "/images/upgradeIcons/Jedi%20Mind%20Trick.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Jedi%20Mind%20Trick.jpeg",
+      "keywords": [],
+      "requirements": [
+        "light side"
+      ],
+      "id": "dw"
+    },
+    "dt": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Force Push",
+      "iconLocation": "/images/upgradeIcons/Force%20Push.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Force%20Push.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dt"
+    },
+    "du": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Force Reflexes",
+      "iconLocation": "/images/upgradeIcons/Force%20Reflexes.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Force%20Reflexes.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "du"
+    },
+    "dr": {
+      "displayName": "",
+      "cardSubtype": "generator",
+      "cardName": "Barrage Generator",
+      "iconLocation": "/images/upgradeIcons/Barrage%20Generator.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Barrage%20Generator.jpeg",
+      "keywords": [
+        "Fixed",
+        "Suppressive"
+      ],
+      "requirements": [],
+      "id": "dr"
+    },
+    "ds": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Battle Meditation",
+      "iconLocation": "/images/upgradeIcons/Battle%20Meditation.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Battle%20Meditation.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "ds"
+    },
+    "dp": {
+      "displayName": "",
+      "cardSubtype": "comms",
+      "cardName": "Comms Relay",
+      "iconLocation": "/images/upgradeIcons/Comms%20Relay.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Comms%20Relay.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "dp"
+    },
+    "dq": {
+      "displayName": "",
+      "cardSubtype": "generator",
+      "cardName": "Overcharged Generator",
+      "iconLocation": "/images/upgradeIcons/Overcharged%20Generator.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Overcharged%20Generator.jpeg",
+      "keywords": [
+        "Fixed",
+        "Impact"
+      ],
+      "requirements": [],
+      "id": "dq"
+    },
+    "iw": {
+      "requirements": [
+        "B1 Battle Droids"
+      ],
+      "cardName": "E-5s B1 Trooper",
+      "cardSubtype": "heavy weapon",
+      "iconLocation": "/images/upgradeIcons/E-5s%20B1%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/E-5s%20B1%20Trooper.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "displayName": "",
+      "id": "iw"
+    },
+    "em": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "DLT-19x Sniper",
+      "iconLocation": "/images/upgradeIcons/DLT-19x%20Sniper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 28,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/DLT-19x%20Sniper.jpeg",
+      "keywords": [
+        "High Velocity",
+        "Pierce"
+      ],
+      "requirements": [
+        "Scout Troopers"
+      ],
+      "id": "em"
+    },
+    "el": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Electrostaff Guard",
+      "iconLocation": "/images/upgradeIcons/Electrostaff%20Guard.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 25,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Electrostaff%20Guard.jpeg",
+      "keywords": [
+        "Sidearm",
+        "Immune"
+      ],
+      "requirements": [
+        "Imperial Royal Guards"
+      ],
+      "id": "el"
+    },
+    "eo": {
+      "displayName": "Ion Snowtrooper",
+      "cardSubtype": "heavy weapon",
+      "cardName": "T-7 Ion Snowtrooper",
+      "iconLocation": "/images/upgradeIcons/T-7%20Ion%20Snowtrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 34,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/T-7%20Ion%20Snowtrooper.jpeg",
+      "keywords": [
+        "Impact",
+        "Ion",
+        "Ion Token"
+      ],
+      "requirements": [
+        "Snowtroopers"
+      ],
+      "id": "eo"
+    },
+    "en": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Sonic Charge Saboteur",
+      "iconLocation": "/images/upgradeIcons/Sonic%20Charge%20Saboteur.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 26,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Sonic%20Charge%20Saboteur.jpeg",
+      "keywords": [
+        "Arm",
+        "Detonate",
+        "Blast",
+        "Suppressive"
+      ],
+      "requirements": [
+        "Scout Troopers"
+      ],
+      "id": "en"
+    },
+    "ei": {
+      "displayName": "Barrage Trooper",
+      "iconLocation": "/images/upgradeIcons/MPL-57%20Barrage%20Trooper.jpeg",
+      "links": [
+        {
+          "titles": [
+            "Fleet Troopers"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/fleet-troopers/"
+          ]
+        }
+      ],
+      "cardSubtype": "heavy weapon",
+      "cardName": "MPL-57 Barrage Trooper",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 33,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/MPL-57%20Barrage%20Trooper.jpeg",
+      "keywords": [
+        "Blast",
+        "Impact"
+      ],
+      "requirements": [
+        "Fleet Troopers"
+      ],
+      "id": "ei"
+    },
+    "eh": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Scatter Gun Trooper",
+      "iconLocation": "/images/upgradeIcons/Scatter%20Gun%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 23,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Scatter%20Gun%20Trooper.jpeg",
+      "keywords": [
+        "Pierce"
+      ],
+      "requirements": [
+        "Fleet Troopers"
+      ],
+      "id": "eh"
+    },
+    "ek": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "HH-12 Stormtrooper",
+      "iconLocation": "/images/upgradeIcons/HH-12%20Stormtrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 34,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/HH-12%20Stormtrooper.jpeg",
+      "keywords": [
+        "Cumbersome",
+        "Impact"
+      ],
+      "requirements": [
+        "Stormtroopers"
+      ],
+      "id": "ek"
+    },
+    "ej": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "DLT-19 Stormtrooper",
+      "iconLocation": "/images/upgradeIcons/DLT-19%20Stormtrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 24,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/DLT-19%20Stormtrooper.jpeg",
+      "keywords": [
+        "Impact"
+      ],
+      "requirements": [
+        "Stormtroopers"
+      ],
+      "id": "ej"
+    },
+    "ee": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Bowcaster Wookiee",
+      "iconLocation": "/images/upgradeIcons/Bowcaster%20Wookiee.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 35,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Bowcaster%20Wookiee.jpeg",
+      "keywords": [
+        "Impact",
+        "Pierce"
+      ],
+      "requirements": [
+        "Wookiee Warriors"
+      ],
+      "id": "ee"
+    },
+    "ed": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Z-6 Trooper",
+      "iconLocation": "/images/upgradeIcons/Z-6%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 22,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Z-6%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Rebel Troopers"
+      ],
+      "id": "ed"
+    },
+    "eg": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "DH-447 Sniper",
+      "iconLocation": "/images/upgradeIcons/DH-447%20Sniper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 28,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/DH-447%20Sniper.jpeg",
+      "keywords": [
+        "High Velocity",
+        "Pierce"
+      ],
+      "requirements": [
+        "Rebel Commandos"
+      ],
+      "id": "eg"
+    },
+    "ef": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Proton Charge Saboteur",
+      "iconLocation": "/images/upgradeIcons/Proton%20Charge%20Saboteur.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 26,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Proton%20Charge%20Saboteur.jpeg",
+      "keywords": [
+        "Arm",
+        "Detonate",
+        "Blast",
+        "Impact"
+      ],
+      "requirements": [
+        "Rebel Commandos"
+      ],
+      "id": "ef"
+    },
+    "ea": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "A-300 Configuration",
+      "iconLocation": "/images/upgradeIcons/A-300%20Configuration.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 6,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/A-300%20Configuration.jpeg",
+      "keywords": [
+        "Reconfigure"
+      ],
+      "requirements": [
+        "Rebel Pathfinders"
+      ],
+      "id": "ea"
+    },
+    "ec": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "MPL-57 Ion Trooper",
+      "iconLocation": "/images/upgradeIcons/MPL-57%20Ion%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 32,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/MPL-57%20Ion%20Trooper.jpeg",
+      "keywords": [
+        "Impact",
+        "Ion",
+        "Ion Token"
+      ],
+      "requirements": [
+        "Rebel Troopers"
+      ],
+      "id": "ec"
+    },
+    "eb": {
+      "displayName": "",
+      "iconLocation": "/images/upgradeIcons/The%20Darksaber.jpeg",
+      "links": [
+        {
+          "titles": [
+            "Sabine Wren: Explosive Artist"
+          ],
+          "blogName": "Legion Academy",
+          "urls": [
+            "https://www.legionacademy.net/2019/05/20/sabine-wren-explosive-artist/"
+          ]
+        },
+        {
+          "titles": [
+            "Sabine Wren: Explosive Artist"
+          ],
+          "blogName": "The Jedha Journal",
+          "urls": [
+            "https://thejedhajournal.home.blog/2019/05/19/sabine-wren-explosive-artist/"
+          ]
+        }
+      ],
+      "cardSubtype": "armament",
+      "cardName": "The Darksaber",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 25,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/The%20Darksaber.jpeg",
+      "keywords": [
+        "Dauntless",
+        "Immune",
+        "Impact",
+        "Pierce"
+      ],
+      "requirements": [
+        "Sabine Wren"
+      ],
+      "id": "eb"
+    },
+    "aw": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "crit surge",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Boba Fett: Strategy Guide"
+          ],
+          "blogName": "New Ways to Motivate Them",
+          "urls": [
+            "http://empirelegion.com/2019/01/21/boba-fett-strategy-guide/"
+          ]
+        },
+        {
+          "titles": [
+            "Boba Freakin' Fett"
+          ],
+          "blogName": "The Jedha Journal",
+          "urls": [
+            "https://thejedhajournal.home.blog/2019/04/05/boba-freakin-fett/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Boba Fett",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/Boba%20Fett.jpeg",
+      "cost": 140,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Boba%20Fett.jpeg",
+      "keywords": [
+        "Jump",
+        "Arsenal",
+        "Bounty",
+        "Impervious",
+        "Sharpshooter",
+        "Impact",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "training",
+        "training",
+        "gear",
+        "gear"
+      ],
+      "id": "aw"
+    },
+    "ey": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Imperial Comms Technician",
+      "iconLocation": "/images/upgradeIcons/Imperial%20Comms%20Technician.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Imperial%20Comms%20Technician.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "ey"
+    },
+    "ex": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Stormtrooper",
+      "iconLocation": "/images/upgradeIcons/Stormtrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 11,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Stormtrooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Stormtroopers"
+      ],
+      "id": "ex"
+    },
+    "ez": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "FX-9 Medical Droid",
+      "iconLocation": "/images/upgradeIcons/FX-9%20Medical%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 19,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/FX-9%20Medical%20Droid.jpeg",
+      "keywords": [
+        "Treat",
+        "Noncombatant"
+      ],
+      "requirements": [],
+      "id": "ez"
+    },
+    "eu": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "2-1B Medical Droid",
+      "iconLocation": "/images/upgradeIcons/2-1B%20Medical%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 18,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/2-1B%20Medical%20Droid.jpeg",
+      "keywords": [
+        "Treat",
+        "Noncombatant"
+      ],
+      "requirements": [],
+      "id": "eu"
+    },
+    "et": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "R5 Astromech Droid",
+      "iconLocation": "/images/upgradeIcons/R5%20Astromech%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 8,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/R5%20Astromech%20Droid.jpeg",
+      "keywords": [
+        "Repair",
+        "Noncombatant"
+      ],
+      "requirements": [],
+      "id": "et"
+    },
+    "ew": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Imperial Officer",
+      "iconLocation": "/images/upgradeIcons/Imperial%20Officer.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Imperial%20Officer.jpeg",
+      "keywords": [
+        "Inspire",
+        "Leader"
+      ],
+      "requirements": [],
+      "id": "ew"
+    },
+    "ev": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Fleet Trooper",
+      "iconLocation": "/images/upgradeIcons/Fleet%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 11,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Fleet%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Fleet Troopers"
+      ],
+      "id": "ev"
+    },
+    "eq": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Rebel Comms Technician",
+      "iconLocation": "/images/upgradeIcons/Rebel%20Comms%20Technician.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 9,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Rebel%20Comms%20Technician.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "eq"
+    },
+    "ep": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Flametrooper",
+      "iconLocation": "/images/upgradeIcons/Flametrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Flametrooper.jpeg",
+      "keywords": [
+        "Blast",
+        "Spray"
+      ],
+      "requirements": [
+        "Snowtroopers"
+      ],
+      "id": "ep"
+    },
+    "es": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Rebel Trooper",
+      "iconLocation": "/images/upgradeIcons/Rebel%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Rebel%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Rebel Troopers"
+      ],
+      "id": "es"
+    },
+    "er": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Rebel Officer",
+      "iconLocation": "/images/upgradeIcons/Rebel%20Officer.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 19,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Rebel%20Officer.jpeg",
+      "keywords": [
+        "Inspire",
+        "Leader"
+      ],
+      "requirements": [],
+      "id": "er"
+    },
+    "fy": {
+      "additionalTags": [],
+      "displayName": "Captain Rex",
+      "iconLocation": "/images/unitIcons/Clone%20Captain%20Rex.jpeg",
+      "links": [],
+      "cardName": "Clone Captain Rex",
+      "cardSubtype": "clone trooper",
+      "isUnique": true,
+      "rank": "commander",
+      "cardType": "unit",
+      "cost": 90,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/unitCards/Clone%20Captain%20Rex.jpeg",
+      "keywords": [
+        "Gunslinger",
+        "Scout",
+        "Scouting Party",
+        "Sharpshooter",
+        "Tactical"
+      ],
+      "upgradeBar": [
+        "command",
+        "training",
+        "gear",
+        "gear",
+        "grenades"
+      ],
+      "id": "fy"
+    },
+    "bd": {
+      "cardType": "unit",
+      "displayName": "Death Troopers",
+      "additionalTags": [
+        "red defense",
+        "crit surge",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Death Troopers"
+          ],
+          "blogName": "New Ways to Motivate Them",
+          "urls": [
+            "http://empirelegion.com/2019/05/01/death-troopers/"
+          ]
+        },
+        {
+          "titles": [
+            "When Death Troopers come knocking"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/death-troopers-come-knocking-star-wars-legion/"
+          ]
+        },
+        {
+          "titles": [
+            "Rapid Reaction: Imperial Death TRoopers"
+          ],
+          "blogName": "The Jedha Journal",
+          "urls": [
+            "https://thejedhajournal.home.blog/2019/03/22/rapid-reaction-imperal-death-troopers/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Imperial Death Troopers",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Imperial%20Death%20Troopers.jpeg",
+      "cost": 76,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Imperial%20Death%20Troopers.jpeg",
+      "keywords": [
+        "Disciplined",
+        "Pierce",
+        "Ready"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "armament",
+        "grenades"
+      ],
+      "id": "bd"
+    },
+    "be": {
+      "cardType": "unit",
+      "displayName": "E-Web Team",
+      "additionalTags": [
+        "red defense",
+        "crit surge"
+      ],
+      "cardSubtype": "emplacement trooper",
+      "cardName": "E-Web Heavy Blaster Team",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/E-Web%20Heavy%20Blaster%20Team.jpeg",
+      "cost": 55,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/E-Web%20Heavy%20Blaster%20Team.jpeg",
+      "keywords": [
+        "Emplacement Trooper",
+        "Full Pivot",
+        "Plodding",
+        "Reposition",
+        "Sentinel",
+        "Cumbersome",
+        "Fixed"
+      ],
+      "upgradeBar": [
+        "comms",
+        "generator"
+      ],
+      "id": "be"
+    },
+    "bf": {
+      "cardType": "unit",
+      "displayName": "Speeder Bikes",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "74-Z Speeder Bikes"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/74-z-speeder-bikes/"
+          ]
+        }
+      ],
+      "cardSubtype": "repulsor vehicle",
+      "cardName": "74-Z Speeder Bikes",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/74-Z%20Speeder%20Bikes.jpeg",
+      "cost": 90,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/74-Z%20Speeder%20Bikes.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Cover",
+        "Speeder",
+        "Fixed",
+        "Impact"
+      ],
+      "upgradeBar": [
+        "comms"
+      ],
+      "id": "bf"
+    },
+    "bg": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "AT-ST"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/at-st/"
+          ]
+        }
+      ],
+      "cardSubtype": "ground vehicle",
+      "cardName": "AT-ST",
+      "isUnique": false,
+      "rank": "heavy",
+      "iconLocation": "/images/unitIcons/AT-ST.jpeg",
+      "cost": 195,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/AT-ST.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Armor",
+        "Arsenal",
+        "Weak Point",
+        "Fixed",
+        "Impact"
+      ],
+      "upgradeBar": [
+        "pilot",
+        "hardpoint",
+        "hardpoint",
+        "hardpoint",
+        "comms"
+      ],
+      "id": "bg"
+    },
+    "ba": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Imperial Scout Troopers - Sniper"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/imperial-scout-troopers-sniper/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Scout Troopers",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Scout%20Troopers.jpeg",
+      "cost": 60,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Scout%20Troopers.jpeg",
+      "keywords": [
+        "Low Profile",
+        "Scout",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "grenades"
+      ],
+      "id": "ba"
+    },
+    "bb": {
+      "cardType": "unit",
+      "displayName": "Scout Strike Team",
+      "additionalTags": [
+        "white defense",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Scout Troopers Strike Team",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Scout%20Troopers%20Strike%20Team.jpeg",
+      "cost": 16,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Scout%20Troopers%20Strike%20Team.jpeg",
+      "keywords": [
+        "Low Profile",
+        "Scout",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "grenades"
+      ],
+      "id": "bb"
+    },
+    "bc": {
+      "cardType": "unit",
+      "displayName": "Royal Guards",
+      "additionalTags": [
+        "red defense"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Imperial Royal Guards",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Imperial%20Royal%20Guards.jpeg",
+      "cost": 75,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Imperial%20Royal%20Guards.jpeg",
+      "keywords": [
+        "Charge",
+        "Disciplined",
+        "Guardian"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "training",
+        "gear",
+        "grenades"
+      ],
+      "id": "bc"
+    },
+    "bl": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Ambush",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Ambush.jpeg",
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/commandCards/Ambush.jpeg",
+      "keywords": [],
+      "id": "bl"
+    },
+    "bm": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Master of Evil",
+      "cardType": "command",
+      "commander": "Darth Vader",
+      "iconLocation": "/images/commandIcons/Master%20of%20Evil.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Master%20of%20Evil.jpeg",
+      "keywords": [],
+      "id": "bm"
+    },
+    "bn": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Imperial Discipline",
+      "cardType": "command",
+      "commander": "General Veers",
+      "iconLocation": "/images/commandIcons/Imperial%20Discipline.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Imperial%20Discipline.jpeg",
+      "keywords": [],
+      "id": "bn"
+    },
+    "bo": {
+      "displayName": "",
+      "links": [
+        {
+          "titles": [
+            "Emperor Palpatine: A Practical Playing Guide"
+          ],
+          "blogName": "New Ways to Motivate Them",
+          "urls": [
+            "http://empirelegion.com/2018/12/04/emperor-palpatine-a-practical-playing-guide/"
+          ]
+        }
+      ],
+      "cardSubtype": "3",
+      "cardName": "An Entire Legion",
+      "cardType": "command",
+      "commander": "Emperor Palpatine",
+      "iconLocation": "/images/commandIcons/An%20Entire%20Legion.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/An%20Entire%20Legion.jpeg",
+      "keywords": [],
+      "id": "bo"
+    },
+    "bh": {
+      "cardType": "unit",
+      "displayName": "Combat Assault Tank",
+      "additionalTags": [
+        "red defense"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Armor for your Armoire"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/star-wars-legion-tank/"
+          ]
+        }
+      ],
+      "cardSubtype": "ground vehicle",
+      "cardName": "Occupier Combat Assault Tank",
+      "isUnique": false,
+      "rank": "heavy",
+      "iconLocation": "/images/unitIcons/Occupier%20Combat%20Assault%20Tank.jpeg",
+      "cost": 155,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Occupier%20Combat%20Assault%20Tank.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Armor",
+        "Arsenal",
+        "Reposition",
+        "Transport: Open",
+        "Weak Point",
+        "Suppressive",
+        "Fixed",
+        "Impact"
+      ],
+      "upgradeBar": [
+        "pilot",
+        "hardpoint",
+        "comms"
+      ],
+      "id": "bh"
+    },
+    "bi": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Rebel Officer",
+      "isUnique": false,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Rebel%20Officer.jpeg",
+      "cost": 50,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Rebel%20Officer.jpeg",
+      "keywords": [
+        "Take Cover",
+        "Inspire",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "command",
+        "gear"
+      ],
+      "id": "bi"
+    },
+    "bj": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Assault",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Assault.jpeg",
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/commandCards/Assault.jpeg",
+      "keywords": [],
+      "id": "bj"
+    },
+    "bk": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Push",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Push.jpeg",
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/commandCards/Push.jpeg",
+      "keywords": [],
+      "id": "bk"
+    },
+    "bt": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Give In To Your Anger",
+      "cardType": "command",
+      "commander": "Emperor Palpatine",
+      "iconLocation": "/images/commandIcons/Give%20In%20To%20Your%20Anger.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Give%20In%20To%20Your%20Anger.jpeg",
+      "keywords": [],
+      "id": "bt"
+    },
+    "bu": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "ZX Flame Projector",
+      "cardType": "command",
+      "commander": "Boba Fett",
+      "iconLocation": "/images/commandIcons/ZX%20Flame%20Projector.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/ZX%20Flame%20Projector.jpeg",
+      "keywords": [
+        "Blast",
+        "Spray"
+      ],
+      "id": "bu"
+    },
+    "bv": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Maximum Firepower",
+      "cardType": "command",
+      "commander": "General Veers",
+      "iconLocation": "/images/commandIcons/Maximum%20Firepower.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Maximum%20Firepower.jpeg",
+      "keywords": [
+        "Impact",
+        "Immune"
+      ],
+      "id": "bv"
+    },
+    "bw": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Implacable",
+      "cardType": "command",
+      "commander": "Darth Vader",
+      "iconLocation": "/images/commandIcons/Implacable.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Implacable.jpeg",
+      "keywords": [],
+      "id": "bw"
+    },
+    "bp": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Z-6 Jetpack Rocket",
+      "cardType": "command",
+      "commander": "Boba Fett",
+      "iconLocation": "/images/commandIcons/Z-6%20Jetpack%20Rocket.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Z-6%20Jetpack%20Rocket.jpeg",
+      "keywords": [
+        "Blast",
+        "Impact"
+      ],
+      "id": "bp"
+    },
+    "bq": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Lying In Wait",
+      "cardType": "command",
+      "commander": "Bossk",
+      "iconLocation": "/images/commandIcons/Lying%20In%20Wait.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Lying%20In%20Wait.jpeg",
+      "keywords": [
+        "Sharpshooter"
+      ],
+      "id": "bq"
+    },
+    "br": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "New Ways to Motivate Them",
+      "cardType": "command",
+      "commander": "Darth Vader",
+      "iconLocation": "/images/commandIcons/New%20Ways%20to%20Motivate%20Them.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/New%20Ways%20to%20Motivate%20Them.jpeg",
+      "keywords": [],
+      "id": "br"
+    },
+    "bs": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Evasive Maneuvers",
+      "cardType": "command",
+      "commander": "General Veers",
+      "iconLocation": "/images/commandIcons/Evasive%20Maneuvers.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Evasive%20Maneuvers.jpeg",
+      "keywords": [],
+      "id": "bs"
+    },
+    "jd": {
+      "displayName": "",
+      "cardName": "You Serve Your Master Well",
+      "cardSubtype": "1",
+      "cardType": "command",
+      "commander": "Luke Skywalker",
+      "iconLocation": "/images/commandIcons/You%20Serve%20Your%20Master%20Well.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/You%20Serve%20Your%20Master%20Well.jpeg",
+      "keywords": [],
+      "id": "jd"
+    },
+    "je": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Fear and Dead Men",
+      "iconLocation": "/images/commandIcons/Fear%20and%20Dead%20Men.jpeg",
+      "commander": "Darth Vader",
+      "cardType": "command",
+      "products": [], 
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Fear%20and%20Dead%20Men.jpeg",
+      "keywords": [],
+      "id": "je"
+    },
+    "bx": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "And Now You Will Die",
+      "cardType": "command",
+      "commander": "Emperor Palpatine",
+      "iconLocation": "/images/commandIcons/And%20Now%20You%20Will%20Die.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/And%20Now%20You%20Will%20Die.jpeg",
+      "keywords": [],
+      "id": "bx"
+    },
+    "by": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Voracious Ambition",
+      "cardType": "command",
+      "commander": "Director Orson Krennic",
+      "iconLocation": "/images/commandIcons/Voracious%20Ambition.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Voracious%20Ambition.jpeg",
+      "keywords": [],
+      "id": "by"
+    },
+    "bz": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Whipcord Launcher",
+      "cardType": "command",
+      "commander": "Boba Fett",
+      "iconLocation": "/images/commandIcons/Whipcord%20Launcher.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Whipcord%20Launcher.jpeg",
+      "keywords": [],
+      "id": "bz"
+    },
+    "jc": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Vader's Might",
+      "iconLocation": "/images/commandIcons/Vader's%20Might.jpeg",
+      "commander": "Darth Vader",
+      "cardType": "command",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Vader's%20Might.jpeg",
+      "keywords": [],
+      "id": "jc"
+    },
+    "ck": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "My Ally is the Force",
+      "cardType": "command",
+      "commander": "Luke Skywalker",
+      "iconLocation": "/images/commandIcons/My%20Ally%20is%20the%20Force.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/My%20Ally%20is%20the%20Force.jpeg",
+      "keywords": [],
+      "id": "ck"
+    },
+    "cj": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Legacy of Mandalore",
+      "cardType": "command",
+      "commander": "Sabine Wren",
+      "iconLocation": "/images/commandIcons/Legacy%20of%20Mandalore.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Legacy%20of%20Mandalore.jpeg",
+      "keywords": [
+        "Inspire"
+      ],
+      "id": "cj"
+    },
+    "ci": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Complete the Mission",
+      "cardType": "command",
+      "commander": "Jyn Erso",
+      "iconLocation": "/images/commandIcons/Complete%20the%20Mission.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Complete%20the%20Mission.jpeg",
+      "keywords": [
+        "Low Profile"
+      ],
+      "id": "ci"
+    },
+    "ch": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Covering Fire",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Covering%20Fire.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Covering%20Fire.jpeg",
+      "keywords": [],
+      "id": "ch"
+    },
+    "co": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Trust Goes Both Ways",
+      "cardType": "command",
+      "commander": "Jyn Erso",
+      "iconLocation": "/images/commandIcons/Trust%20Goes%20Both%20Ways.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Trust%20Goes%20Both%20Ways.jpeg",
+      "keywords": [
+        "Inspire",
+        "Teamwork"
+      ],
+      "id": "co"
+    },
+    "cn": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Brains and Brawn",
+      "cardType": "command",
+      "commander": "Chewbacca",
+      "iconLocation": "/images/commandIcons/Brains%20and%20Brawn.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Brains%20and%20Brawn.jpeg",
+      "keywords": [],
+      "id": "cn"
+    },
+    "cm": {
+      "displayName": "",
+      "links": [
+        {
+          "titles": [
+            "Han Solo"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/han-solo/"
+          ]
+        }
+      ],
+      "cardSubtype": "2",
+      "cardName": "Reckless Diversion",
+      "cardType": "command",
+      "commander": "Han Solo",
+      "iconLocation": "/images/commandIcons/Reckless%20Diversion.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Reckless%20Diversion.jpeg",
+      "keywords": [],
+      "id": "cm"
+    },
+    "cl": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "No Time for Sorrows",
+      "cardType": "command",
+      "commander": "Leia Organa",
+      "iconLocation": "/images/commandIcons/No%20Time%20for%20Sorrows.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/No%20Time%20for%20Sorrows.jpeg",
+      "keywords": [],
+      "id": "cl"
+    },
+    "cc": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Coordinated Fire",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Coordinated%20Fire.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Coordinated%20Fire.jpeg",
+      "keywords": [],
+      "id": "cc"
+    },
+    "cb": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Pinned Down",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Pinned%20Down.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Pinned%20Down.jpeg",
+      "keywords": [],
+      "id": "cb"
+    },
+    "ca": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Covert Observation",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Covert%20Observation.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Covert%20Observation.jpeg",
+      "keywords": [],
+      "id": "ca"
+    },
+    "cg": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Notorious Scoundrels",
+      "cardType": "command",
+      "commander": "Chewbacca",
+      "iconLocation": "/images/commandIcons/Notorious%20Scoundrels.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Notorious%20Scoundrels.jpeg",
+      "keywords": [],
+      "id": "cg"
+    },
+    "cf": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Change of Plans",
+      "cardType": "command",
+      "commander": "Han Solo",
+      "iconLocation": "/images/commandIcons/Change%20of%20Plans.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Change%20of%20Plans.jpeg",
+      "keywords": [],
+      "id": "cf"
+    },
+    "ce": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Somebody Has to Save Our Skins",
+      "cardType": "command",
+      "commander": "Leia Organa",
+      "iconLocation": "/images/commandIcons/Somebody%20Has%20to%20Save%20Our%20Skins.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Somebody%20Has%20to%20Save%20Our%20Skins.jpeg",
+      "keywords": [],
+      "id": "ce"
+    },
+    "cd": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Return of the Jedi",
+      "cardType": "command",
+      "commander": "Luke Skywalker",
+      "iconLocation": "/images/commandIcons/Return%20of%20the%20Jedi.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Return%20of%20the%20Jedi.jpeg",
+      "keywords": [],
+      "id": "cd"
+    },
+    "cz": {
+      "displayName": "",
+      "cardSubtype": "command",
+      "cardName": "Strict Orders",
+      "iconLocation": "/images/upgradeIcons/Strict%20Orders.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Strict%20Orders.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "cz"
+    },
+    "cy": {
+      "displayName": "",
+      "cardSubtype": "command",
+      "cardName": "Esteemed Leader",
+      "iconLocation": "/images/upgradeIcons/Esteemed%20Leader.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Esteemed%20Leader.jpeg",
+      "keywords": [
+        "Guardian"
+      ],
+      "requirements": [],
+      "id": "cy"
+    },
+    "cx": {
+      "displayName": "",
+      "cardSubtype": "command",
+      "cardName": "Commanding Presence",
+      "iconLocation": "/images/upgradeIcons/Commanding%20Presence.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Commanding%20Presence.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "cx"
+    },
+    "cs": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Sorry About the Mess",
+      "cardType": "command",
+      "commander": "Han Solo",
+      "iconLocation": "/images/commandIcons/Sorry%20About%20the%20Mess.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Sorry%20About%20the%20Mess.jpeg",
+      "keywords": [],
+      "id": "cs"
+    },
+    "cr": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Coordinated Bombardment",
+      "cardType": "command",
+      "commander": "Leia Organa",
+      "iconLocation": "/images/commandIcons/Coordinated%20Bombardment.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Coordinated%20Bombardment.jpeg",
+      "keywords": [
+        "Immune"
+      ],
+      "id": "cr"
+    },
+    "cq": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Son of Skywalker",
+      "cardType": "command",
+      "commander": "Luke Skywalker",
+      "iconLocation": "/images/commandIcons/Son%20of%20Skywalker.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Son%20of%20Skywalker.jpeg",
+      "keywords": [],
+      "id": "cq"
+    },
+    "cp": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Turning the Tide",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Turning%20the%20Tide.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Turning%20the%20Tide.jpeg",
+      "keywords": [
+        "Inspire"
+      ],
+      "id": "cp"
+    },
+    "cw": {
+      "displayName": "",
+      "cardSubtype": "command",
+      "cardName": "Improvised Orders",
+      "iconLocation": "/images/upgradeIcons/Improvised%20Orders.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Improvised%20Orders.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "cw"
+    },
+    "cv": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Sabotaged Communications",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Sabotaged%20Communications.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Sabotaged%20Communications.jpeg",
+      "keywords": [],
+      "id": "cv"
+    },
+    "cu": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Common Cause",
+      "cardType": "command",
+      "commander": "Chewbacca",
+      "iconLocation": "/images/commandIcons/Common%20Cause.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Common%20Cause.jpeg",
+      "keywords": [],
+      "id": "cu"
+    },
+    "ct": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Rebellious",
+      "cardType": "command",
+      "commander": "Jyn Erso",
+      "iconLocation": "/images/commandIcons/Rebellious.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Rebellious.jpeg",
+      "keywords": [
+        "Charge"
+      ],
+      "id": "ct"
+    },
+    "ja": {
+      "requirements": [
+        "Stormtroopers"
+      ],
+      "cardName": "T-21 Stormtrooper",
+      "cardSubtype": "heavy weapon",
+      "iconLocation": "/images/upgradeIcons/T-21%20Stormtrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 27,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/T-21%20Stormtrooper.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "displayName": "",
+      "id": "ja"
+    },
+    "iq": {
+      "requirements": [
+        "AAT Trade Federation Battle Tank"
+      ],
+      "cardName": "T-Series Tactical Droid Pilot",
+      "cardSubtype": "pilot",
+      "iconLocation": "/images/upgradeIcons/T-Series%20Tactical%20Droid%20Pilot.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/T-Series%20Tactical%20Droid%20Pilot.jpeg",
+      "keywords": [
+        "AI",
+        "Field Commander"
+      ],
+      "displayName": "",
+      "id": "iq"
+    },
+    "iu": {
+      "requirements": [
+        "Rebel Troopers"
+      ],
+      "cardName": "DLT-20A Trooper",
+      "cardSubtype": "heavy weapon",
+      "iconLocation": "/images/upgradeIcons/DLT-20A%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 26,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/DLT-20A%20Trooper.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "displayName": "",
+      "id": "iu"
+    },
+    "jb": {
+      "requirements": [],
+      "cardSubtype": "training",
+      "cardName": "Offensive Push",
+      "iconLocation": "/images/upgradeIcons/Offensive%20Push.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 4,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Offensive%20Push.jpeg",
+      "keywords": [
+        "Tactical"
+      ],
+      "displayName": "",
+      "id": "jb"
+    },
+    "ah": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Rebel Troopers"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/rebel-troopers/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Rebel Troopers",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Rebel%20Troopers.jpeg",
+      "cost": 40,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Rebel%20Troopers.jpeg",
+      "keywords": [
+        "Nimble"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "gear",
+        "grenades"
+      ],
+      "id": "ah"
+    },
+    "is": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "You Disappoint Me",
+      "iconLocation": "/images/commandIcons/You%20Disappoint%20Me.jpeg",
+      "commander": "Count Dooku",
+      "cardType": "command",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/You%20Disappoint%20Me.jpeg",
+      "keywords": [],
+      "id": "is"
+    },
+    "hz": {
+      "displayName": "",
+      "cardSubtype": "comms",
+      "cardName": "Linked Targeting Array",
+      "iconLocation": "/images/upgradeIcons/Linked%20Targeting%20Array.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Linked%20Targeting%20Array.jpeg",
+      "keywords": [
+        "Target"
+      ],
+      "requirements": [
+        [
+          "emplacement trooper",
+          "vehicle"
+        ]
+      ],
+      "id": "hz"
+    },
+    "hx": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Force Guidance",
+      "iconLocation": "/images/upgradeIcons/Force%20Guidance.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Force%20Guidance.jpeg",
+      "keywords": [
+        "Surge Token"
+      ],
+      "requirements": [],
+      "id": "hx"
+    },
+    "hy": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Electrobinoculars",
+      "iconLocation": "/images/upgradeIcons/Electrobinoculars.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 8,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Electrobinoculars.jpeg",
+      "keywords": [
+        "Spotter"
+      ],
+      "requirements": [],
+      "id": "hy"
+    },
+    "an": {
+      "cardType": "unit",
+      "displayName": "Laser Cannon Team",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "cardSubtype": "emplacement trooper",
+      "cardName": "1.4 FD Laser Cannon Team",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/1.4%20FD%20Laser%20Cannon%20Team.jpeg",
+      "cost": 70,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/1.4%20FD%20Laser%20Cannon%20Team.jpeg",
+      "keywords": [
+        "Emplacement Trooper",
+        "Full Pivot",
+        "Sentinel",
+        "Stationary",
+        "Impact",
+        "Fixed"
+      ],
+      "upgradeBar": [
+        "comms",
+        "generator"
+      ],
+      "id": "an"
+    },
+    "hr": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "E-60R B1 Trooper",
+      "iconLocation": "/images/upgradeIcons/E-60R%20B1%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/E-60R%20B1%20Trooper.jpeg",
+      "keywords": [
+        "Impact"
+      ],
+      "requirements": [
+        "B1 Battle Droids"
+      ],
+      "id": "hr"
+    },
+    "hs": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "T-21 Blaster Rifle",
+      "iconLocation": "/images/upgradeIcons/T-21%20Blaster%20Rifle.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/T-21%20Blaster%20Rifle.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "requirements": [
+        "Dewback Rider"
+      ],
+      "id": "hs"
+    },
+    "hp": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Z-6 Phase I Trooper",
+      "iconLocation": "/images/upgradeIcons/Z-6%20Phase%20I%20Clone%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 25,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Z-6%20Phase%20I%20Clone%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Phase I Clone Troopers"
+      ],
+      "id": "hp"
+    },
+    "hq": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "DC-15 Phase I Trooper",
+      "iconLocation": "/images/upgradeIcons/DC-15%20Phase%20I%20Clone%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 30,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/DC-15%20Phase%20I%20Clone%20Trooper.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "requirements": [
+        "Phase I Clone Troopers"
+      ],
+      "id": "hq"
+    },
+    "hv": {
+      "requirements": [
+        "Phase II Clone Troopers"
+      ],
+      "cardSubtype": "personnel",
+      "cardName": "Phase II Clone Trooper",
+      "iconLocation": "/images/upgradeIcons/Phase%20II%20Clone%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Phase%20II%20Clone%20Trooper.jpeg",
+      "keywords": [],
+      "displayName": "",
+      "id": "hv"
+    },
+    "hw": {
+      "displayName": "",
+      "cardSubtype": "command",
+      "cardName": "Aggressive Tactics",
+      "iconLocation": "/images/upgradeIcons/Aggressive%20Tactics.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": -1,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Aggressive%20Tactics.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "hw"
+    },
+    "ht": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "RT-97C Blaster Rifle",
+      "iconLocation": "/images/upgradeIcons/RT-97C%20Blaster%20Rifle.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": -1,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/RT-97C%20Blaster%20Rifle.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Dewback Rider"
+      ],
+      "id": "ht"
+    },
+    "hu": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "CR-24 Flamethrower",
+      "iconLocation": "/images/upgradeIcons/CR-24%20Flamethrower.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": -1,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/CR-24%20Flamethrower.jpeg",
+      "keywords": [
+        "Blast",
+        "Spray"
+      ],
+      "requirements": [
+        "Dewback Rider"
+      ],
+      "id": "hu"
+    },
+    "hj": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Hello There!",
+      "cardType": "command",
+      "commander": "Obi-Wan Kenobi",
+      "iconLocation": "/images/commandIcons/Hello%20There!.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Hello%20There!.jpeg",
+      "keywords": [
+        "Nimble",
+        "Surge Token"
+      ],
+      "id": "hj"
+    },
+    "hk": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Supreme Commander",
+      "cardType": "command",
+      "commander": "General Grievous",
+      "iconLocation": "/images/commandIcons/Supreme%20Commander.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/Supreme%20Commander.jpeg",
+      "keywords": [
+        "Guardian"
+      ],
+      "id": "hk"
+    },
+    "hh": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Shoretrooper",
+      "iconLocation": "/images/upgradeIcons/Shoretrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 13,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Shoretrooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Shoretroopers"
+      ],
+      "id": "hh"
+    },
+    "hi": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "General Kenobi",
+      "cardType": "command",
+      "commander": "Obi-Wan Kenobi",
+      "iconLocation": "/images/commandIcons/General%20Kenobi.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/General%20Kenobi.jpeg",
+      "keywords": [],
+      "id": "hi"
+    },
+    "hn": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "B1 Battle Droid",
+      "iconLocation": "/images/upgradeIcons/B1%20Battle%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 6,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/B1%20Battle%20Droid.jpeg",
+      "keywords": [],
+      "requirements": [
+        "B1 Battle Droids"
+      ],
+      "id": "hn"
+    },
+    "ho": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "E-5C B1 Trooper",
+      "iconLocation": "/images/upgradeIcons/E-5C%20B1%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 18,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/E-5C%20B1%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "B1 Battle Droids"
+      ],
+      "id": "ho"
+    },
+    "hl": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Crush Them!",
+      "cardType": "command",
+      "commander": "General Grievous",
+      "iconLocation": "/images/commandIcons/Crush%20Them!.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/Crush%20Them!.jpeg",
+      "keywords": [],
+      "id": "hl"
+    },
+    "hm": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Phase I Clone Trooper",
+      "iconLocation": "/images/upgradeIcons/Phase%20I%20Clone%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 13,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Phase%20I%20Clone%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Phase I Clone Troopers"
+      ],
+      "id": "hm"
+    },
+    "hb": {
+      "displayName": "",
+      "cardSubtype": "hardpoint",
+      "cardName": "M-45 Ion Blaster",
+      "iconLocation": "/images/upgradeIcons/M-45%20Ion%20Blaster.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 38,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/M-45%20Ion%20Blaster.jpeg",
+      "keywords": [
+        "Fixed",
+        "Impact",
+        "Ion",
+        "Ion Token"
+      ],
+      "requirements": [
+        "X-34 Landspeeder"
+      ],
+      "id": "hb"
+    },
+    "hc": {
+      "displayName": "",
+      "cardSubtype": "hardpoint",
+      "cardName": "DLT-19 Rifle Pintle",
+      "iconLocation": "/images/upgradeIcons/DLT-19%20Rifle%20Pintle.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 18,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/DLT-19%20Rifle%20Pintle.jpeg",
+      "keywords": [
+        "Impact"
+      ],
+      "requirements": [
+        "Occupier Combat Assault Tank"
+      ],
+      "id": "hc"
+    },
+    "ha": {
+      "displayName": "",
+      "cardSubtype": "hardpoint",
+      "cardName": "Mark II Medium Blaster",
+      "iconLocation": "/images/upgradeIcons/Mark%20II%20Medium%20Blaster.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 34,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Mark%20II%20Medium%20Blaster.jpeg",
+      "keywords": [
+        "Fixed"
+      ],
+      "requirements": [
+        "X-34 Landspeeder"
+      ],
+      "id": "ha"
+    },
+    "hf": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "hit surge"
+      ],
+      "cardSubtype": "creature trooper",
+      "cardName": "Dewback Rider",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/Dewback%20Rider.jpeg",
+      "cost": 90,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Dewback%20Rider.jpeg",
+      "keywords": [
+        "Creature Trooper",
+        "Armor",
+        "Relentless",
+        "Reposition",
+        "Spur",
+        "Unhindered"
+      ],
+      "upgradeBar": [
+        "training",
+        "comms",
+        "armament"
+      ],
+      "id": "hf"
+    },
+    "hg": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Shoretroopers",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Shoretroopers.jpeg",
+      "cost": 52,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Shoretroopers.jpeg",
+      "keywords": [
+        "Coordinate",
+        "Target"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "training",
+        "gear",
+        "grenades"
+      ],
+      "id": "hg"
+    },
+    "hd": {
+      "displayName": "",
+      "cardSubtype": "hardpoint",
+      "cardName": "RT-97C Rifle Pintle",
+      "iconLocation": "/images/upgradeIcons/RT-97C%20Rifle%20Pintle.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 14,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/RT-97C%20Rifle%20Pintle.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Occupier Combat Assault Tank"
+      ],
+      "id": "hd"
+    },
+    "he": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "cardSubtype": "creature trooper",
+      "cardName": "Tauntaun Riders",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/Tauntaun%20Riders.jpeg",
+      "cost": 90,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Tauntaun%20Riders.jpeg",
+      "keywords": [
+        "Creature Trooper",
+        "Agile",
+        "Relentless",
+        "Reposition",
+        "Sharpshooter",
+        "Unhindered",
+        "Ram"
+      ],
+      "upgradeBar": [
+        "training",
+        "comms"
+      ],
+      "id": "he"
+    },
+    "aq": {
+      "cardType": "unit",
+      "displayName": "Landspeeder",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "cardSubtype": "repulsor vehicle",
+      "cardName": "X-34 Landspeeder",
+      "isUnique": false,
+      "rank": "heavy",
+      "iconLocation": "/images/unitIcons/X-34%20Landspeeder.jpeg",
+      "cost": 75,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/X-34%20Landspeeder.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Arsenal",
+        "Cover",
+        "Light Transport: Open",
+        "Speeder"
+      ],
+      "upgradeBar": [
+        "pilot",
+        "crew",
+        "crew",
+        "hardpoint",
+        "comms"
+      ],
+      "id": "aq"
+    },
+    "ap": {
+      "cardType": "unit",
+      "displayName": "Airspeeder",
+      "additionalTags": [
+        "white defense",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "T-47 Airspeeder"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/t-47-airspeeder/"
+          ]
+        }
+      ],
+      "cardSubtype": "repulsor vehicle",
+      "cardName": "T-47 Airspeeder",
+      "isUnique": false,
+      "rank": "heavy",
+      "iconLocation": "/images/unitIcons/T-47%20Airspeeder.jpeg",
+      "cost": 175,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/T-47%20Airspeeder.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Armor",
+        "Arsenal",
+        "Cover",
+        "Immune",
+        "Speeder",
+        "Fixed",
+        "Impact"
+      ],
+      "upgradeBar": [
+        "pilot",
+        "hardpoint",
+        "comms"
+      ],
+      "id": "ap"
+    },
+    "Cc": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Limited Visibility",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Limited%20Visibility.jpeg",
+      "keywords": [],
+      "id": "Cc"
+    },
+    "Cb": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Hostile Environment",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Hostile%20Environment.jpeg",
+      "keywords": [],
+      "id": "Cb"
+    },
+    "Ca": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Clear Conditions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Clear%20Conditions.jpeg",
+      "keywords": [],
+      "id": "Ca"
+    },
+    "ik": {
+      "displayName": "",
+      "cardSubtype": "command",
+      "cardName": "Aggressive Tactics",
+      "cardType": "upgrade",
+      "isUnique": false,
+      "iconLocation": "/images/upgradeIcons/Aggressive%20Tactics.jpeg",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Aggressive%20Tactics.jpeg",
+      "keywords": [],
+      "requirements": [],
+      "id": "ik"
+    },
+    "Ce": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Rapid Reinforcements",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Rapid%20Reinforcements.jpeg",
+      "keywords": [],
+      "id": "Ce"
+    },
+    "Cd": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Minefield",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Minefield.jpeg",
+      "keywords": [
+        "Blast",
+        "Impact"
+      ],
+      "id": "Cd"
+    },
+    "ij": {
+      "displayName": "",
+      "cardSubtype": "force",
+      "cardName": "Hope",
+      "cardType": "upgrade",
+      "isUnique": false,
+      "iconLocation": "/images/upgradeIcons/Hope.jpeg",
+      "cost": 3,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Hope.jpeg",
+      "keywords": [
+        "Inspire"
+      ],
+      "requirements": [
+        "light side"
+      ],
+      "id": "ij"
+    },
+    "im": {
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Trained In Your Jedi Arts",
+      "cardType": "command",
+      "commander": "General Grievous",
+      "iconLocation": "/images/commandIcons/Trained%20In%20Your%20Jedi%20Arts.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/Trained%20In%20Your%20Jedi%20Arts.jpeg",
+      "keywords": [
+        "Disengage",
+        "Suppressive",
+        "Versatile"
+      ],
+      "id": "im"
+    },
+    "il": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "DT-57 \"Annihilator\"",
+      "cardType": "upgrade",
+      "isUnique": true,
+      "iconLocation": "/images/upgradeIcons/DT-57%20%22Annihilator%22.jpeg",
+      "cost": 12,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/DT-57%20%22Annihilator%22.jpeg",
+      "keywords": [
+        "Critical",
+        "Pierce",
+        "Versatile"
+      ],
+      "requirements": [
+        "General Grievous"
+      ],
+      "id": "il"
+    },
+    "iy": {
+      "requirements": [
+        "RT-97C Stormtrooper"
+      ],
+      "cardName": "RT-97C Stormtrooper",
+      "cardSubtype": "heavy weapon",
+      "iconLocation": "/images/upgradeIcons/RT-97C%20Stormtrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 26,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/RT-97C%20Stormtrooper.jpeg",
+      "keywords": [],
+      "displayName": "",
+      "id": "iy"
+    },
+    "ix": {
+      "requirements": [
+        "Phase I Clone Troopers"
+      ],
+      "cardSubtype": "heavy weapon",
+      "cardName": "RPS-6 Phase I Trooper",
+      "iconLocation": "/images/upgradeIcons/RPS-6%20Phase%20I%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 26,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/RPS-6%20Phase%20I%20Trooper.jpeg",
+      "keywords": [
+        "Cumbersome",
+        "Impact"
+      ],
+      "displayName": "",
+      "id": "ix"
+    },
+    "ac": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "crit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Han Solo",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Han%20Solo.jpeg",
+      "cost": 120,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Han%20Solo.jpeg",
+      "keywords": [
+        "Low Profile",
+        "Gunslinger",
+        "Sharpshooter",
+        "Uncanny Luck",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "command",
+        "training",
+        "gear"
+      ],
+      "id": "ac"
+    },
+    "ab": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "crit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Leia Organa",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Leia%20Organa.jpeg",
+      "cost": 90,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Leia%20Organa.jpeg",
+      "keywords": [
+        "Take Cover",
+        "Inspire",
+        "Nimble",
+        "Sharpshooter",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "command",
+        "command",
+        "gear"
+      ],
+      "id": "ab"
+    },
+    "ae": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "crit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Jyn Erso",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Jyn%20Erso.jpeg",
+      "cost": 130,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Jyn%20Erso.jpeg",
+      "keywords": [
+        "Quick Thinking",
+        "Danger Sense",
+        "Infiltrate",
+        "Nimble",
+        "Sharpshooter",
+        "Suppressive"
+      ],
+      "upgradeBar": [
+        "command",
+        "training",
+        "gear",
+        "armament"
+      ],
+      "id": "ae"
+    },
+    "ad": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "crit surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Luke Skywalker"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/luke-skywalker/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Luke Skywalker",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Luke%20Skywalker.jpeg",
+      "cost": 160,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Luke%20Skywalker.jpeg",
+      "keywords": [
+        "Jump",
+        "Charge",
+        "Deflect",
+        "Immune",
+        "Impact",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "force",
+        "force",
+        "gear"
+      ],
+      "id": "ad"
+    },
+    "ag": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "crit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Sabine Wren",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/Sabine%20Wren.jpeg",
+      "cost": 125,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Sabine%20Wren.jpeg",
+      "keywords": [
+        "Jump",
+        "Gunslinger",
+        "Impervious",
+        "Nimble",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "training",
+        "gear",
+        "gear",
+        "armament"
+      ],
+      "id": "ag"
+    },
+    "af": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "crit surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Chewbacca: The Lone Operative"
+          ],
+          "blogName": "The Jedha Journal",
+          "urls": [
+            "https://thejedhajournal.home.blog/2019/03/15/chewbacca-the-lone-operative/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Chewbacca",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/Chewbacca.jpeg",
+      "cost": 110,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Chewbacca.jpeg",
+      "keywords": [
+        "Enrage",
+        "Expert Climber",
+        "Guardian",
+        "Teamwork",
+        "Unhindered",
+        "Impact",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "training",
+        "training",
+        "gear"
+      ],
+      "id": "af"
+    },
+    "ai": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Fleet Troopers",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Fleet%20Troopers.jpeg",
+      "cost": 44,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Fleet%20Troopers.jpeg",
+      "keywords": [
+        "Ready"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "gear",
+        "grenades"
+      ],
+      "id": "ai"
+    },
+    "ip": {
+      "requirements": [
+        "TX-130 Saber-Class Fighter Tank"
+      ],
+      "cardSubtype": "pilot",
+      "cardName": "Aayla Secura",
+      "iconLocation": "/images/upgradeIcons/Aayla%20Secura.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Aayla%20Secura.jpeg",
+      "keywords": [
+        "Inspire",
+        "Field Commander"
+      ],
+      "displayName": "",
+      "id": "ip"
+    },
+    "ak": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Rebel Commandos - Snipers",
+            "Rebel Commandos - Saboteurs"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/rebel-commandos-snipers/",
+            "https://thefifthtrooper.com/rebel-commandos-saboteurs/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Rebel Commandos",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Rebel%20Commandos.jpeg",
+      "cost": 60,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Rebel%20Commandos.jpeg",
+      "keywords": [
+        "Low Profile",
+        "Scout",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "grenades"
+      ],
+      "id": "ak"
+    },
+    "ir": {
+      "displayName": "",
+      "cardName": "We're Not Programmed",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "Clone Captain Rex",
+      "iconLocation": "/images/commandIcons/We're%20Not%20Programmed.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/We're%20Not%20Programmed.jpeg",
+      "keywords": [
+        "Inspire",
+        "Surge Token"
+      ],
+      "id": "ir"
+    },
+    "am": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "crit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Rebel Pathfinders",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Rebel%20Pathfinders.jpeg",
+      "cost": 68,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Rebel%20Pathfinders.jpeg",
+      "keywords": [
+        "Danger Sense",
+        "Dauntless",
+        "Infiltrate"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "armament",
+        "grenades"
+      ],
+      "id": "am"
+    },
+    "it": {
+      "requirements": [
+        "B1 Battle Droids"
+      ],
+      "cardSubtype": "personnel",
+      "cardName": "B1 Security Droid",
+      "iconLocation": "/images/upgradeIcons/B1%20Security%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 9,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/B1%20Security%20Droid.jpeg",
+      "keywords": [],
+      "displayName": "",
+      "id": "it"
+    },
+    "ao": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "crit surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "AT-RT"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/at-rt/"
+          ]
+        }
+      ],
+      "cardSubtype": "ground vehicle",
+      "cardName": "AT-RT",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/AT-RT.jpeg",
+      "cost": 55,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/AT-RT.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Armor",
+        "Climbing Vehicle",
+        "Expert Climber",
+        "Impact"
+      ],
+      "upgradeBar": [
+        "hardpoint",
+        "comms"
+      ],
+      "id": "ao"
+    },
+    "iv": {
+      "requirements": [
+        "Phase I Clone Troopers"
+      ],
+      "cardSubtype": "heavy weapon",
+      "cardName": "DP-23 Phase I Trooper",
+      "iconLocation": "/images/upgradeIcons/DP-23%20Phase%20I%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 27,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/DP-23%20Phase%20I%20Trooper.jpeg",
+      "keywords": [
+        "Pierce"
+      ],
+      "displayName": "",
+      "id": "iv"
+    },
+    "ii": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "Ryder Azadi",
+      "iconLocation": "/images/upgradeIcons/Ryder%20Azadi.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Ryder%20Azadi.jpeg",
+      "keywords": [],
+      "requirements": [
+        "repulsor vehicle"
+      ],
+      "id": "ii"
+    },
+    "ih": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Electro Grappling Line",
+      "iconLocation": "/images/upgradeIcons/Electro%20Grappling%20Line.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Electro%20Grappling%20Line.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Sabine Wren"
+      ],
+      "id": "ih"
+    },
+    "as": {
+      "cardName": "Emperor Palpatine",
+      "entourage": [
+        "Imperial Royal Guards"
+      ],
+      "displayName": "",
+      "links": [
+        {
+          "titles": [
+            "Imperial Royal Guard: Strategy Guide"
+          ],
+          "blogName": "New Ways to Motivate Them",
+          "urls": [
+            "http://empirelegion.com/2018/12/17/imperial-royal-guard-strategy-guide/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "faction": "empire",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Emperor%20Palpatine.jpeg",
+      "cost": 210,
+      "products": [],
+      "additionalTags": [
+        "red defense",
+        "crit surge",
+        "block surge"
+      ],
+      "imageLocation": "/images/unitCards/Emperor%20Palpatine.jpeg",
+      "keywords": [
+        "Pulling the Strings",
+        "Entourage",
+        "Immune",
+        "Master of the Force",
+        "Pierce",
+        "Suppressive"
+      ],
+      "upgradeBar": [
+        "force",
+        "force",
+        "force",
+        "command"
+      ],
+      "id": "as",
+      "cardType": "unit"
+    },
+    "ar": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Imperial Officer",
+      "isUnique": false,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Imperial%20Officer.jpeg",
+      "cost": 50,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Imperial%20Officer.jpeg",
+      "keywords": [
+        "Spotter",
+        "Inspire",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "command",
+        "gear"
+      ],
+      "id": "ar"
+    },
+    "au": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "crit surge"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "General Veers",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/General%20Veers.jpeg",
+      "cost": 80,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/General%20Veers.jpeg",
+      "keywords": [
+        "Spotter",
+        "Inspire",
+        "Precise",
+        "Sharpshooter",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "command",
+        "command",
+        "gear"
+      ],
+      "id": "au"
+    },
+    "at": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Darth Vader - Dark Lord of the Sith"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/darth-vader-dark-lord-of-the-sith/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Darth Vader",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Darth%20Vader.jpeg",
+      "cost": 200,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Darth%20Vader.jpeg",
+      "keywords": [
+        "Deflect",
+        "Immune",
+        "Master of the Force",
+        "Relentless",
+        "Impact",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "force",
+        "force",
+        "force"
+      ],
+      "id": "at"
+    },
+    "io": {
+      "requirements": [
+        "B2 Super Battle Droids"
+      ],
+      "cardName": "B2 Super Battle Droid",
+      "cardSubtype": "personnel",
+      "iconLocation": "/images/upgradeIcons/B2%20Super%20Battle%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 16,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/B2%20Super%20Battle%20Droid.jpeg",
+      "keywords": [],
+      "displayName": "",
+      "id": "io"
+    },
+    "av": {
+      "cardName": "Director Orson Krennic",
+      "entourage": [
+        "Imperial Death Troopers"
+      ],
+      "displayName": "Director Krennic",
+      "links": [
+        {
+          "titles": [
+            "Rapid Reaction: Director Orson Krennic"
+          ],
+          "blogName": "The Jedha Journal",
+          "urls": [
+            "https://thejedhajournal.home.blog/2019/03/19/rapid-reaction-director-orson-krennic/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "faction": "empire",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Director%20Orson%20Krennic.jpeg",
+      "cost": 90,
+      "products": [],
+      "additionalTags": [
+        "white defense",
+        "crit surge",
+        "block surge"
+      ],
+      "imageLocation": "/images/unitCards/Director%20Orson%20Krennic.jpeg",
+      "keywords": [
+        "Compel",
+        "Cunning",
+        "Entourage",
+        "Sharpshooter",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "command",
+        "command",
+        "gear"
+      ],
+      "id": "av",
+      "cardType": "unit"
+    },
+    "ia": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense"
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "General Grievous",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/General%20Grievous.jpeg",
+      "cost": 175,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/unitCards/General%20Grievous.jpeg",
+      "keywords": [
+        "Arsenal",
+        "Block",
+        "Impervious",
+        "Jedi Hunter",
+        "Relentless",
+        "Scale",
+        "Impact",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "command",
+        "command",
+        "training",
+        "armament"
+      ],
+      "id": "ia"
+    },
+    "ax": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "crit surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Bossk - Trandoshan Terror"
+          ],
+          "blogName": "Legion Academy",
+          "urls": [
+            "https://www.legionacademy.net/2019/06/08/bossk-trandoshan-terror/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Bossk",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/Bossk.jpeg",
+      "cost": 115,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Bossk.jpeg",
+      "keywords": [
+        "Bounty",
+        "Enrage",
+        "Expert Climber",
+        "Regenerate",
+        "Unhindered",
+        "Pierce",
+        "Suppressive"
+      ],
+      "upgradeBar": [
+        "training",
+        "training",
+        "gear"
+      ],
+      "id": "ax"
+    },
+    "ic": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "hit surge"
+      ],
+      "cardSubtype": "repulsor vehicle",
+      "cardName": "BARC Speeder",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/BARC%20Speeder.jpeg",
+      "cost": 75,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/unitCards/BARC%20Speeder.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Arsenal",
+        "Cover",
+        "Speeder",
+        "Fixed"
+      ],
+      "upgradeBar": [
+        "crew",
+        "comms"
+      ],
+      "id": "ic"
+    },
+    "az": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "red defense",
+        "hit surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Snowtroopers"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/snowtroopers/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Snowtroopers",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Snowtroopers.jpeg",
+      "cost": 48,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/unitCards/Snowtroopers.jpeg",
+      "keywords": [
+        "Steady"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "gear",
+        "grenades"
+      ],
+      "id": "az"
+    },
+    "ie": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [
+        "white defense",
+        "block surge"
+      ],
+      "cardSubtype": "ground vehicle",
+      "cardName": "Droidekas",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/Droidekas.jpeg",
+      "cost": 100,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/unitCards/Droidekas.jpeg",
+      "keywords": [
+        "Vehicle",
+        "AI",
+        "Generator",
+        "Shielded",
+        "Wheel Mode",
+        "Suppressive",
+        "Fixed",
+        "Immune",
+        "Shield Token"
+      ],
+      "upgradeBar": [
+        "comms"
+      ],
+      "id": "ie"
+    },
+    "id": {
+      "displayName": "",
+      "cardSubtype": "crew",
+      "cardName": "BARC Twin Laser Gunner",
+      "iconLocation": "/images/upgradeIcons/BARC%20Twin%20Laser%20Gunner.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 18,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/BARC%20Twin%20Laser%20Gunner.jpeg",
+      "keywords": [
+        "Fixed"
+      ],
+      "requirements": [],
+      "id": "id"
+    },
+    "ig": {
+      "displayName": "CM-O/93 Trooper",
+      "cardSubtype": "heavy weapon",
+      "cardName": "CM-O 93 Trooper",
+      "iconLocation": "/images/upgradeIcons/CM-O%2093%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 31,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/CM-O%2093%20Trooper.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "requirements": [
+        "Rebel Veterans"
+      ],
+      "id": "ig"
+    },
+    "if": {
+      "cardType": "unit",
+      "displayName": "Medium Blaster Trooper",
+      "additionalTags": [
+        "white defense",
+        "block surge",
+        "hit surge"
+      ],
+      "cardSubtype": "emplacement trooper",
+      "cardName": "Mark II Medium Blaster Trooper",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Mark%20II%20Medium%20Blaster%20Trooper.jpeg",
+      "cost": 38,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Mark%20II%20Medium%20Blaster%20Trooper.jpeg",
+      "keywords": [
+        "Emplacement Trooper",
+        "Detachment",
+        "Fire Support",
+        "Full Pivot",
+        "Reposition",
+        "Sentinel",
+        "Critical",
+        "Cumbersome",
+        "Fixed"
+      ],
+      "upgradeBar": [
+        "comms"
+      ],
+      "id": "if"
+    },
+    "ib": {
+      "displayName": "",
+      "cardSubtype": "grenades",
+      "cardName": "Smoke Grenades",
+      "iconLocation": "/images/upgradeIcons/Smoke%20Grenades.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 6,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Smoke%20Grenades.jpeg",
+      "keywords": [
+        "Smoke"
+      ],
+      "requirements": [],
+      "id": "ib"
+    },
+    "Df": {
+      "displayName": "Forces Converge",
+      "cardSubtype": "deployment",
+      "cardName": "Forces Converge (Act 1)",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Forces%20Converge%20(Act%201).jpeg",
+      "keywords": [],
+      "id": "Df"
+    },
+    "Dd": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "The Long March",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/The%20Long%20March.jpeg",
+      "keywords": [],
+      "id": "Dd"
+    },
+    "De": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Major Offensive",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Major%20Offensive.jpeg",
+      "keywords": [],
+      "id": "De"
+    },
+    "Db": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Battle Lines",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Battle%20Lines.jpeg",
+      "keywords": [],
+      "id": "Db"
+    },
+    "Dc": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Disarray",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Disarray.jpeg",
+      "keywords": [],
+      "id": "Dc"
+    },
+    "aa": {
+      "displayName": "",
+      "cardSubtype": "4",
+      "cardName": "Standing Orders",
+      "cardType": "command",
+      "commander": "",
+      "iconLocation": "/images/commandIcons/Standing%20Orders.jpeg",
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/commandCards/Standing%20Orders.jpeg",
+      "keywords": [],
+      "id": "aa"
+    },
+    "Da": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Advanced Positions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Advanced%20Positions.jpeg",
+      "keywords": [
+        "Scout",
+        "Stationary"
+      ],
+      "id": "Da"
+    },
+    "Of": {
+      "displayName": "Sabotage Moisture Vaporators",
+      "cardSubtype": "objective",
+      "cardName": "Sabotage the Moisture Vaporators",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Sabotage%20the%20Moisture%20Vaporators.jpeg",
+      "keywords": [
+        "Sabotage/Repair"
+      ],
+      "id": "Of"
+    },
+    "Oe": {
+      "displayName": "Secure the Intel",
+      "cardSubtype": "objective",
+      "cardName": "Secure the Intel (Act 1)",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Secure%20the%20Intel%20(Act%201).jpeg",
+      "keywords": [
+        "Extract",
+        "Claim"
+      ],
+      "id": "Oe"
+    },
+    "al": {
+      "cardType": "unit",
+      "displayName": "Commando Strike Team",
+      "additionalTags": [
+        "white defense",
+        "hit surge",
+        "block surge"
+      ],
+      "links": [
+        {
+          "titles": [
+            "Rebel Commandos - Snipers",
+            "Rebel Commandos - Saboteurs"
+          ],
+          "blogName": "The Fifth Trooper",
+          "urls": [
+            "https://thefifthtrooper.com/rebel-commandos-snipers/",
+            "https://thefifthtrooper.com/rebel-commandos-saboteurs/"
+          ]
+        }
+      ],
+      "cardSubtype": "trooper",
+      "cardName": "Rebel Commandos Strike Team",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/Rebel%20Commandos%20Strike%20Team.jpeg",
+      "cost": 16,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Rebel%20Commandos%20Strike%20Team.jpeg",
+      "keywords": [
+        "Low Profile",
+        "Scout",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "grenades"
+      ],
+      "id": "al"
+    },
+    "fp": {
+      "displayName": "",
+      "cardName": "I am a Jedi",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "Luke Skywalker",
+      "iconLocation": "/images/commandIcons/I%20am%20a%20Jedi.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/I%20am%20a%20Jedi.jpeg",
+      "keywords": [],
+      "id": "fp"
+    },
+    "fq": {
+      "displayName": "",
+      "cardSubtype": "3",
+      "cardName": "Darkness Descends",
+      "iconLocation": "/images/commandIcons/Darkness%20Descends.jpeg",
+      "commander": "Darth Vader",
+      "cardType": "command",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Darkness%20Descends.jpeg",
+      "keywords": [
+        "Infiltrate",
+        "Scout"
+      ],
+      "id": "fq"
+    },
+    "fr": {
+      "requirements": [
+        "BARC Speeder"
+      ],
+      "cardSubtype": "crew",
+      "cardName": "BARC Ion Gunner",
+      "iconLocation": "/images/upgradeIcons/BARC%20Ion%20Gunner.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 28,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/BARC%20Ion%20Gunner.jpeg",
+      "keywords": [
+        "Fixed",
+        "Impact",
+        "Ion",
+        "Ion Token"
+      ],
+      "displayName": "",
+      "id": "fr"
+    },
+    "fs": {
+      "requirements": [
+        "BARC Speeder"
+      ],
+      "cardName": "BARC RPS-6 Gunner",
+      "cardSubtype": "crew",
+      "iconLocation": "/images/upgradeIcons/BARC%20RPS-6%20Gunner.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 24,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/BARC%20RPS-6%20Gunner.jpeg",
+      "keywords": [
+        "Impact"
+      ],
+      "displayName": "",
+      "id": "fs"
+    },
+    "ft": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "cardSubtype": "emplacement trooper",
+      "faction": "empire",
+      "cardName": "DF-90 Mortar Trooper",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/DF-90%20Mortar%20Trooper.jpeg",
+      "cost": 36,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/DF-90%20Mortar%20Trooper.jpeg",
+      "keywords": [
+        "Detachment",
+        "Fire Support",
+        "Full Pivot",
+        "Reposition",
+        "Sentinel",
+        "Critical",
+        "Cumbersome",
+        "Suppressive",
+        "Fixed"
+      ],
+      "upgradeBar": [
+        "comms"
+      ],
+      "id": "ft"
+    },
+    "fu": {
+      "requirements": [
+        "Shoretroopers"
+      ],
+      "cardName": "T-21B Trooper",
+      "cardSubtype": "heavy weapon",
+      "iconLocation": "/images/upgradeIcons/T-21B%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 32,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/T-21B%20Trooper.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "displayName": "",
+      "id": "fu"
+    },
+    "fv": {
+      "requirements": [
+        "Dewback Rider"
+      ],
+      "cardSubtype": "armament",
+      "cardName": "RT-97C Blaster Rifle",
+      "iconLocation": "/images/upgradeIcons/RT-97C%20Blaster%20Rifle.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/RT-97C%20Blaster%20Rifle.jpeg",
+      "keywords": [],
+      "displayName": "",
+      "id": "fv"
+    },
+    "fw": {
+      "requirements": [
+        "Dewback Rider"
+      ],
+      "cardName": "CR-24 Flame Rifle",
+      "cardSubtype": "armament",
+      "iconLocation": "/images/upgradeIcons/CR-24%20Flame%20Rifle.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/CR-24%20Flame%20Rifle.jpeg",
+      "keywords": [],
+      "displayName": "",
+      "id": "fw"
+    },
+    "fx": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "cardSubtype": "trooper",
+      "faction": "separatists",
+      "cardName": "Count Dooku",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Count%20Dooku.jpeg",
+      "cost": 205,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Count%20Dooku.jpeg",
+      "keywords": [
+        "Cunning",
+        "Deflect",
+        "Immune",
+        "Makashi Mastery",
+        "Master of the Force",
+        "Impact",
+        "Pierce",
+        "Scatter"
+      ],
+      "upgradeBar": [
+        "force",
+        "force",
+        "force",
+        "command"
+      ],
+      "id": "fx"
+    },
+    "Oc": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Key Positions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Key%20Positions.jpeg",
+      "keywords": [],
+      "id": "Oc"
+    },
+    "fz": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "republic",
+      "cardSubtype": "clone trooper",
+      "cardName": "Phase II Clone Troopers",
+      "isUnique": false,
+      "rank": "corps",
+      "iconLocation": "/images/unitIcons/Phase%20II%20Clone%20Troopers.jpeg",
+      "cost": 60,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Phase%20II%20Clone%20Troopers.jpeg",
+      "keywords": [
+        "Fire Support",
+        "Reliable"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "personnel",
+        "training",
+        "gear",
+        "grenades"
+      ],
+      "id": "fz"
+    },
+    "Ob": {
+      "displayName": "Intercept Transmissions",
+      "cardSubtype": "objective",
+      "cardName": "Intercept the Transmissions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Intercept%20the%20Transmissions.jpeg",
+      "keywords": [],
+      "id": "Ob"
+    },
+    "fa": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "R4 Astromech Droid",
+      "iconLocation": "/images/upgradeIcons/R4%20Astromech%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 9,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/R4%20Astromech%20Droid.jpeg",
+      "keywords": [
+        "Repair",
+        "Noncombatant"
+      ],
+      "requirements": [],
+      "id": "fa"
+    },
+    "fb": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Snowtrooper",
+      "iconLocation": "/images/upgradeIcons/Snowtrooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 12,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Snowtrooper.jpeg",
+      "keywords": [],
+      "requirements": [
+        "Snowtroopers"
+      ],
+      "id": "fb"
+    },
+    "fc": {
+      "displayName": "Rotary Blaster",
+      "cardSubtype": "hardpoint",
+      "cardName": "AT-RT Rotary Blaster",
+      "iconLocation": "/images/upgradeIcons/AT-RT%20Rotary%20Blaster.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 30,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/AT-RT%20Rotary%20Blaster.jpeg",
+      "keywords": [
+        "Fixed"
+      ],
+      "requirements": [
+        "AT-RT"
+      ],
+      "id": "fc"
+    },
+    "fd": {
+      "displayName": "Flamethrower",
+      "cardSubtype": "hardpoint",
+      "cardName": "AT-RT Flamethrower",
+      "iconLocation": "/images/upgradeIcons/AT-RT%20Flamethrower.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 25,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/AT-RT%20Flamethrower.jpeg",
+      "keywords": [
+        "Blast",
+        "Fixed",
+        "Spray"
+      ],
+      "requirements": [
+        "AT-RT"
+      ],
+      "id": "fd"
+    },
+    "fe": {
+      "displayName": "Laser Cannon",
+      "cardSubtype": "hardpoint",
+      "cardName": "AT-RT Laser Cannon",
+      "iconLocation": "/images/upgradeIcons/AT-RT%20Laser%20Cannon.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 35,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/AT-RT%20Laser%20Cannon.jpeg",
+      "keywords": [
+        "Impact",
+        "Fixed"
+      ],
+      "requirements": [
+        "AT-RT"
+      ],
+      "id": "fe"
+    },
+    "ff": {
+      "displayName": "Ground Buzzer",
+      "cardSubtype": "hardpoint",
+      "cardName": "Ax-108 Ground Buzzer",
+      "iconLocation": "/images/upgradeIcons/Ax-108%20Ground%20Buzzer.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Ax-108%20Ground%20Buzzer.jpeg",
+      "keywords": [
+        "Fixed"
+      ],
+      "requirements": [
+        "T-47 Airspeeder"
+      ],
+      "id": "ff"
+    },
+    "fg": {
+      "displayName": "Power Harpoon",
+      "cardSubtype": "hardpoint",
+      "cardName": "MoDk Power Harpoon",
+      "iconLocation": "/images/upgradeIcons/MoDk%20Power%20Harpoon.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 8,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/MoDk%20Power%20Harpoon.jpeg",
+      "keywords": [
+        "Fixed",
+        "Tow Cable"
+      ],
+      "requirements": [
+        "T-47 Airspeeder"
+      ],
+      "id": "fg"
+    },
+    "fh": {
+      "displayName": "Twin Light Blaster Cannon",
+      "cardSubtype": "hardpoint",
+      "cardName": "88 Twin Light Blaster Cannon",
+      "iconLocation": "/images/upgradeIcons/88%20Twin%20Light%20Blaster%20Cannon.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/88%20Twin%20Light%20Blaster%20Cannon.jpeg",
+      "keywords": [
+        "Impact",
+        "Fixed"
+      ],
+      "requirements": [
+        "AT-ST"
+      ],
+      "id": "fh"
+    },
+    "fi": {
+      "displayName": "Mortar Launcher",
+      "cardSubtype": "hardpoint",
+      "cardName": "AT-ST Mortar Launcher",
+      "iconLocation": "/images/upgradeIcons/AT-ST%20Mortar%20Launcher.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/AT-ST%20Mortar%20Launcher.jpeg",
+      "keywords": [
+        "Fixed",
+        "Suppressive"
+      ],
+      "requirements": [
+        "AT-ST"
+      ],
+      "id": "fi"
+    },
+    "fj": {
+      "displayName": "Concussion Grenade Launcher",
+      "cardSubtype": "hardpoint",
+      "cardName": "DW-3 Concussion Grenade Launcher",
+      "iconLocation": "/images/upgradeIcons/DW-3%20Concussion%20Grenade%20Launcher.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/DW-3%20Concussion%20Grenade%20Launcher.jpeg",
+      "keywords": [
+        "Fixed",
+        "Blast"
+      ],
+      "requirements": [
+        "AT-ST"
+      ],
+      "id": "fj"
+    },
+    "fk": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "Wedge Antilles",
+      "iconLocation": "/images/upgradeIcons/Wedge%20Antilles.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Wedge%20Antilles.jpeg",
+      "keywords": [
+        "Full Pivot"
+      ],
+      "requirements": [
+        "repulsor vehicle"
+      ],
+      "id": "fk"
+    },
+    "fl": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "General Weiss",
+      "iconLocation": "/images/upgradeIcons/General%20Weiss.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/General%20Weiss.jpeg",
+      "keywords": [
+        "Arsenal"
+      ],
+      "requirements": [
+        "ground vehicle"
+      ],
+      "id": "fl"
+    },
+    "fm": {
+      "additionalTags": [],
+      "displayName": "",
+      "iconLocation": "/images/unitIcons/Luke%20Skywalker2.jpeg",
+      "links": [],
+      "cardName": "Luke Skywalker",
+      "cardSubtype": "trooper",
+      "isUnique": true,
+      "rank": "operative",
+      "cardType": "unit",
+      "cost": 200,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/unitCards/Luke%20Skywalker2.jpeg",
+      "keywords": [
+        "Jump",
+        "Charge",
+        "Deflect",
+        "Disengage",
+        "Immune",
+        "Master of the Force",
+        "Impact",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "force",
+        "force",
+        "force",
+        "training"
+      ],
+      "id": "fm"
+    },
+    "fn": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "empire",
+      "cardSubtype": "trooper",
+      "cardName": "Darth Vader",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/Darth%20Vader2.jpeg",
+      "cost": 170,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Darth%20Vader2.jpeg",
+      "keywords": [
+        "Deflect",
+        "Immune",
+        "Jedi Hunter",
+        "Master of the Force",
+        "Relentless",
+        "Spur",
+        "Impact",
+        "Pierce",
+        "Blast",
+        "Scatter"
+      ],
+      "upgradeBar": [
+        "force",
+        "force",
+        "training"
+      ],
+      "id": "fn"
+    },
+    "fo": {
+      "requirements": [
+        "dark side"
+      ],
+      "cardName": "Fear",
+      "cardSubtype": "force",
+      "iconLocation": "/images/upgradeIcons/Fear.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 3,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Fear.jpeg",
+      "keywords": [
+        "Demoralize"
+      ],
+      "displayName": "",
+      "id": "fo"
+    },
+    "in": {
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Knowledge and Defense",
+      "cardType": "command",
+      "commander": "Obi-Wan Kenobi",
+      "iconLocation": "/images/commandIcons/Knowledge%20and%20Defense.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Knowledge%20and%20Defense.jpeg",
+      "keywords": [
+        "Guardian"
+      ],
+      "id": "in"
+    },
+    "iz": {
+      "requirements": [
+        "Rebel Troopers"
+      ],
+      "cardSubtype": "heavy weapon",
+      "cardName": "SX-21 Trooper",
+      "iconLocation": "/images/upgradeIcons/SX-21%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 20,
+      "products": [
+        "Impact"
+      ],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/SX-21%20Trooper.jpeg",
+      "keywords": [],
+      "displayName": "",
+      "id": "iz"
+    },
+    "de": {
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Environmental Gear",
+      "iconLocation": "/images/upgradeIcons/Environmental%20Gear.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 3,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Environmental%20Gear.jpeg",
+      "keywords": [
+        "Unhindered"
+      ],
+      "requirements": [],
+      "id": "de"
+    }
+  }
+}
