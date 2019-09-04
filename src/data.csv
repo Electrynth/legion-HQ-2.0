@@ -70,7 +70,6 @@ ef,Proton Charge Saboteur,upgrade,heavy weapon
 ea,A-300 Configuration,upgrade,armament
 ec,MPL-57 Ion Trooper,upgrade,heavy weapon
 eb,The Darksaber,upgrade,armament
-aw,Boba Fett,unit,operative
 ey,Imperial Comms Technician,upgrade,personnel
 ex,Stormtrooper,upgrade,personnel
 ez,FX-9 Medical Droid,upgrade,personnel
@@ -82,6 +81,7 @@ eq,Rebel Comms Technician,upgrade,personnel
 ep,Flametrooper,upgrade,heavy weapon
 es,Rebel Trooper,upgrade,personnel
 er,Rebel Officer,upgrade,personnel
+fv,RT-97C Blaster Rifle,upgrade,armament
 bd,Imperial Death Troopers,unit,special
 be,E-Web Heavy Blaster Team,unit,support
 bf,74-Z Speeder Bikes,unit,support
@@ -106,7 +106,7 @@ bq,Lying In Wait,command,3
 br,New Ways to Motivate Them,command,2
 bs,Evasive Maneuvers,command,2
 jd,You Serve Your Master Well,command,1
-ac,Han Solo,unit,commander
+je,Fear and Dead Men,command,2
 bx,And Now You Will Die,command,1
 by,Voracious Ambition,command,1
 bz,Whipcord Launcher,command,1
@@ -184,7 +184,7 @@ au,General Veers,unit,commander
 at,Darth Vader,unit,commander
 iy,RT-97C Stormtrooper,upgrade,heavy weapon
 ix,RPS-6 Phase I Trooper,upgrade,heavy weapon
-aa,Standing Orders,command,4
+ac,Han Solo,unit,commander
 ab,Leia Organa,unit,commander
 ae,Jyn Erso,unit,commander
 ad,Luke Skywalker,unit,commander
@@ -204,7 +204,7 @@ ik,Aggressive Tactics,upgrade,command
 ij,Hope,upgrade,force
 im,Trained In Your Jedi Arts,command,1
 il,"DT-57 ""Annihilator""",upgrade,armament
-io,B2 Super Battle Droid,upgrade,personnel
+aw,Boba Fett,unit,operative
 av,Director Orson Krennic,unit,commander
 ay,Stormtroopers,unit,corps
 ax,Bossk,unit,operative
@@ -221,6 +221,7 @@ Dd,The Long March,battle,deployment
 De,Major Offensive,battle,deployment
 Db,Battle Lines,battle,deployment
 Dc,Disarray,battle,deployment
+aa,Standing Orders,command,4
 Da,Advanced Positions,battle,deployment
 Of,Sabotage the Moisture Vaporators,battle,objective
 Oe,Secure the Intel (Act 1),battle,objective
@@ -231,7 +232,7 @@ fr,BARC Ion Gunner,upgrade,crew
 fs,BARC RPS-6 Gunner,upgrade,crew
 ft,DF-90 Mortar Trooper,unit,corps
 fu,T-21B Trooper,upgrade,heavy weapon
-fv,RT-97C Blaster Rifle,upgrade,armament
+io,B2 Super Battle Droid,upgrade,personnel
 fw,CR-24 Flame Rifle,upgrade,armament
 fx,Count Dooku,unit,commander
 fy,Clone Captain Rex,unit,commander

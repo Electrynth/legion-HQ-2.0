@@ -138,12 +138,12 @@ print_card_map()
 
 #
 command_card = {}
-command_card['faction'] = 'empire'
-command_card['cardName'] = 'Fear and Dead Men'
+command_card['faction'] = 'rebels'
+command_card['cardName'] = 'I\'m Full of Surprises'
 command_card['displayName'] = ''
 command_card['cardType'] = 'command'
 command_card['cardSubtype'] = '2'
-command_card['commander'] = 'Darth Vader'
+command_card['commander'] = 'Luke Skywalker'
 command_card['keywords'] = []
 command_card['products'] = []
 add_card(command_card)
