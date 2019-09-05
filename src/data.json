@@ -1488,7 +1488,7 @@
       "iconLocation": "/images/upgradeIcons/A-300%20Configuration.jpeg",
       "isUnique": false,
       "cardType": "upgrade",
-      "cost": 6,
+      "cost": 0,
       "products": [],
       "faction": "rebels",
       "imageLocation": "/images/upgradeCards/A-300%20Configuration.jpeg",
