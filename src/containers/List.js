@@ -1422,7 +1422,6 @@ class ListContainer extends React.Component {
     const mobile = width === 'xs' || width === 'sm';
     let commandRows = [];
     const pointTotalString = this.getPointTotalString(currentList);
-    console.log(currentList);
     currentList.commandCards.forEach((commandId, i) => {
       commandRows.push(
         <CommandChip
