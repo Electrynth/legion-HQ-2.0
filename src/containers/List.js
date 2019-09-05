@@ -685,17 +685,17 @@ class ListContainer extends React.Component {
     currentList.units.forEach((unitObject) => {
       const unitCard = allCards[unitObject.unitId];
 
-      if (unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName}`
-      else unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName}`;
+      if (unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`
+      else unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`;
 
       let upgradeString = '';
       unitObject.upgradesEquipped.forEach((upgradeCardId, i) => {
         const upgradeCard = allCards[upgradeCardId];
-        if (upgradeCardId) upgradeString += `${upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName}, `
+        if (upgradeCardId) upgradeString += `${upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName} (${upgradeCard.cost}), `
         if (i === unitObject.upgradesEquipped.length - 1) {
           upgradeString = upgradeString.substring(0, upgradeString.length - 2);
           if (upgradeString.length > 0) {
-            unitString[unitCard.rank] += ` (${upgradeString}) = ${unitObject.totalUnitCost}\n`;
+            unitString[unitCard.rank] += ` ${upgradeString} = ${unitObject.totalUnitCost}\n`;
           } else unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost}\n`;
         }
       });

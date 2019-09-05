@@ -199,7 +199,7 @@ class UnitRow extends React.Component {
           >
             <Grid item>
               <Typography variant="body2" color="primary">
-                {unitCard.displayName ? unitCard.displayName : unitCard.cardName}
+                {`${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost})`}
               </Typography>
             </Grid>
             <Grid item style={{ height: '24px' }}>

@@ -35,7 +35,7 @@ class UpgradeChip extends React.Component {
       <Chip
         key={equippedUpgradeId}
         avatar={chipAvatar}
-        label={upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName}
+        label={`${upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName} (${upgradeCard.cost})`}
         onClick={() => handleClick()}
         onDelete={() => removeUpgrade()}
         style={{ marginRight: 4, marginBottom: 2 }}
