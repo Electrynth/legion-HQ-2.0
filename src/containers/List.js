@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import mergeImages from 'merge-images';
 import domtoimage from 'dom-to-image-more';
 import copy from 'clipboard-copy';
+import ReactToPrint from 'react-to-print';
 import withWidth from '@material-ui/core/withWidth';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -28,6 +29,7 @@ import CardImage from '../components/CardImage';
 import UnitRow from '../components/UnitRow';
 import CommandChip from '../components/CommandChip';
 import DataContext from '../components/DataContext';
+import ListPrintText from '../components/ListPrintText';
 
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'rgba(255, 255, 255, 0.23)' : ''
@@ -297,8 +299,7 @@ class ListContainer extends React.Component {
   }
 
   generateBottomContent() {
-    const content = (undefined);
-    return content;
+    return undefined;
   }
 
   changeViewFilter = (viewFilter) => {
@@ -614,7 +615,7 @@ class ListContainer extends React.Component {
     changeCurrentList(currentList);
   }
 
-  copyTournamentTextToClipboard = () => {
+  generateTournamentText = () => {
     const {
       allCards
     } = this.context;
@@ -629,7 +630,7 @@ class ListContainer extends React.Component {
       Array(unitObject.count).fill().forEach((singleUnitObject) => {
         listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
         unitObject.upgradesEquipped.forEach((upgradeCardId) => {
-          if (upgradeCardId) listString += ` - ${allCards[upgradeCardId].cardName}\n`
+          if (upgradeCardId) listString += ` - ${allCards[upgradeCardId].cardName} (${allCards[upgradeCardId].cost})\n`
         });
       });
     });
@@ -643,7 +644,7 @@ class ListContainer extends React.Component {
     if (currentList.commandCards.length > 0) {
       listString += '****Standing Orders\n';
     }
-    listString += '\nBattle Deck:\n';
+    listString += '\nBattle Deck\n';
     listString += 'Objectives:\n'
     currentList.objectiveCards.forEach((objectiveCardId) => {
       listString += ` - ${allCards[objectiveCardId].cardName}\n`;
@@ -656,10 +657,14 @@ class ListContainer extends React.Component {
     currentList.deploymentCards.forEach((deploymentCardId) => {
       listString += ` - ${allCards[deploymentCardId].cardName}\n`;
     });
-    copy(listString);
+    return listString;
   }
 
-  copyTextToClipboard = () => {
+  copyTournamentTextToClipboard = () => {
+    copy(this.generateTournamentText());
+  }
+
+  generateListText = () => {
     const {
       allCards
     } = this.context;
@@ -722,10 +727,14 @@ class ListContainer extends React.Component {
     if (currentList.commandCards.length > 0) {
       listString += '••••Standing Orders';
     }
-    copy(listString);
+    return listString;
   }
 
-  copyLinkToClipboard = (linkType) => {
+  copyTextToClipboard = () => {
+    copy(this.generateListText());
+  }
+
+  generateLink = (linkType) => {
     const {
       currentList
     } = this.props;
@@ -752,7 +761,11 @@ class ListContainer extends React.Component {
         urlStrings.push(conditionCardId);
       });
     }
-    copy(`https://legion-hq.herokuapp.com/list/${currentList.faction}/${urlStrings.join(',')}`);
+    return `https://legion-hq.herokuapp.com/list/${currentList.faction}/${urlStrings.join(',')}`;
+  }
+
+  copyLinkToClipboard = (linkType) => {
+    copy(this.generateLink(linkType));
   }
 
   generateCustomLocation = (cardId) => {
@@ -1419,6 +1432,9 @@ class ListContainer extends React.Component {
       toggleListMode,
       clearList
     } = this.props;
+    const listTournamentText = this.generateTournamentText();
+    const listUrl = this.generateLink('Legion HQ Link');
+    console.log(listUrl);
     const mobile = width === 'xs' || width === 'sm';
     let commandRows = [];
     const pointTotalString = this.getPointTotalString(currentList);
@@ -1772,15 +1788,19 @@ class ListContainer extends React.Component {
                 </Button>
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
-                <Button
-                  disabled
-                  size="small"
-                  variant="outlined"
-                  color="primary"
-                >
-                  <PrintIcon style={{ marginRight: 5 }} />
-                  Print
-                </Button>
+                <ReactToPrint
+                  content={() => this.componentRef}
+                  trigger={() => (
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      color="primary"
+                    >
+                      <PrintIcon style={{ marginRight: 5 }} />
+                      Print
+                    </Button>
+                  )}
+                />
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
                 <Button
@@ -1820,6 +1840,9 @@ class ListContainer extends React.Component {
               <div
                 id="listImage"
               />
+            </Grid>
+            <Grid item style={{ display: 'none' }}>
+              <ListPrintText ref={el => (this.componentRef = el)} listTournamentText={listTournamentText} listUrl={listUrl} />
             </Grid>
             <Grid item>
               <div style={{ marginBottom: '250px' }} />
