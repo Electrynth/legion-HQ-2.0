@@ -1434,7 +1434,6 @@ class ListContainer extends React.Component {
     } = this.props;
     const listTournamentText = this.generateTournamentText();
     const listUrl = this.generateLink('Legion HQ Link');
-    console.log(listUrl);
     const mobile = width === 'xs' || width === 'sm';
     let commandRows = [];
     const pointTotalString = this.getPointTotalString(currentList);

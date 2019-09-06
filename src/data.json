@@ -3167,23 +3167,6 @@
       "requirements": [],
       "id": "hw"
     },
-    "ht": {
-      "displayName": "",
-      "cardName": "RT-97C Blaster Rifle",
-      "cardSubtype": "armament",
-      "iconLocation": "/images/upgradeIcons/RT-97C%20Blaster%20Rifle.jpeg",
-      "isUnique": false,
-      "cardType": "upgrade",
-      "cost": -1,
-      "products": [],
-      "faction": "empire",
-      "imageLocation": "/images/upgradeCards/RT-97C%20Blaster%20Rifle.jpeg",
-      "keywords": [],
-      "requirements": [
-        "Dewback Rider"
-      ],
-      "id": "ht"
-    },
     "hu": {
       "displayName": "",
       "cardName": "CR-24 Flamethrower",

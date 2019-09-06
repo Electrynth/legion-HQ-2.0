@@ -300,8 +300,13 @@ class App extends Component {
       support: 0,
       heavy: 0
     };
+    const entourageUnits = {
+      bc: false, // imperial royal guards
+      bd: false // imperial death troopers
+    };
     currentList.pointTotal = 0;
     currentList.units.forEach((unitObject) => {
+      if (unitObject.unitId in entourageUnits) entourageUnits[unitObject.unitId] = true;
       unitObject.totalUnitCost = allCards[unitObject.unitId].cost * unitObject.count;
       unitCounts[allCards[unitObject.unitId].rank] += unitObject.count;
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
@@ -312,6 +317,12 @@ class App extends Component {
       currentList.pointTotal += unitObject.totalUnitCost;
     });
     currentList.unitCounts = unitCounts;
+    if (currentList.uniques.includes('as') && entourageUnits['bc']) { // emperor palpatine + IRG
+      currentList.unitCounts.special -= 1;
+    }
+    if (currentList.uniques.includes('av') && entourageUnits['bd']) { // krennic + IDTs
+      currentList.unitCounts.special -= 1;
+    }
     this.setState({ currentList });
   }
 
