@@ -1036,6 +1036,7 @@
     "dz": {
       "displayName": "",
       "cardName": "A-180 Configuration",
+      "displayName": "A-180 Config",
       "cardSubtype": "armament",
       "iconLocation": "/images/upgradeIcons/A-180%20Configuration.jpeg",
       "isUnique": false,
