@@ -141,7 +141,8 @@ class Home extends React.Component {
                 src="/images/imperialTerrain.png"
                 style={{
                   width: '66%',
-                  height: '66%'
+                  height: '66%',
+                  marginBottom: 48
                 }}
               />
             </a>
