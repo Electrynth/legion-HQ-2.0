@@ -106,6 +106,10 @@
   "communityLinks": {
     "Blogs": [
       {
+        "url": "https://boringbloganyway.com/",
+        "name": "Boring Blog Anyway"
+      },
+      {
         "url": "https://imperialdiscipline.blog",
         "name": "Imperial Discipline"
       },

@@ -40,27 +40,7 @@ class InfoContainer extends React.Component {
           justify="flex-start"
           alignItems="center"
         >
-          <Grid item style={{ marginTop: 60, maxWidth: '90vw' }}>
-            <Typography
-              variant="h6"
-              color="primary"
-              className={classes.textAlignCenter}
-            >
-              This is a prototype builder. Link to thread with more information is below...
-            </Typography>
-          </Grid>
-          <Grid item style={{ maxWidth: '90vw' }}>
-            <IconButton
-              color="primary"
-              size="medium"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://community.fantasyflightgames.com/topic/297265-legion-hq-list-builder-update/"
-            >
-              <OpenInNewIcon color="primary" />
-            </IconButton>
-          </Grid>
-          <Grid item style={{ marginTop: 60 }}>
+          <Grid item style={{ marginTop: 72 }}>
             {bmacButton}
           </Grid>
           <Grid item>

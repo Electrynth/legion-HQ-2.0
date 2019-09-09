@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
+import Link from '@material-ui/core/Link';
 import AddIcon from '@material-ui/icons/Add';
 import FiberNewIcon from '@material-ui/icons/FiberNew';
 // import DeleteIcon from '@material-ui/icons/Delete';
@@ -64,10 +65,48 @@ class Home extends React.Component {
           item
           container
           direction="row"
-          justify="center"
           alignItems="center"
-          style={{ marginTop: 36 }}
+          justify="center"
+          style={{
+            maxWidth: '50vw'
+          }}
         >
+          <Grid item>
+            <FiberNewIcon color="primary" />
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="caption"
+              color="primary"
+              className={classes.textAlignCenter}
+            >
+              There is a known bug with iOS devices that prevents users from adding upgrades to units.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          container
+          direction="row"
+          alignItems="center"
+          justify="center"
+          style={{
+            maxWidth: '50vw'
+          }}
+        >
+          <Grid item>
+            <FiberNewIcon color="primary" />
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="caption"
+              color="primary"
+              className={classes.textAlignCenter}
+            >
+              Check out Invader League season 4{' '}
+              <Link target="_blank" href="http://invaderleague.com">here!</Link>
+            </Typography>
+          </Grid>
         </Grid>
         <div style={{ marginTop: 36 }} className={classes.factionListsContainer}>
           {Object.keys(factions).map(factionName => (
