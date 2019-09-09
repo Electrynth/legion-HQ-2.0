@@ -80,9 +80,10 @@ const styles = theme => ({
     backgroundColor: 'rgba(255,255,255,0.05)'
   },
   factionListsContainer: {
-    position: 'absolute',
+    overflow: 'scroll',
     top: '25vh',
-    textAlign: 'center'
+    textAlign: 'center',
+    maxHeight: '50vh'
   },
   googleButtonContainer: {
     position: 'absolute',

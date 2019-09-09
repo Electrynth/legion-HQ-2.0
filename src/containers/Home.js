@@ -33,6 +33,7 @@ class Home extends React.Component {
     } = this.props;
     const { testLists } = this.state;
     return (
+      <div>
       <Grid
         container
         direction="column"
@@ -148,6 +149,7 @@ class Home extends React.Component {
         </div>
         <Grid item style={{ marginBottom: 120 }} />
       </Grid>
+      </div>
     );
   }
 }
