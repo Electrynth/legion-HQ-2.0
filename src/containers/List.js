@@ -636,13 +636,13 @@ class ListContainer extends React.Component {
     });
     listString += '\nCommand Cards:\n';
     currentList.commandCards.forEach((commandCardId) => {
-      let numPips = '*';
-      if (allCards[commandCardId].cardSubtype === '2') numPips = '**';
-      else if (allCards[commandCardId].cardSubtype === '3') numPips = '***';
+      let numPips = '•';
+      if (allCards[commandCardId].cardSubtype === '2') numPips = '••';
+      else if (allCards[commandCardId].cardSubtype === '3') numPips = '•••';
       listString += `${numPips}${allCards[commandCardId].cardName}\n`;
     });
     if (currentList.commandCards.length > 0) {
-      listString += '****Standing Orders\n';
+      listString += '••••Standing Orders\n';
     }
     listString += '\nBattle Deck\n';
     listString += 'Objectives:\n'
