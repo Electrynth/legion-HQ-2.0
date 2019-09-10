@@ -1,5 +1,9 @@
 {
   "keywordDict": {
+    "Outmaneuver": "You can spend dodge tokens to cancel critical hit results.",
+    "Hover": "You can reverse, strafe, and standby. You are treated as a ground vehicle by other units.",
+    "Barrage": "If you do not use ARSENAL during your activation, you can perform up to 2 attack actions.",
+    "Makashi Mastery": "While performing a melee attack, you may reduce the PIERCE value of your melee weapon by 1. If you do, the defender cannot use IMMUNE: PIERCE or IMPERVIOUS.",
     "Low Profile": "While defending, if you have light cover, improve your cover by 1.",
     "Generator": "During the End Phase, flip X inactive shield token(s).",
     "Agile": "After you perform a standard move, gain X dodge token(s). Note: climbing, clambering, embarking, disembarking, pivoting, and reversing are not standard moves. This effect does not trigger abilities that occur after dodge actions are performed.",
@@ -70,7 +74,7 @@
     "Detonate": "After a unit controlled by any player performs an action, you may detonate X of the friendly specified charge tokens.",
     "Tactical": "After you perform a standard move, gain X aim tokens.",
     "Coordinate": "After you are issued an order, you may issue an order to a friendly unit with the name or type specified by X at range 1.",
-    "Scatter": "Unknown.",
+    "Scatter": "After performing an attack against a trooper unit with small bases, you may move any non-leader minis in the defending unit, following the all the rules of cohesion, as if the unit leader had performed a standard move.",
     "Repair": "Place a wound token on this card to remove up to X wound, ion, or vehicle damage tokens from a friendly vehicle at range 1 and in line of sight. Limit Y tokens.",
     "Droid Trooper": "Droid troopers do not lose actions and do not gain cover from suppression. Droids can still become panicked due to suppression, however.",
     "Tow Cable": "After a vehicle is wounded by an attack that includes this weapon, perform a pivot with that vehicle.",
