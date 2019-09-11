@@ -992,7 +992,7 @@
       "iconLocation": "/images/upgradeIcons/Emergency%20Stims.jpeg",
       "isUnique": false,
       "cardType": "upgrade",
-      "cost": 8,
+      "cost": 12,
       "products": [],
       "faction": "",
       "imageLocation": "/images/upgradeCards/Emergency%20Stims.jpeg",
@@ -5589,11 +5589,10 @@
       "cardType": "upgrade",
       "cost": 20,
       "products": [
-        "Impact"
       ],
       "faction": "rebels",
       "imageLocation": "/images/upgradeCards/SX-21%20Trooper.jpeg",
-      "keywords": [],
+      "keywords": ["Impact"],
       "displayName": "",
       "id": "iz"
     },

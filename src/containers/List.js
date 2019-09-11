@@ -734,11 +734,16 @@ class ListContainer extends React.Component {
     const c3poPresent = currentList.uniques.includes('ji') || currentList.uniques.includes('jj');
     currentList.units.forEach((unitObject) => {
       let noUpgrades = true;
+      let r2d2c3po = false;
       const unitCard = allCards[unitObject.unitId];
+      if (unitObject.unitId === 'ji' || unitObject.unitId === 'jj') return;
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
         if (upgradeCardId) noUpgrades = false;
       });
-      if (noUpgrades && unitObject.count === 1) unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName}`;
+      if (r2d2Present && c3poPresent && (unitObject.unitId === 'jg' || unitObject.unitId === 'jh')) {
+        r2d2c3po = true;
+        unitString[unitCard.rank] += ` - R2-D2 (35) + C-3PO (15):`;
+      } else if (noUpgrades && unitObject.count === 1) unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName}`;
       else if (noUpgrades && unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost})`;
       else if (unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`;
       else unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`;
@@ -749,11 +754,14 @@ class ListContainer extends React.Component {
         if (i === unitObject.upgradesEquipped.length - 1) {
           upgradeString = upgradeString.substring(0, upgradeString.length - 2);
           if (upgradeString.length > 0) {
-            unitString[unitCard.rank] += ` ${upgradeString} = ${unitObject.totalUnitCost}\n`;
-          } else unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost}\n`;
+            if (r2d2c3po) unitString[unitCard.rank] += ` ${upgradeString} = ${unitObject.totalUnitCost + 15}\n`;
+            else unitString[unitCard.rank] += ` ${upgradeString} = ${unitObject.totalUnitCost}\n`;
+          } else {
+            if (r2d2c3po) unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost + 15}\n`;
+            else unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost}\n`;
+          }
         }
       });
-      if (unitObject.unitId === 'ji' || unitObject.unitId === 'jj') unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost}\n`;
     });
     if (unitString.commander !== '') listString += 'Commanders:\n';
     listString += unitString.commander;
