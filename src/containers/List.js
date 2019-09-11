@@ -730,12 +730,18 @@ class ListContainer extends React.Component {
       support: '',
       heavy: ''
     };
+    const r2d2Present = currentList.uniques.includes('jg') || currentList.uniques.includes('jh');
+    const c3poPresent = currentList.uniques.includes('ji') || currentList.uniques.includes('jj');
     currentList.units.forEach((unitObject) => {
+      let noUpgrades = true;
       const unitCard = allCards[unitObject.unitId];
-
-      if (unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`
+      unitObject.upgradesEquipped.forEach((upgradeCardId) => {
+        if (upgradeCardId) noUpgrades = false;
+      });
+      if (noUpgrades && unitObject.count === 1) unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName}`;
+      else if (noUpgrades && unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost})`;
+      else if (unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`;
       else unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`;
-
       let upgradeString = '';
       unitObject.upgradesEquipped.forEach((upgradeCardId, i) => {
         const upgradeCard = allCards[upgradeCardId];
@@ -747,6 +753,7 @@ class ListContainer extends React.Component {
           } else unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost}\n`;
         }
       });
+      if (unitObject.unitId === 'ji' || unitObject.unitId === 'jj') unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost}\n`;
     });
     if (unitString.commander !== '') listString += 'Commanders:\n';
     listString += unitString.commander;

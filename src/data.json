@@ -2056,7 +2056,7 @@
     },
     "bb": {
       "cardType": "unit",
-      "displayName": "Scout Strike Team",
+      "displayName": "Strike Team",
       "additionalTags": [
         "white defense",
         "block surge"
@@ -2178,7 +2178,7 @@
     },
     "bh": {
       "cardType": "unit",
-      "displayName": "Combat Assault Tank",
+      "displayName": "Occupier Tank",
       "additionalTags": [
         "red defense"
       ],
@@ -2525,13 +2525,13 @@
     "jm": {
       "displayName": "",
       "cardSubtype": "1",
-      "cardName": "Blast Off!", 
-      "iconLocation": "/images/commandIcons/Blast%20Off!.jpeg", 
+      "cardName": "Blast Off!",
+      "iconLocation": "/images/commandIcons/Blast%20Off!.jpeg",
       "commander": "R2-D2",
       "cardType": "command",
       "products": [],
       "faction": "republic",
-      "imageLocation": "/images/commandCards/Blast%20Off!.jpeg", 
+      "imageLocation": "/images/commandCards/Blast%20Off!.jpeg",
       "keywords": [
         "Disengage",
         "Jump"
@@ -3261,7 +3261,7 @@
       "id": "hs"
     },
     "hp": {
-      "displayName": "",
+      "displayName": "Z-6 Trooper",
       "cardSubtype": "heavy weapon",
       "cardName": "Z-6 Phase I Trooper",
       "iconLocation": "/images/upgradeIcons/Z-6%20Phase%20I%20Clone%20Trooper.jpeg",
@@ -3278,7 +3278,7 @@
       "id": "hp"
     },
     "hq": {
-      "displayName": "",
+      "displayName": "DC-15 Trooper",
       "cardSubtype": "heavy weapon",
       "cardName": "DC-15 Phase I Trooper",
       "iconLocation": "/images/upgradeIcons/DC-15%20Phase%20I%20Clone%20Trooper.jpeg",
@@ -3899,7 +3899,7 @@
         "Cumbersome",
         "Impact"
       ],
-      "displayName": "",
+      "displayName": "RPS-6 Trooper",
       "id": "ix"
     },
     "ac": {
@@ -4164,7 +4164,7 @@
     },
     "ak": {
       "cardType": "unit",
-      "displayName": "",
+      "displayName": "Commandos",
       "additionalTags": [
         "white defense",
         "hit surge",
@@ -4327,7 +4327,7 @@
       "keywords": [
         "Pierce"
       ],
-      "displayName": "",
+      "displayName": "DP-23 Trooper",
       "id": "iv"
     },
     "ii": {
@@ -4973,7 +4973,7 @@
     },
     "al": {
       "cardType": "unit",
-      "displayName": "Commando Strike Team",
+      "displayName": "Strike Team",
       "additionalTags": [
         "white defense",
         "hit surge",
