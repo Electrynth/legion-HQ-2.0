@@ -134,11 +134,11 @@ class App extends Component {
       result.destination.index
     );
 
-    // currentList.unitObjectStrings = reorder(
-    //   currentList.unitObjectStrings,
-    //   result.source.index,
-    //   result.destination.index
-    // );
+    currentList.unitObjectStrings = reorder(
+      currentList.unitObjectStrings,
+      result.source.index,
+      result.destination.index
+    );
 
     this.setState({ currentList });
   }
@@ -183,6 +183,7 @@ class App extends Component {
         pointTotal: 0,
         competitive: false,
         units: [],
+        unitObjectStrings: [],
         commandCards: [],
         objectiveCards: [],
         conditionCards: [],
@@ -306,12 +307,14 @@ class App extends Component {
     };
     currentList.pointTotal = 0;
     currentList.units.forEach((unitObject) => {
+      unitObject.hasUniques = allCards[unitObject.unitId].isUnique;
       if (unitObject.unitId in entourageUnits) entourageUnits[unitObject.unitId] = true;
       unitObject.totalUnitCost = allCards[unitObject.unitId].cost * unitObject.count;
       unitCounts[allCards[unitObject.unitId].rank] += unitObject.count;
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
         if (upgradeCardId) {
           unitObject.totalUnitCost += allCards[upgradeCardId].cost * unitObject.count;
+          if (allCards[upgradeCardId].isUnique) unitObject.hasUniques = true;
         }
       });
       currentList.pointTotal += unitObject.totalUnitCost;

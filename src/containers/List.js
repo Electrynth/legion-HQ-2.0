@@ -383,18 +383,14 @@ class ListContainer extends React.Component {
         }
       });
     }
+    currentList.unitObjectStrings.splice(currentList.unitObjectStrings.indexOf(unitObject.unitObjectString), 1);
     currentList.units.splice(unitsIndex, 1);
-    // currentList.unitObjectStrings.splice(unitsIndex, 1);
     changeCurrentList(currentList);
     this.changeViewFilter({ type: '' });
   };
 
   generateUnitObjectString(unitObject) {
-    let unitObjectString = unitObject.unitId;
-    unitObject.upgradesEquipped.forEach((upgradeCardId) => {
-      if (upgradeCardId) unitObjectString += upgradeCardId;
-    });
-    return unitObjectString;
+    return `${unitObject.unitId}${unitObject.upgradesEquipped.join('')}`;
   }
 
   addUpgradeCard = (upgradeCardId, unitsIndex, upgradesIndex) => {
@@ -405,73 +401,81 @@ class ListContainer extends React.Component {
       currentList,
       changeCurrentList
     } = this.props;
-    const currentUpgradeCardId = currentList.units[unitsIndex].upgradesEquipped[upgradesIndex];
-    if (currentUpgradeCardId) this.removeUpgrade(unitsIndex, upgradesIndex);
+    const unitObject = currentList.units[unitsIndex];
+    const unitObjectString = this.generateUnitObjectString(unitObject);
     const upgradeCard = allCards[upgradeCardId];
-    if (upgradeCard.isUnique) {
-      currentList.uniques.push(upgradeCardId);
-      currentList.units[unitsIndex].hasUniques = true;
+    const currentUpgradeCardId = unitObject.upgradesEquipped[upgradesIndex];
+    if (currentUpgradeCardId) {
+      this.swapUpgradeCard(upgradeCardId, unitsIndex, upgradesIndex);
+    } else {
+      if (upgradeCard.isUnique) {
+        currentList.uniques.push(upgradeCardId);
+        unitObject.hasUniques = true;
+      }
+      const newUnitObject = JSON.parse(JSON.stringify(unitObject));
+      newUnitObject.count = 1;
+      newUnitObject.upgradesEquipped[upgradesIndex] = upgradeCardId;
+      if (upgradeCard.cardName.includes('Comms Technician')) {
+        newUnitObject.upgradesEquipped.push(undefined);
+        newUnitObject.additionalUpgradeSlots.push('comms');
+      }
+      newUnitObject.unitObjectString = this.generateUnitObjectString(newUnitObject);
+      if (currentList.unitObjectStrings.includes(newUnitObject.unitObjectString)) { // new combination already exists
+        currentList.units[currentList.unitObjectStrings.indexOf(newUnitObject.unitObjectString)].count += 1;
+        if (currentList.units[currentList.unitObjectStrings.indexOf(unitObjectString)].count === 1) { // if there was only one left, delete it
+          this.removeUnit(unitsIndex);
+        } else { // otherwise just decrement its count
+          currentList.units[currentList.unitObjectStrings.indexOf(unitObjectString)].count -= 1;
+        }
+      } else { // new combination doesn't exist, update in place
+        if (unitObject.count === 1) {
+          unitObject.upgradesEquipped[upgradesIndex] = upgradeCardId;
+          if (upgradeCard.cardName.includes('Comms Technician')) {
+            unitObject.upgradesEquipped.push(undefined);
+            unitObject.additionalUpgradeSlots.push('comms');
+          }
+          unitObject.unitObjectString = this.generateUnitObjectString(unitObject);
+          currentList.unitObjectStrings[unitsIndex] = unitObject.unitObjectString;
+        } else {
+          unitObject.count -= 1;
+          currentList.units.splice(unitsIndex + 1, 0, newUnitObject);
+          currentList.unitObjectStrings.splice(unitsIndex + 1, 0, newUnitObject.unitObjectString);
+        }
+      }
+      changeCurrentList(currentList);
+      this.changeViewFilter({ type: '' });
     }
-    currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = upgradeCardId;
-    if (upgradeCard.cardName.includes('Comms Technician')) {
-      currentList.units[unitsIndex].upgradesEquipped.push(undefined);
-      currentList.units[unitsIndex].additionalUpgradeSlots.push('comms');
+  }
+
+  swapUpgradeCard = (newUpgradeCardId, unitsIndex, upgradesIndex) => {
+    const {
+      allCards
+    } = this.context;
+    const {
+      currentList,
+      changeCurrentList
+    } = this.props;
+    const unitObject = currentList.units[unitsIndex];
+    const oldUpgradeCardId = currentList.units[unitsIndex].upgradesEquipped[upgradesIndex];
+    const oldUpgradeCard = allCards[oldUpgradeCardId];
+    const newUpgradeCard = allCards[newUpgradeCardId];
+    // this.removeUpgrade(unitsIndex, upgradesIndex);
+    if (oldUpgradeCard.isUnique) {
+      currentList.uniques.splice(currentList.uniques.indexOf(oldUpgradeCardId));
     }
+    if (newUpgradeCard.isUnique) {
+      currentList.uniques.push(newUpgradeCardId);
+      unitObject.hasUniques = true;
+    }
+    unitObject.upgradesEquipped[upgradesIndex] = newUpgradeCardId;
+    if (newUpgradeCard.cardName.includes('Comms Technician')) {
+      unitObject.upgradesEquipped.push(undefined);
+      unitObject.additionalUpgradeSlots.push('comms');
+    }
+    unitObject.unitObjectString = this.generateUnitObjectString(unitObject);
+    currentList.unitObjectStrings[unitsIndex] = unitObject.unitObjectString;
     changeCurrentList(currentList);
     this.changeViewFilter({ type: '' });
-
-
-
-    // if (upgradeCard.cardName.includes('Comms Technician')) {
-    //   unitObject.upgradesEquipped.push(undefined);
-    //   unitObject.additionalUpgradeSlots.push('comms');
-    // }
-
-    // if (unitObject.count === 1) {
-    //   if (upgradeCard.isUnique) {
-    //     currentList.uniques.push(upgradeCardId);
-    //     unitObject.hasUniques = true;
-    //   }
-    //   if (upgradeCard.cardName.includes('Comms Technician')) {
-    //     unitObject.upgradesEquipped.push(undefined);
-    //     unitObject.additionalUpgradeSlots.push('comms');
-    //   }
-    //   unitObject.upgradesEquipped[upgradesIndex] = upgradeCardId;
-    //   unitObject.unitObjectString = unitObject.unitId;
-    //   unitObject.upgradesEquipped.forEach((upgradeCardId) => {
-    //     if (upgradeCardId) unitObject.unitObjectString += upgradeCardId;
-    //   });
-    //   if (currentList.unitObjectStrings.includes(unitObject.unitObjectString)) {
-    //     currentList.units[currentList.unitObjectStrings.indexOf(unitObject.unitObjectString)].count += 1;
-    //     currentList.units.splice(unitsIndex, 1);
-    //     currentList.unitObjectStrings.splice(unitsIndex, 1);
-    //   }
-    // } else if (unitObject.count > 1) {
-    //   const newUnitObject = JSON.parse(JSON.stringify(currentList.units[unitsIndex]));
-    //   if (upgradeCard.isUnique) {
-    //     currentList.uniques.push(upgradeCardId);
-    //     newUnitObject.hasUniques = true;
-    //   }
-    //   if (upgradeCard.cardName.includes('Comms Technician')) {
-    //     newUnitObject.upgradesEquipped.push(undefined);
-    //     newUnitObject.additionalUpgradeSlots.push('comms');
-    //   }
-    //   newUnitObject.upgradesEquipped[upgradesIndex] = upgradeCardId;
-    //   newUnitObject.unitObjectString = unitObject.unitId;
-    //   newUnitObject.upgradesEquipped.forEach((upgradeCardId) => {
-    //     if (upgradeCardId) newUnitObject.unitObjectString += upgradeCardId;
-    //   });
-    //   unitObject.count -= 1;
-    //   if (currentList.unitObjectStrings.includes(newUnitObject.unitObjectString)) {
-    //     currentList.units[currentList.unitObjectStrings.indexOf(newUnitObject.unitObjectString)].count += 1;
-    //   } else {
-    //     newUnitObject.count = 1;
-    //     currentList.units.splice(unitsIndex + 1, 0, newUnitObject);
-    //     currentList.unitObjectStrings.splice(unitsIndex + 1, 0, newUnitObject.unitObjectString);
-    //   }
-    // }
-
-    //this.changeViewFilter({ type: '' });
   }
 
   removeUpgrade = (unitsIndex, upgradesIndex) => {
@@ -482,15 +486,42 @@ class ListContainer extends React.Component {
       currentList,
       changeCurrentList
     } = this.props;
-    const upgradeCardId = currentList.units[unitsIndex].upgradesEquipped[upgradesIndex];
+    const unitObject = currentList.units[unitsIndex];
+    const upgradeCardId = unitObject.upgradesEquipped[upgradesIndex];
     const upgradeCard = allCards[upgradeCardId];
     if (upgradeCard.isUnique && currentList.uniques.includes(upgradeCardId)) {
       currentList.uniques.splice(currentList.uniques.indexOf(upgradeCardId), 1);
     }
-    currentList.units[unitsIndex].upgradesEquipped[upgradesIndex] = undefined;
-    if (upgradeCard.cardName.includes('Comms Technician')) {
-      currentList.units[unitsIndex].additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.indexOf('comms'), 1);
-      currentList.units[unitsIndex].upgradesEquipped.pop(); // change this if there is ever another upgrade that adds upgrade slots
+    if (unitObject.count === 1) {
+      unitObject.upgradesEquipped[upgradesIndex] = undefined;
+      if (upgradeCard.cardName.includes('Comms Technician')) {
+        unitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.indexOf('comms'), 1);
+        unitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade that adds upgrade slots
+      }
+      unitObject.unitObjectString = this.generateUnitObjectString(unitObject);
+      if (currentList.unitObjectStrings.includes(unitObject.unitObjectString)) {
+        currentList.units[currentList.unitObjectStrings.indexOf(unitObject.unitObjectString)].count += 1;
+        currentList.units.splice(unitsIndex, 1);
+        currentList.unitObjectStrings.splice(unitsIndex, 1);
+      } else {
+        currentList.unitObjectStrings[unitsIndex] = unitObject.unitObjectString;
+      }
+    } else { // decrement original stack, increment new stack if it exists, otherwise create it
+      unitObject.count -= 1;
+      const newUnitObject = JSON.parse(JSON.stringify(unitObject));
+      newUnitObject.upgradesEquipped[upgradesIndex] = undefined;
+      if (upgradeCard.cardName.includes('Comms Technician')) {
+        newUnitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.indexOf('comms'), 1);
+        newUnitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade that adds upgrade slots
+      }
+      newUnitObject.unitObjectString = this.generateUnitObjectString(newUnitObject);
+      if (currentList.unitObjectStrings.includes(newUnitObject.unitObjectString)) { // increment already existing stack
+        currentList.units[currentList.unitObjectStrings.indexOf(newUnitObject.unitObjectString)].count += 1;
+      } else { // create new stack
+        newUnitObject.count = 1;
+        currentList.units.splice(unitsIndex + 1, 0, newUnitObject);
+        currentList.unitObjectStrings.splice(unitsIndex + 1, 0, newUnitObject.unitObjectString);
+      }
     }
     changeCurrentList(currentList);
     this.changeViewFilter({ type: '' });
@@ -501,6 +532,7 @@ class ListContainer extends React.Component {
       allCards
     } = this.context;
     const unitCard = allCards[unitId];
+    const unitObjectString = unitId;
     const unitStackSize = stackSize ? stackSize : this.state.unitStackSize;
     const {
       currentList,
@@ -515,24 +547,29 @@ class ListContainer extends React.Component {
         totalUnitCost: unitCard.cost,
         additionalUpgradeSlots: [],
         upgradesEquipped: new Array(unitCard.upgradeBar.length).fill(undefined),
-        unitObjectString: `${unitId}`
+        unitObjectString
       };
       if (unitCard.isUnique) {
         unitObject.count = 1; // stack size is 1
         unitObject.hasUniques = true; // unit obj has uniques
         currentList.uniques.push(unitId); // add unit to list of uniques
         currentList.units.push(unitObject); // add unit to list of units
+        currentList.unitObjectStrings.push(unitObjectString);
         if (unitCard.rank === 'commander' || unitCard.rank === 'operative') {
            currentList.commanders.push(allCards[unitObject.unitId].cardName);
          }
       } else {
-        unitObject.count = unitStackSize; // stack size
-        currentList.units.push(unitObject); // add to list
+        if (currentList.unitObjectStrings.includes(unitObjectString)) {
+          currentList.units[currentList.unitObjectStrings.indexOf(unitObjectString)].count += unitStackSize;
+        } else {
+          unitObject.count = unitStackSize; // stack size
+          currentList.units.push(unitObject); // add to list
+          currentList.unitObjectStrings.push(unitObjectString);
+        }
       }
     }
     changeCurrentList(currentList);
     this.changeViewFilter({ type: '' })
-    // this.applyEntourage();
   }
 
   addObjective = (objectiveCardId) => {
