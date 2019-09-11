@@ -668,13 +668,17 @@ class ListContainer extends React.Component {
     let listString = '';
     listString += `${currentList.title}\n`;
     listString += `${this.getPointTotalString(currentList)}\n`;
+    const c3poPresent = currentList.uniques.includes('ji') || currentList.uniques.includes('jj');
     currentList.units.forEach((unitObject) => {
       const unitCard = allCards[unitObject.unitId];
+      if (unitCard.cardName === 'C-3PO') return;
       Array(unitObject.count).fill().forEach((singleUnitObject) => {
-        listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
+        if (unitCard.cardName === 'R2-D2' && c3poPresent) listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
+        else listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
         unitObject.upgradesEquipped.forEach((upgradeCardId) => {
           if (upgradeCardId) listString += ` - ${allCards[upgradeCardId].cardName} (${allCards[upgradeCardId].cost})\n`
         });
+        if (unitCard.cardName === 'R2-D2' && c3poPresent) listString += ' - C-3PO (15)\n'
       });
     });
     listString += '\nCommand Cards:\n';
