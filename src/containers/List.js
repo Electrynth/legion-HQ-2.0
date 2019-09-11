@@ -538,7 +538,13 @@ class ListContainer extends React.Component {
       currentList,
       changeCurrentList
     } = this.props;
-    if (currentList.uniques.includes(unitId) || currentList.commanders.includes(unitCard.cardName)) {
+    let r2d2Present = true;
+    if (!currentList.uniques.includes('jg') && !currentList.uniques.includes('jh')) {
+      r2d2Present = false;
+    }
+    if (!r2d2Present && (unitId === 'ji' || unitId === 'jj')) {
+      return;
+    } else if (currentList.uniques.includes(unitId) || currentList.commanders.includes(unitCard.cardName)) {
       return
     } else {
       const unitObject = {
@@ -852,6 +858,10 @@ class ListContainer extends React.Component {
     const allIds = Object.keys(allCards);
     let content = undefined;
     if (viewFilter.type === 'add unit') {
+      let r2d2Present = true;
+      if (!currentList.uniques.includes('jg') && !currentList.uniques.includes('jh')) {
+        r2d2Present = false;
+      }
       content = allIds.filter((cardId) => {
           if (allCards[cardId].cardType === 'unit') {
             if (allCards[cardId].rank !== viewFilter.rank) return false;
@@ -872,8 +882,9 @@ class ListContainer extends React.Component {
               cardId={unitCardId}
               key={unitCardId}
               handleClick={() => this.addUnitCard(unitCardId)}
-              isDisabled={currentList.uniques.includes(unitCardId) ||
-                currentList.commanders.includes(allCards[unitCardId].cardName)
+              isDisabled={currentList.uniques.includes(unitCardId)
+                || currentList.commanders.includes(allCards[unitCardId].cardName)
+                || (!r2d2Present && (unitCardId === 'ji' || unitCardId === 'jj'))
               }
             />
           </div>

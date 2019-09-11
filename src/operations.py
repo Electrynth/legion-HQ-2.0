@@ -108,42 +108,42 @@ def db_to_json():
 print_card_map()
 
 # unit_card = {}
-# unit_card['cost'] = 170
-# unit_card['isUnique'] = False
-# unit_card['faction'] = 'separatists'
-# unit_card['cardName'] = 'AAT Trade Federation Battle Tank'
-# unit_card['displayName'] = 'AAT Battle Tank'
+# unit_card['cost'] = 15
+# unit_card['isUnique'] = True
+# unit_card['faction'] = 'republic'
+# unit_card['cardName'] = 'C-3PO'
+# unit_card['displayName'] = ''
 # unit_card['cardType'] = 'unit'
-# unit_card['cardSubtype'] = 'repulsor vehicle'
-# unit_card['rank'] = 'heavy'
+# unit_card['cardSubtype'] = 'droid trooper'
+# unit_card['rank'] = 'operative'
 # unit_card['additionalTags'] = []
-# unit_card['upgradeBar'] = ['pilot', 'comms']
+# unit_card['upgradeBar'] = []
 # unit_card['links'] = []
-# unit_card['keywords'] = ['AI', 'Armor', 'Barrage', 'Hover', 'Weak Point', 'Fixed', 'Critical', 'High Velocity', 'Impact']
+# unit_card['keywords'] = ['Calculate Odds', 'Distract', 'Counterpart']
 # unit_card['products'] = []
 # add_card(unit_card)
 
 # upgrade_card = {}
-# upgrade_card['cost'] = 4
+# upgrade_card['cost'] = 3
 # upgrade_card['isUnique'] = False
 # upgrade_card['faction'] = ''
-# upgrade_card['cardName'] = 'Offensive Push'
-# upgrade_card['displayName'] = ''
+# upgrade_card['cardName'] = 'Integrated Comms Antenna'
+# upgrade_card['displayName'] = 'Comms Antenna'
 # upgrade_card['cardType'] = 'upgrade'
-# upgrade_card['cardSubtype'] = 'training'
-# upgrade_card['keywords'] = ['Tactical']
+# upgrade_card['cardSubtype'] = 'comms'
+# upgrade_card['keywords'] = []
 # upgrade_card['products'] = []
-# upgrade_card['requirements'] = []
+# upgrade_card['requirements'] = ['droid trooper']
 # add_card(upgrade_card)
 
 #
 command_card = {}
-command_card['faction'] = 'rebels'
-command_card['cardName'] = 'I\'m Full of Surprises'
+command_card['faction'] = 'republic'
+command_card['cardName'] = 'Blasting Off!'
 command_card['displayName'] = ''
 command_card['cardType'] = 'command'
-command_card['cardSubtype'] = '2'
-command_card['commander'] = 'Luke Skywalker'
-command_card['keywords'] = []
+command_card['cardSubtype'] = '1'
+command_card['commander'] = 'R2-D2'
+command_card['keywords'] = ['Disengage', 'Jump']
 command_card['products'] = []
 add_card(command_card)

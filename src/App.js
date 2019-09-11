@@ -326,6 +326,9 @@ class App extends Component {
     if (currentList.uniques.includes('av') && entourageUnits['bd']) { // krennic + IDTs
       currentList.unitCounts.special -= 1;
     }
+    if (currentList.uniques.includes('ji') || currentList.uniques.includes('jj')) { // C-3PO
+      currentList.unitCounts.operative -= 1;
+    }
     this.setState({ currentList });
   }
 

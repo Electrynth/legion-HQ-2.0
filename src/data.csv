@@ -26,7 +26,7 @@ gk,Personal Combat Shield,upgrade,gear
 gj,Overwatch,upgrade,training
 gi,Symbol of Rebellion,command,2
 gh,Explosions!,command,1
-ia,General Grievous,unit,commander
+aj,Wookiee Warriors,unit,special
 dn,Comms Jammer,upgrade,comms
 do,Long-Range Comlink,upgrade,comms
 dl,Concussion Grenades,upgrade,grenades
@@ -43,6 +43,7 @@ db,Emergency Stims,upgrade,gear
 dc,Targeting Scopes,upgrade,gear
 Oa,Breakthrough,battle,objective
 da,Recon Intel,upgrade,gear
+ay,Stormtroopers,unit,corps
 dz,A-180 Configuration,upgrade,armament
 dx,Anger,upgrade,force
 dy,Force Choke,upgrade,force
@@ -54,7 +55,7 @@ dr,Barrage Generator,upgrade,generator
 ds,Battle Meditation,upgrade,force
 dp,Comms Relay,upgrade,comms
 dq,Overcharged Generator,upgrade,generator
-ir,We're Not Programmed,command,3
+iw,E-5s B1 Trooper,upgrade,heavy weapon
 em,DLT-19x Sniper,upgrade,heavy weapon
 el,Electrostaff Guard,upgrade,heavy weapon
 eo,T-7 Ion Snowtrooper,upgrade,heavy weapon
@@ -81,7 +82,7 @@ eq,Rebel Comms Technician,upgrade,personnel
 ep,Flametrooper,upgrade,heavy weapon
 es,Rebel Trooper,upgrade,personnel
 er,Rebel Officer,upgrade,personnel
-fv,RT-97C Blaster Rifle,upgrade,armament
+fy,Clone Captain Rex,unit,commander
 bd,Imperial Death Troopers,unit,special
 be,E-Web Heavy Blaster Team,unit,support
 bf,74-Z Speeder Bikes,unit,support
@@ -107,12 +108,15 @@ br,New Ways to Motivate Them,command,2
 bs,Evasive Maneuvers,command,2
 jd,You Serve Your Master Well,command,1
 je,Fear and Dead Men,command,2
+jf,Full of Surprises,command,2
+jg,R2-D2,unit,operative
 bx,And Now You Will Die,command,1
 by,Voracious Ambition,command,1
 bz,Whipcord Launcher,command,1
 jc,Vader's Might,command,1
-am,Rebel Pathfinders,unit,special
-iv,DP-23 Phase I Trooper,upgrade,heavy weapon
+jl,Blasting Off!,command,1
+jh,R2-D2,unit,operative
+ji,C-3PO,unit,operative
 ck,My Ally is the Force,command,2
 cj,Legacy of Mandalore,command,3
 ci,Complete the Mission,command,3
@@ -124,10 +128,12 @@ cl,No Time for Sorrows,command,2
 cc,Coordinated Fire,command,3
 cb,Pinned Down,command,2
 ca,Covert Observation,command,1
+jk,Integrated Comms Antenna,upgrade,comms
 cg,Notorious Scoundrels,command,3
 cf,Change of Plans,command,3
 ce,Somebody Has to Save Our Skins,command,3
 cd,Return of the Jedi,command,3
+io,B2 Super Battle Droid,upgrade,personnel
 cz,Strict Orders,upgrade,command
 cy,Esteemed Leader,upgrade,command
 cx,Commanding Presence,upgrade,command
@@ -139,15 +145,17 @@ cw,Improvised Orders,upgrade,command
 cv,Sabotaged Communications,command,1
 cu,Common Cause,command,1
 ct,Rebellious,command,1
-ao,AT-RT,unit,support
 ja,T-21 Stormtrooper,upgrade,heavy weapon
-ai,Fleet Troopers,unit,corps
+iq,T-Series Tactical Droid Pilot,upgrade,pilot
+iy,RT-97C Stormtrooper,upgrade,heavy weapon
+iu,DLT-20A Trooper,upgrade,heavy weapon
 jb,Offensive Push,upgrade,training
-ip,Aayla Secura,upgrade,pilot
-ak,Rebel Commandos,unit,special
+ah,Rebel Troopers,unit,corps
+is,You Disappoint Me,command,3
 hz,Linked Targeting Array,upgrade,comms
 hx,Force Guidance,upgrade,force
 hy,Electrobinoculars,upgrade,gear
+an,1.4 FD Laser Cannon Team,unit,support
 hr,E-60R B1 Trooper,upgrade,heavy weapon
 hs,T-21 Blaster Rifle,upgrade,armament
 hp,Z-6 Phase I Trooper,upgrade,heavy weapon
@@ -171,18 +179,18 @@ hf,Dewback Rider,unit,support
 hg,Shoretroopers,unit,corps
 hd,RT-97C Rifle Pintle,upgrade,hardpoint
 he,Tauntaun Riders,unit,support
-ii,Ryder Azadi,upgrade,pilot
-ih,Electro Grappling Line,upgrade,gear
+aq,X-34 Landspeeder,unit,heavy
+ap,T-47 Airspeeder,unit,heavy
 Cc,Limited Visibility,battle,condition
 Cb,Hostile Environment,battle,condition
 Ca,Clear Conditions,battle,condition
-as,Emperor Palpatine,unit,commander
+ik,Aggressive Tactics,upgrade,command
 Ce,Rapid Reinforcements,battle,condition
 Cd,Minefield,battle,condition
-ar,Imperial Officer,unit,commander
-au,General Veers,unit,commander
-at,Darth Vader,unit,commander
-iy,RT-97C Stormtrooper,upgrade,heavy weapon
+ij,Hope,upgrade,force
+im,Trained In Your Jedi Arts,command,1
+il,"DT-57 ""Annihilator""",upgrade,armament
+jj,C-3PO,unit,operative
 ix,RPS-6 Phase I Trooper,upgrade,heavy weapon
 ac,Han Solo,unit,commander
 ab,Leia Organa,unit,commander
@@ -190,23 +198,23 @@ ae,Jyn Erso,unit,commander
 ad,Luke Skywalker,unit,commander
 ag,Sabine Wren,unit,operative
 af,Chewbacca,unit,operative
-iq,T-Series Tactical Droid Pilot,upgrade,pilot
-ah,Rebel Troopers,unit,corps
-is,You Disappoint Me,command,3
-aj,Wookiee Warriors,unit,special
-iu,DLT-20A Trooper,upgrade,heavy weapon
+ai,Fleet Troopers,unit,corps
+ip,Aayla Secura,upgrade,pilot
+ak,Rebel Commandos,unit,special
+ir,We're Not Programmed,command,3
+am,Rebel Pathfinders,unit,special
 it,B1 Security Droid,upgrade,personnel
-iw,E-5s B1 Trooper,upgrade,heavy weapon
-an,1.4 FD Laser Cannon Team,unit,support
-aq,X-34 Landspeeder,unit,heavy
-ap,T-47 Airspeeder,unit,heavy
-ik,Aggressive Tactics,upgrade,command
-ij,Hope,upgrade,force
-im,Trained In Your Jedi Arts,command,1
-il,"DT-57 ""Annihilator""",upgrade,armament
+ao,AT-RT,unit,support
+iv,DP-23 Phase I Trooper,upgrade,heavy weapon
+ii,Ryder Azadi,upgrade,pilot
+ih,Electro Grappling Line,upgrade,gear
+as,Emperor Palpatine,unit,commander
+ar,Imperial Officer,unit,commander
+au,General Veers,unit,commander
+at,Darth Vader,unit,commander
 aw,Boba Fett,unit,operative
 av,Director Orson Krennic,unit,commander
-ay,Stormtroopers,unit,corps
+ia,General Grievous,unit,commander
 ax,Bossk,unit,operative
 ic,BARC Speeder,unit,support
 az,Snowtroopers,unit,corps
@@ -214,7 +222,6 @@ ie,Droidekas,unit,support
 id,BARC Twin Laser Gunner,upgrade,crew
 ig,CM-O 93 Trooper,upgrade,heavy weapon
 if,Mark II Medium Blaster Trooper,unit,corps
-Oc,Key Positions,battle,objective
 ib,Smoke Grenades,upgrade,grenades
 Df,Forces Converge (Act 1),battle,deployment
 Dd,The Long March,battle,deployment
@@ -232,10 +239,10 @@ fr,BARC Ion Gunner,upgrade,crew
 fs,BARC RPS-6 Gunner,upgrade,crew
 ft,DF-90 Mortar Trooper,unit,corps
 fu,T-21B Trooper,upgrade,heavy weapon
-io,B2 Super Battle Droid,upgrade,personnel
+fv,RT-97C Blaster Rifle,upgrade,armament
 fw,CR-24 Flame Rifle,upgrade,armament
 fx,Count Dooku,unit,commander
-fy,Clone Captain Rex,unit,commander
+Oc,Key Positions,battle,objective
 fz,Phase II Clone Troopers,unit,corps
 Ob,Intercept the Transmissions,battle,objective
 fa,R4 Astromech Droid,upgrade,personnel
