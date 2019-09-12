@@ -4151,7 +4151,7 @@
       "iconLocation": "/images/upgradeIcons/Aayla%20Secura.jpeg",
       "isUnique": true,
       "cardType": "upgrade",
-      "cost": 15,
+      "cost": 5,
       "products": [],
       "faction": "republic",
       "imageLocation": "/images/upgradeCards/Aayla%20Secura.jpeg",
