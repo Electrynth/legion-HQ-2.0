@@ -456,7 +456,7 @@
     },
     "gx": {
       "cardType": "unit",
-      "displayName": "",
+      "displayName": "Battle Droids",
       "additionalTags": [
         "white defense"
       ],
@@ -601,7 +601,7 @@
       "id": "gb"
     },
     "ga": {
-      "displayName": "",
+      "displayName": "Super Battle Droids",
       "iconLocation": "/images/unitIcons/B2%20Super%20Battle%20Droids.jpeg",
       "links": [],
       "cardName": "B2 Super Battle Droids",
@@ -626,7 +626,7 @@
       "id": "ga"
     },
     "go": {
-      "displayName": "Imperial Hammers Pilot",
+      "displayName": "Elite Armor Pilot",
       "cardSubtype": "pilot",
       "cardName": "Imperial Hammers Elite Armor Pilot",
       "iconLocation": "/images/upgradeIcons/Imperial%20Hammers%20Elite%20Armor%20Pilot.jpeg",
@@ -643,7 +643,7 @@
       "id": "go"
     },
     "gn": {
-      "displayName": "",
+      "displayName": "E-11D Config",
       "cardSubtype": "armament",
       "cardName": "E-11D Configuration",
       "iconLocation": "/images/upgradeIcons/E-11D%20Configuration.jpeg",
@@ -1083,7 +1083,7 @@
       "id": "ay"
     },
     "dz": {
-      "displayName": "",
+      "displayName": "A-180 Config",
       "cardSubtype": "armament",
       "cardName": "A-180 Configuration",
       "iconLocation": "/images/upgradeIcons/A-180%20Configuration.jpeg",
@@ -1280,7 +1280,7 @@
       "keywords": [
         "Critical"
       ],
-      "displayName": "",
+      "displayName": "E-5s Trooper",
       "id": "iw"
     },
     "em": {
@@ -1535,7 +1535,7 @@
       "id": "ef"
     },
     "ea": {
-      "displayName": "",
+      "displayName": "A-300 Config",
       "cardSubtype": "armament",
       "cardName": "A-300 Configuration",
       "iconLocation": "/images/upgradeIcons/A-300%20Configuration.jpeg",
@@ -1617,7 +1617,7 @@
       "id": "eb"
     },
     "ey": {
-      "displayName": "",
+      "displayName": "Comms Technician",
       "cardSubtype": "personnel",
       "cardName": "Imperial Comms Technician",
       "iconLocation": "/images/upgradeIcons/Imperial%20Comms%20Technician.jpeg",
@@ -1649,7 +1649,7 @@
       "id": "ex"
     },
     "ez": {
-      "displayName": "",
+      "displayName": "Medical Droid",
       "cardSubtype": "personnel",
       "cardName": "FX-9 Medical Droid",
       "iconLocation": "/images/upgradeIcons/FX-9%20Medical%20Droid.jpeg",
@@ -1667,7 +1667,7 @@
       "id": "ez"
     },
     "eu": {
-      "displayName": "",
+      "displayName": "Medical Droid",
       "cardSubtype": "personnel",
       "cardName": "2-1B Medical Droid",
       "iconLocation": "/images/upgradeIcons/2-1B%20Medical%20Droid.jpeg",
@@ -1738,7 +1738,7 @@
       "id": "ev"
     },
     "eq": {
-      "displayName": "",
+      "displayName": "Comms Technician",
       "cardSubtype": "personnel",
       "cardName": "Rebel Comms Technician",
       "iconLocation": "/images/upgradeIcons/Rebel%20Comms%20Technician.jpeg",
@@ -2830,7 +2830,7 @@
       "faction": "separatists",
       "imageLocation": "/images/upgradeCards/B2%20Super%20Battle%20Droid.jpeg",
       "keywords": [],
-      "displayName": "",
+      "displayName": "Super Battle Droid",
       "id": "io"
     },
     "cz": {
@@ -3223,7 +3223,7 @@
       "id": "an"
     },
     "hr": {
-      "displayName": "",
+      "displayName": "E-60R Trooper",
       "cardSubtype": "heavy weapon",
       "cardName": "E-60R B1 Trooper",
       "iconLocation": "/images/upgradeIcons/E-60R%20B1%20Trooper.jpeg",
@@ -3427,7 +3427,7 @@
       "id": "hi"
     },
     "hn": {
-      "displayName": "",
+      "displayName": "Battle Droid",
       "cardSubtype": "personnel",
       "cardName": "B1 Battle Droid",
       "iconLocation": "/images/upgradeIcons/B1%20Battle%20Droid.jpeg",
@@ -3444,7 +3444,7 @@
       "id": "hn"
     },
     "ho": {
-      "displayName": "",
+      "displayName": "E-5C Trooper",
       "cardSubtype": "heavy weapon",
       "cardName": "E-5C B1 Trooper",
       "iconLocation": "/images/upgradeIcons/E-5C%20B1%20Trooper.jpeg",
@@ -4268,7 +4268,7 @@
       "faction": "separatists",
       "imageLocation": "/images/upgradeCards/B1%20Security%20Droid.jpeg",
       "keywords": [],
-      "displayName": "",
+      "displayName": "Security Droid",
       "id": "it"
     },
     "ao": {
