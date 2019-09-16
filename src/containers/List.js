@@ -1895,7 +1895,10 @@ class ListContainer extends React.Component {
                   variant="outlined"
                   size="small"
                   color="primary"
-                  onClick={clearList}
+                  onClick={() => {
+                    this.changeViewFilter({ type: '' });
+                    clearList();
+                  }}
                 >
                   <ClearIcon style={{ marginRight: 5 }} />
                   Clear List
@@ -1919,6 +1922,7 @@ class ListContainer extends React.Component {
     );
     let rightPaneMessage = undefined;
     if (viewFilter.type === 'add upgrade'
+      && viewFilter.unitsIndex
       && currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex]) {
       const upgradeTypeIcon = (
         <img
