@@ -152,6 +152,15 @@ class UnitRow extends React.Component {
             alt={upgradeTypes[upgradeBar[i]].displayName}
             src={upgradeTypes[upgradeBar[i]].iconLocation}
             className={classes.upgradeTypeButton}
+            onTouchEnd={() => {
+              this.handleClose();
+              changeViewFilter({
+                type: 'add upgrade',
+                unitsIndex,
+                upgradesIndex: i,
+                upgradeType: upgradeBar[i]
+              });
+            }}
             onClick={() => {
               this.handleClose();
               changeViewFilter({
@@ -227,6 +236,8 @@ class UnitRow extends React.Component {
         <MenuItem
           key="increment"
           onClick={() => incrementUnitCount(unitsIndex)}
+          onTouchEnd={() => incrementUnitCount(unitsIndex)}
+          style={{ cursor: 'pointer' }}
         >
           <ListItemIcon>
             <ExposurePlus1Icon color="primary" />
@@ -241,6 +252,11 @@ class UnitRow extends React.Component {
             this.handleClose();
             decrementUnitCount(unitsIndex);
           }}
+          onTouchEnd={() => {
+            this.handleClose();
+            decrementUnitCount(unitsIndex);
+          }}
+          style={{ cursor: 'pointer' }}
         >
           <ListItemIcon>
             <ExposureNeg1Icon color="primary" />
@@ -256,6 +272,11 @@ class UnitRow extends React.Component {
           this.handleClose();
           removeUnit(unitsIndex)
         }}
+        onTouchEnd={() => {
+          this.handleClose();
+          removeUnit(unitsIndex)
+        }}
+        style={{ cursor: 'pointer' }}
       >
         <ListItemIcon>
           <DeleteIcon color="primary" />
@@ -295,6 +316,7 @@ class UnitRow extends React.Component {
                 position: 'relative'
               }}
               className={userSettings.themeColor === 'light' ? classes.darkerHoverOver : classes.grayHoverOver}
+              onTouchStart={this.handleClick}
               onClick={this.handleClick}
             />
             <Menu
