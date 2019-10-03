@@ -1914,7 +1914,7 @@ class ListContainer extends React.Component {
               <ListPrintText ref={el => (this.componentRef = el)} listTournamentText={listTournamentText} listUrl={listUrl} />
             </Grid>
             <Grid item>
-              <div style={{ marginBottom: '250px' }} />
+              <div style={{ marginBottom: 500 }} />
             </Grid>
           </div>
         </div>
@@ -2037,7 +2037,7 @@ class ListContainer extends React.Component {
             rightPaneWidth
           )}
           <Grid item>
-            <div style={{ marginBottom: '100px' }} />
+            <div style={{ marginBottom: 500 }} />
           </Grid>
         </Grid>
       </Grid>
