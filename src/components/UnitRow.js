@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -27,7 +28,9 @@ class UnitRow extends React.Component {
 
   handleClose = () => this.setState({ anchorEl: null });
 
-  handleClick = (event) => this.setState({ anchorEl: event.currentTarget });
+  handleClick = (event) => {
+    this.setState({ anchorEl: event.currentTarget });
+  }
 
   render() {
     const {
@@ -152,7 +155,7 @@ class UnitRow extends React.Component {
             alt={upgradeTypes[upgradeBar[i]].displayName}
             src={upgradeTypes[upgradeBar[i]].iconLocation}
             className={classes.upgradeTypeButton}
-            onClick={() => {
+            onClick={(event) => {
               this.handleClose();
               changeViewFilter({
                 type: 'add upgrade',
@@ -290,31 +293,46 @@ class UnitRow extends React.Component {
             {unitContent}
           </Grid>
           <Grid item {...dragHandle}>
-            <MoreVertIcon
-              color="primary"
-              fontSize="large"
+            <IconButton
+              size="small"
+              onClick={this.handleClick}
               style={{
                 top: '12px',
                 position: 'relative'
               }}
-              className={userSettings.themeColor === 'light' ? classes.darkerHoverOver : classes.grayHoverOver}
-              onClick={this.handleClick}
-
-            />
-            <Menu
-              id="unit-action-menu"
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={this.handleClose}
-              transitionDuration={{ enter: 150, exit: 0 }}
             >
-              {menuItems}
-            </Menu>
+              <MoreVertIcon size="large" />
+            </IconButton>
           </Grid>
+          <Menu
+            id="unit-action-menu"
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={this.handleClose}
+            transitionDuration={{ enter: 150, exit: 0 }}
+          >
+            {menuItems}
+          </Menu>
         </Grid>
       </div>
     );
   }
 }
+
+/*
+<MoreVertIcon
+  color="primary"
+  fontSize="large"
+  style={{
+    top: '12px',
+    position: 'relative'
+  }}
+  className={userSettings.themeColor === 'light' ? classes.darkerHoverOver : classes.grayHoverOver}
+  onClick={(event) => {
+    console.log(event);
+    this.handleClick(event);
+  }}
+/>
+*/
 
 export default UnitRow;
