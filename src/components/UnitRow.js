@@ -152,15 +152,6 @@ class UnitRow extends React.Component {
             alt={upgradeTypes[upgradeBar[i]].displayName}
             src={upgradeTypes[upgradeBar[i]].iconLocation}
             className={classes.upgradeTypeButton}
-            onTouchEnd={() => {
-              this.handleClose();
-              changeViewFilter({
-                type: 'add upgrade',
-                unitsIndex,
-                upgradesIndex: i,
-                upgradeType: upgradeBar[i]
-              });
-            }}
             onClick={() => {
               this.handleClose();
               changeViewFilter({
@@ -236,7 +227,6 @@ class UnitRow extends React.Component {
         <MenuItem
           key="increment"
           onClick={() => incrementUnitCount(unitsIndex)}
-          onTouchEnd={() => incrementUnitCount(unitsIndex)}
           style={{ cursor: 'pointer' }}
         >
           <ListItemIcon>
@@ -249,10 +239,6 @@ class UnitRow extends React.Component {
         <MenuItem
           key="decrement"
           onClick={() => {
-            this.handleClose();
-            decrementUnitCount(unitsIndex);
-          }}
-          onTouchEnd={() => {
             this.handleClose();
             decrementUnitCount(unitsIndex);
           }}
@@ -269,10 +255,6 @@ class UnitRow extends React.Component {
       <MenuItem
         key="delete"
         onClick={() => {
-          this.handleClose();
-          removeUnit(unitsIndex)
-        }}
-        onTouchEnd={() => {
           this.handleClose();
           removeUnit(unitsIndex)
         }}
@@ -316,8 +298,8 @@ class UnitRow extends React.Component {
                 position: 'relative'
               }}
               className={userSettings.themeColor === 'light' ? classes.darkerHoverOver : classes.grayHoverOver}
-              onTouchStart={this.handleClick}
               onClick={this.handleClick}
+
             />
             <Menu
               id="unit-action-menu"
