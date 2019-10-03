@@ -69,43 +69,17 @@ class Home extends React.Component {
           alignItems="center"
           justify="center"
           style={{
-            maxWidth: '50vw'
+            maxWidth: '75vw'
           }}
         >
           <Grid item>
-            <FiberNewIcon color="primary" />
-          </Grid>
-          <Grid item>
+            <FiberNewIcon color="primary" style={{ marginRight: 5 }} />
             <Typography
               variant="caption"
               color="primary"
               className={classes.textAlignCenter}
             >
-              There is a known bug with iOS devices that prevents users from adding upgrades to units.
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid
-          item
-          container
-          direction="row"
-          alignItems="center"
-          justify="center"
-          style={{
-            maxWidth: '50vw'
-          }}
-        >
-          <Grid item>
-            <FiberNewIcon color="primary" />
-          </Grid>
-          <Grid item>
-            <Typography
-              variant="caption"
-              color="primary"
-              className={classes.textAlignCenter}
-            >
-              Check out Invader League season 4{' '}
-              <Link target="_blank" href="http://invaderleague.com">here!</Link>
+              The bug for adding upgrades on iOS devices has (probably) been fixed. Please email contact@legion-hq.com if you continue to have this issue. Thank you for your patience!
             </Typography>
           </Grid>
         </Grid>
