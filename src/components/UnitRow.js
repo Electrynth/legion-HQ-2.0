@@ -292,7 +292,7 @@ class UnitRow extends React.Component {
           <Grid item style={{ width: 'calc(100% - 125px)' }}>
             {unitContent}
           </Grid>
-          <Grid item {...dragHandle}>
+          <Grid item>
             <IconButton
               size="small"
               onClick={this.handleClick}
@@ -301,7 +301,9 @@ class UnitRow extends React.Component {
                 position: 'relative'
               }}
             >
-              <MoreVertIcon size="large" />
+              <div {...dragHandle}>
+                <MoreVertIcon size="large" />
+              </div>
             </IconButton>
           </Grid>
           <Menu
