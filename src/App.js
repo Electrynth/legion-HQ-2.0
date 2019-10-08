@@ -419,7 +419,7 @@ class App extends Component {
       helmet = (
         <Helmet>
           <style>
-            {'body { background: url(/images/background.png) no-repeat center fixed; background-size: contain; }'}
+            {'body { background-color: #303030 !important; }'}
           </style>
         </Helmet>
       );
@@ -431,12 +431,20 @@ class App extends Component {
           </style>
         </Helmet>
       );
+    } else if (userSettings.themeColor === 'blue') {
+      helmet = (
+        <Helmet>
+          <style>
+            {'body { background-color: #394d5b !important; }'}
+          </style>
+        </Helmet>
+      );
     }
     return (
       <div>
         <div>
           {helmet}
-          <AppBar position="fixed" color="default">
+          <AppBar position="fixed" color={userSettings.themeColor === 'blue' ? 'secondary' : 'default'}>
             {activeTab !== undefined && (
               <Tabs
                 variant="fullWidth"

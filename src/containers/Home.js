@@ -22,7 +22,8 @@ class Home extends React.Component {
   render() {
     const {
       classes,
-      factions
+      factions,
+      userSettings
     } = this.context;
     const {
       userId,
@@ -34,96 +35,111 @@ class Home extends React.Component {
     const { testLists } = this.state;
     return (
       <div>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-      >
-        <Grid item style={{ marginTop: 60 }}>
-          <Typography variant="h4" color="primary">
-            Legion HQ
-          </Typography>
-        </Grid>
-        <Grid item style={{ maxWidth: '90vw' }}>
-          <Typography
-            variant="caption"
-            color="primary"
-            className={classes.textAlignCenter}
-          >
-            An unofficial tool and resource for Fantasy Flight Games: Star Wars™: Legion.
-          </Typography>
-        </Grid>
-        <Grid item style={{ maxWidth: '90vw', marginBottom: 16 }}>
-          <Typography
-            variant="caption"
-            color="primary"
-            className={classes.textAlignCenter}
-          >
-            Email contact@legion-hq.com to report bugs, give feedback, and request features!
-          </Typography>
-        </Grid>
         <Grid
-          item
           container
-          direction="row"
+          direction="column"
           alignItems="center"
-          justify="center"
-          style={{
-            maxWidth: '75vw'
-          }}
         >
-          <Grid item>
-            <FiberNewIcon color="primary" style={{ marginRight: 5 }} />
+          <Grid item align="center" style={{ marginTop: 75 }}>
+            <img
+              alt="Fifth Trooper"
+              src={userSettings.themeColor === 'light' ? '/images/fifthTrooperLogoLight.png' : '/images/fifthTrooperLogo.png'}
+              style={{
+                width: '20%'
+              }}
+            />
+          </Grid>
+          <Grid item align="center">
+            <img
+              alt="Legion HQ"
+              src={userSettings.themeColor === 'light' ? '/images/legionHQLogoLight.png' : '/images/legionHQLogo.png'}
+              style={{
+                width: '40%'
+              }}
+            />
+          </Grid>
+          <Grid item style={{ maxWidth: '90vw' }}>
             <Typography
               variant="caption"
               color="primary"
               className={classes.textAlignCenter}
             >
-              The bug for adding upgrades on iOS devices has (probably) been fixed. Please email contact@legion-hq.com if you continue to have this issue. Thank you for your patience!
+              An unofficial tool and resource for Fantasy Flight Games: Star Wars™: Legion.
             </Typography>
           </Grid>
-        </Grid>
-        <div style={{ marginTop: 36 }} className={classes.factionListsContainer}>
-          {Object.keys(factions).map(factionName => (
-            <Grid item key={factionName} style={{ marginTop: 12 }}>
-              <Chip
-                clickable
-                variant="outlined"
-                icon={<AddIcon />}
-                onClick={() => handleFactionClick(factionName)}
-                style={{
-                  border: `${factions[factionName].color} solid 2px`,
-                  marginRight: 4,
-                  marginBottom: 4
-                }}
-                label={(
-                  <Typography variant="subtitle1">
-                    {factions[factionName].longName}
-                  </Typography>
-                )}
-              />
-            </Grid>
-          ))}
-          <Grid item style={{ marginTop: 36 }}>
-            <a
-              href="https://imperialterrain.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+          <Grid item style={{ maxWidth: '90vw', marginBottom: 16 }}>
+            <Typography
+              variant="caption"
+              color="primary"
+              className={classes.textAlignCenter}
             >
-              <img
-                alt="Imperial Terrain"
-                src="/images/imperialTerrain.png"
-                style={{
-                  width: '66%',
-                  height: '66%',
-                  marginBottom: 48
-                }}
-              />
-            </a>
+              Email contact@legion-hq.com to report bugs, give feedback, and request features!
+            </Typography>
           </Grid>
-        </div>
-        <Grid item style={{ marginBottom: 120 }} />
-      </Grid>
+          <Grid
+            item
+            container
+            direction="row"
+            alignItems="center"
+            justify="center"
+            style={{
+              maxWidth: '75vw'
+            }}
+          >
+            <Grid item>
+              <FiberNewIcon color="primary" style={{ marginRight: 5 }} />
+              <Typography
+                variant="caption"
+                color="primary"
+                className={classes.textAlignCenter}
+              >
+                The bug for adding upgrades on iOS devices has (probably) been fixed. Please email contact@legion-hq.com if you continue to have this issue. Thank you for your patience!
+              </Typography>
+            </Grid>
+          </Grid>
+          <div style={{ marginTop: 36 }} className={classes.factionListsContainer}>
+            {Object.keys(factions).map(factionName => (
+              <Grid item key={factionName} style={{ marginTop: 12 }}>
+                <Chip
+                  clickable
+                  variant="outlined"
+                  icon={<AddIcon />}
+                  onClick={() => handleFactionClick(factionName)}
+                  style={{
+                    border: `${factions[factionName].color} solid 2px`,
+                    marginRight: 4,
+                    marginBottom: 4
+                  }}
+                  label={(
+                    <Typography variant="subtitle1">
+                      {factions[factionName].longName}
+                    </Typography>
+                  )}
+                />
+              </Grid>
+            ))}
+            <Grid item style={{ marginTop: 36 }}>
+              <div>
+                <a
+                  href="https://imperialterrain.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    alt="Imperial Terrain"
+                    src="/images/imperialTerrain.png"
+                    style={{
+                      width: '50%',
+                      height: '50%',
+                      marginBottom: 48
+                    }}
+                  />
+                </a>
+              </div>
+            </Grid>
+          </div>
+          <Grid item style={{ marginBottom: 120 }} />
+        </Grid>
       </div>
     );
   }
