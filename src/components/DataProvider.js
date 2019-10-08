@@ -275,7 +275,7 @@ class DataProvider extends React.Component {
       upgradeDisplayType: 'rows'
     },
     allUserSettings: {
-      themes: ['light', 'dark'],
+      themes: ['light', 'dark', 'blue'],
       upgradeDisplayTypes: ['rows', 'chips'],
       fontFamilies: ['Aero Matics Regular', 'None'],
       listLeftPaneWidths: ['none', 'little less than half', 'half', 'little more than half']
@@ -368,10 +368,25 @@ class DataProvider extends React.Component {
             main: '#fafafa'
           },
           secondary: {
-            main: '#757575'
+            main: '#0f232d'
           },
           error: {
             main: '#f44336'
+          }
+        }
+      };
+    } else if (userSettings.themeColor === 'blue') {
+      themeObject = {
+        palette: {
+          type: 'dark',
+          primary: {
+            main: '#ffffff'
+          },
+          secondary: {
+            main: '#0f232d',
+          },
+          error: {
+            main: '#f44336',
           }
         }
       };

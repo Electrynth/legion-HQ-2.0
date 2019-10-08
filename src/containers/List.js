@@ -1447,6 +1447,10 @@ class ListContainer extends React.Component {
     const combinedImage = new Image();
     const titleImage = new Image();
     const contentImage = new Image();
+    let backgroundColor = 'white';
+    if (userSettings.themeColor === 'light') backgroundColor = 'white';
+    else if (userSettings.themeColor === 'dark') backgroundColor = '#303030';
+    else backgroundColor = '#394d5b';
     domtoimage.toJpeg(listTitleNode, {
       style: {
         backgroundColor: userSettings.themeColor === 'light' ? 'white' : '#303030',
@@ -1687,6 +1691,7 @@ class ListContainer extends React.Component {
                   <Grid item>
                     <Chip
                       label="Commands"
+                      color={userSettings.themeColor === 'default' ? 'secondary' : 'inherit'}
                       icon={<AddIcon size="small" />}
                       onClick={() => this.changeViewFilter({ type: 'add commands' })}
                       style={{ marginRight: 4, marginBottom: 2 }}
@@ -1709,6 +1714,7 @@ class ListContainer extends React.Component {
                 <Grid item>
                   <Chip
                     label="Objective"
+                    color={userSettings.themeColor === 'default' ? 'secondary' : 'inherit'}
                     icon={<AddIcon size="small" />}
                     onClick={() => this.changeViewFilter({ type: 'add objectives' })}
                     style={{ marginRight: 4, marginBottom: 2 }}
@@ -1719,6 +1725,7 @@ class ListContainer extends React.Component {
                 return (
                   <Grid item key={objectiveCardId}>
                     <Chip
+                      color={userSettings.themeColor === 'default' ? 'secondary' : 'inherit'}
                       label={allCards[objectiveCardId].cardName}
                       onClick={() => this.changeViewFilter({ type: 'add objectives' })}
                       style={{ marginRight: 4, marginBottom: 2 }}
@@ -1738,6 +1745,7 @@ class ListContainer extends React.Component {
               {currentList.deploymentCards.length < 4 && (
                 <Grid item>
                   <Chip
+                    color={userSettings.themeColor === 'default' ? 'secondary' : 'inherit'}
                     label="Deployment"
                     icon={<AddIcon size="small" />}
                     onClick={() => this.changeViewFilter({ type: 'add deployments' })}
@@ -1749,6 +1757,7 @@ class ListContainer extends React.Component {
                 return (
                   <Grid item key={deploymentCardId}>
                     <Chip
+                      color={userSettings.themeColor === 'default' ? 'secondary' : 'inherit'}
                       label={allCards[deploymentCardId].cardName}
                       onClick={() => this.changeViewFilter({ type: 'add deployments' })}
                       style={{ marginRight: 4, marginBottom: 2 }}
@@ -1768,6 +1777,7 @@ class ListContainer extends React.Component {
               {currentList.conditionCards.length < 4 && (
                 <Grid item>
                   <Chip
+                    color={userSettings.themeColor === 'default' ? 'secondary' : 'inherit'}
                     label="Condition"
                     icon={<AddIcon size="small" />}
                     onClick={() => this.changeViewFilter({ type: 'add conditions' })}
@@ -1779,6 +1789,7 @@ class ListContainer extends React.Component {
                 return (
                   <Grid item key={conditionCardId}>
                     <Chip
+                      color={userSettings.themeColor === 'default' ? 'secondary' : 'inherit'}
                       label={allCards[conditionCardId].cardName}
                       onClick={() => this.changeViewFilter({ type: 'add conditions' })}
                       style={{ marginRight: 4, marginBottom: 2 }}
