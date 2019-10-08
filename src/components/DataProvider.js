@@ -17,6 +17,10 @@ const styles = theme => ({
     flexGrow: 1,
     height: 250
   },
+  vertButton: {
+    position: 'relative',
+    top: 10
+  },
   input: {
     display: 'inline-flex !important',
     padding: 0

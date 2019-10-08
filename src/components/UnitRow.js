@@ -295,14 +295,12 @@ class UnitRow extends React.Component {
           <Grid item>
             <IconButton
               size="small"
+              edge="end"
               onClick={this.handleClick}
-              style={{
-                top: '12px',
-                position: 'relative'
-              }}
+              className={classes.vertButton}
             >
               <div {...dragHandle}>
-                <MoreVertIcon size="large" />
+                <MoreVertIcon style={{ marginTop: 5 }} />
               </div>
             </IconButton>
           </Grid>
