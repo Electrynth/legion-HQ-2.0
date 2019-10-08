@@ -368,7 +368,7 @@ class DataProvider extends React.Component {
             main: '#fafafa'
           },
           secondary: {
-            main: '#0f232d'
+            main: '#757575'
           },
           error: {
             main: '#f44336'
