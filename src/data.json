@@ -3313,21 +3313,6 @@
       "displayName": "",
       "id": "hv"
     },
-    "hw": {
-      "displayName": "",
-      "cardSubtype": "command",
-      "cardName": "Aggressive Tactics",
-      "iconLocation": "/images/upgradeIcons/Aggressive%20Tactics.jpeg",
-      "isUnique": false,
-      "cardType": "upgrade",
-      "cost": -1,
-      "products": [],
-      "faction": "",
-      "imageLocation": "/images/upgradeCards/Aggressive%20Tactics.jpeg",
-      "keywords": [],
-      "requirements": [],
-      "id": "hw"
-    },
     "ht": {
       "displayName": "",
       "cardSubtype": "armament",
@@ -3344,26 +3329,6 @@
         "Dewback Rider"
       ],
       "id": "ht"
-    },
-    "hu": {
-      "displayName": "",
-      "cardSubtype": "armament",
-      "cardName": "CR-24 Flamethrower",
-      "iconLocation": "/images/upgradeIcons/CR-24%20Flamethrower.jpeg",
-      "isUnique": false,
-      "cardType": "upgrade",
-      "cost": -1,
-      "products": [],
-      "faction": "empire",
-      "imageLocation": "/images/upgradeCards/CR-24%20Flamethrower.jpeg",
-      "keywords": [
-        "Blast",
-        "Spray"
-      ],
-      "requirements": [
-        "Dewback Rider"
-      ],
-      "id": "hu"
     },
     "hj": {
       "displayName": "",
