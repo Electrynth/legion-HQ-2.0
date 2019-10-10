@@ -711,6 +711,57 @@ class ListContainer extends React.Component {
     copy(this.generateTournamentText());
   }
 
+  copyMinifiedTextToClipboard = () => {
+    copy(this.generateMinifiedText());
+  }
+
+  generateMinifiedText = () => {
+    const { allCards } = this.context;
+    const { currentList } = this.props;
+    const numActivations = currentList.units.reduce((activations, unitObject) => {
+      if (unitObject.unitId !== 'ji' && unitObject.unitId !== 'jj') activations += unitObject.count;
+      return activations;
+    }, 0);
+    let listString = '';
+    listString += `${currentList.title}\n`;
+    listString += `${this.getPointTotalString(currentList)} (${numActivations} ${numActivations === 1 ? 'activation' : 'activations'})`;
+    listString += '\n'
+    const r2d2Present = currentList.uniques.includes('jg') || currentList.uniques.includes('jh');
+    const c3poPresent = currentList.uniques.includes('ji') || currentList.uniques.includes('jj');
+    currentList.units.forEach((unitObject) => {
+      let noUpgrades = true;
+      const unitCard = allCards[unitObject.unitId];
+      if (unitObject.unitId === 'ji' || unitObject.unitId === 'jj') return;
+      let upgradeString = '';
+      unitObject.upgradesEquipped.forEach((upgradeCardId, upgradeIndex) => {
+        if (upgradeCardId) {
+          const upgradeCard = allCards[upgradeCardId];
+          noUpgrades = false;
+          upgradeString += `${upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName}, `;
+        }
+      });
+      upgradeString = upgradeString.slice(0, -2);
+      if (unitObject.unitId === 'jg' || unitObject.unitId === 'jh') {
+        if (c3poPresent) listString += `R2-D2 + C-3PO${noUpgrades ? '' : ` (${upgradeString})`}`;
+        else listString += `R2-D2${noUpgrades ? '' : ` (${upgradeString})`}`;
+      } else {
+        listString += `${unitObject.count === 1 ? '' : `${unitObject.count}× `}${unitCard.displayName ? unitCard.displayName : unitCard.cardName}${noUpgrades ? '' : ` (${upgradeString})`}`;
+      }
+      listString += '\n';
+    });
+    currentList.commandCards.forEach((commandCardId, index) => {
+      if (index === 0) listString += 'Commands: ';
+      let numPips = '•';
+      if (allCards[commandCardId].cardSubtype === '2') numPips = '••';
+      else if (allCards[commandCardId].cardSubtype === '3') numPips = '•••';
+      listString += `${numPips}${allCards[commandCardId].cardName}, `;
+    });
+    if (currentList.commandCards.length > 0) {
+      listString += '••••Standing Orders';
+    }
+    return listString;
+  }
+
   generateListText = () => {
     const {
       allCards
@@ -1503,6 +1554,7 @@ class ListContainer extends React.Component {
       toggleListMode,
       clearList
     } = this.props;
+    const listMinifiedText = this.generateMinifiedText();
     const listTournamentText = this.generateTournamentText();
     const listUrl = this.generateLink('Legion HQ Link');
     const mobile = width === 'xs' || width === 'sm';
@@ -1862,6 +1914,20 @@ class ListContainer extends React.Component {
                 >
                   <ListAltIcon style={{ marginRight: 5 }} />
                   (Tournament) Text Export
+                </Button>
+              </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                  onClick={() => {
+                    this.copyMinifiedTextToClipboard();
+                    handleOpenSnackbar('Copied text to clipboard!');
+                  }}
+                >
+                  <ListAltIcon style={{ marginRight: 5 }} />
+                  (Minimal) Text Export
                 </Button>
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
