@@ -76,27 +76,6 @@ class Home extends React.Component {
               Email contact@legion-hq.com to report bugs, give feedback, and request features!
             </Typography>
           </Grid>
-          <Grid
-            item
-            container
-            direction="row"
-            alignItems="center"
-            justify="center"
-            style={{
-              maxWidth: '75vw'
-            }}
-          >
-            <Grid item>
-              <FiberNewIcon color="primary" style={{ marginRight: 5 }} />
-              <Typography
-                variant="caption"
-                color="primary"
-                className={classes.textAlignCenter}
-              >
-                The bug for adding upgrades on iOS devices has (probably) been fixed. Please email contact@legion-hq.com if you continue to have this issue. Thank you for your patience!
-              </Typography>
-            </Grid>
-          </Grid>
           <div style={{ marginTop: 36 }} className={classes.factionListsContainer}>
             {Object.keys(factions).map(factionName => (
               <Grid item key={factionName} style={{ marginTop: 12 }}>
