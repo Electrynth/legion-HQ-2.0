@@ -116,6 +116,10 @@ class ListContainer extends React.Component {
                   const upgradeCard = allCards[upgradeId];
                   if (upgradeCard.cardName.includes('Comms Technician')) {
                     unitObject.additionalUpgradeSlots.push('comms');
+                  } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
+                    unitObject.additionalUpgradeSlots.push('training');
+                  } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
+                    unitObject.additionalUpgradeSlots.push('gear');
                   }
                   const upgradeBar = [...allCards[unitId].upgradeBar, ...unitObject.additionalUpgradeSlots];
                   if (currentList.uniques.includes(upgradeId) || upgradesEquipped.includes(upgradeId)) {
@@ -418,6 +422,12 @@ class ListContainer extends React.Component {
       if (upgradeCard.cardName.includes('Comms Technician')) {
         newUnitObject.upgradesEquipped.push(undefined);
         newUnitObject.additionalUpgradeSlots.push('comms');
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
+        newUnitObject.upgradesEquipped.push(undefined);
+        newUnitObject.additionalUpgradeSlots.push('training');
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
+        newUnitObject.upgradesEquipped.push(undefined);
+        newUnitObject.additionalUpgradeSlots.push('gear');
       }
       newUnitObject.unitObjectString = this.generateUnitObjectString(newUnitObject);
       if (currentList.unitObjectStrings.includes(newUnitObject.unitObjectString)) { // new combination already exists
@@ -433,6 +443,12 @@ class ListContainer extends React.Component {
           if (upgradeCard.cardName.includes('Comms Technician')) {
             unitObject.upgradesEquipped.push(undefined);
             unitObject.additionalUpgradeSlots.push('comms');
+          } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
+            unitObject.upgradesEquipped.push(undefined);
+            unitObject.additionalUpgradeSlots.push('training');
+          } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
+            unitObject.upgradesEquipped.push(undefined);
+            unitObject.additionalUpgradeSlots.push('gear');
           }
           unitObject.unitObjectString = this.generateUnitObjectString(unitObject);
           currentList.unitObjectStrings[unitsIndex] = unitObject.unitObjectString;
@@ -471,6 +487,12 @@ class ListContainer extends React.Component {
     if (newUpgradeCard.cardName.includes('Comms Technician')) {
       unitObject.upgradesEquipped.push(undefined);
       unitObject.additionalUpgradeSlots.push('comms');
+    } else if (newUpgradeCard.cardName.includes('Rebel Trooper Captain') || newUpgradeCard.cardName.includes('Stormtrooper Captain')) {
+      unitObject.upgradesEquipped.push(undefined);
+      unitObject.additionalUpgradeSlots.push('training');
+    } else if (newUpgradeCard.cardName.includes('Rebel Trooper Specialist') || newUpgradeCard.cardName.includes('Stormtrooper Specialist')) {
+      unitObject.upgradesEquipped.push(undefined);
+      unitObject.additionalUpgradeSlots.push('gear');
     }
     unitObject.unitObjectString = this.generateUnitObjectString(unitObject);
     currentList.unitObjectStrings[unitsIndex] = unitObject.unitObjectString;
@@ -496,7 +518,13 @@ class ListContainer extends React.Component {
       unitObject.upgradesEquipped[upgradesIndex] = undefined;
       if (upgradeCard.cardName.includes('Comms Technician')) {
         unitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.indexOf('comms'), 1);
-        unitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade that adds upgrade slots
+        unitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade (in a different slot) that adds upgrade slots
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
+        unitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.indexOf('training'), 1);
+        unitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade (in a different slot) that adds upgrade slots
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
+        unitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.lastIndexOf('gear'), 1);
+        unitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade (in a different slot) that adds upgrade slots
       }
       unitObject.unitObjectString = this.generateUnitObjectString(unitObject);
       if (currentList.unitObjectStrings.includes(unitObject.unitObjectString)) {
@@ -513,6 +541,12 @@ class ListContainer extends React.Component {
       if (upgradeCard.cardName.includes('Comms Technician')) {
         newUnitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.indexOf('comms'), 1);
         newUnitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade that adds upgrade slots
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
+        newUnitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.indexOf('training'), 1);
+        newUnitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade (in a different slot) that adds upgrade slots
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
+        newUnitObject.additionalUpgradeSlots.splice(currentList.units[unitsIndex].additionalUpgradeSlots.lastIndexOf('gear'), 1);
+        newUnitObject.upgradesEquipped.pop(); // change this if there is ever another upgrade (in a different slot) that adds upgrade slots
       }
       newUnitObject.unitObjectString = this.generateUnitObjectString(newUnitObject);
       if (currentList.unitObjectStrings.includes(newUnitObject.unitObjectString)) { // increment already existing stack

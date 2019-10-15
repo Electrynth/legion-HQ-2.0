@@ -5577,6 +5577,74 @@
       ],
       "requirements": [],
       "id": "de"
+    },
+    "jn": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Stormtrooper Captain",
+      "iconLocation": "/images/upgradeIcons/Stormtrooper%20Captain.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Stormtrooper%20Captain.jpeg",
+      "keywords": [
+        "Leader"
+      ],
+      "requirements": [],
+      "id": "jn"
+    },
+    "jo": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Rebel Trooper Captain",
+      "iconLocation": "/images/upgradeIcons/Rebel%20Trooper%20Captain.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 14,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Rebel%20Trooper%20Captain.jpeg",
+      "keywords": [
+        "Leader"
+      ],
+      "requirements": [],
+      "id": "jo"
+    },
+    "jp": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Rebel Trooper Specialist",
+      "iconLocation": "/images/upgradeIcons/Rebel%20Trooper%20Specialist.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 14,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Rebel%20Trooper%20Specialist.jpeg",
+      "keywords": [
+        "Surge Token"
+      ],
+      "requirements": [],
+      "id": "jp"
+    },
+    "jq": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Stormtrooper Specialist",
+      "iconLocation": "/images/upgradeIcons/Stormtrooper%20Specialist.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Stormtrooper%20Specialist.jpeg",
+      "keywords": [
+        "Surge Token"
+      ],
+      "requirements": [],
+      "id": "jq"
     }
   }
 }
