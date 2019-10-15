@@ -5592,7 +5592,7 @@
       "keywords": [
         "Leader"
       ],
-      "requirements": [],
+      "requirements": ["Stormtroopers"],
       "id": "jn"
     },
     "jo": {
@@ -5609,7 +5609,7 @@
       "keywords": [
         "Leader"
       ],
-      "requirements": [],
+      "requirements": ["Rebel Troopers"],
       "id": "jo"
     },
     "jp": {
@@ -5626,7 +5626,7 @@
       "keywords": [
         "Surge Token"
       ],
-      "requirements": [],
+      "requirements": ["Rebel Troopers"],
       "id": "jp"
     },
     "jq": {
@@ -5643,7 +5643,7 @@
       "keywords": [
         "Surge Token"
       ],
-      "requirements": [],
+      "requirements": ["Stormtroopers"],
       "id": "jq"
     }
   }
