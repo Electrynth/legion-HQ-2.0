@@ -1,5 +1,9 @@
 {
   "keywordDict": {
+    "Fear, Surprise, and Intimidation": "(Count Dooku) Count Dooku gains Arsenal 2 and Relentless and all of Count Dooku's ranged weapons gain Versatile. After Count Dooku performs an attack, each defending unit gains 2 suppression tokens.",
+    "Double the Fall": "(Count Dooku and 1 Unit) At the beginning of the activation phase, if Count Dooku has a faceup order token, he can put his order token back in the order pool and choose up to 2 enemy units at range 1 or 2 with faceup order tokens and put their order tokens back into their order pool.",
+    "You Can Call Me Captain": "(Clone Captain Rex) Rex gains Fire Support. When Rex uses Fire Support, his order token doesn't get flipped facedown. When a friendly unit makes a melee attack, Rex can use Fire Support to add one ranged weapon to the attack pool.",
+    "Eat This, Clankers!": "(2 Troopers) When performing a ranged attack with a friendly trooper unit with a faceup order token and an aim token, you can add range one distance to one of the ranged weapons (Max range 4)",
     "Low Profile": "While defending, if you have light cover, improve your cover by 1.",
     "Generator": "During the End Phase, flip X inactive shield token(s).",
     "Agile": "After you perform a standard move, gain X dodge token(s). Note: climbing, clambering, embarking, disembarking, pivoting, and reversing are not standard moves. This effect does not trigger abilities that occur after dodge actions are performed.",
@@ -5645,6 +5649,66 @@
       ],
       "requirements": ["Stormtroopers"],
       "id": "jq"
+    },
+    "jr": {
+      "id": "jr",
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "Fear, Surprise, and Intimidation",
+      "cardType": "command",
+      "commander": "Count Dooku",
+      "iconLocation": "/images/commandIcons/Fear%2C%20Surprise%2C%20and%20Intimidation.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/Fear%2C%20Surprise%2C%20and%20Intimidation.jpeg",
+      "keywords": [
+        "Fear, Surprise, and Intimidation"
+      ]
+    },
+    "js": {
+      "id": "js",
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Double the Fall",
+      "cardType": "command",
+      "commander": "Count Dooku",
+      "iconLocation": "/images/commandIcons/Double%20the%20Fall.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/Double%20the%20Fall.jpeg",
+      "keywords": [
+        "Double the Fall"
+      ]
+    },
+    "jt": {
+      "id": "jt",
+      "displayName": "",
+      "cardSubtype": "1",
+      "cardName": "You Can Call Me Captain",
+      "cardType": "command",
+      "commander": "Clone Captain Rex",
+      "iconLocation": "/images/commandIcons/You%20Can%20Call%20Me%20Captain.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/You%20Can%20Call%20Me%20Captain.jpeg",
+      "keywords": [
+        "You Can Call Me Captain"
+      ]
+    },
+    "ju": {
+      "id": "ju",
+      "displayName": "",
+      "cardSubtype": "2",
+      "cardName": "Eat This, Clankers!",
+      "cardType": "command",
+      "commander": "Clone Captain Rex",
+      "iconLocation": "/images/commandIcons/Eat%20This%2C%20Clankers!.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Eat%20This%2C%20Clankers!.jpeg",
+      "keywords": [
+        "Eat This, Clankers!"
+      ]
     }
   }
 }
