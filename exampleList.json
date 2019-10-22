@@ -1,21 +1,42 @@
 {
-  "pointTotal": 186,
+  "pointTotal": 793,
   "userId": "",
-  "title": "Example title",
+  "title": "The Cook's Speciality",
   "mode": "standard",
-  "faction": "rebels",
+  "faction": "empire",
   "notes": "Some notes...",
   "units": [
     {
+      "count": 1,
+      "totalUnitCost": 95,
+      "unitId": "au",
+      "upgradesEquipped": ["cz", "cw", null],
+      "additionalUpgradeSlots": []
+    },
+    {
+      "count": 1,
+      "totalUnitCost": 146,
+      "unitId": "aw",
+      "upgradesEquipped": ["dh", null, "da", null],
+      "additionalUpgradeSlots": []
+    },
+    {
+      "count": 6,
+      "totalUnitCost": 408,
+      "unitId": "ay",
+      "upgradesEquipped": ["ej", null, null, null],
+      "additionalUpgradeSlots": []
+    },
+    {
       "count": 3,
-      "totalUnitCost": 186,
-      "unitId": "ah",
-      "upgradesEquipped": ["ed", null, null, null],
+      "totalUnitCost": 144,
+      "unitId": "bb",
+      "upgradesEquipped": ["em", null, null, null, null],
       "additionalUpgradeSlots": []
     }
   ],
-  "commandCards": ["bk"],
-  "objectiveCards": ["Oa"],
-  "conditionCards": [],
-  "deploymentCards": ["Dd", "Df"]
+  "commandCards": ["bv", "bz", "bu", "bk", "bp", "bn"],
+  "objectiveCards": ["Od", "Of", "Oa", "Oc"],
+  "conditionCards": ["Cc", "Ca", "Ce", "Cb"],
+  "deploymentCards": ["Dd", "De", "Db", "Da]
 }
