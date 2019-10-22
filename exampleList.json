@@ -1,0 +1,21 @@
+{
+  "pointTotal": 186,
+  "userId": "",
+  "title": "Example title",
+  "mode": "standard",
+  "faction": "rebels",
+  "notes": "Some notes...",
+  "units": [
+    {
+      "count": 3,
+      "totalUnitCost": 186,
+      "unitId": "ah",
+      "upgradesEquipped": ["ed", null, null, null],
+      "additionalUpgradeSlots": []
+    }
+  ],
+  "commandCards": ["bk"],
+  "objectiveCards": ["Oa"],
+  "conditionCards": [],
+  "deploymentCards": ["Dd", "Df"]
+}
