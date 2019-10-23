@@ -10,6 +10,7 @@ import FiberNewIcon from '@material-ui/icons/FiberNew';
 // import DeleteIcon from '@material-ui/icons/Delete';
 // import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import DataContext from '../components/DataContext';
+import auth0Client from '../components/Auth';
 
 class Home extends React.Component {
 
@@ -26,13 +27,8 @@ class Home extends React.Component {
       userSettings
     } = this.context;
     const {
-      userId,
-      handleFactionClick,
-      handleGoogleLoginSuccess,
-      handleGoogleLoginFailure,
-      handleGoogleLogout
+      handleFactionClick
     } = this.props;
-    const { testLists } = this.state;
     return (
       <div>
         <Grid
@@ -73,7 +69,7 @@ class Home extends React.Component {
               color="primary"
               className={classes.textAlignCenter}
             >
-              Email contact@legion-hq.com to report bugs, give feedback, and request features!
+              Email contact@legion-hq.com to report bugs or request new features!
             </Typography>
           </Grid>
           <div style={{ marginTop: 36 }} className={classes.factionListsContainer}>
@@ -97,7 +93,29 @@ class Home extends React.Component {
                 />
               </Grid>
             ))}
-            <Grid item style={{ marginTop: 36 }}>
+            <Grid item style={{ marginTop: 24 }}>
+              {auth0Client.isAuthenticated() ? (
+                <Button
+                  variant="contained"
+                  color="inherit"
+                  onClick={() => {
+                    auth0Client.signOut();
+                    this.props.history.replace('/');
+                  }}
+                >
+                  {`Logout (${auth0Client.getEmail().split('@')[0]})`}
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  color="inherit"
+                  onClick={auth0Client.signIn}
+                >
+                  Login
+                </Button>
+              )}
+            </Grid>
+            <Grid item style={{ marginTop: 12 }}>
               <div>
                 <a
                   href="https://imperialterrain.com/"

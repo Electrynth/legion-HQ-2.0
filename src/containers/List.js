@@ -1,5 +1,5 @@
 import React from 'react';
-import { debounce } from 'lodash';
+import Axios from 'axios';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import mergeImages from 'merge-images';
 import domtoimage from 'dom-to-image-more';
@@ -63,149 +63,181 @@ class ListContainer extends React.Component {
       match,
       currentList,
       changeActiveTab,
-      changeCurrentList
+      changeCurrentList,
+      loadListByListId
     } = this.props;
     if (factions[match.params.faction] && !match.params.listString) {
       changeCurrentList({ ...currentList, faction: match.params.faction });
+      changeActiveTab(1);
+    } else if (Number.parseInt(match.params.faction, 10) > 999) {
+      const listId = match.params.faction;
+      const artificialMatch = {};
+      Axios.get(`https://api.legion-hq.com:3000/lists/${listId}`).then((response) => {
+        if (response.data.length > 0) {
+          artificialMatch.params = {
+            faction: response.data[0].faction,
+            listString: response.data[0].serial
+          };
+          this.convertMatchToList(artificialMatch);
+          changeActiveTab(1);
+        } else {
+          this.props.history.push('/');
+          changeActiveTab(0);
+        }
+      }).catch((error) => {
+        this.props.history.push('/');
+        changeActiveTab(0);
+      });
     } else {
-      this.setState({ loadingList: true });
-      let listCode = '';
-      if (factions[match.params.faction]) listCode = match.params.listString;
-      else listCode = match.params.faction;
-      let invalidFormat = false;
-      let faction = factions[match.params.faction] ? match.params.faction : '';
-      let unitObjects = [];
-      let urlStrings = listCode.split(',');
-      urlStrings.forEach((urlString, i) => {
-        if (urlString.charAt(0) && urlString.charAt(1) && urlString.charAt(2)) {
-          let unitCount = urlString.charAt(0);
-          let unitId = `${urlString.charAt(1)}${urlString.charAt(2)}`;
-          if (unitCount > 0 && unitCount < 13 && allCards[unitId] && allCards[unitId].cardType === 'unit') {
-            if (currentList.uniques.includes(unitId)) {
-              invalidFormat = true;
-            } else if (allCards[unitId].isUnique) {
-              currentList.uniques.push(unitId);
-              if (allCards[unitId].rank === 'commander' || allCards[unitId].rank === 'operative') {
-                currentList.commanders.push(allCards[unitId].cardName);
+      this.convertMatchToList(match);
+      changeActiveTab(1);
+    }
+  }
+
+  convertMatchToList = (match) => {
+    const { factions, allCards } = this.context;
+    const {
+      currentList,
+      changeActiveTab,
+      changeCurrentList
+    } = this.props;
+    this.setState({ loadingList: true });
+    let listCode = '';
+    if (factions[match.params.faction]) listCode = match.params.listString;
+    else listCode = match.params.faction;
+    let invalidFormat = false;
+    let faction = factions[match.params.faction] ? match.params.faction : '';
+    let unitObjects = [];
+    let urlStrings = listCode.split(',');
+    urlStrings.forEach((urlString, i) => {
+      if (urlString.charAt(0) && urlString.charAt(1) && urlString.charAt(2)) {
+        let unitCount = urlString.charAt(0);
+        let unitId = `${urlString.charAt(1)}${urlString.charAt(2)}`;
+        if (unitCount > 0 && unitCount < 13 && allCards[unitId] && allCards[unitId].cardType === 'unit') {
+          if (currentList.uniques.includes(unitId)) {
+            invalidFormat = true;
+          } else if (allCards[unitId].isUnique) {
+            currentList.uniques.push(unitId);
+            if (allCards[unitId].rank === 'commander' || allCards[unitId].rank === 'operative') {
+              currentList.commanders.push(allCards[unitId].cardName);
+            }
+          }
+          if (!invalidFormat) {
+            let unitObject = {
+              unitId,
+              count: Number.parseInt(unitCount),
+              upgradesEquipped: new Array(allCards[unitId].upgradeBar.length).fill(undefined),
+              hasUniques: allCards[unitId].isUnique,
+              totalUnitCost: allCards[unitId].cost * unitCount,
+              additionalUpgradeSlots: [],
+              unitObjectString: `${unitId}`
+            };
+            if (!faction) faction = allCards[unitId].faction;
+            else if (allCards[unitId].faction !== faction) invalidFormat = true;
+            let upgradeIds = [];
+            for (let i = 3; i < urlString.length; i += 1) {
+              if (urlString.charAt(i) !== '0' && urlString.charAt(i + 1)) {
+                upgradeIds.push(`${urlString.charAt(i)}${urlString.charAt(i + 1)}`);
+                i += 1;
+              } else {
+                upgradeIds.push(undefined);
               }
             }
-            if (!invalidFormat) {
-              let unitObject = {
-                unitId,
-                count: Number.parseInt(unitCount),
-                upgradesEquipped: new Array(allCards[unitId].upgradeBar.length).fill(undefined),
-                hasUniques: allCards[unitId].isUnique,
-                totalUnitCost: allCards[unitId].cost * unitCount,
-                additionalUpgradeSlots: [],
-                unitObjectString: `${unitId}`
-              };
-              if (!faction) faction = allCards[unitId].faction;
-              else if (allCards[unitId].faction !== faction) invalidFormat = true;
-              let upgradeIds = [];
-              for (let i = 3; i < urlString.length; i += 1) {
-                if (urlString.charAt(i) !== '0' && urlString.charAt(i + 1)) {
-                  upgradeIds.push(`${urlString.charAt(i)}${urlString.charAt(i + 1)}`);
-                  i += 1;
-                } else {
-                  upgradeIds.push(undefined);
+            let upgradesEquipped = [];
+            upgradeIds.forEach((upgradeId, i) => {
+              if (upgradeId && !invalidFormat) {
+                const upgradeCard = allCards[upgradeId];
+                if (upgradeCard.cardName.includes('Comms Technician')) {
+                  unitObject.additionalUpgradeSlots.push('comms');
+                } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
+                  unitObject.additionalUpgradeSlots.push('training');
+                } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
+                  unitObject.additionalUpgradeSlots.push('gear');
                 }
-              }
-              let upgradesEquipped = [];
-              upgradeIds.forEach((upgradeId, i) => {
-                if (upgradeId && !invalidFormat) {
-                  const upgradeCard = allCards[upgradeId];
-                  if (upgradeCard.cardName.includes('Comms Technician')) {
-                    unitObject.additionalUpgradeSlots.push('comms');
-                  } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
-                    unitObject.additionalUpgradeSlots.push('training');
-                  } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
-                    unitObject.additionalUpgradeSlots.push('gear');
-                  }
-                  const upgradeBar = [...allCards[unitId].upgradeBar, ...unitObject.additionalUpgradeSlots];
-                  if (currentList.uniques.includes(upgradeId) || upgradesEquipped.includes(upgradeId)) {
-                    // if upgrade is in uniques list or is already equipped => invalidate
-                    invalidFormat = true;
-                  } else if (allCards[upgradeId].cardSubtype !== upgradeBar[i]) {
-                    // if upgrade is not the right type for that particular slot => invalidate
-                    invalidFormat = true;
-                  } else if (allCards[upgradeId].faction && (allCards[upgradeId].faction !== allCards[unitId].faction)) {
-                    // if upgrade has a faction and that faction is not the same as the unit => invalidate
-                    invalidFormat = true;
-                  } else if (allCards[upgradeId].isUnique) {
-                    unitObject.hasUniques = true;
-                    currentList.uniques.push(upgradeId);
-                  }
-                  if (!invalidFormat) {
-                    unitObject.totalUnitCost += allCards[upgradeId].cost * unitCount;
-                    upgradesEquipped.push(upgradeId);
-                    unitObject.unitObjectString += upgradeId;
-                  }
-                } else upgradesEquipped.push(undefined);
-              });
-              unitObject.upgradesEquipped = upgradesEquipped;
-              if (!invalidFormat) {
-                if (currentList.unitObjectStrings.includes(unitObject.unitObjectString)) {
-                  const index = currentList.unitObjectStrings.indexOf(unitObject.unitObjectString);
-                  unitObjects[index].count += unitObject.count;
-                } else {
-                  unitObjects.push(unitObject);
-                  currentList.unitObjectStrings.push(unitObject.unitObjectString);
-                }
-                currentList.pointTotal += unitObject.totalUnitCost;
-              }
-            }
-          } else invalidFormat = true;
-        } else if (urlString.charAt(0) && urlString.charAt(1)) {
-          const cardId = `${urlString.charAt(0)}${urlString.charAt(1)}`;
-          if (allCards[cardId] && (allCards[cardId].cardType === 'command' || allCards[cardId].cardType === 'battle')) {
-            if (allCards[cardId].cardType === 'command') {
-              if (currentList.commandCards.length < 7) {
-                currentList.commandCards.push(cardId);
-                currentList.commandCards = currentList.commandCards.sort((firstId, secondId) => {
-                  const firstType = Number.parseInt(allCards[firstId].cardSubtype);
-                  const secondType = Number.parseInt(allCards[secondId].cardSubtype);
-                  if (firstType > secondType) return 1;
-                  else if (firstType < secondType) return -1;
-                  return 0;
-                });
-              }
-            } else if (allCards[cardId].cardType === 'battle') {
-              switch (allCards[cardId].cardSubtype) {
-                case 'objective':
-                  currentList.objectiveCards.push(cardId);
-                  break;
-                case 'condition':
-                  currentList.conditionCards.push(cardId);
-                  break;
-                case 'deployment':
-                  currentList.deploymentCards.push(cardId);
-                  break;
-                default:
+                const upgradeBar = [...allCards[unitId].upgradeBar, ...unitObject.additionalUpgradeSlots];
+                if (currentList.uniques.includes(upgradeId) || upgradesEquipped.includes(upgradeId)) {
+                  // if upgrade is in uniques list or is already equipped => invalidate
                   invalidFormat = true;
+                } else if (allCards[upgradeId].cardSubtype !== upgradeBar[i]) {
+                  // if upgrade is not the right type for that particular slot => invalidate
+                  invalidFormat = true;
+                } else if (allCards[upgradeId].faction && (allCards[upgradeId].faction !== allCards[unitId].faction)) {
+                  // if upgrade has a faction and that faction is not the same as the unit => invalidate
+                  invalidFormat = true;
+                } else if (allCards[upgradeId].isUnique) {
+                  unitObject.hasUniques = true;
+                  currentList.uniques.push(upgradeId);
+                }
+                if (!invalidFormat) {
+                  unitObject.totalUnitCost += allCards[upgradeId].cost * unitCount;
+                  upgradesEquipped.push(upgradeId);
+                  unitObject.unitObjectString += upgradeId;
+                }
+              } else upgradesEquipped.push(undefined);
+            });
+            unitObject.upgradesEquipped = upgradesEquipped;
+            if (!invalidFormat) {
+              if (currentList.unitObjectStrings.includes(unitObject.unitObjectString)) {
+                const index = currentList.unitObjectStrings.indexOf(unitObject.unitObjectString);
+                unitObjects[index].count += unitObject.count;
+              } else {
+                unitObjects.push(unitObject);
+                currentList.unitObjectStrings.push(unitObject.unitObjectString);
               }
-            } else invalidFormat = true;
+              currentList.pointTotal += unitObject.totalUnitCost;
+            }
+          }
+        } else invalidFormat = true;
+      } else if (urlString.charAt(0) && urlString.charAt(1)) {
+        const cardId = `${urlString.charAt(0)}${urlString.charAt(1)}`;
+        if (allCards[cardId] && (allCards[cardId].cardType === 'command' || allCards[cardId].cardType === 'battle')) {
+          if (allCards[cardId].cardType === 'command') {
+            if (currentList.commandCards.length < 7) {
+              currentList.commandCards.push(cardId);
+              currentList.commandCards = currentList.commandCards.sort((firstId, secondId) => {
+                const firstType = Number.parseInt(allCards[firstId].cardSubtype);
+                const secondType = Number.parseInt(allCards[secondId].cardSubtype);
+                if (firstType > secondType) return 1;
+                else if (firstType < secondType) return -1;
+                return 0;
+              });
+            }
+          } else if (allCards[cardId].cardType === 'battle') {
+            switch (allCards[cardId].cardSubtype) {
+              case 'objective':
+                currentList.objectiveCards.push(cardId);
+                break;
+              case 'condition':
+                currentList.conditionCards.push(cardId);
+                break;
+              case 'deployment':
+                currentList.deploymentCards.push(cardId);
+                break;
+              default:
+                invalidFormat = true;
+            }
           } else invalidFormat = true;
         } else invalidFormat = true;
-        if (invalidFormat) return;
+      } else invalidFormat = true;
+      if (invalidFormat) return;
+    });
+    if (invalidFormat) {
+      currentList.units = [];
+      currentList.faction = 'rebels';
+      alert('Invalid List Format - Defaulting to Rebels...');
+    } else {
+      unitObjects.forEach((unitObject) => {
+        currentList.unitCounts[allCards[unitObject.unitId].rank] += Number.parseInt(unitObject.count);
       });
-      if (invalidFormat) {
-        currentList.units = [];
-        currentList.faction = 'rebels';
-        alert('Invalid List Format - Defaulting to Rebels...');
-      } else {
-        unitObjects.forEach((unitObject) => {
-          currentList.unitCounts[allCards[unitObject.unitId].rank] += Number.parseInt(unitObject.count);
-        });
-        currentList.units = unitObjects;
-        currentList.faction = faction;
-        currentList.mode = 'standard mode';
-      }
-      this.setState({
-        loadingList: false
-      }, changeCurrentList({ ...currentList }));
+      currentList.units = unitObjects;
+      currentList.faction = faction;
+      currentList.mode = 'standard mode';
     }
-    changeActiveTab(1);
+    this.setState({
+      loadingList: false
+    }, changeCurrentList({ ...currentList }));
   }
+
 
   incrementUnitStackSize = () => {
     const { unitStackSize } = this.state;
@@ -908,11 +940,12 @@ class ListContainer extends React.Component {
         urlStrings.push(conditionCardId);
       });
     }
-    return `https://legion-hq.herokuapp.com/list/${currentList.faction}/${urlStrings.join(',')}`;
+    return `${urlStrings.join(',')}`;
   }
 
   copyLinkToClipboard = (linkType) => {
-    copy(this.generateLink(linkType));
+    const { currentList } = this.props;
+    copy(`https://legion-hq.herokuapp.com/list/${currentList.faction}/${this.generateLink(linkType)}`);
   }
 
   generateCustomLocation = (cardId) => {
@@ -1581,13 +1614,17 @@ class ListContainer extends React.Component {
     } = this.state;
     const {
       width,
+      userId,
       currentList,
       onDragEnd,
       handleChangeTitle,
       handleOpenSnackbar,
       toggleListMode,
-      clearList
+      clearList,
+      saveCurrentList
     } = this.props;
+    console.log(userId);
+    console.log(currentList);
     const listMinifiedText = this.generateMinifiedText();
     const listTournamentText = this.generateTournamentText();
     const listUrl = this.generateLink('Legion HQ Link');
@@ -1981,10 +2018,11 @@ class ListContainer extends React.Component {
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
                 <Button
-                  disabled
                   size="small"
                   variant="outlined"
                   color="primary"
+                  disabled={userId < 999}
+                  onClick={() => saveCurrentList(this.generateLink('Legion HQ Link'))}
                 >
                   <SaveIcon style={{ marginRight: 5 }} />
                   Save

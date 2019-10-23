@@ -6,7 +6,6 @@ import {
   createMuiTheme,
   MuiThemeProvider
 } from '@material-ui/core/styles';
-// import withWidth from '@material-ui/core/withWidth';
 import Data from '../data.json';
 import DataContext from './DataContext';
 

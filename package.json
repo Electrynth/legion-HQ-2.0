@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "@material-ui/icons": "^4.2.1",
+    "auth0-js": "^9.11.3",
     "axios": "^0.19.0",
     "clipboard-copy": "^3.0.0",
     "dom-to-image-more": "^2.8.0",
@@ -35,7 +36,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build",
-    "deploy": "aws s3 sync build/ s3://legion-hq"
+    "deploy": "aws s3 sync build/ s3://legion-hq-web --acl public-read"
   },
   "eslintConfig": {
     "extends": "react-app"

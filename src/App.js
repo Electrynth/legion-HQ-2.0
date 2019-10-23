@@ -19,6 +19,8 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import InfoIcon from '@material-ui/icons/Info';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import DataContext from './components/DataContext';
+import Callback from './components/Callback';
+import auth0Client from './components/Auth';
 import asyncComponent from './components/AsyncComponent';
 const AsyncHome = asyncComponent(() => import('./containers/Home'));
 const AsyncList = asyncComponent(() => import('./containers/List'));
@@ -54,7 +56,7 @@ class App extends Component {
     snackbarMessage: '',
     isSnackbarOpen: false,
     activeTab: 0,
-    userId: '',
+    userId: -1,
     cardNameFilter: '',
     keywords: [],
     keywordFilter: [],
@@ -66,7 +68,6 @@ class App extends Component {
     userSettings: {},
     currentList: {
       mode: 'standard mode',
-      userId: '',
       title: '',
       faction: '',
       notes: '',
@@ -91,13 +92,34 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { location } = this.props;
     const { tabRoutes } = this.context;
     this.setState({
       activeTab: tabRoutes[location.pathname],
       loadingCards: true
     });
+    if (location.pathname === '/callback') return;
+    try {
+      await auth0Client.silentAuth();
+      if (auth0Client.isAuthenticated()) {
+        const email = auth0Client.getEmail();
+        Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
+          if (emailSearch.data.length === 0) {
+            Axios.post(`https://api.legion-hq.com:3000/users`, { email }).then((createResponse) => {
+              this.setUserId(createResponse.data.userId);
+            });
+          } else {
+            this.setUserId(emailSearch.data[0].userId);
+            this.forceUpdate();
+          }
+        });
+      } else {
+        this.forceUpdate();
+      }
+    } catch (err) {
+      if (err.error !== 'login_required') console.log('Login error:', err.error);
+    }
   }
 
   toggleListMode = () => {
@@ -155,6 +177,10 @@ class App extends Component {
 
   setUpgradeTypeFilter = event => this.setState({ upgradeTypeFilter: event.target.value });
 
+  setUserId = userId => this.setState({ userId });
+
+  changeActiveTab = activeTab => this.setState({ activeTab })
+
   handleTabClick = (event, value) => {
     const { history } = this.props;
     const { currentList } = this.state;
@@ -172,11 +198,11 @@ class App extends Component {
 
   handleFactionClick = (faction) => {
     const { history } = this.props;
+    const { userId } = this.state;
     this.setState({
       activeTab: 1,
       currentList: {
         mode: 'standard mode',
-        userId: '',
         title: '',
         faction,
         notes: '',
@@ -194,60 +220,12 @@ class App extends Component {
     }, history.push(`/list/${faction}`));
   }
 
-  handleGoogleLoginSuccess = (googleResponse) => {
-    if ('googleId' in googleResponse) {
-      const userId = md5(googleResponse.googleId);
-      Axios.get(`/user?userId=${userId}`).then((userResponse) => {
-        const userData = userResponse.data;
-        if (userData.error) {
-          alert('Login error:', userData.message);
-        } else if (userData.results.length === 0) {
-            Axios.post(`/user?userId=${userId}`).then((creationResponse) => {
-            const creationData = creationResponse.data;
-            if (creationData.error) this.setState({ googleResponse: true });
-            else {
-              this.setState({
-                userId,
-                userLists: [],
-                googleResponse: true
-              });
-            }
-          });
-        } else {
-          Axios.get(`lists?userId=${userId}`).then((response) => {
-            const { data } = response;
-            if (data.error) this.setState({ googleResponse: true });
-            else {
-              this.setState({
-                userId,
-                userLists: data.results,
-                googleResponse: true
-              });
-            }
-          });
-        }
-      });
-    }
-  }
-
   handleChangeTitle = (event) => {
     const { currentList } = this.state;
     if (event.target.value.length < 26) {
       currentList.title = event.target.value;
       this.setState({ currentList });
     }
-  }
-
-  handleGoogleLoginFailure = (googleResponse) => {
-    alert(`Login Error: ${googleResponse.error}`);
-  }
-
-  handleGoogleLogout = () => {
-    alert('Successfully signed out.');
-    this.setState({
-      userId: '',
-      userLists: []
-    });
   }
 
   refreshUserLists = () => {
@@ -265,7 +243,6 @@ class App extends Component {
     this.setState({
       currentList: {
         mode: currentList.mode,
-        userId: currentList.userId,
         title: currentList.title,
         faction: currentList.faction,
         notes: currentList.notes,
@@ -289,6 +266,40 @@ class App extends Component {
         }
       }
     })
+  }
+
+  saveCurrentList = (serial) => {
+    const { currentList, userId } = this.state;
+    if (Number.parseInt(userId, 10) < 0) return;
+    const listToSave = {
+      serial,
+      userId,
+      ...currentList
+    };
+    if ('listId' in currentList) {
+      // update list
+      Axios.put(`https://api.legion-hq.com:3000/lists/${currentList.listId}`, listToSave).then((response) => {
+        this.handleOpenSnackbar('List has been updated!');
+      }).catch((error) => {
+        console.log(error);
+        this.handleOpenSnackbar('List failed to be updated!');
+      });
+    } else {
+      // create new list
+      Axios.post('https://api.legion-hq.com:3000/lists', listToSave).then((response) => {
+        const { listId } = response.data;
+        this.setState({ currentList: { ...currentList, listId } })
+        this.props.history.push(`/list/${listId}`);
+        this.handleOpenSnackbar('List has been created!');
+      }).catch((error) => {
+        console.log(error);
+        this.handleOpenSnackbar('List unable to be created!')
+      });
+    }
+  }
+
+  loadListByListId = (listId, callback) => {
+
   }
 
   changeCurrentList = currentList => {
@@ -332,8 +343,6 @@ class App extends Component {
     this.setState({ currentList });
   }
 
-  changeActiveTab = activeTab => this.setState({ activeTab })
-
   render() {
     const {
       userSettings
@@ -361,6 +370,7 @@ class App extends Component {
       classes
     } = this.props;
     const commonProps = {
+      userId,
       classes,
       factions,
       keywords,
@@ -373,20 +383,18 @@ class App extends Component {
       handleCloseSnackbar: this.handleCloseSnackbar
     };
     const homeProps = {
-      userId,
       handleFactionClick: this.handleFactionClick,
-      handleGoogleLoginSuccess: this.handleGoogleLoginSuccess,
-      handleGoogleLoginFailure: this.handleGoogleLoginFailure,
-      handleGoogleLogout: this.handleGoogleLogout,
       ...commonProps
     };
     const listProps = {
       currentList,
+      loadListByListId: this.loadListByListId,
       changeCurrentList: this.changeCurrentList,
       changeActiveTab: this.changeActiveTab,
       onDragEnd: this.onDragEnd,
       toggleListMode: this.toggleListMode,
       clearList: this.clearList,
+      saveCurrentList: this.saveCurrentList,
       ...commonProps
     };
     const cardsProps = {
@@ -413,6 +421,10 @@ class App extends Component {
     };
     const infoProps = {
       ...commonProps
+    };
+    const callbackProps = {
+      setUserId: this.setUserId,
+      handleTabClick: this.handleTabClick
     };
     let helmet = undefined;
     if (userSettings.themeColor === 'dark') {
@@ -501,6 +513,7 @@ class App extends Component {
           <Route path="/stats" render={(props) => <AsyncStats {...statsProps} {...props} />} />
           <Route path="/settings" render={(props) => <AsyncSettings {...settingsProps} {...props} />} />
           <Route path="/info" render={(props) => <AsyncInfo {...infoProps} {...props} />} />
+          <Route exact path="/callback" render={(props) => <Callback {...callbackProps} {...props} />} />
           <Redirect to="/" />
         </Switch>
       </div>
