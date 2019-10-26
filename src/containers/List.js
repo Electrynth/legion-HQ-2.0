@@ -2023,7 +2023,7 @@ class ListContainer extends React.Component {
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
                 <Button
-                  disabled={currentList.listId < 999}
+                  disabled={userId < 999 || currentList.listId < 999}
                   size="small"
                   variant="outlined"
                   color="primary"

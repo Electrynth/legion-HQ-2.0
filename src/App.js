@@ -20,6 +20,7 @@ import EqualizerIcon from '@material-ui/icons/Equalizer';
 import DataContext from './components/DataContext';
 import Callback from './components/Callback';
 import auth0Client from './components/Auth';
+import PrivacyPolicy from './containers/PrivacyPolicy';
 import asyncComponent from './components/AsyncComponent';
 const AsyncHome = asyncComponent(() => import('./containers/Home'));
 const AsyncList = asyncComponent(() => import('./containers/List'));
@@ -571,6 +572,7 @@ class App extends Component {
             <Route path="/stats" render={(props) => <AsyncStats {...statsProps} {...props} />} />
             <Route path="/settings" render={(props) => <AsyncSettings {...settingsProps} {...props} />} />
             <Route path="/info" render={(props) => <AsyncInfo {...infoProps} {...props} />} />
+            <Route path="/privacy" render={(props) => <PrivacyPolicy {...props} />} />
             <Route exact path="/callback" render={(props) => <Callback {...callbackProps} {...props} />} />
             <Redirect to="/" />
           </Switch>
