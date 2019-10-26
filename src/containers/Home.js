@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
@@ -16,8 +17,15 @@ class Home extends React.Component {
 
   static contextType = DataContext;
 
-  state = {
-    testLists: []
+  componentDidMount() {
+    const { userId, changeUserLists } = this.props;
+    if (userId > 999) {
+      Axios.get(`https://api.legion-hq.com:3000/lists?userId=${userId}`).then((response) => {
+        changeUserLists(response.data);
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
   }
 
   render() {
@@ -27,8 +35,17 @@ class Home extends React.Component {
       userSettings
     } = this.context;
     const {
+      userLists,
+      deleteList,
       handleFactionClick
     } = this.props;
+    const listChips = {
+      rebels: [],
+      empire: [],
+      republic: [],
+      separatists: []
+    };
+    userLists.forEach(userList => listChips[userList.faction].push(userList));
     return (
       <div>
         <Grid
@@ -91,15 +108,40 @@ class Home extends React.Component {
                     </Typography>
                   )}
                 />
+                {listChips[factionName].map((userList, i) => {
+                  if (!userList.listId) return undefined;
+                  return (
+                    <Chip
+                      key={i}
+                      clickable
+                      variant="outlined"
+                      label={(
+                        <Typography>
+                          {`${userList.title.length > 15 ? `${userList.title.substring(0, 15)}...` : userList.title} - ${userList.pointTotal}`}
+                        </Typography>
+                      )}
+                      onDelete={() => deleteList(userList.listId)}
+                      style={{
+                        border: `${factions[factionName].color} solid 2px`,
+                        marginRight: 4,
+                        marginBottom: 4
+                      }}
+                      onClick={() => {
+                        handleFactionClick(factionName);
+                        this.props.history.push(`/list/${userList.listId}`);
+                      }}
+                    />
+                  );
+                })}
               </Grid>
             ))}
             <Grid item style={{ marginTop: 24 }}>
               {auth0Client.isAuthenticated() ? (
                 <Button
-                  variant="contained"
-                  color="inherit"
+                  variant="outlined"
                   onClick={() => {
                     auth0Client.signOut();
+                    this.changeUserLists([]);
                     this.props.history.replace('/');
                   }}
                 >
@@ -107,8 +149,7 @@ class Home extends React.Component {
                 </Button>
               ) : (
                 <Button
-                  variant="contained"
-                  color="inherit"
+                  variant="outlined"
                   onClick={auth0Client.signIn}
                 >
                   Login
@@ -135,72 +176,11 @@ class Home extends React.Component {
               </div>
             </Grid>
           </div>
-          <Grid item style={{ marginBottom: 120 }} />
+          <Grid item style={{ marginBottom: 60 }} />
         </Grid>
       </div>
     );
   }
 }
-
-/*
-<Grid item className={classes.googleButtonContainer}>
-  {userId ? (
-    <GoogleLogout
-      buttonText="Sign out"
-      onLogoutSuccess={handleGoogleLogout}
-      className="loginButton"
-    />
-  ) : (
-    <GoogleLogin
-      isSignedIn
-      buttonText="Sign in with Google"
-      clientId="112890447494-ls135bmon2jbaj0mh3k0fnukugp9upkk.apps.googleusercontent.com"
-      onSuccess={handleGoogleLoginSuccess}
-      onFailure={handleGoogleLoginFailure}
-      className="loginButton"
-    />
-  )}
-</Grid>
-*/
-
-/*
-{testLists.map((testList, i) => {
-  if (testList.faction === factionName) {
-    if (testList.notes === '') {
-      return (
-        <Chip
-          key={i}
-          clickable
-          variant="outlined"
-          label={<Typography>{`${testList.title} - ${testList.pointTotal}`}</Typography>}
-          onDelete={() => console.log('deleted')}
-          style={{
-            border: `${factions[factionName].color} solid 2px`,
-            marginRight: 4,
-            marginBottom: 4
-          }}
-          onClick={() => handleFactionClick(factionName)}
-        />
-      );
-    } else {
-      return (
-        <Tooltip
-          key={i}
-          title={(<Typography variant="body1">{testList.notes}</Typography>)}
-        >
-          <Chip
-            clickable
-            variant="outlined"
-            label={<Typography>{`${testList.title} - ${testList.pointTotal}`}</Typography>}
-            onDelete={() => console.log('deleted')}
-            style={{ border: `${factions[factionName].color} solid 2px`, marginRight: 4 }}
-            onClick={() => handleFactionClick(factionName)}
-          />
-        </Tooltip>
-      );
-    }
-  } else return null;
-})}
-*/
 
 export default Home;

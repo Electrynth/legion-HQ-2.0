@@ -58,27 +58,21 @@ class ListContainer extends React.Component {
   }
 
   componentDidMount() {
-    const { factions, allCards } = this.context;
+    const { factions } = this.context;
     const {
       match,
       currentList,
       changeActiveTab,
-      changeCurrentList,
-      loadListByListId
+      changeCurrentList
     } = this.props;
     if (factions[match.params.faction] && !match.params.listString) {
       changeCurrentList({ ...currentList, faction: match.params.faction });
       changeActiveTab(1);
-    } else if (Number.parseInt(match.params.faction, 10) > 999) {
+    } else if (Number.parseInt(match.params.faction) > 999) {
       const listId = match.params.faction;
-      const artificialMatch = {};
       Axios.get(`https://api.legion-hq.com:3000/lists/${listId}`).then((response) => {
         if (response.data.length > 0) {
-          artificialMatch.params = {
-            faction: response.data[0].faction,
-            listString: response.data[0].serial
-          };
-          this.convertMatchToList(artificialMatch);
+          changeCurrentList(response.data[0]);
           changeActiveTab(1);
         } else {
           this.props.history.push('/');
@@ -237,7 +231,6 @@ class ListContainer extends React.Component {
       loadingList: false
     }, changeCurrentList({ ...currentList }));
   }
-
 
   incrementUnitStackSize = () => {
     const { unitStackSize } = this.state;
@@ -1621,10 +1614,9 @@ class ListContainer extends React.Component {
       handleOpenSnackbar,
       toggleListMode,
       clearList,
-      saveCurrentList
+      saveCurrentList,
+      forkCurrentList
     } = this.props;
-    console.log(userId);
-    console.log(currentList);
     const listMinifiedText = this.generateMinifiedText();
     const listTournamentText = this.generateTournamentText();
     const listUrl = this.generateLink('Legion HQ Link');
@@ -1708,6 +1700,7 @@ class ListContainer extends React.Component {
           <Grid item>
             <TextField
               fullWidth
+              value={currentList.title}
               placeholder="Untitled"
               onChange={handleChangeTitle}
               helperText={`${numActivations} ${numActivations === 1 ? 'activation' : 'activations'}`}
@@ -2022,7 +2015,7 @@ class ListContainer extends React.Component {
                   variant="outlined"
                   color="primary"
                   disabled={userId < 999}
-                  onClick={() => saveCurrentList(this.generateLink('Legion HQ Link'))}
+                  onClick={() => saveCurrentList()}
                 >
                   <SaveIcon style={{ marginRight: 5 }} />
                   Save
@@ -2030,10 +2023,11 @@ class ListContainer extends React.Component {
               </Grid>
               <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
                 <Button
-                  disabled
+                  disabled={currentList.listId < 999}
                   size="small"
                   variant="outlined"
                   color="primary"
+                  onClick={() => forkCurrentList()}
                 >
                   <CallSplitIcon style={{ marginRight: 5 }} />
                   Fork List
@@ -2063,7 +2057,7 @@ class ListContainer extends React.Component {
               <ListPrintText ref={el => (this.componentRef = el)} listTournamentText={listTournamentText} listUrl={listUrl} />
             </Grid>
             <Grid item>
-              <div style={{ marginBottom: 500 }} />
+              <div style={{ marginBottom: 250 }} />
             </Grid>
           </div>
         </div>
@@ -2186,7 +2180,7 @@ class ListContainer extends React.Component {
             rightPaneWidth
           )}
           <Grid item>
-            <div style={{ marginBottom: 500 }} />
+            <div style={{ marginBottom: 250 }} />
           </Grid>
         </Grid>
       </Grid>

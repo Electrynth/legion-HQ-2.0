@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { withRouter } from 'react-router-dom';
-import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import DataContext from './DataContext';
 import auth0Client from './Auth';
@@ -41,9 +41,7 @@ class Callback extends React.Component {
           alignItems="center"
         >
           <Grid item style={{ marginTop: 72 }}>
-            <Typography color="inherit">
-              Loading profile...
-            </Typography>
+            <CircularProgress />
           </Grid>
         </Grid>
       </div>

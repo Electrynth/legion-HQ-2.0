@@ -3,7 +3,6 @@ import {
   Switch, Route, Redirect, withRouter
 } from 'react-router-dom';
 import Axios from 'axios';
-import md5 from 'md5';
 import { Helmet } from 'react-helmet';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -55,6 +54,7 @@ class App extends Component {
   state = {
     snackbarMessage: '',
     isSnackbarOpen: false,
+    initialLoading: true,
     activeTab: 0,
     userId: -1,
     cardNameFilter: '',
@@ -99,7 +99,10 @@ class App extends Component {
       activeTab: tabRoutes[location.pathname],
       loadingCards: true
     });
-    if (location.pathname === '/callback') return;
+    if (location.pathname === '/callback') {
+      this.setState({ initialLoading: false });
+      return;
+    }
     try {
       await auth0Client.silentAuth();
       if (auth0Client.isAuthenticated()) {
@@ -107,19 +110,38 @@ class App extends Component {
         Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
           if (emailSearch.data.length === 0) {
             Axios.post(`https://api.legion-hq.com:3000/users`, { email }).then((createResponse) => {
-              this.setUserId(createResponse.data.userId);
+              this.setState({
+                initialLoading: false,
+                userId: emailSearch.data[0].userId
+              });
+              this.forceUpdate();
+            }).catch((error) => {
+              console.log(error);
+              this.setState({ initialLoading: false });
             });
           } else {
-            this.setUserId(emailSearch.data[0].userId);
-            this.forceUpdate();
+            const userId = emailSearch.data[0].userId;
+            Axios.get(`https://api.legion-hq.com:3000/lists?userId=${userId}`).then((response) => {
+              this.changeUserLists(response.data);
+              this.setState({
+                userId,
+                initialLoading: false
+              });
+              this.forceUpdate();
+            }).catch((error) => {
+              console.log(error);
+              this.setState({ userId, initialLoading: false })
+            });
           }
         });
       } else {
+        this.setState({ initialLoading: false });
         this.forceUpdate();
       }
     } catch (err) {
       if (err.error !== 'login_required') console.log('Login error:', err.error);
     }
+    this.setState({ initialLoading: false });
   }
 
   toggleListMode = () => {
@@ -221,11 +243,10 @@ class App extends Component {
   }
 
   handleChangeTitle = (event) => {
+    if (event.target.value.length > 25) return
     const { currentList } = this.state;
-    if (event.target.value.length < 26) {
-      currentList.title = event.target.value;
-      this.setState({ currentList });
-    }
+    currentList.title = event.target.value;
+    this.setState({ currentList });
   }
 
   refreshUserLists = () => {
@@ -268,17 +289,48 @@ class App extends Component {
     })
   }
 
-  saveCurrentList = (serial) => {
+  deleteList = (listId) => {
+    Axios.delete(`https://api.legion-hq.com:3000/lists/${listId}`).then((response) => {
+      const { userId } = this.state;
+      if (userId > 999) {
+        Axios.get(`https://api.legion-hq.com:3000/lists?userId=${userId}`).then((response) => {
+          this.changeUserLists(response.data);
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
+      this.handleOpenSnackbar('List has been deleted!');
+    }).catch((error) => {
+      console.log(error);
+      this.handleOpenSnackbar('List failed to be deleted!');
+    });
+  }
+
+  forkCurrentList = () => {
     const { currentList, userId } = this.state;
     if (Number.parseInt(userId, 10) < 0) return;
-    const listToSave = {
-      serial,
-      userId,
-      ...currentList
-    };
-    if ('listId' in currentList) {
+    delete currentList.listId;
+    delete currentList._id;
+    currentList.title += 'copy';
+    if (currentList.userId === userId) {
+      Axios.post('https://api.legion-hq.com:3000/lists', {userId, ...currentList}).then((response) => {
+        const { listId } = response.data;
+        this.setState({ currentList: { ...response.data } });
+        this.props.history.push(`/list/${listId}`);
+        this.handleOpenSnackbar('List has been forked!');
+      }).catch((error) => {
+        console.log(error);
+        this.handleOpenSnackbar('List unable to be forked!')
+        });
+    }
+  }
+
+  saveCurrentList = () => {
+    const { currentList, userId } = this.state;
+    if (Number.parseInt(userId, 10) < 0) return;
+    if (currentList.listId && currentList.userId === userId) {
       // update list
-      Axios.put(`https://api.legion-hq.com:3000/lists/${currentList.listId}`, listToSave).then((response) => {
+      Axios.put(`https://api.legion-hq.com:3000/lists/${currentList.listId}`, currentList).then((response) => {
         this.handleOpenSnackbar('List has been updated!');
       }).catch((error) => {
         console.log(error);
@@ -286,9 +338,10 @@ class App extends Component {
       });
     } else {
       // create new list
-      Axios.post('https://api.legion-hq.com:3000/lists', listToSave).then((response) => {
+      if (currentList.userId) delete currentList.userId;
+      Axios.post('https://api.legion-hq.com:3000/lists', {userId, ...currentList}).then((response) => {
         const { listId } = response.data;
-        this.setState({ currentList: { ...currentList, listId } })
+        this.setState({ currentList: { ...response.data } });
         this.props.history.push(`/list/${listId}`);
         this.handleOpenSnackbar('List has been created!');
       }).catch((error) => {
@@ -298,9 +351,7 @@ class App extends Component {
     }
   }
 
-  loadListByListId = (listId, callback) => {
-
-  }
+  changeUserLists = userLists => this.setState({ userLists });
 
   changeCurrentList = currentList => {
     const { allCards } = this.context;
@@ -351,6 +402,7 @@ class App extends Component {
       activeTab,
       userId,
       currentList,
+      userLists,
       cardNameFilter,
       keywords,
       keywordFilter,
@@ -364,13 +416,15 @@ class App extends Component {
       upgradeTypes,
       upgradeTypeFilter,
       isSnackbarOpen,
-      snackbarMessage
+      snackbarMessage,
+      initialLoading
     } = this.state;
     const {
       classes
     } = this.props;
     const commonProps = {
       userId,
+      userLists,
       classes,
       factions,
       keywords,
@@ -383,6 +437,8 @@ class App extends Component {
       handleCloseSnackbar: this.handleCloseSnackbar
     };
     const homeProps = {
+      deleteList: this.deleteList,
+      changeUserLists: this.changeUserLists,
       handleFactionClick: this.handleFactionClick,
       ...commonProps
     };
@@ -394,6 +450,7 @@ class App extends Component {
       onDragEnd: this.onDragEnd,
       toggleListMode: this.toggleListMode,
       clearList: this.clearList,
+      forkCurrentList: this.forkCurrentList,
       saveCurrentList: this.saveCurrentList,
       ...commonProps
     };
@@ -505,17 +562,19 @@ class App extends Component {
         >
 
         </Snackbar>
-        <Switch>
-          <Route exact path="/" render={(props) => <AsyncHome {...homeProps} {...props} />} />
-          <Route path="/list/:faction/:listString" render={(props) => <AsyncList {...listProps} {...props} />} />
-          <Route path="/list/:faction" render={(props) => <AsyncList {...listProps} {...props} />} />
-          <Route path="/cards" render={(props) => <AsyncCards {...cardsProps} {...props} />} />
-          <Route path="/stats" render={(props) => <AsyncStats {...statsProps} {...props} />} />
-          <Route path="/settings" render={(props) => <AsyncSettings {...settingsProps} {...props} />} />
-          <Route path="/info" render={(props) => <AsyncInfo {...infoProps} {...props} />} />
-          <Route exact path="/callback" render={(props) => <Callback {...callbackProps} {...props} />} />
-          <Redirect to="/" />
-        </Switch>
+        {!initialLoading && (
+          <Switch>
+            <Route exact path="/" render={(props) => <AsyncHome {...homeProps} {...props} />} />
+            <Route path="/list/:faction/:listString" render={(props) => <AsyncList {...listProps} {...props} />} />
+            <Route path="/list/:faction" render={(props) => <AsyncList {...listProps} {...props} />} />
+            <Route path="/cards" render={(props) => <AsyncCards {...cardsProps} {...props} />} />
+            <Route path="/stats" render={(props) => <AsyncStats {...statsProps} {...props} />} />
+            <Route path="/settings" render={(props) => <AsyncSettings {...settingsProps} {...props} />} />
+            <Route path="/info" render={(props) => <AsyncInfo {...infoProps} {...props} />} />
+            <Route exact path="/callback" render={(props) => <Callback {...callbackProps} {...props} />} />
+            <Redirect to="/" />
+          </Switch>
+        )}
       </div>
     );
   }
