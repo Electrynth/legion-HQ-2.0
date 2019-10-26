@@ -244,7 +244,7 @@ class App extends Component {
   }
 
   handleChangeTitle = (event) => {
-    if (event.target.value.length > 25) return
+    if (event.target.value.length > 30) return
     const { currentList } = this.state;
     currentList.title = event.target.value;
     this.setState({ currentList });
@@ -312,7 +312,7 @@ class App extends Component {
     if (Number.parseInt(userId, 10) < 0) return;
     delete currentList.listId;
     delete currentList._id;
-    currentList.title += 'copy';
+    currentList.title += ' copy';
     if (currentList.userId === userId) {
       Axios.post('https://api.legion-hq.com:3000/lists', {userId, ...currentList}).then((response) => {
         const { listId } = response.data;

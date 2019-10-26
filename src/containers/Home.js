@@ -117,7 +117,7 @@ class Home extends React.Component {
                       variant="outlined"
                       label={(
                         <Typography>
-                          {`${userList.title.length > 15 ? `${userList.title.substring(0, 15)}...` : userList.title} - ${userList.pointTotal}`}
+                          {`${userList.title.length > 20 ? `${userList.title.substring(0, 20)}...` : userList.title} - ${userList.pointTotal}`}
                         </Typography>
                       )}
                       onDelete={() => deleteList(userList.listId)}
