@@ -2,14 +2,25 @@
 Legion HQ is a web-based tool and resource for Fantasy Flight Games: Star Wars: Legion. Legion HQ 2.0 is the improved version of the [Legion HQ](https://github.com/NicholasCBrown/legion-HQ "Legion HQ 1.0 Github").
 
 # Current Major Features
+##### Current features in progress
+- Fifth Trooper Redesign
+- General Code Refactor
+- Repo Reorganization
+##### Recently finished features
+- User authentication & list saving/forking
 ## List Builder
 Users can build lists in standard 800-point format, 1600-point grand army format, and Imperial Discipline's [500-point format](https://imperialdiscipline.blog/2019/06/04/creating-a-500-point-format-for-legion/).
 
 # Planned Major Features
+Rough roadmap of features being worked on
 ## Tournament Organizer
-Work In Progress
+Feature for Tournament Organizers (T.O.'s) to organize events.
+- Participants use Legion HQ to build lists and submit them to an event
+- Participants submit round results and the software determines next pairing
+- Requirements still being gathered...
 ## Tournament Data Analyzer
-Work In Progress
+Feature built off the Organizer feature that aggregates data for analysis
+- Users can query, view, or export data from events
 ## Card Database
 Static pages for each card in the game with various data related to the card:
 - Point changes and errata for the card
