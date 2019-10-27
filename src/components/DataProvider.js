@@ -86,7 +86,8 @@ const styles = theme => ({
     overflow: 'scroll',
     top: '25vh',
     textAlign: 'center',
-    maxHeight: '50vh'
+    maxHeight: '75vh',
+    maxWidth: '75vw'
   },
   googleButtonContainer: {
     position: 'absolute',

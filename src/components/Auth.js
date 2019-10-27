@@ -7,8 +7,8 @@ class Auth {
       domain: 'dev-i-uenm-b.auth0.com',
       audience: 'https://dev-i-uenm-b.auth0.com/userinfo',
       clientID: 'lD7NO1LrFyHlaMY0oHQoCb7s6MblhVrl',
-      // redirectUri: 'https://d37xhki8rk4762.cloudfront.net/callback',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: 'https://d37xhki8rk4762.cloudfront.net/callback',
+      // redirectUri: 'http://localhost:3000/callback',
       responseType: 'id_token',
       scope: 'openid profile email',
       expires_in: 36 * 60 * 60 * 1000
@@ -83,8 +83,8 @@ class Auth {
     this.profile = null;
     this.expiresAt = null;
     this.auth0.logout({
-        // returnTo: 'https://d37xhki8rk4762.cloudfront.net',
-        returnTo: 'http://localhost:3000',
+        returnTo: 'https://d37xhki8rk4762.cloudfront.net',
+        // returnTo: 'http://localhost:3000',
         clientID: 'lD7NO1LrFyHlaMY0oHQoCb7s6MblhVrl',
     });
   }
