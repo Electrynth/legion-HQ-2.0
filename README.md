@@ -29,9 +29,9 @@ Users can build lists in standard 800-point format, 1600-point grand army format
 
 - Legion HQ 2.0 Desktop Stats: ![Screenshot](images/desktop2.png)
 
-- Legion HQ 1.0 Mobile Stats: ![Screenshot](images/mobile2.png)
+- Legion HQ 1.0 Mobile Stats: ![Screenshot](images/mobile1.png)
 
-- Legion HQ 2.0 Mobile Stats: ![Screenshot](images/mobile1.png)
+- Legion HQ 2.0 Mobile Stats: ![Screenshot](images/mobile2.png)
 
 ## Technology
 Legion HQ's frontend is built in [React](https://reactjs.org/) using Facebook's [create-react-app](https://github.com/facebook/create-react-app) and currently resides in [Heroku](https://dashboard.heroku.com/). The backend database is hosted in [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and the backend APIs are hosted on a [Lightsail](https://aws.amazon.com/lightsail/) instance.
