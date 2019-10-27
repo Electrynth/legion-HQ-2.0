@@ -7,24 +7,52 @@ Users can build lists in standard 800-point format, 1600-point grand army format
 
 # Planned Major Features
 ## Tournament Organizer
-## Card Database
-## Inventory Manager
+Work In Progress
 ## Tournament Data Analyzer
-## Soundboard
-## Custom Card Creator
-## Custom Card Rater & Database
+Work In Progress
+## Card Database
+Static pages for each card in the game with various data related to the card:
+- Point changes and errata for the card
+- Products the card can be acquired in
+- Average number of hits, if applicable
+- Links to articles from various blogs about the card
+- Related cards
+## Inventory Manager
+Interface for users to input what products or individual cards they own
+- Hooks into the list builder to give feedback on what lists can be constructed from collection
 ## List Rater & Database
+Users can publish lists they create and other users can view and rate lists on creativity, fun, competitiveness
+## Soundboard
+Feature where user can push buttons to replay sound bytes from Star Wars media
+## Custom Card Creator
+Feature where user can create a custom unit, upgrade, or command card.
+## Custom Card Rater & Database
+Users can view custom cards made by other players and give ratings on creativity, design, or balance.
 ## Mobile & Desktop App
+Mobile and desktop apps can be built using a shared codebase with React Native.
+- Allows users to use Legion HQ while offline
 
 # Planned Improvements
 ## Fifth Trooper Redesign
+Work In Progress
 ## Repo Reorganization
+Legion HQ will be split into a few different repos.
+- Legion-hq-web: Contains all frontend code
+- Legion-hq-api: Contains all APIs
+- Legion-hq-cards: Small web app for rendering a static page for any card
+- Legion-hq-assets: Repo will all other static assets like images, logos, JSON
 ## General Code Refactor
+Code is currently very messy, not maintainable, and not easy to contribute to.
+- Decouple app logic and UI logic
+- Reduce number of lines in each js file for readability
+- more...
 
 # Improvements Over 1.0
+- Addition of Republic and Separatists factions
+- Serialization of list for sharing URL on social media
 - Major redesign of user interface with a focus on mobile browsers
 - Moderate code refactor (~780kb -> ~280kb)
-- Use of route based code splitting to decrease initial load time (fully loaded time: 3s -> 1.5s)
+- Use of route-based code splitting to decrease initial load time (fully loaded time: 3s -> 1.5s)
 - Legion HQ 1.0 Desktop Stats: ![Screenshot](images/desktop1.png)
 
 - Legion HQ 2.0 Desktop Stats: ![Screenshot](images/desktop2.png)
@@ -38,4 +66,4 @@ Legion HQ's frontend is built in [React](https://reactjs.org/) using Facebook's 
 ### Planned Technological Improvements
 - Frontend will be served on Amazon S3 buckets behind Cloudfront
 - Backend API's will be on Amazon's Lambda functions behind API Gateway
-- Frontend and Backend will be rewritten using Typescript
+- Frontend and Backend will (probably) be rewritten using Typescript
