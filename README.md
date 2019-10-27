@@ -32,13 +32,17 @@ Static pages for each card in the game with various data related to the card:
 Interface for users to input what products or individual cards they own
 - Hooks into the list builder to give feedback on what lists can be constructed from collection
 ## List Rater & Database
-Users can publish lists they create and other users can view and rate lists on creativity, fun, competitiveness
+Users can publish and share lists they create
+- View and rate lists on creativity, fun, competitiveness
+- Give feedback in the form of comments
 ## Soundboard
 Feature where user can push buttons to replay sound bytes from Star Wars media
 ## Custom Card Creator
 Feature where user can create a custom unit, upgrade, or command card.
 ## Custom Card Rater & Database
-Users can view custom cards made by other players and give ratings on creativity, design, or balance.
+Users can view custom cards made by other players.
+- Give ratings on creativity, design, or balance
+- Give feedback in the form of comments
 ## Mobile & Desktop App
 Mobile and desktop apps can be built using a shared codebase with React Native.
 - Allows users to use Legion HQ while offline
