@@ -3,10 +3,12 @@ import Axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
+import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import Link from '@material-ui/core/Link';
 import AddIcon from '@material-ui/icons/Add';
+import { GitHub } from '@material-ui/icons';
 import FiberNewIcon from '@material-ui/icons/FiberNew';
 // import DeleteIcon from '@material-ui/icons/Delete';
 // import { GoogleLogin, GoogleLogout } from 'react-google-login';
@@ -163,6 +165,16 @@ class Home extends React.Component {
                   Login
                 </Button>
               )}
+            </Grid>
+            <Grid item style={{ marginTop: 12 }}>
+              <IconButton
+                color="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/NicholasCBrown/legion-HQ-2.0"
+              >
+                <GitHub />
+              </IconButton>
             </Grid>
             <Grid item style={{ marginTop: 12 }}>
               <div>
