@@ -86,7 +86,7 @@ class Auth {
     this.auth0.logout({
         // returnTo: 'https://d37xhki8rk4762.cloudfront.net',
         // returnTo: 'http://localhost:3000',
-        returnTo: 'https://legion-hq.herokuapp.com',
+        returnTo: 'https://legion-hq.herokuapp.com/',
         clientID: 'lD7NO1LrFyHlaMY0oHQoCb7s6MblhVrl',
     });
   }
