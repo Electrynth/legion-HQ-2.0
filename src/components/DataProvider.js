@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core/styles';
 import Data from '../data.json';
 import DataContext from './DataContext';
+import 'typeface-roboto';
 
 const cookies = new Cookies();
 
@@ -17,8 +18,7 @@ const styles = theme => ({
     height: 250
   },
   vertButton: {
-    position: 'relative',
-    top: 10
+    marginLeft: 4
   },
   input: {
     display: 'inline-flex !important',

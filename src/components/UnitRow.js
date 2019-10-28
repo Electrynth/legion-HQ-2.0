@@ -289,20 +289,22 @@ class UnitRow extends React.Component {
             {unitRankAvatar}
             {unitAvatar}
           </Grid>
-          <Grid item style={{ width: 'calc(100% - 125px)' }}>
+          <Grid item style={{ width: 'calc(100% - 145px)' }}>
             {unitContent}
           </Grid>
           <Grid item>
             <IconButton
               size="small"
-              edge="end"
               onClick={this.handleClick}
               className={classes.vertButton}
             >
-              <div {...dragHandle}>
-                <MoreVertIcon style={{ marginTop: 5 }} />
-              </div>
+              <AddIcon />
             </IconButton>
+          </Grid>
+          <Grid item>
+            <div {...dragHandle}>
+              <MoreVertIcon style={{ marginTop: 3 }} color="primary" />
+            </div>
           </Grid>
           <Menu
             id="unit-action-menu"

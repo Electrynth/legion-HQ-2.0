@@ -27,6 +27,7 @@
     "react-to-print": "^2.4.0",
     "recompose": "^0.30.0",
     "serve": "^11.1.0",
+    "typeface-roboto": "0.0.75",
     "universal-cookie": "^4.0.2"
   },
   "scripts": {
