@@ -8,10 +8,8 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import Link from '@material-ui/core/Link';
 import AddIcon from '@material-ui/icons/Add';
-import { GitHub } from '@material-ui/icons';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import FiberNewIcon from '@material-ui/icons/FiberNew';
-// import DeleteIcon from '@material-ui/icons/Delete';
-// import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import DataContext from '../components/DataContext';
 import auth0Client from '../components/Auth';
 
@@ -173,7 +171,7 @@ class Home extends React.Component {
                 rel="noopener noreferrer"
                 href="https://github.com/NicholasCBrown/legion-HQ-2.0"
               >
-                <GitHub />
+                <GitHubIcon />
               </IconButton>
             </Grid>
             <Grid item style={{ marginTop: 12 }}>

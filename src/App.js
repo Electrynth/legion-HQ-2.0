@@ -310,10 +310,11 @@ class App extends Component {
   forkCurrentList = () => {
     const { currentList, userId } = this.state;
     if (Number.parseInt(userId, 10) < 0) return;
-    delete currentList.listId;
-    delete currentList._id;
-    currentList.title += ' copy';
     if (currentList.userId === userId) {
+      currentList.title += ' copy';
+      if (currentList.userId) delete currentList.userId;
+      if (currentList.listId) delete currentList.listId;
+      if (currentList._id) delete currentList._id;
       Axios.post('https://api.legion-hq.com:3000/lists', {userId, ...currentList}).then((response) => {
         const { listId } = response.data;
         this.setState({ currentList: { ...response.data } });
@@ -340,6 +341,8 @@ class App extends Component {
     } else {
       // create new list
       if (currentList.userId) delete currentList.userId;
+      if (currentList.listId) delete currentList.listId;
+      if (currentList._id) delete currentList._id;
       Axios.post('https://api.legion-hq.com:3000/lists', {userId, ...currentList}).then((response) => {
         const { listId } = response.data;
         this.setState({ currentList: { ...response.data } });
