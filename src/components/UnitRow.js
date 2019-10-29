@@ -319,7 +319,7 @@ class UnitRow extends React.Component {
             {unitRankAvatar}
             {unitAvatar}
           </Grid>
-          <Grid item style={{ width: 'calc(100% - 160px)' }}>
+          <Grid item style={{ width: 'calc(100% - 165px)' }}>
             {unitContent}
           </Grid>
           <Grid item>
@@ -329,7 +329,7 @@ class UnitRow extends React.Component {
             item
             {...dragHandle}
             style={{
-              marginLeft: 5,
+              marginRight: 10,
               width: 10,
               backgroundColor: 'lightgrey'
             }}
