@@ -155,10 +155,27 @@ class UnitRow extends React.Component {
             equippedUpgradeId={equippedUpgradeId}
             changeViewFilter={this.changeViewFilter}
             removeUpgrade={() => removeUpgrade(unitsIndex, i)}
-            handleClick={() => changeViewFilter({
-              type: 'view card',
-              cardId: equippedUpgradeId
-            })}
+            handleClick={() => {
+              if (
+                allCards[equippedUpgradeId].cardName.includes('Comms Technician') ||
+                allCards[equippedUpgradeId].cardName.includes('Rebel Trooper Captain') ||
+                allCards[equippedUpgradeId].cardName.includes('Stormtrooper Captain') ||
+                allCards[equippedUpgradeId].cardName.includes('Rebel Trooper Specialist') ||
+                allCards[equippedUpgradeId].cardName.includes('Stormtrooper Specialist')
+              ) {
+                changeViewFilter({
+                  type: 'view card',
+                  cardId: equippedUpgradeId
+                });
+              } else {
+                changeViewFilter({
+                  type: 'add upgrade',
+                  unitsIndex,
+                  upgradesIndex: i,
+                  upgradeType: upgradeBar[i]
+                });
+              }
+            }}
           />
         );
         equippedUpgrades.push(
@@ -331,7 +348,7 @@ class UnitRow extends React.Component {
           justify="space-between"
           alignItems="stretch"
         >
-          <Grid item style={{ marginRight: -15 }}>
+          <Grid item style={{ marginRight: -10 }}>
             {unitIconBundle}
           </Grid>
           <Grid item style={{ width: 'calc(100% - 145px)' }}>

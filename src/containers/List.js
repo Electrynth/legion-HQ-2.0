@@ -2125,7 +2125,30 @@ class ListContainer extends React.Component {
       </Grid>
     );
     let rightPaneMessage = undefined;
-    if (viewFilter.type === 'add commands') {
+    if (viewFilter.type === 'add upgrade'
+      && viewFilter.unitsIndex > -1
+      && currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex]) {
+      const upgradeTypeIcon = (
+        <img
+          src={upgradeTypes[viewFilter.upgradeType].iconLocation}
+          alt={viewFilter.upgradeType}
+          style={{
+            width: 25,
+            height: 25,
+            marginRight: 5,
+            marginLeft: 5
+          }}
+        />
+      );
+      rightPaneMessage = (
+        <Typography
+          variant="h6"
+          color="primary"
+        >
+          Swapping out {upgradeTypeIcon} {`${allCards[currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex]].cardName}`}...
+        </Typography>
+      );
+    } else if (viewFilter.type === 'add commands') {
       let commandCardString = '';
       currentList.commandCards.forEach((commandCardId) => {
         let numPips = '•';
@@ -2188,7 +2211,9 @@ class ListContainer extends React.Component {
                   </Button>
                 </ButtonGroup>
               )}
-              {viewFilter.type === 'add upgrade' && currentList.units[viewFilter.unitsIndex].count > 1 && (
+              {viewFilter.type === 'add upgrade' &&
+                currentList.units[viewFilter.unitsIndex].count > 1 &&
+                !currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex] (
                 <FormGroup row>
                   <FormControlLabel
                     label={
@@ -2210,7 +2235,6 @@ class ListContainer extends React.Component {
                       />
                     }
                   >
-
                   </FormControlLabel>
                 </FormGroup>
               )}
