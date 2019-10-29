@@ -77,8 +77,8 @@ class CardImage extends React.PureComponent {
       },
       upgrade: {
         vsmall: {
-          height: '217px',
-          width: '140px'
+          height: '201.5px',
+          width: '130px'
         },
         small: {
           height: '248px',

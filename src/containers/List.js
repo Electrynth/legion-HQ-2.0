@@ -15,6 +15,9 @@ import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import Badge from '@material-ui/core/Badge';
 import Chip from '@material-ui/core/Chip';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import CloseIcon from '@material-ui/icons/Close';
@@ -52,6 +55,7 @@ class ListContainer extends React.Component {
   state = {
     loadingList: false,
     unitStackSize: 1,
+    applyUpgradeToAll: false,
     viewFilter: {
       type: ''
     }
@@ -334,7 +338,8 @@ class ListContainer extends React.Component {
   changeViewFilter = (viewFilter) => {
     this.setState({
       viewFilter,
-      unitStackSize: 1
+      unitStackSize: 1,
+      applyUpgradeToAll: false
     });
   }
 
@@ -430,11 +435,36 @@ class ListContainer extends React.Component {
       currentList,
       changeCurrentList
     } = this.props;
+    const { applyUpgradeToAll } = this.state;
     const unitObject = currentList.units[unitsIndex];
-    const unitObjectString = this.generateUnitObjectString(unitObject);
     const upgradeCard = allCards[upgradeCardId];
     const currentUpgradeCardId = unitObject.upgradesEquipped[upgradesIndex];
-    if (currentUpgradeCardId) {
+    let unitObjectString = this.generateUnitObjectString(unitObject);
+    if (applyUpgradeToAll && !upgradeCard.isUnique) {
+      unitObject.upgradesEquipped[upgradesIndex] = upgradeCardId;
+      if (upgradeCard.cardName.includes('Comms Technician')) {
+        unitObject.upgradesEquipped.push(undefined);
+        unitObject.additionalUpgradeSlots.push('comms');
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Captain') || upgradeCard.cardName.includes('Stormtrooper Captain')) {
+        unitObject.upgradesEquipped.push(undefined);
+        unitObject.additionalUpgradeSlots.push('training');
+      } else if (upgradeCard.cardName.includes('Rebel Trooper Specialist') || upgradeCard.cardName.includes('Stormtrooper Specialist')) {
+        unitObject.upgradesEquipped.push(undefined);
+        unitObject.additionalUpgradeSlots.push('gear');
+      }
+      unitObjectString = this.generateUnitObjectString(unitObject);
+      if (currentList.unitObjectStrings.indexOf(unitObjectString) > 0) {
+        currentList.units[currentList.unitObjectStrings.indexOf(unitObjectString)].count += unitObject.count;
+        currentList.units.splice(unitsIndex, 1);
+        currentList.unitObjectStrings.splice(unitsIndex, 1);
+      } else {
+        unitObject.unitObjectString = unitObjectString;
+        currentList.unitObject = unitObject;
+        currentList.unitObjectStrings[unitsIndex] = unitObject.unitObjectString;
+      }
+      changeCurrentList(currentList);
+      this.changeViewFilter({ type: '' });
+    } else if (currentUpgradeCardId) {
       this.swapUpgradeCard(upgradeCardId, unitsIndex, upgradesIndex);
     } else {
       if (upgradeCard.isUnique) {
@@ -1008,7 +1038,7 @@ class ListContainer extends React.Component {
           >
             <CardImage
               showKeywords={true}
-              size="small"
+              size="vsmall"
               cardId={unitCardId}
               key={unitCardId}
               handleClick={() => this.addUnitCard(unitCardId)}
@@ -1094,8 +1124,8 @@ class ListContainer extends React.Component {
             }}
           >
             <CardImage
+              size="vsmall"
               showKeywords={true}
-              size="small"
               cardId={upgradeCardId}
               key={upgradeCardId}
               isDisabled={true}
@@ -1116,8 +1146,8 @@ class ListContainer extends React.Component {
             }}
           >
             <CardImage
+              size="vsmall"
               showKeywords={true}
-              size="small"
               cardId={upgradeCardId}
               key={upgradeCardId}
               isDisabled={false}
@@ -1136,8 +1166,8 @@ class ListContainer extends React.Component {
             }}
           >
             <CardImage
+              size="vsmall"
               showKeywords={true}
-              size="small"
               cardId={upgradeCardId}
               key={upgradeCardId}
               isDisabled={true}
@@ -1590,6 +1620,37 @@ class ListContainer extends React.Component {
         });
       });
     });
+  }
+
+  generateAddUpgradeView = (viewFilter, currentList, rightPaneWidth) => {
+    const { allCards } = this.context;
+    const allIds = Object.keys(allCards);
+    let content = undefined;
+    content = [];
+    const forceAffinity = {
+      'dark side': ['empire', 'separatists'],
+      'light side': ['republic', 'rebels'],
+      '': ''
+    };
+    const unitObject = currentList.units[viewFilter.unitsIndex];
+    const unitCard = allCards[unitObject.unitId];
+    unitObject.upgradesEquipped.forEach((equippedUpgradeId) => {
+      if (equippedUpgradeId) {
+        content.push();
+      } else {
+
+      }
+    });
+    // allIds.filter((cardId) => {
+    //   return (
+    //     allCards[cardId].cardType === 'upgrade' &&
+    //     allCards[cardId].cost > -1 &&
+    //     (allCards[cardId].faction === '' || allCards[cardId].faction === currentList.faction)
+    //   );
+    // }).forEach((upgradeCardId) => {
+    //   const upgradeCard = allCards[upgradeCardId];
+    //
+    // });
   }
 
   render() {
@@ -2064,30 +2125,7 @@ class ListContainer extends React.Component {
       </Grid>
     );
     let rightPaneMessage = undefined;
-    if (viewFilter.type === 'add upgrade'
-      && viewFilter.unitsIndex
-      && currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex]) {
-      const upgradeTypeIcon = (
-        <img
-          src={upgradeTypes[viewFilter.upgradeType].iconLocation}
-          alt={viewFilter.upgradeType}
-          style={{
-            width: 25,
-            height: 25,
-            marginRight: 5,
-            marginLeft: 5
-          }}
-        />
-      );
-      rightPaneMessage = (
-        <Typography
-          variant="h6"
-          color="primary"
-        >
-          Swapping out {upgradeTypeIcon} {`${allCards[currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex]].cardName}`}...
-        </Typography>
-      );
-    } else if (viewFilter.type === 'add commands') {
+    if (viewFilter.type === 'add commands') {
       let commandCardString = '';
       currentList.commandCards.forEach((commandCardId) => {
         let numPips = '•';
@@ -2150,6 +2188,32 @@ class ListContainer extends React.Component {
                   </Button>
                 </ButtonGroup>
               )}
+              {viewFilter.type === 'add upgrade' && currentList.units[viewFilter.unitsIndex].count > 1 && (
+                <FormGroup row>
+                  <FormControlLabel
+                    label={
+                      <Typography
+                        variant="h6"
+                        color="primary"
+                      >
+                        Apply to all
+                      </Typography>
+                    }
+                    control={
+                      <Checkbox
+                        checked={this.state.applyUpgradeToAll}
+                        onChange={() => {
+                          this.setState({
+                            applyUpgradeToAll: !this.state.applyUpgradeToAll
+                          });
+                        }}
+                      />
+                    }
+                  >
+
+                  </FormControlLabel>
+                </FormGroup>
+              )}
               {rightPaneMessage}
             </Grid>
             <Grid item xs={1} />
@@ -2192,7 +2256,7 @@ class ListContainer extends React.Component {
         direction="column"
         style={{
           marginTop: 60,
-          padding: 5
+          padding: 1
         }}
       >
         <Grid

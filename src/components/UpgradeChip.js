@@ -25,7 +25,8 @@ class UpgradeChip extends React.Component {
         src={upgradeCard.iconLocation}
         onClick={changeViewFilter}
         style={{
-          width: 48,
+          objectFit: 'cover',
+          width: 40,
           height: 32,
           borderRadius: '25px'
         }}
@@ -38,7 +39,7 @@ class UpgradeChip extends React.Component {
         label={`${upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName} (${upgradeCard.cost})`}
         onClick={() => handleClick()}
         onDelete={() => removeUpgrade()}
-        style={{ marginRight: 4, marginBottom: 2 }}
+        style={{ marginRight: 2, marginBottom: 2 }}
       />
     );
   }
