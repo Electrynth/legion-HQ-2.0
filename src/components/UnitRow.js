@@ -16,7 +16,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import RemoveIcon from '@material-ui/icons/Remove';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import DragIndicator from '@material-ui/icons/DragIndicator';
+import Dehaze from '@material-ui/icons/Dehaze';
 import UpgradeChip from '../components/UpgradeChip';
 import DataContext from '../components/DataContext';
 
@@ -136,7 +136,7 @@ class UnitRow extends React.Component {
             width: 62.5,
             height: 50,
             borderRadius: 25,
-            right: 8,
+            right: 10,
             marginTop: 4,
             position: 'relative'
           }}
@@ -207,32 +207,42 @@ class UnitRow extends React.Component {
           justify="center"
           alignItems="center"
         >
-          <Grid item>
-            <Typography
-              variant="body2"
-              color="primary"
-            >
-              {totalUnitCost}
-            </Typography>
+          <Grid
+            item
+            container
+            spacing={0}
+            direction="row"
+            justify="space-evenly"
+            alignItems="center"
+          >
+            <Grid item>
+              <Typography
+                variant="body2"
+                color="primary"
+              >
+                {totalUnitCost}
+              </Typography>
+            </Grid>
           </Grid>
           <Grid
             item
             container
             spacing={0}
             direction="row"
-            justify="space-between"
-            alignItems="flex-start"
+            justify="flex-start"
+            alignItems="center"
           >
-            {upgradeMenuItems.length > 0 && (
-              <Grid item>
-                <IconButton
-                  size="small"
-                  onClick={this.handleClickUpgrade}
-                >
-                  <AddIcon />
-                </IconButton>
-              </Grid>
-            )}
+            <Grid item>
+              <IconButton
+                size="small"
+                onClick={this.handleClickUpgrade}
+                style={{
+                  opacity: `${upgradeMenuItems.length > 0 ? 1 : 0}`
+                }}
+              >
+                <AddIcon />
+              </IconButton>
+            </Grid>
             <Grid item>
               <IconButton
                 size="small"
@@ -306,6 +316,12 @@ class UnitRow extends React.Component {
         <DeleteIcon color="primary" />
       </MenuItem>
     );
+    const unitIconBundle = (
+      <div>
+        {unitRankAvatar}
+        {unitAvatar}
+      </div>
+    )
     return (
       <div>
         <Grid
@@ -314,26 +330,17 @@ class UnitRow extends React.Component {
           wrap="nowrap"
           justify="space-between"
           alignItems="stretch"
+          {...dragHandle}
         >
-          <Grid item>
-            {unitRankAvatar}
-            {unitAvatar}
+          <Grid item style={{ marginRight: -15 }}>
+            {unitIconBundle}
           </Grid>
-          <Grid item style={{ width: 'calc(100% - 165px)' }}>
+          <Grid item style={{ width: 'calc(100% - 145px)' }}>
             {unitContent}
           </Grid>
           <Grid item>
             {unitFooter}
           </Grid>
-          <Grid
-            item
-            {...dragHandle}
-            style={{
-              marginRight: 10,
-              width: 10,
-              backgroundColor: 'lightgrey'
-            }}
-          />
           <Menu
             id="unit-upgrade-menu"
             anchorEl={upgradeAnchorEl}
