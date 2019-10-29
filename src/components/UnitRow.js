@@ -88,6 +88,7 @@ class UnitRow extends React.Component {
         <div
           style={{
             bottom: 5,
+            left: 2,
             width: 21,
             height: 21,
             backgroundColor: 'white',
@@ -115,6 +116,7 @@ class UnitRow extends React.Component {
           alt={allCards[unitObject.unitId].cardName}
           style={{
             bottom: 0,
+            left: 2,
             width: 22,
             height: 22,
             position: 'relative',
@@ -134,7 +136,7 @@ class UnitRow extends React.Component {
             width: 62.5,
             height: 50,
             borderRadius: 25,
-            right: 10,
+            right: 8,
             marginTop: 4,
             position: 'relative'
           }}
@@ -317,7 +319,7 @@ class UnitRow extends React.Component {
             {unitRankAvatar}
             {unitAvatar}
           </Grid>
-          <Grid item style={{ flexGrow: 1, position: 'relative', right: 5 }}>
+          <Grid item style={{ width: 'calc(100% - 160px)' }}>
             {unitContent}
           </Grid>
           <Grid item>
