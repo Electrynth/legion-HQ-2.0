@@ -330,7 +330,6 @@ class UnitRow extends React.Component {
           wrap="nowrap"
           justify="space-between"
           alignItems="stretch"
-          {...dragHandle}
         >
           <Grid item style={{ marginRight: -15 }}>
             {unitIconBundle}
@@ -338,7 +337,18 @@ class UnitRow extends React.Component {
           <Grid item style={{ width: 'calc(100% - 145px)' }}>
             {unitContent}
           </Grid>
-          <Grid item>
+          <Grid
+            item
+            style={{
+              marginTop: 15,
+              marginBottom: 15,
+              borderLeft: '1px solid rgba(255, 255, 255, 0.1)'
+            }}
+          />
+          <Grid
+            item
+            {...dragHandle}
+          >
             {unitFooter}
           </Grid>
           <Menu
