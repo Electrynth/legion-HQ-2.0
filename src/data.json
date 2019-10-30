@@ -5709,6 +5709,75 @@
       "keywords": [
         "Eat This, Clankers!"
       ]
+    },
+    "jv": {
+      "displayName": "OOM Battle Droid",
+      "cardSubtype": "personnel",
+      "cardName": "OOM-Series Battle Droid",
+      "iconLocation": "/images/upgradeIcons/OOM-Series%20Battle%20Droid.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 12,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/OOM-Series%20Battle%20Droid.jpeg",
+      "keywords": [
+        "Coordinate",
+        "Leader"
+      ],
+      "requirements": ["B1 Battle Droids"],
+      "id": "jv"
+    },
+    "jw": {
+      "displayName": "Radiation Cannon Trooper",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Radiation Cannon B1 Trooper",
+      "iconLocation": "/images/upgradeIcons/Radiation%20Cannon%20B1%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 22,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/Radiation%20Cannon%20B1%20Trooper.jpeg",
+      "keywords": [
+        "Poison Token"
+      ],
+      "requirements": ["B1 Battle Droids"],
+      "id": "jw"
+    },
+    "jx": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Phase I Clone Captain",
+      "iconLocation": "/images/upgradeIcons/Phase%20I%20Clone%20Captain.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 17,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Phase%20I%20Clone%20Captain.jpeg",
+      "keywords": [
+        "Leader"
+      ],
+      "requirements": ["Phase I Clone Troopers"],
+      "id": "jx"
+    },
+    "jy": {
+      "displayName": "",
+      "cardSubtype": "personnel",
+      "cardName": "Phase I Clone Captain",
+      "iconLocation": "/images/upgradeIcons/Phase%20I%20Clone%20Specialist.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 17,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Phase%20I%20Clone%20Specialist.jpeg",
+      "keywords": [
+        "Leader"
+      ],
+      "requirements": ["Phase I Clone Troopers"],
+      "id": "jy"
     }
   }
 }

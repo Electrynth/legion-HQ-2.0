@@ -158,10 +158,8 @@ class UnitRow extends React.Component {
             handleClick={() => {
               if (
                 allCards[equippedUpgradeId].cardName.includes('Comms Technician') ||
-                allCards[equippedUpgradeId].cardName.includes('Rebel Trooper Captain') ||
-                allCards[equippedUpgradeId].cardName.includes('Stormtrooper Captain') ||
-                allCards[equippedUpgradeId].cardName.includes('Rebel Trooper Specialist') ||
-                allCards[equippedUpgradeId].cardName.includes('Stormtrooper Specialist')
+                allCards[equippedUpgradeId].cardName.includes('Captain') ||
+                allCards[equippedUpgradeId].cardName.includes('Specialist')
               ) {
                 changeViewFilter({
                   type: 'view card',
