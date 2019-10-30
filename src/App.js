@@ -371,21 +371,29 @@ class App extends Component {
       bc: false, // imperial royal guards
       bd: false // imperial death troopers
     };
+    const newUniques = [];
     currentList.pointTotal = 0;
     currentList.units.forEach((unitObject) => {
-      unitObject.hasUniques = allCards[unitObject.unitId].isUnique;
+      if (allCards[unitObject.unitId].isUnique) {
+        newUniques.push(unitObject.unitId);
+        unitObject.hasUniques = true;
+      }
       if (unitObject.unitId in entourageUnits) entourageUnits[unitObject.unitId] = true;
       unitObject.totalUnitCost = allCards[unitObject.unitId].cost * unitObject.count;
       unitCounts[allCards[unitObject.unitId].rank] += unitObject.count;
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
         if (upgradeCardId) {
           unitObject.totalUnitCost += allCards[upgradeCardId].cost * unitObject.count;
-          if (allCards[upgradeCardId].isUnique) unitObject.hasUniques = true;
+          if (allCards[upgradeCardId].isUnique) {
+            newUniques.push(upgradeCardId);
+            unitObject.hasUniques = true;
+          }
         }
       });
       currentList.pointTotal += unitObject.totalUnitCost;
     });
     currentList.unitCounts = unitCounts;
+    currentList.uniques = newUniques;
     if (currentList.uniques.includes('as') && entourageUnits['bc']) { // emperor palpatine + IRG
       currentList.unitCounts.special -= 1;
     }
