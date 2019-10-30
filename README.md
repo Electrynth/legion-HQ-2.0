@@ -66,7 +66,7 @@ Code is currently very messy, not maintainable, and not easy to contribute to.
 - Addition of Republic and Separatists factions
 - Serialization of list for sharing URL on social media
 - Major redesign of user interface with a focus on mobile browsers
-- Moderate code refactor (~780kb -> ~280kb)
+- Moderate code refactor (web bundle size of ~780kb -> ~280kb)
 - Use of route-based code splitting to decrease initial load time (fully loaded time: 3s -> 1.5s)
 - Legion HQ 1.0 Desktop Stats: ![Screenshot](images/desktop1.png)
 
