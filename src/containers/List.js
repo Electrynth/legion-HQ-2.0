@@ -2125,9 +2125,7 @@ class ListContainer extends React.Component {
       </Grid>
     );
     let rightPaneMessage = undefined;
-    if (viewFilter.type === 'add upgrade'
-      && viewFilter.unitsIndex > -1
-      && currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex]) {
+    if (viewFilter.swappingUpgrades) {
       const upgradeTypeIcon = (
         <img
           src={upgradeTypes[viewFilter.upgradeType].iconLocation}
@@ -2211,9 +2209,8 @@ class ListContainer extends React.Component {
                   </Button>
                 </ButtonGroup>
               )}
-              {viewFilter.type === 'add upgrade' &&
-                currentList.units[viewFilter.unitsIndex].count > 1 &&
-                !currentList.units[viewFilter.unitsIndex].upgradesEquipped[viewFilter.upgradesIndex] (
+              {!viewFilter.swappingUpgrades &&
+                currentList.units[viewFilter.unitsIndex].count > 1 && (
                 <FormGroup row>
                   <FormControlLabel
                     label={

@@ -172,7 +172,8 @@ class UnitRow extends React.Component {
                   type: 'add upgrade',
                   unitsIndex,
                   upgradesIndex: i,
-                  upgradeType: upgradeBar[i]
+                  upgradeType: upgradeBar[i],
+                  swappingUpgrades: true
                 });
               }
             }}
@@ -193,7 +194,7 @@ class UnitRow extends React.Component {
                 type: 'add upgrade',
                 unitsIndex,
                 upgradesIndex: i,
-                upgradeType: upgradeBar[i]
+                upgradeType: upgradeBar[i],
               });
             }}
           >
