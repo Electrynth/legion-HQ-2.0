@@ -17,62 +17,79 @@ class Callback extends React.Component {
   async componentDidMount() {
     const { changeUserLists, handleTabClick, setUserId } = this.props;
     await auth0Client.handleAuthentication();
-    const email = auth0Client.getEmail();
+    const profile = auth0Client.getProfile();
+    let email;
+    if (
+      profile.hasOwnProperty('email') &&
+      profile.email
+    ) {
+        email = profile.email;
+    } else if (
+      profile.hasOwnProperty('name') &&
+      profile.name
+    ) {
+      email = profile.name
+    } else {
+      this.setState({
+        email,
+        message: `Email and Name not found in profile! Available fields: ${Object.keys(profile).join(', ')}`
+      });
+    }
     const waitTime = 1000;
     if (email) {
       this.setState({
         email,
         message: `Successfully authenticated...`
       });
+      setTimeout(() => {
+        Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
+          if (emailSearch.data.length === 0) {
+            this.setState({
+              email,
+              message: `Creating new account...`
+            });
+            setTimeout(() => {
+              Axios.post(`https://api.legion-hq.com:3000/users`, { email }).then((createResponse) => {
+                this.setState({
+                  email,
+                  message: `Your account was successfully created!`
+                });
+                setTimeout(() => {
+                  setUserId(createResponse.data.userId);
+                  handleTabClick(null, 0);
+                }, waitTime);
+              });
+            }, waitTime);
+          } else {
+            this.setState({
+              email,
+              message: `Welcome back! Loading your saved lists...`
+            });
+            setTimeout(() => {
+              Axios.get(`https://api.legion-hq.com:3000/lists?userId=${emailSearch.data[0].userId}`).then((response) => {
+                this.setState({
+                  email,
+                  message: `Found ${response.data.length} ${response.data.length === 1 ? 'list' : 'lists'}...`
+                });
+                setTimeout(() => {
+                  setUserId(emailSearch.data[0].userId);
+                  changeUserLists(response.data);
+                  handleTabClick(null, 0);
+                }, waitTime);
+              }).catch((error) => {
+                console.log(error);
+                alert(error.description);
+              });
+            }, waitTime);
+          }
+        });
+      }, waitTime);
     } else {
-      this.setState({
-        email,
-        message: `Successfully authenticated but no email address found!`
-      });
+      setTimeout(() => {
+        setUserId(-1);
+        handleTabClick(null, 0);
+      }, 3000);
     }
-    setTimeout(() => {
-      Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
-        if (emailSearch.data.length === 0) {
-          this.setState({
-            email,
-            message: `Creating new account...`
-          });
-          setTimeout(() => {
-            Axios.post(`https://api.legion-hq.com:3000/users`, { email }).then((createResponse) => {
-              this.setState({
-                email,
-                message: `Your account was successfully created!`
-              });
-              setTimeout(() => {
-                setUserId(createResponse.data.userId);
-                handleTabClick(null, 0);
-              }, waitTime);
-            });
-          }, waitTime);
-        } else {
-          this.setState({
-            email,
-            message: `Welcome back! Loading your saved lists...`
-          });
-          setTimeout(() => {
-            Axios.get(`https://api.legion-hq.com:3000/lists?userId=${emailSearch.data[0].userId}`).then((response) => {
-              this.setState({
-                email,
-                message: `Found ${response.data.length} ${response.data.length === 1 ? 'list' : 'lists'}...`
-              });
-              setTimeout(() => {
-                setUserId(emailSearch.data[0].userId);
-                changeUserLists(response.data);
-                handleTabClick(null, 0);
-              }, waitTime);
-            }).catch((error) => {
-              console.log(error);
-              alert(error.description);
-            });
-          }, waitTime);
-        }
-      });
-    }, waitTime);
   }
 
   render() {
