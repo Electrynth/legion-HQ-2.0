@@ -66,7 +66,8 @@ class Callback extends React.Component {
                 handleTabClick(null, 0);
               }, waitTime);
             }).catch((error) => {
-              alert(error);
+              console.log(error);
+              alert(error.description);
             });
           }, waitTime);
         }

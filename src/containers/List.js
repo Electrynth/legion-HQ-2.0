@@ -25,6 +25,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import PrintIcon from '@material-ui/icons/Print';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import SaveIcon from '@material-ui/icons/Save';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import ImageIcon from '@material-ui/icons/Image';
 import CallSplitIcon from '@material-ui/icons/CallSplit';
 import ClearIcon from '@material-ui/icons/Clear';
@@ -33,6 +34,7 @@ import UnitRow from '../components/UnitRow';
 import CommandChip from '../components/CommandChip';
 import DataContext from '../components/DataContext';
 import ListPrintText from '../components/ListPrintText';
+import auth0Client from '../components/Auth';
 
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'rgba(255, 255, 255, 0.23)' : ''
@@ -1677,9 +1679,11 @@ class ListContainer extends React.Component {
       toggleListMode,
       clearList,
       saveCurrentList,
-      forkCurrentList
+      forkCurrentList,
+      changeUserId,
+      reauthenticate,
+      reauthMessage
     } = this.props;
-    console.log(userId);
     const listMinifiedText = this.generateMinifiedText();
     const listTournamentText = this.generateTournamentText();
     const listUrl = this.generateLink('Legion HQ Link');
@@ -2110,6 +2114,22 @@ class ListContainer extends React.Component {
                   Clear List
                 </Button>
               </Grid>
+              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  color="primary"
+                  disabled={userId !== -1}
+                  onClick={reauthenticate}
+                >
+                  <VpnKeyIcon style={{ marginRight: 5 }} />
+                  {reauthMessage === '' ? (
+                    'Reauthenticate'
+                  ) : (
+                    reauthMessage
+                  )}
+                </Button>
+              </Grid>
             </Grid>
             <Grid item>
               <div
@@ -2118,6 +2138,13 @@ class ListContainer extends React.Component {
             </Grid>
             <Grid item style={{ display: 'none' }}>
               <ListPrintText ref={el => (this.componentRef = el)} listTournamentText={listTournamentText} listUrl={listUrl} />
+            </Grid>
+            <Grid item style={{ marginLeft: '47%' }}>
+              {userId > 0 && (
+                <Typography variant="caption" color="primary">
+                  {`ID ${userId}`}
+                </Typography>
+              )}
             </Grid>
             <Grid item>
               <div style={{ marginBottom: 500 }} />

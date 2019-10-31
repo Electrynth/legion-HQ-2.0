@@ -23,6 +23,7 @@ class Home extends React.Component {
       Axios.get(`https://api.legion-hq.com:3000/lists?userId=${userId}`).then((response) => {
         changeUserLists(response.data);
       }).catch((error) => {
+        alert(error.description);
         console.log(error);
       });
     }

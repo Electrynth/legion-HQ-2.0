@@ -50,9 +50,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.onDragEnd = this.onDragEnd.bind(this);
+    this.reauthenticate = this.reauthenticate.bind(this);
   }
 
   state = {
+    reauthMessage: '',
     snackbarMessage: '',
     isSnackbarOpen: false,
     initialLoading: true,
@@ -93,6 +95,62 @@ class App extends Component {
     }
   }
 
+  async reauthenticate() {
+    const waitTime = 2000;
+    try {
+      await auth0Client.silentAuth();
+      if (auth0Client.isAuthenticated()) {
+        const email = auth0Client.getEmail();
+        this.setState({
+          reauthMessage: 'Loading...'
+        });
+        setTimeout(() => {
+          Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
+            if (emailSearch.data.length === 0) {
+              this.setState({
+                reauthMessage: 'Email not found...'
+              });
+              setTimeout(() => {
+                this.setState({
+                  reauthMessage: ''
+                });
+              }, waitTime);
+            } else {
+              this.setState({
+                reauthMessage: 'Found user id'
+              });
+              setTimeout(() => {
+                this.setState({
+                  userId: emailSearch.data[0].userId,
+                  reauthMessage: 'Logged in'
+                });
+              });
+            }
+          });
+        }, waitTime);
+      } else {
+        this.setState({
+          reauthMessage: 'Auth failure'
+        });
+      }
+    } catch (error) {
+      if (error.error === 'login_required') {
+        alert('Please login on homepage');
+      } else {
+        console.log(error);
+        alert(error.description);
+        this.setState({
+          reauthMessage: 'Failed'
+        });
+      }
+      setTimeout(() => {
+        this.setState({
+          reauthMessage: ''
+        });
+      }, waitTime);
+    }
+  }
+
   async componentDidMount() {
     const { location } = this.props;
     const { tabRoutes } = this.context;
@@ -117,7 +175,7 @@ class App extends Component {
               });
               this.forceUpdate();
             }).catch((error) => {
-              alert(error);
+              alert(error.description);
               this.setState({ initialLoading: false });
               this.forceUpdate();
             });
@@ -362,6 +420,8 @@ class App extends Component {
     }
   }
 
+  changeUserId = userId => this.setState({ userId });
+
   changeUserLists = userLists => this.setState({ userLists });
 
   changeCurrentList = currentList => {
@@ -436,7 +496,8 @@ class App extends Component {
       upgradeTypeFilter,
       isSnackbarOpen,
       snackbarMessage,
-      initialLoading
+      initialLoading,
+      reauthMessage
     } = this.state;
     const {
       classes
@@ -463,6 +524,9 @@ class App extends Component {
     };
     const listProps = {
       currentList,
+      reauthMessage,
+      reauthenticate: this.reauthenticate,
+      changeUserId: this.changeUserId,
       loadListByListId: this.loadListByListId,
       changeCurrentList: this.changeCurrentList,
       changeActiveTab: this.changeActiveTab,
