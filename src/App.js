@@ -218,9 +218,9 @@ class App extends Component {
         this.setState({ initialLoading: false });
         this.forceUpdate();
       }
-    } catch (err) {
-      if (err.error !== 'login_required') {
-        alert(err.error);
+    } catch (error) {
+      if (error.error !== 'login_required') {
+        console.log(error);
       }
       this.setState({ initialLoading: false });
     }
