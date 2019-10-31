@@ -2114,22 +2114,6 @@ class ListContainer extends React.Component {
                   Clear List
                 </Button>
               </Grid>
-              <Grid item style={{ marginRight: 10, marginBottom: 10 }}>
-                <Button
-                  variant="outlined"
-                  size="small"
-                  color="primary"
-                  disabled={userId !== -1}
-                  onClick={reauthenticate}
-                >
-                  <VpnKeyIcon style={{ marginRight: 5 }} />
-                  {reauthMessage === '' ? (
-                    'Reauthenticate'
-                  ) : (
-                    reauthMessage
-                  )}
-                </Button>
-              </Grid>
             </Grid>
             <Grid item>
               <div
@@ -2343,5 +2327,24 @@ class ListContainer extends React.Component {
     );
   }
 }
+
+/*
+<Grid item style={{ marginRight: 10, marginBottom: 10 }}>
+  <Button
+    variant="outlined"
+    size="small"
+    color="primary"
+    disabled={userId !== -1}
+    onClick={reauthenticate}
+  >
+    <VpnKeyIcon style={{ marginRight: 5 }} />
+    {reauthMessage === '' ? (
+      'Reauthenticate'
+    ) : (
+      reauthMessage
+    )}
+  </Button>
+</Grid>
+*/
 
 export default withWidth()(ListContainer);

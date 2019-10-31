@@ -165,35 +165,55 @@ class App extends Component {
     try {
       await auth0Client.silentAuth();
       if (auth0Client.isAuthenticated()) {
-        const email = auth0Client.getEmail();
-        Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
-          if (emailSearch.data.length === 0) {
-            Axios.post(`https://api.legion-hq.com:3000/users`, { email }).then((createResponse) => {
-              this.setState({
-                initialLoading: false,
-                userId: emailSearch.data[0].userId
+        const profile = auth0Client.getProfile()
+        let email;
+        if (
+          profile.hasOwnProperty('email') &&
+          profile.email
+        ) {
+            email = profile.email;
+        } else if (
+          profile.hasOwnProperty('name') &&
+          profile.name
+        ) {
+          email = profile.name
+        } else {
+          alert('Email and name not found in profile!');
+        }
+        if (email) {
+          Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
+            if (emailSearch.data.length === 0) {
+              Axios.post(`https://api.legion-hq.com:3000/users`, { email }).then((createResponse) => {
+                this.setState({
+                  initialLoading: false,
+                  userId: emailSearch.data[0].userId
+                });
+                this.forceUpdate();
+              }).catch((error) => {
+                alert(error.description);
+                this.setState({ initialLoading: false });
+                this.forceUpdate();
               });
-              this.forceUpdate();
-            }).catch((error) => {
-              alert(error.description);
-              this.setState({ initialLoading: false });
-              this.forceUpdate();
-            });
-          } else {
-            const userId = emailSearch.data[0].userId;
-            Axios.get(`https://api.legion-hq.com:3000/lists?userId=${userId}`).then((response) => {
-              this.changeUserLists(response.data);
-              this.setState({
-                userId,
-                initialLoading: false
+            } else {
+              const userId = emailSearch.data[0].userId;
+              Axios.get(`https://api.legion-hq.com:3000/lists?userId=${userId}`).then((response) => {
+                this.changeUserLists(response.data);
+                this.setState({
+                  userId,
+                  initialLoading: false
+                });
+                this.forceUpdate();
+              }).catch((error) => {
+                console.log(error);
+                this.setState({ userId, initialLoading: false })
               });
-              this.forceUpdate();
-            }).catch((error) => {
-              console.log(error);
-              this.setState({ userId, initialLoading: false })
-            });
-          }
-        });
+            }
+          });
+        } else {
+          this.setState({
+            initialLoading: false
+          });
+        }
       } else {
         this.setState({ initialLoading: false });
         this.forceUpdate();
