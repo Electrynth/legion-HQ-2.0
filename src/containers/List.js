@@ -83,6 +83,7 @@ class ListContainer extends React.Component {
           changeActiveTab(0);
         }
       }).catch((error) => {
+        alert(`Failed to load list ${listId}.`);
         this.props.history.push('/');
         changeActiveTab(0);
       });
@@ -1678,6 +1679,7 @@ class ListContainer extends React.Component {
       saveCurrentList,
       forkCurrentList
     } = this.props;
+    console.log(userId);
     const listMinifiedText = this.generateMinifiedText();
     const listTournamentText = this.generateTournamentText();
     const listUrl = this.generateLink('Legion HQ Link');
@@ -2075,7 +2077,7 @@ class ListContainer extends React.Component {
                   size="small"
                   variant="outlined"
                   color="primary"
-                  disabled={userId < 999}
+                  disabled={userId === -1}
                   onClick={() => saveCurrentList()}
                 >
                   <SaveIcon style={{ marginRight: 5 }} />
@@ -2118,7 +2120,7 @@ class ListContainer extends React.Component {
               <ListPrintText ref={el => (this.componentRef = el)} listTournamentText={listTournamentText} listUrl={listUrl} />
             </Grid>
             <Grid item>
-              <div style={{ marginBottom: 250 }} />
+              <div style={{ marginBottom: 500 }} />
             </Grid>
           </div>
         </div>

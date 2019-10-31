@@ -187,7 +187,7 @@ class Home extends React.Component {
                     style={{
                       width: '50%',
                       height: '50%',
-                      marginBottom: 60
+                      marginBottom: 120
                     }}
                   />
                 </a>

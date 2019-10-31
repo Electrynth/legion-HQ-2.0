@@ -117,8 +117,9 @@ class App extends Component {
               });
               this.forceUpdate();
             }).catch((error) => {
-              console.log(error);
+              alert(error);
               this.setState({ initialLoading: false });
+              this.forceUpdate();
             });
           } else {
             const userId = emailSearch.data[0].userId;
@@ -140,7 +141,10 @@ class App extends Component {
         this.forceUpdate();
       }
     } catch (err) {
-      if (err.error !== 'login_required') console.log('Login error:', err.error);
+      if (err.error !== 'login_required') {
+        alert(err.error);
+      }
+      this.setState({ initialLoading: false });
     }
     this.setState({ initialLoading: false });
   }
@@ -329,7 +333,10 @@ class App extends Component {
 
   saveCurrentList = () => {
     const { currentList, userId } = this.state;
-    if (Number.parseInt(userId, 10) < 0) return;
+    if (Number.parseInt(userId, 10) < 0) {
+      this.handleOpenSnackbar('User ID error, list unable to be created!');
+      return;
+    };
     if (currentList.listId && currentList.userId === userId) {
       // update list
       Axios.put(`https://api.legion-hq.com:3000/lists/${currentList.listId}`, currentList).then((response) => {
@@ -492,6 +499,7 @@ class App extends Component {
       ...commonProps
     };
     const callbackProps = {
+      changeUserLists: this.changeUserLists,
       setUserId: this.setUserId,
       handleTabClick: this.handleTabClick
     };
