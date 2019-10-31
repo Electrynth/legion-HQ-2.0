@@ -165,7 +165,7 @@ class App extends Component {
     try {
       await auth0Client.silentAuth();
       if (auth0Client.isAuthenticated()) {
-        const profile = auth0Client.getProfile()
+        const profile = auth0Client.getProfile();
         let email;
         if (
           profile.hasOwnProperty('email') &&
@@ -178,7 +178,7 @@ class App extends Component {
         ) {
           email = profile.name
         } else {
-          alert('Email and name not found in profile!');
+          alert(`Email and Name not found in profile! Available fields: ${Object.keys(profile).join(', ')}`);
         }
         if (email) {
           Axios.get(`https://api.legion-hq.com:3000/users?email=${email}`).then((emailSearch) => {
