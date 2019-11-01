@@ -3541,7 +3541,9 @@
         "Relentless",
         "Reposition",
         "Spur",
-        "Unhindered"
+        "Unhindered",
+        "Critical",
+        "Suppressive"
       ],
       "upgradeBar": [
         "training",
