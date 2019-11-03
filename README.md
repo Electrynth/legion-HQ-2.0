@@ -46,6 +46,12 @@ Users can view custom cards made by other players.
 ### Mobile & Desktop App
 Mobile and desktop apps can be built using a shared codebase with React Native.
 - Allows users to use Legion HQ while offline
+### Hobby & Crafts Section
+Basically a page where people can upload/link images related to a specific unit, theme, or category
+- Themes would be like Hoth, Felucia, Mustafar, forest, etc.
+- Category would be terrain, bases, miniatures, and storage, etc.
+- Primary purpose is for inspiration
+- Maybe a rating system at some point
 
 # Planned Improvements
 ### Fifth Trooper Redesign
