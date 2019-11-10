@@ -1,22 +1,14 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
-import Chip from '@material-ui/core/Chip';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import IconButton from '@material-ui/core/IconButton';
 import ExposurePlus1Icon from '@material-ui/icons/ExposurePlus1';
 import ExposureNeg1Icon from '@material-ui/icons/ExposureNeg1';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add';
-import CloseIcon from '@material-ui/icons/Close';
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import RemoveIcon from '@material-ui/icons/Remove';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import Dehaze from '@material-ui/icons/Dehaze';
 import UpgradeChip from '../components/UpgradeChip';
 import DataContext from '../components/DataContext';
 
@@ -55,8 +47,7 @@ class UnitRow extends React.Component {
       classes,
       ranks,
       upgradeTypes,
-      allCards,
-      userSettings
+      allCards
     } = this.context;
     const {
       upgradeAnchorEl,
@@ -68,7 +59,6 @@ class UnitRow extends React.Component {
       changeViewFilter,
       incrementUnitCount,
       decrementUnitCount,
-      copyUnitRow,
       removeUnit,
       removeUpgrade,
       dragHandle
@@ -81,7 +71,6 @@ class UnitRow extends React.Component {
     });
     totalUnitCost *= unitObject.count;
     const menuItems = [];
-    const settingsMenuItems = [];
     const upgradeMenuItems = [];
     const unitRankAvatar = (
       <div style={{ display: 'inline-block'}}>
