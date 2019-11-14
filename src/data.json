@@ -5664,7 +5664,9 @@
       "faction": "separatists",
       "imageLocation": "/images/commandCards/Fear%2C%20Surprise%2C%20and%20Intimidation.jpeg",
       "keywords": [
-        "Fear, Surprise, and Intimidation"
+        "Arsenal",
+        "Relentless",
+        "Versatile"
       ]
     },
     "js": {
@@ -5679,7 +5681,6 @@
       "faction": "separatists",
       "imageLocation": "/images/commandCards/Double%20the%20Fall.jpeg",
       "keywords": [
-        "Double the Fall"
       ]
     },
     "jt": {
