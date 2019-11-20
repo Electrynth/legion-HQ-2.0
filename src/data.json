@@ -5781,6 +5781,38 @@
       ],
       "requirements": ["Phase I Clone Troopers"],
       "id": "jy"
+    },
+    "jz": {
+      "displayName": "",
+      "cardName": "Smoke Screen",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "R2-D2",
+      "iconLocation": "/images/commandIcons/Smoke%20Screen.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Smoke%20Screen.jpeg",
+      "keywords": [
+        "Smoke"
+      ],
+      "id": "jz"
+    },
+    "ka": {
+      "displayName": "",
+      "cardName": "Impromptu Immolation",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "R2-D2",
+      "iconLocation": "/images/commandIcons/Impromptu%20Immolation.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Impromptu%20Immolation.jpeg",
+      "keywords": [
+        "Blast",
+        "Spray",
+        "Suppressive"
+      ],
+      "id": "ka"
     }
   }
 }
