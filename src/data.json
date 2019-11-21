@@ -5845,6 +5845,36 @@
         "Suppressive"
       ],
       "id": "kc"
+    },
+    "kd": {
+      "displayName": "Z-6 Trooper",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Z-6 Phase II Clone Trooper",
+      "iconLocation": "/images/upgradeIcons/Z-6%20Phase%20II%20Clone%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 27,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Z-6%20Phase%20II%20Clone%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": ["Phase II Clone Troopers"],
+      "id": "kd"
+    },
+    "ke": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "B2-ACM Trooper",
+      "iconLocation": "/images/upgradeIcons/B2-ACM%20Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 26,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/B2-ACM%20Trooper.jpeg",
+      "keywords": [],
+      "requirements": ["B2 Super Battle Droids"],
+      "id": "ke"
     }
   }
 }
