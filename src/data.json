@@ -5664,7 +5664,9 @@
       "faction": "separatists",
       "imageLocation": "/images/commandCards/Fear%2C%20Surprise%2C%20and%20Intimidation.jpeg",
       "keywords": [
-        "Fear, Surprise, and Intimidation"
+        "Arsenal",
+        "Relentless",
+        "Versatile"
       ]
     },
     "js": {
@@ -5679,7 +5681,6 @@
       "faction": "separatists",
       "imageLocation": "/images/commandCards/Double%20the%20Fall.jpeg",
       "keywords": [
-        "Double the Fall"
       ]
     },
     "jt": {
@@ -5780,6 +5781,70 @@
       ],
       "requirements": ["Phase I Clone Troopers"],
       "id": "jy"
+    },
+    "jz": {
+      "displayName": "",
+      "cardName": "Smoke Screen",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "R2-D2",
+      "iconLocation": "/images/commandIcons/Smoke%20Screen.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Smoke%20Screen.jpeg",
+      "keywords": [
+        "Smoke"
+      ],
+      "id": "jz"
+    },
+    "ka": {
+      "displayName": "",
+      "cardName": "Impromptu Immolation",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "R2-D2",
+      "iconLocation": "/images/commandIcons/Impromptu%20Immolation.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Impromptu%20Immolation.jpeg",
+      "keywords": [
+        "Blast",
+        "Spray",
+        "Suppressive"
+      ],
+      "id": "ka"
+    },
+    "kb": {
+      "displayName": "",
+      "cardName": "Smoke Screen",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "R2-D2",
+      "iconLocation": "/images/commandIcons/Smoke%20Screen.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Smoke%20Screen.jpeg",
+      "keywords": [
+        "Smoke"
+      ],
+      "id": "kb"
+    },
+    "kc": {
+      "displayName": "",
+      "cardName": "Impromptu Immolation",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "R2-D2",
+      "iconLocation": "/images/commandIcons/Impromptu%20Immolation.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Impromptu%20Immolation.jpeg",
+      "keywords": [
+        "Blast",
+        "Spray",
+        "Suppressive"
+      ],
+      "id": "kc"
     }
   }
 }

@@ -52,6 +52,8 @@ Basically a page where people can upload/link images related to a specific unit,
 - Category would be terrain, bases, miniatures, and storage, etc.
 - Primary purpose is for inspiration
 - Maybe a rating system at some point
+### List Analysis
+Page where all lists in the database are analyzed and possible a recommendation system when builing a list.
 
 # Planned Improvements
 ### Fifth Trooper Redesign
