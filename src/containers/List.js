@@ -311,7 +311,7 @@ class ListContainer extends React.Component {
           if (currentList.unitCounts[rank] > 1) return errorColor;
           break;
         case 'corps':
-          if (currentList.unitCounts[rank] < 2 || currentList.unitCounts[rank] > 5) return errorColor;
+          if (currentList.unitCounts[rank] < 2 || currentList.unitCounts[rank] > 4) return errorColor;
           break;
         case 'special':
           if (currentList.unitCounts[rank] > 2) return errorColor;
