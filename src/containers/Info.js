@@ -55,22 +55,6 @@ class InfoContainer extends React.Component {
               width: '33%'
             }}
           />
-          <Grid item style={{ textAlign: 'center' }}>
-            <a
-              href="https://imperialterrain.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                alt="Imperial Terrain"
-                src="/images/imperialTerrain.png"
-                style={{
-                  width: '66%',
-                  height: '66%'
-                }}
-              />
-            </a>
-          </Grid>
           <Grid item>
             <Button
               color="default"

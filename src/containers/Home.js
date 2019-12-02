@@ -175,25 +175,6 @@ class Home extends React.Component {
                 <GitHubIcon />
               </IconButton>
             </Grid>
-            <Grid item style={{ marginTop: 12 }}>
-              <div>
-                <a
-                  href="https://imperialterrain.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    alt="Imperial Terrain"
-                    src="/images/imperialTerrain.png"
-                    style={{
-                      width: '50%',
-                      height: '50%',
-                      marginBottom: 120
-                    }}
-                  />
-                </a>
-              </div>
-            </Grid>
           </div>
           <Grid item style={{ marginBottom: 60 }} />
         </Grid>
