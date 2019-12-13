@@ -1,5 +1,6 @@
 {
   "keywordDict": {
+    "Skirmish": "Intended for use in Skirmish matches.",
     "Low Profile": "While defending, if you have light cover, improve your cover by 1.",
     "Generator": "During the End Phase, flip X inactive shield token(s).",
     "Agile": "After you perform a standard move, gain X dodge token(s). Note: climbing, clambering, embarking, disembarking, pivoting, and reversing are not standard moves. This effect does not trigger abilities that occur after dodge actions are performed.",
@@ -3757,6 +3758,74 @@
       "keywords": [],
       "id": "Ce"
     },
+    "Cf": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Fortified Positions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Fortified%20Positions.jpeg",
+      "keywords": [],
+      "id": "Cf"
+    },
+    "Cg": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Supply Drop",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Supply%20Drop.jpeg",
+      "keywords": [],
+      "id": "Cg"
+    },
+    "Ch": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "War Weary",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/War%20Weary.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Ch"
+    },
+    "Ci": {
+      "displayName": "Clear Conditions",
+      "cardSubtype": "condition",
+      "cardName": "Clear Conditions2",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Clear%20Conditions2.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Ci"
+    },
+    "Cj": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Dawn",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Dawn.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Cj"
+    },
+    "Ck": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Improvised Defenses",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Improvised%20Defenses.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Ck"
+    },
     "Cd": {
       "displayName": "",
       "cardSubtype": "condition",
@@ -4847,6 +4916,54 @@
       "keywords": [],
       "id": "Df"
     },
+    "Dg": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Faceoff",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Faceoff.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Dg"
+    },
+    "Dh": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Meeting Engagement",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Meeting%20Engagement.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Dh"
+    },
+    "Di": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Flanking Positions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Flanking%20Positions.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Di"
+    },
+    "Dj": {
+      "displayName": "Battle Lines",
+      "cardSubtype": "deployment",
+      "cardName": "Battle Lines2",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Battle%20Lines2.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Dj"
+    },
     "Dd": {
       "displayName": "",
       "cardSubtype": "deployment",
@@ -4924,6 +5041,66 @@
         "Sabotage/Repair"
       ],
       "id": "Of"
+    },
+    "Og": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Hostage Exchange",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Hostage%20Exchange.jpeg",
+      "keywords": [
+        "Claim"
+      ],
+      "id": "Og"
+    },
+    "Oh": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Elimination",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Elimination.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Oh"
+    },
+    "Oi": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Pivotal Positions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Pivotal%20Positions.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Oi"
+    },
+    "Oj": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Breach",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Breach.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Oj"
+    },
+    "Ok": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Control",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Control.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Ok"
     },
     "Oe": {
       "displayName": "Secure the Intel",
@@ -5944,8 +6121,7 @@
       "keywords": [
         "Cumbersome",
         "High Velocity",
-        "Pierce",
-        "Reconfigure"
+        "Pierce"
       ],
       "requirements": ["Cassian Andor"],
       "id": "kh"

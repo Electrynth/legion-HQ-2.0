@@ -145,6 +145,24 @@ class CardImage extends React.PureComponent {
         large: {
           width: '420px',
           height: '300px'
+        },
+        skirmish: {
+          vsmall: {
+            width: '217px',
+            height: '304px'
+          },
+          small: {
+            height: '350px',
+            width: '250px'
+          },
+          medium: {
+            height: '385px',
+            width: '275px'
+          },
+          large: {
+            height: '420px',
+            width: '300px'
+          },
         }
       }
     };
@@ -156,6 +174,9 @@ class CardImage extends React.PureComponent {
       opacity: isDisabled ? 0.5 : 1,
     };
     let cardStyles = cardSizes[cardData.cardType][size];
+    if (cardData.cardType === 'battle' && cardData.keywords.includes('Skirmish')) {
+      cardStyles = cardSizes[cardData.cardType].skirmish[size];
+    }
     if (cardData.cardType === 'upgrade' && cardData.keywords.includes('Reconfigure')) {
       cardStyles = cardSizes[cardData.cardType]['doubleSided'][size];
     }
