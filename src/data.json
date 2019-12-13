@@ -5871,6 +5871,132 @@
       "keywords": [],
       "requirements": ["B2 Super Battle Droids"],
       "id": "ke"
+    },
+    "kf": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "rebels",
+      "cardSubtype": "trooper",
+      "cardName": "Cassian Andor",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Cassian%20Andor.jpeg",
+      "cost": 90,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Cassian%20Andor.jpeg",
+      "keywords": [
+        "Covert Ops",
+        "Danger Sense",
+        "Loadout",
+        "Marksman",
+        "Tactical"
+      ],
+      "upgradeBar": [
+        "training",
+        "training",
+        "gear",
+        "armament"
+      ],
+      "id": "kf"
+    },
+    "kg": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "empire",
+      "cardSubtype": "trooper",
+      "cardName": "Iden Versio",
+      "isUnique": true,
+      "rank": "commander",
+      "iconLocation": "/images/unitIcons/Iden%20Versio.jpeg",
+      "cost": 100,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Iden%20Versio.jpeg",
+      "keywords": [
+        "Quick Thinking",
+        "Covert Ops",
+        "Loadout",
+        "Marksman",
+        "Nimble"
+      ],
+      "upgradeBar": [
+        "training",
+        "training",
+        "gear",
+        "armament"
+      ],
+      "id": "kg"
+    },
+    "kh": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "A280-CFE Sniper Config",
+      "iconLocation": "/images/upgradeIcons/A280-CFE Sniper Config.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/A280-CFE Sniper Config.jpeg",
+      "keywords": [
+        "Cumbersome",
+        "High Velocity",
+        "Pierce",
+        "Reconfigure"
+      ],
+      "requirements": ["Cassian Andor"],
+      "id": "kh"
+    },
+    "ki": {
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "Iden's DLT-20A Rifle",
+      "iconLocation": "/images/upgradeIcons/Iden's%20DLT-20A%20Rifle.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Iden's%20DLT-20A%20Rifle.jpeg",
+      "keywords": [
+        "High Velocity",
+        "Pierce"
+      ],
+      "requirements": ["Iden Versio"],
+      "id": "ki"
+    },
+    "kj": {
+      "displayName": "",
+      "cardName": "Crack Shot",
+      "cardSubtype": "1",
+      "cardType": "command",
+      "commander": "Cassian Andor",
+      "iconLocation": "/images/commandIcons/Crack%20Shot.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Crack%20Shot.jpeg",
+      "keywords": [
+        "Gunslinger"
+      ],
+      "id": "kj"
+    },
+    "kk": {
+      "displayName": "",
+      "cardName": "Pulse Scan",
+      "cardSubtype": "1",
+      "cardType": "command",
+      "commander": "Iden Versio",
+      "iconLocation": "/images/commandIcons/Pulse%20Scan.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Pulse%20Scan.jpeg",
+      "keywords": [
+        "Sharpshooter"
+      ],
+      "id": "kk"
     }
   }
 }
