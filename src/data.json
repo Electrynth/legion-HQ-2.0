@@ -3778,6 +3778,19 @@
       "keywords": [],
       "id": "Cg"
     },
+    "Cd": {
+      "displayName": "",
+      "cardSubtype": "condition",
+      "cardName": "Minefield",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Minefield.jpeg",
+      "keywords": [
+        "Blast",
+        "Impact"
+      ],
+      "id": "Cd"
+    },
     "Ch": {
       "displayName": "",
       "cardSubtype": "condition",
@@ -3825,19 +3838,6 @@
         "Skirmish"
       ],
       "id": "Ck"
-    },
-    "Cd": {
-      "displayName": "",
-      "cardSubtype": "condition",
-      "cardName": "Minefield",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Minefield.jpeg",
-      "keywords": [
-        "Blast",
-        "Impact"
-      ],
-      "id": "Cd"
     },
     "ij": {
       "displayName": "",
@@ -4906,64 +4906,6 @@
       "requirements": [],
       "id": "ib"
     },
-    "Df": {
-      "displayName": "Forces Converge",
-      "cardSubtype": "deployment",
-      "cardName": "Forces Converge (Act 1)",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Forces%20Converge%20(Act%201).jpeg",
-      "keywords": [],
-      "id": "Df"
-    },
-    "Dg": {
-      "displayName": "",
-      "cardSubtype": "deployment",
-      "cardName": "Faceoff",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Faceoff.jpeg",
-      "keywords": [
-        "Skirmish"
-      ],
-      "id": "Dg"
-    },
-    "Dh": {
-      "displayName": "",
-      "cardSubtype": "deployment",
-      "cardName": "Meeting Engagement",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Meeting%20Engagement.jpeg",
-      "keywords": [
-        "Skirmish"
-      ],
-      "id": "Dh"
-    },
-    "Di": {
-      "displayName": "",
-      "cardSubtype": "deployment",
-      "cardName": "Flanking Positions",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Flanking%20Positions.jpeg",
-      "keywords": [
-        "Skirmish"
-      ],
-      "id": "Di"
-    },
-    "Dj": {
-      "displayName": "Battle Lines",
-      "cardSubtype": "deployment",
-      "cardName": "Battle Lines2",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Battle%20Lines2.jpeg",
-      "keywords": [
-        "Skirmish"
-      ],
-      "id": "Dj"
-    },
     "Dd": {
       "displayName": "",
       "cardSubtype": "deployment",
@@ -5030,6 +4972,64 @@
       ],
       "id": "Da"
     },
+    "Df": {
+      "displayName": "Forces Converge",
+      "cardSubtype": "deployment",
+      "cardName": "Forces Converge (Act 1)",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Forces%20Converge%20(Act%201).jpeg",
+      "keywords": [],
+      "id": "Df"
+    },
+    "Dg": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Faceoff",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Faceoff.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Dg"
+    },
+    "Dh": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Meeting Engagement",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Meeting%20Engagement.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Dh"
+    },
+    "Di": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Flanking Positions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Flanking%20Positions.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Di"
+    },
+    "Dj": {
+      "displayName": "Battle Lines",
+      "cardSubtype": "deployment",
+      "cardName": "Battle Lines2",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Battle%20Lines2.jpeg",
+      "keywords": [
+        "Skirmish"
+      ],
+      "id": "Dj"
+    },
     "Of": {
       "displayName": "Sabotage Moisture Vaporators",
       "cardSubtype": "objective",
@@ -5042,6 +5042,26 @@
       ],
       "id": "Of"
     },
+    "Ob": {
+      "displayName": "Intercept Transmissions",
+      "cardSubtype": "objective",
+      "cardName": "Intercept the Transmissions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Intercept%20the%20Transmissions.jpeg",
+      "keywords": [],
+      "id": "Ob"
+    },
+    "Oc": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Key Positions",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Key%20Positions.jpeg",
+      "keywords": [],
+      "id": "Oc"
+    },
     "Og": {
       "displayName": "",
       "cardSubtype": "objective",
@@ -5053,6 +5073,19 @@
         "Claim"
       ],
       "id": "Og"
+    },
+    "Oe": {
+      "displayName": "Secure the Intel",
+      "cardSubtype": "objective",
+      "cardName": "Secure the Intel (Act 1)",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Secure%20the%20Intel%20(Act%201).jpeg",
+      "keywords": [
+        "Extract",
+        "Claim"
+      ],
+      "id": "Oe"
     },
     "Oh": {
       "displayName": "",
@@ -5101,19 +5134,6 @@
         "Skirmish"
       ],
       "id": "Ok"
-    },
-    "Oe": {
-      "displayName": "Secure the Intel",
-      "cardSubtype": "objective",
-      "cardName": "Secure the Intel (Act 1)",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Secure%20the%20Intel%20(Act%201).jpeg",
-      "keywords": [
-        "Extract",
-        "Claim"
-      ],
-      "id": "Oe"
     },
     "al": {
       "cardType": "unit",
@@ -5344,16 +5364,6 @@
       ],
       "id": "fx"
     },
-    "Oc": {
-      "displayName": "",
-      "cardSubtype": "objective",
-      "cardName": "Key Positions",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Key%20Positions.jpeg",
-      "keywords": [],
-      "id": "Oc"
-    },
     "fz": {
       "cardType": "unit",
       "displayName": "",
@@ -5380,16 +5390,6 @@
         "grenades"
       ],
       "id": "fz"
-    },
-    "Ob": {
-      "displayName": "Intercept Transmissions",
-      "cardSubtype": "objective",
-      "cardName": "Intercept the Transmissions",
-      "cardType": "battle",
-      "products": [],
-      "imageLocation": "/images/battleCards/Intercept%20the%20Transmissions.jpeg",
-      "keywords": [],
-      "id": "Ob"
     },
     "fa": {
       "displayName": "",
