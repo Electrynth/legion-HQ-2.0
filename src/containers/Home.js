@@ -98,7 +98,7 @@ class Home extends React.Component {
               Please email contact@legion-hq.com if you have any issues or questions.
             </Typography>
           </Grid>
-          <div style={{ marginTop: 36 }} className={classes.factionListsContainer}>
+          <div style={{ marginTop: 36, maxHeight: '40vh', overflowX: 'scroll' }} className={classes.factionListsContainer}>
             {Object.keys(factions).map(factionName => (
               <Grid item key={factionName} style={{ marginTop: 12 }}>
                 <Chip
