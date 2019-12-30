@@ -230,6 +230,20 @@ class CardImage extends React.PureComponent {
             <div style={{ margin: '-2px' }}>
               {showKeywords && (
                 <CardActions disableSpacing className={classes.cardAction}>
+                  <Tooltip
+                    key="cost"
+                    title={(
+                      <Typography variant="body1">
+                        Current points cost based off current errata.
+                      </Typography>
+                    )}
+                  >
+                    <Chip
+                      label={cardData.cost}
+                      className={classes.keywordChip}
+                      style={{ cursor: 'help' }}
+                    />
+                  </Tooltip>
                   {this.generateKeywordChips(cardData.keywords)}
                 </CardActions>
               )}
