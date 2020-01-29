@@ -112,7 +112,9 @@
     "AI": "Unless you have a faceup order token, your first action must be one of the following, if able: X",
     "Light Transport: Open": "You may transport X friendly trooper units that consists of exactly 1 small base mini. After defending, if you suffered 1 or more wounds, each unit you are transporting suffers 1 wound.",
     "Cumbersome": "You cannot use this weapon and move during the same activation.",
-    "Fire Support": "When another friendly unit performs a ranged attack, if you have a faceup order token, each mini in your unit may add an eligible weapon to the attack pool. If you do, flip your order token facedown. Limit 1 FIRE SUPPORT per attack pool. Note: Can still be used even if a unit would panic during its activation. Only the main unit attacking determines cover, LoS, and surges."
+    "Fire Support": "When another friendly unit performs a ranged attack, if you have a faceup order token, each mini in your unit may add an eligible weapon to the attack pool. If you do, flip your order token facedown. Limit 1 FIRE SUPPORT per attack pool. Note: Can still be used even if a unit would panic during its activation. Only the main unit attacking determines cover, LoS, and surges.",
+    "Beam": "After performing an attack with this weapon, you may perform up to 2 extra attacks using only this weapon. Each attack must be against an enemy unit that is in line of sight, has not already defended, and is at range 1 of the defender.",
+    "Cycle": "At the end of your activation, if you did not use this card, ready it."
   },
   "communityLinks": {
     "Blogs": [
@@ -566,6 +568,8 @@
       ],
       "upgradeBar": [
         "pilot",
+        "ordnance",
+        "ordnance",
         "comms"
       ],
       "id": "gc"
@@ -597,6 +601,7 @@
       "upgradeBar": [
         "pilot",
         "hardpoint",
+        "ordnance",
         "comms"
       ],
       "id": "gb"
@@ -4981,6 +4986,16 @@
       "keywords": [],
       "id": "Df"
     },
+    "Dk": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Roll Out",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Roll Out.jpeg",
+      "keywords": [],
+      "id": "Dk"
+    },
     "Dg": {
       "displayName": "",
       "cardSubtype": "deployment",
@@ -5085,6 +5100,19 @@
         "Claim"
       ],
       "id": "Oe"
+    },
+    "Ol": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Bombing Run",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Bombing Run.jpeg",
+      "keywords": [
+        "Blast",
+        "Suppressive"
+      ],
+      "id": "Ol"
     },
     "Oh": {
       "displayName": "",
@@ -6172,6 +6200,77 @@
         "Sharpshooter"
       ],
       "id": "kk"
+    },
+    "kl": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "Veteran Clone Pilot",
+      "iconLocation": "/images/upgradeIcons/Veteran Clone Pilot.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 7,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Veteran Clone Pilot.jpeg",
+      "keywords": [
+      ],
+      "requirements": ["TX-130 Saber-Class Fighter Tank"],
+      "id": "kl"
+    },
+    "km": {
+      "displayName": "",
+      "cardSubtype": "hardpoint",
+      "cardName": "TX-130 Beam Cannon Turret",
+      "iconLocation": "/images/upgradeIcons/TX-130 Beam Cannon Turret.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 30,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/TX-130 Beam Cannon Turret.jpeg",
+      "keywords": [
+        "Beam"
+      ],
+      "requirements": ["TX-130 Saber-Class Fighter Tank"],
+      "id": "km"
+    },
+    "kn": {
+      "displayName": "",
+      "cardSubtype": "ordnance",
+      "cardName": "Armor-Piercing Shells",
+      "iconLocation": "/images/upgradeIcons/Armor-Piercing Shells.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Armor-Piercing Shells.jpeg",
+      "keywords": [
+        "Cycle",
+        "Fixed",
+        "Impact"
+      ],
+      "requirements": ["TX-130 Saber-Class Fighter Tank"],
+      "id": "kn"
+    },
+    "ko": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Phase II Mortar Trooper",
+      "iconLocation": "/images/upgradeIcons/Phase II Mortar Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 25,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Phase II Mortar Trooper.jpeg",
+      "keywords": [
+        "Critical",
+        "Suppressive",
+        "Cumbersome"
+      ],
+      "requirements": ["Phase II Clone Troopers"],
+      "id": "ko"
     }
   }
 }
