@@ -6262,7 +6262,7 @@
       "cardType": "upgrade",
       "cost": 25,
       "products": [],
-      "faction": "",
+      "faction": "republic",
       "imageLocation": "/images/upgradeCards/Phase II Mortar Trooper.jpeg",
       "keywords": [
         "Critical",
@@ -6271,6 +6271,25 @@
       ],
       "requirements": ["Phase II Clone Troopers"],
       "id": "ko"
+    },
+    "kp": {
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "B2-HA Trooper",
+      "iconLocation": "/images/upgradeIcons/B2-HA Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 32,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/B2-HA Trooper.jpeg",
+      "keywords": [
+        "Blast",
+        "Cycle",
+        "Impact"
+      ],
+      "requirements": ["B2 Super Battle Droids"],
+      "id": "kp"
     }
   }
 }
