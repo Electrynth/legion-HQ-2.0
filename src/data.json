@@ -6262,7 +6262,7 @@
       "cardType": "upgrade",
       "cost": 25,
       "products": [],
-      "faction": "",
+      "faction": "republic",
       "imageLocation": "/images/upgradeCards/Phase II Mortar Trooper.jpeg",
       "keywords": [
         "Critical",
@@ -6274,6 +6274,25 @@
     },
     "kp": {
       "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "B2-HA Trooper",
+      "iconLocation": "/images/upgradeIcons/B2-HA Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 32,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/B2-HA Trooper.jpeg",
+      "keywords": [
+        "Blast",
+        "Cycle",
+        "Impact"
+      ],
+      "requirements": ["B2 Super Battle Droids"],
+      "id": "kp"
+    },
+    "kq": {
+      "id": "kq",
       "cardSubtype": "pilot",
       "cardName": "Lok Durd",
       "iconLocation": "/images/upgradeIcons/Lok Durd.jpeg",
@@ -6288,7 +6307,6 @@
         "Suppressive"
       ],
       "requirements": ["AAT Trade Federation Battle Tank"],
-      "id": "kp"
     }
   }
 }
