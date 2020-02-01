@@ -6271,6 +6271,24 @@
       ],
       "requirements": ["Phase II Clone Troopers"],
       "id": "ko"
+    },
+    "kp": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "Lok Durd",
+      "iconLocation": "/images/upgradeIcons/Lok Durd.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 9,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/Lok Durd.jpeg",
+      "keywords": [
+        "AI",
+        "Suppressive"
+      ],
+      "requirements": ["AAT Trade Federation Battle Tank"],
+      "id": "kp"
     }
   }
 }
