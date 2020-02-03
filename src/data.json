@@ -6296,7 +6296,7 @@
       "cardSubtype": "pilot",
       "cardName": "Lok Durd",
       "iconLocation": "/images/upgradeIcons/Lok Durd.jpeg",
-      "isUnique": false,
+      "isUnique": true,
       "cardType": "upgrade",
       "cost": 9,
       "products": [],
@@ -6307,6 +6307,40 @@
         "Suppressive"
       ],
       "requirements": ["AAT Trade Federation Battle Tank"]
+    },
+    "kr": {
+      "displayName": "Twin Laser Turret",
+      "cardSubtype": "hardpoint",
+      "cardName": "TX-130 Twin Laser Turret",
+      "iconLocation": "/images/upgradeIcons/TX-130 Twin Laser Turret.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 14,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/TX-130 Twin Laser Turret.jpeg",
+      "keywords": [
+        "Critical"
+      ],
+      "requirements": ["TX-130 Saber-Class Fighter Tank"],
+      "id": "kr"
+    },
+    "ks": {
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "Plo Koon",
+      "iconLocation": "/images/upgradeIcons/Plo Koon.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 9,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Plo Koon.jpeg",
+      "keywords": [
+        "Agile"
+      ],
+      "requirements": ["TX-130 Saber-Class Fighter Tank"],
+      "id": "ks"
     }
   }
 }
