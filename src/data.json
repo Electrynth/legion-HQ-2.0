@@ -5977,7 +5977,7 @@
       "faction": "republic",
       "imageLocation": "/images/upgradeCards/Phase%20I%20Clone%20Specialist.jpeg",
       "keywords": [
-        "Leader"
+        "Surge Token"
       ],
       "requirements": ["Phase I Clone Troopers"],
       "id": "jy"
@@ -6330,7 +6330,7 @@
       "cardSubtype": "pilot",
       "cardName": "Plo Koon",
       "iconLocation": "/images/upgradeIcons/Plo Koon.jpeg",
-      "isUnique": false,
+      "isUnique": true,
       "cardType": "upgrade",
       "cost": 9,
       "products": [],
@@ -6341,6 +6341,63 @@
       ],
       "requirements": ["TX-130 Saber-Class Fighter Tank"],
       "id": "ks"
+    },
+    "kt": {
+      "id": "kt",
+      "displayName": "\"Bunker Buster\" Shells",
+      "cardSubtype": "ordnance",
+      "cardName": "Bunker Buster Shells",
+      "iconLocation": "/images/upgradeIcons/Bunker Buster Shells.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 12,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Bunker Buster Shells.jpeg",
+      "keywords": [
+        "Blast",
+        "Cycle",
+        "Fixed",
+        "Scatter"
+      ],
+      "requirements": []
+    },
+    "ku": {
+      "id": "ku",
+      "displayName": "",
+      "cardSubtype": "ordnance",
+      "cardName": "High-Energy Shells",
+      "iconLocation": "/images/upgradeIcons/High-Energy Shells.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 12,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/High-Energy Shells.jpeg",
+      "keywords": [
+        "Critical",
+        "Cycle",
+        "High Velocity",
+        "Fixed"
+      ],
+      "requirements": []
+    },
+    "kv": {
+      "id": "kv",
+      "displayName": "",
+      "cardSubtype": "pilot",
+      "cardName": "OOM-Series Droid Pilot",
+      "iconLocation": "/images/upgradeIcons/OOM-Series Droid Pilot.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 7,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/OOM-Series Droid Pilot.jpeg",
+      "keywords": [
+        "Coordinate"
+      ],
+      "requirements": ["AAT Trade Federation Battle Tank"]
     }
   }
 }
