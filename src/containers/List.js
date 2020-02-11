@@ -305,7 +305,7 @@ class ListContainer extends React.Component {
     } else if (currentList.mode === '500-point mode') {
       switch (rank) {
         case 'commander':
-          if (currentList.unitCounts[rank] < 1 || currentList.unitCounts[rank] > 2) return errorColor;
+          if (currentList.unitCounts[rank] < 1 || currentList.unitCounts[rank] > 1) return errorColor;
           break;
         case 'operative':
           if (currentList.unitCounts[rank] > 1) return errorColor;
