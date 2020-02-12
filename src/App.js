@@ -458,6 +458,7 @@ class App extends Component {
       bc: false, // imperial royal guards
       bd: false // imperial death troopers
     };
+    const hasRexJetpack = false;
     const newUniques = [];
     currentList.pointTotal = 0;
     currentList.units.forEach((unitObject) => {
@@ -470,6 +471,7 @@ class App extends Component {
       unitCounts[allCards[unitObject.unitId].rank] += unitObject.count;
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
         if (upgradeCardId) {
+          if (upgradeCardId === 'lk') hasRexJetpack = true;
           unitObject.totalUnitCost += allCards[upgradeCardId].cost * unitObject.count;
           if (allCards[upgradeCardId].isUnique) {
             newUniques.push(upgradeCardId);
@@ -489,6 +491,9 @@ class App extends Component {
     }
     if (currentList.uniques.includes('ji') || currentList.uniques.includes('jj')) { // C-3PO
       currentList.unitCounts.operative -= 1;
+    }
+    if (currentList.uniques.includes('fy') && hasRexJetpack) {
+      currentList.pointTotal -= 5;
     }
     this.setState({ currentList });
   }
