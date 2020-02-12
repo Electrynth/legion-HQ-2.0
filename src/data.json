@@ -6398,6 +6398,445 @@
         "Coordinate"
       ],
       "requirements": ["AAT Trade Federation Battle Tank"]
+    },
+    "kw": {
+      "cardType": "unit",
+      "displayName": "Padmé Amidala",
+      "links": [],
+      "faction": "republic",
+      "cardSubtype": "trooper",
+      "cardName": "Padme Amidala",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/Padme Amidala.jpeg",
+      "cost": 90,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Padme Amidala.jpeg",
+      "keywords": [
+        "Quick Thinking",
+        "Authoritative",
+        "Exemplar",
+        "Nimble",
+        "Sharpshooter",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "command",
+        "training",
+        "gear",
+        "armament"
+      ],
+      "id": "kw"
+    },
+    "kx": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "separatists",
+      "cardSubtype": "trooper",
+      "cardName": "Cad Bane",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/Cad Bane.jpeg",
+      "cost": 125,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Cad Bane.jpeg",
+      "keywords": [
+        "Jump",
+        "Bounty",
+        "Danger Sense",
+        "Sharpshooter",
+        "Steady",
+        "Pierce"
+      ],
+      "upgradeBar": [
+        "command",
+        "comms",
+        "gear",
+        "armament",
+        "grenades"
+      ],
+      "id": "kx"
+    },
+    "ky": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "republic",
+      "cardSubtype": "clone trooper",
+      "cardName": "ARC Troopers Strike Team",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/ARC Troopers.jpeg",
+      "cost": 21,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/ARC Troopers.jpeg",
+      "keywords": [
+        "Heavy Weapon Team",
+        "Impervious",
+        "Scout",
+        "Sharpshooter",
+        "Tactical"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "gear",
+        "grenades"
+      ],
+      "id": "ky"
+    },
+    "kz": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "republic",
+      "cardSubtype": "clone trooper",
+      "cardName": "ARC Troopers",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/ARC Troopers.jpeg",
+      "cost": 72,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/ARC Troopers.jpeg",
+      "keywords": [
+        "Impervious",
+        "Scout",
+        "Sharpshooter",
+        "Tactical"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "gear",
+        "gear",
+        "grenades"
+      ],
+      "id": "kz"
+    },
+    "la": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "separatists",
+      "cardSubtype": "droid trooper",
+      "cardName": "BX-Series Droid Commandos",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/BX-Series Droid Commandos.jpeg",
+      "cost": 68,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/BX-Series Droid Commandos.jpeg",
+      "keywords": [
+        "AI",
+        "Impervious",
+        "Scale",
+        "Scout",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "armament",
+        "grenades"
+      ],
+      "id": "la"
+    },
+    "lb": {
+      "cardType": "unit",
+      "displayName": "BX Droid Strike Team",
+      "links": [],
+      "faction": "separatists",
+      "cardSubtype": "droid trooper",
+      "cardName": "BX-Series Droid Commandos Strike Team",
+      "isUnique": false,
+      "rank": "special",
+      "iconLocation": "/images/unitIcons/BX-Series Droid Commandos.jpeg",
+      "cost": 22,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/BX-Series Droid Commandos.jpeg",
+      "keywords": [
+        "AI",
+        "Heavy Weapon Team",
+        "Impervious",
+        "Scale",
+        "Scout",
+        "Sharpshooter"
+      ],
+      "upgradeBar": [
+        "heavy weapon",
+        "training",
+        "comms",
+        "grenades",
+        "armament"
+      ],
+      "id": "lb"
+    },
+    "lc": {
+      "id": "lc",
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "Deflector Shields",
+      "iconLocation": "/images/upgradeIcons/Deflector Shields.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 18,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/Deflector Shields.jpeg",
+      "keywords": [
+        "Shields",
+        "Recharge"
+      ],
+      "requirements": ["BX-Series Droid Commandos"]
+    },
+    "ld": {
+      "id": "ld",
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "BX-Series Droid Sniper",
+      "iconLocation": "/images/upgradeIcons/BX-Series Droid Sniper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 38,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/BX-Series Droid Sniper.jpeg",
+      "keywords": [
+        "Lethal",
+        "Pierce",
+        "Immune",
+        "Deflect"
+      ],
+      "requirements": ["BX-Series Droid Commandos"]
+    },
+    "le": {
+      "id": "le",
+      "displayName": "EMP \"Droid Poppers\"",
+      "cardSubtype": "grenades",
+      "cardName": "EMP Droid Poppers",
+      "iconLocation": "/images/upgradeIcons/EMP Droid Poppers.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 3,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/EMP Droid Poppers.jpeg",
+      "keywords": [
+        "Ion"
+      ],
+      "requirements": []
+    },
+    "lf": {
+      "id": "lf",
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "DC-15x ARC Trooper",
+      "iconLocation": "/images/upgradeIcons/DC-15x ARC Trooper.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 31,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/DC-15x ARC Trooper.jpeg",
+      "keywords": [
+        "Critical",
+        "Immune",
+        "Deflect",
+        "Lethal",
+        "Pierce"
+      ],
+      "requirements": ["ARC Troopers"]
+    },
+    "lg": {
+      "id": "lg",
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Fives",
+      "iconLocation": "/images/upgradeIcons/Fives.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 36,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Fives.jpeg",
+      "keywords": [
+      ],
+      "requirements": ["Clone Trooper"]
+    },
+    "lh": {
+      "id": "lh",
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Echo",
+      "iconLocation": "/images/upgradeIcons/Echo.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 42,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Echo.jpeg",
+      "keywords": [
+      ],
+      "requirements": ["Clone Trooper"]
+    },
+    "li": {
+      "id": "li",
+      "displayName": "",
+      "cardSubtype": "training",
+      "cardName": "Situational Awareness",
+      "iconLocation": "/images/upgradeIcons/Situational Awareness.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 2,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Situational Awareness.jpeg",
+      "keywords": [
+      ],
+      "requirements": []
+    },
+    "lj": {
+      "id": "lj",
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "Vibroswords",
+      "iconLocation": "/images/upgradeIcons/Vibroswords.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 6,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/Vibroswords.jpeg",
+      "keywords": [
+        "Charge"
+      ],
+      "requirements": ["BX-Series Droid Commandos"]
+    },
+    "lk": {
+      "id": "lk",
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "JT-12 Jetpacks",
+      "iconLocation": "/images/upgradeIcons/JT-12 Jetpacks.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/JT-12 Jetpacks.jpeg",
+      "keywords": [
+        "Jump"
+      ],
+      "requirements": [["Clone Captain Rex", "ARC Troopers"]]
+    },
+    "ll": {
+      "id": "ll",
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "Electro Gauntlets",
+      "iconLocation": "/images/upgradeIcons/Electro Gauntlets.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 10,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/upgradeCards/Electro Gauntlets.jpeg",
+      "keywords": [
+        "Immobilize",
+        "Suppressive"
+      ],
+      "requirements": ["Cad Bane"]
+    },
+    "lm": {
+      "id": "lm",
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "Looted E-5 Blaster",
+      "iconLocation": "/images/upgradeIcons/Looted E-5 Blaster.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 5,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/upgradeCards/Looted E-5 Blaster.jpeg",
+      "keywords": [
+        "Pierce"
+      ],
+      "requirements": ["Padme Amidala"]
+    },
+    "ln": {
+      "displayName": "",
+      "cardName": "Diplomatic Cover",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "Padme Amidala",
+      "iconLocation": "/images/commandIcons/Diplomatic Cover.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Diplomatic Cover.jpeg",
+      "keywords": [
+        "Permanent",
+        "Secret Mission",
+        "Reliable",
+        "Divulge",
+        "Infiltrate"
+      ],
+      "id": "ln"
+    },
+    "lo": {
+      "displayName": "",
+      "cardName": "I'm in Control",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "Cad Bane",
+      "iconLocation": "/images/commandIcons/I'm in Control.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/I'm in Control.jpeg",
+      "keywords": [
+      ],
+      "id": "lo"
+    },
+    "lp": {
+      "displayName": "",
+      "cardName": "I Make the Rules Now",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "Cad Bane",
+      "iconLocation": "/images/commandIcons/I Make the Rules Now.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/I Make the Rules Now.jpeg",
+      "keywords": [
+        "Divulge"
+      ],
+      "id": "lp"
+    },
+    "lq": {
+      "displayName": "",
+      "cardName": "Our Fate is in Your Hands",
+      "cardSubtype": "1",
+      "cardType": "command",
+      "commander": "Padme Amidala",
+      "iconLocation": "/images/commandIcons/Our Fate is in Your Hands.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Our Fate is in Your Hands.jpeg",
+      "keywords": [
+        "Danger Sense"
+      ],
+      "id": "lq"
     }
   }
 }
