@@ -458,7 +458,7 @@ class App extends Component {
       bc: false, // imperial royal guards
       bd: false // imperial death troopers
     };
-    const hasRexJetpack = false;
+    let hasRexJetpack = false;
     const newUniques = [];
     currentList.pointTotal = 0;
     currentList.units.forEach((unitObject) => {
