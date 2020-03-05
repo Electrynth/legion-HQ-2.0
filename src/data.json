@@ -1,5 +1,8 @@
 {
   "keywordDict": {
+    "Covert Ops": "When you deploy, you may treat your rank as Operative. If you do, gain INFILTRATE.",
+    "Loadout": "When you deploy, you may swap any of your equipped upgrades with your set-aside upgrades.",
+    "Incognito": "You cannot be attacked by enemy units beyond range 1, unless you have performed an attack or used an objective card action during this game.",
     "Skirmish": "Intended for use in Skirmish matches.",
     "Low Profile": "While defending, if you have light cover, improve your cover by 1.",
     "Generator": "During the End Phase, flip X inactive shield token(s).",
@@ -6135,7 +6138,7 @@
       "id": "kg"
     },
     "kh": {
-      "displayName": "",
+      "displayName": "A280-CFE Configuration",
       "cardSubtype": "armament",
       "cardName": "A280-CFE Sniper Config",
       "iconLocation": "/images/upgradeIcons/A280-CFE Sniper Config.jpeg",
@@ -6144,11 +6147,12 @@
       "cost": 10,
       "products": [],
       "faction": "rebels",
-      "imageLocation": "/images/upgradeCards/A280-CFE Sniper Config.jpeg",
+      "imageLocation": "/images/upgradeCards/A280-CFE Configuration.jpeg",
       "keywords": [
         "Cumbersome",
         "High Velocity",
-        "Pierce"
+        "Pierce",
+        "Reconfigure"
       ],
       "requirements": ["Cassian Andor"],
       "id": "kh"
@@ -6837,6 +6841,96 @@
         "Danger Sense"
       ],
       "id": "lq"
+    },
+    "lr": {
+      "displayName": "",
+      "cardName": "Volunteer Mission",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "Cassian Andor",
+      "iconLocation": "/images/commandIcons/Volunteer Mission.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Volunteer Mission.jpeg",
+      "keywords": [
+        "Danger Sense"
+      ],
+      "id": "lr"
+    },
+    "ls": {
+      "displayName": "",
+      "cardName": "Last Stand",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "Cassian Andor",
+      "iconLocation": "/images/commandIcons/Last Stand.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Last Stand.jpeg",
+      "keywords": [
+        "Indomitable"
+      ],
+      "id": "ls"
+    },
+    "lt": {
+      "displayName": "",
+      "cardName": "Sacrifice",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "K-2SO",
+      "iconLocation": "/images/commandIcons/Sacrifice.jpeg",
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/commandCards/Sacrifice.jpeg",
+      "keywords": [
+        "Guardian"
+      ],
+      "id": "lt"
+    },
+    "lu": {
+      "id": "lu",
+      "displayName": "",
+      "cardSubtype": "armament",
+      "cardName": "Jyn's SE-14 Blaster",
+      "iconLocation": "/images/upgradeIcons/Jyn's SE-14 Blaster.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 31,
+      "products": [],
+      "faction": "rebels",
+      "imageLocation": "/images/upgradeCards/Jyn's SE-14 Blaster.jpeg",
+      "keywords": [
+        "Suppressive",
+        "Pierce"
+      ],
+      "requirements": [["Jyn Erso", "K-2SO"]]
+    },
+    "lv": {
+      "cardType": "unit",
+      "displayName": "",
+      "links": [],
+      "faction": "rebels",
+      "cardSubtype": "droid trooper",
+      "cardName": "K-2SO",
+      "isUnique": true,
+      "rank": "operative",
+      "iconLocation": "/images/unitIcons/K-2SO.jpeg",
+      "cost": 70,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/K-2SO.jpeg",
+      "keywords": [
+        "Calculate Odds",
+        "Armor",
+        "Detachment",
+        "Incognito",
+        "Teamwork"
+      ],
+      "upgradeBar": [
+        "comms",
+        "armament"
+      ],
+      "id": "lv"
     }
   }
 }
