@@ -459,6 +459,7 @@ class App extends Component {
       bd: false // imperial death troopers
     };
     let hasRexJetpack = false;
+    let hasJynGun = false;
     const newUniques = [];
     currentList.pointTotal = 0;
     currentList.units.forEach((unitObject) => {
@@ -472,6 +473,7 @@ class App extends Component {
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
         if (upgradeCardId) {
           if (upgradeCardId === 'lk') hasRexJetpack = true;
+          if (upgradeCardId === 'lu') hasJynGun = true;
           unitObject.totalUnitCost += allCards[upgradeCardId].cost * unitObject.count;
           if (allCards[upgradeCardId].isUnique) {
             newUniques.push(upgradeCardId);
@@ -493,6 +495,9 @@ class App extends Component {
       currentList.unitCounts.operative -= 1;
     }
     if (currentList.uniques.includes('fy') && hasRexJetpack) {
+      currentList.pointTotal -= 5;
+    }
+    if (currentList.uniques.includes('ae') && hasJynGun) {
       currentList.pointTotal -= 5;
     }
     this.setState({ currentList });
