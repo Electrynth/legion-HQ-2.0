@@ -494,6 +494,9 @@ class App extends Component {
     if (currentList.uniques.includes('ji') || currentList.uniques.includes('jj')) { // C-3PO
       currentList.unitCounts.operative -= 1;
     }
+    if (currentList.uniques.includes('lw')) { // ID10
+      currentList.unitCounts.operative -= 1;
+    }
     if (currentList.uniques.includes('fy') && hasRexJetpack) {
       currentList.pointTotal -= 5;
     }

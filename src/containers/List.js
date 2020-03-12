@@ -761,16 +761,20 @@ class ListContainer extends React.Component {
     listString += `${currentList.title}\n`;
     listString += `${this.getPointTotalString(currentList)}\n`;
     const c3poPresent = currentList.uniques.includes('ji') || currentList.uniques.includes('jj');
+    const id10Present = currentList.uniques.includes('lw');
     currentList.units.forEach((unitObject) => {
       const unitCard = allCards[unitObject.unitId];
       if (unitCard.cardName === 'C-3PO') return;
+      if (unitCard.displayName === 'ID10') return;
       Array(unitObject.count).fill().forEach((singleUnitObject) => {
         if (unitCard.cardName === 'R2-D2' && c3poPresent) listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
+        else if (unitCard.cardName === 'Iden Versio' && id10Present) listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
         else listString += `${unitCard.cardName} (${unitObject.totalUnitCost/unitObject.count})\n`;
         unitObject.upgradesEquipped.forEach((upgradeCardId) => {
           if (upgradeCardId) listString += ` - ${allCards[upgradeCardId].cardName} (${allCards[upgradeCardId].cost})\n`
         });
         if (unitCard.cardName === 'R2-D2' && c3poPresent) listString += ' - C-3PO (15)\n'
+        if (unitCard.cardName === 'Iden Versio' && id10Present) listString += ' - ID10 (15)\n'
       });
     });
     listString += '\nCommand Cards:\n';
@@ -820,10 +824,13 @@ class ListContainer extends React.Component {
     listString += '\n'
     const r2d2Present = currentList.uniques.includes('jg') || currentList.uniques.includes('jh');
     const c3poPresent = currentList.uniques.includes('ji') || currentList.uniques.includes('jj');
+    const idenPresent = currentList.uniques.includes('kg');
+    const id10Present = currentList.uniques.includes('lw');
     currentList.units.forEach((unitObject) => {
       let noUpgrades = true;
       const unitCard = allCards[unitObject.unitId];
       if (unitObject.unitId === 'ji' || unitObject.unitId === 'jj') return;
+      if (unitObject.unitId === 'lw') return;
       let upgradeString = '';
       unitObject.upgradesEquipped.forEach((upgradeCardId, upgradeIndex) => {
         if (upgradeCardId) {
@@ -836,6 +843,9 @@ class ListContainer extends React.Component {
       if (unitObject.unitId === 'jg' || unitObject.unitId === 'jh') {
         if (c3poPresent) listString += `R2-D2 + C-3PO${noUpgrades ? '' : ` (${upgradeString})`}`;
         else listString += `R2-D2${noUpgrades ? '' : ` (${upgradeString})`}`;
+      } else if (unitObject.unitId === 'kg') {
+        if (id10Present) listString += `Iden Versio + ID10${noUpgrades ? '' : ` (${upgradeString})`}`;
+        else listString += `Iden Versio${noUpgrades ? '' : ` (${upgradeString})`}`;
       } else {
         listString += `${unitObject.count === 1 ? '' : `${unitObject.count}× `}${unitCard.displayName ? unitCard.displayName : unitCard.cardName}${noUpgrades ? '' : ` (${upgradeString})`}`;
       }
@@ -879,17 +889,24 @@ class ListContainer extends React.Component {
     };
     const r2d2Present = currentList.uniques.includes('jg') || currentList.uniques.includes('jh');
     const c3poPresent = currentList.uniques.includes('ji') || currentList.uniques.includes('jj');
+    const idenPresent = currentList.uniques.includes('kg');
+    const id10Present = currentList.uniques.includes('lw');
     currentList.units.forEach((unitObject) => {
       let noUpgrades = true;
       let r2d2c3po = false;
+      let idenid10 = false;
       const unitCard = allCards[unitObject.unitId];
       if (unitObject.unitId === 'ji' || unitObject.unitId === 'jj') return;
+      if (unitObject.unitId === 'lw') return;
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
         if (upgradeCardId) noUpgrades = false;
       });
       if (r2d2Present && c3poPresent && (unitObject.unitId === 'jg' || unitObject.unitId === 'jh')) {
         r2d2c3po = true;
         unitString[unitCard.rank] += ` - R2-D2 (35) + C-3PO (15):`;
+      } else if (idenPresent && id10Present && (unitObject.unitId === 'kg')) {
+        idenid10 = true;
+        unitString[unitCard.rank] += ` - Iden Versio (100) + ID10 (15):`;
       } else if (noUpgrades && unitObject.count === 1) unitString[unitCard.rank] += ` - ${unitCard.displayName ? unitCard.displayName : unitCard.cardName}`;
       else if (noUpgrades && unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost})`;
       else if (unitObject.count > 1) unitString[unitCard.rank] += ` - ${unitObject.count}× ${unitCard.displayName ? unitCard.displayName : unitCard.cardName} (${unitCard.cost}):`;
@@ -901,10 +918,10 @@ class ListContainer extends React.Component {
         if (i === unitObject.upgradesEquipped.length - 1) {
           upgradeString = upgradeString.substring(0, upgradeString.length - 2);
           if (upgradeString.length > 0) {
-            if (r2d2c3po) unitString[unitCard.rank] += ` ${upgradeString} = ${unitObject.totalUnitCost + 15}\n`;
+            if (r2d2c3po || idenid10) unitString[unitCard.rank] += ` ${upgradeString} = ${unitObject.totalUnitCost + 15}\n`;
             else unitString[unitCard.rank] += ` ${upgradeString} = ${unitObject.totalUnitCost}\n`;
           } else {
-            if (r2d2c3po) unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost + 15}\n`;
+            if (r2d2c3po || idenid10) unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost + 15}\n`;
             else unitString[unitCard.rank] += ` = ${unitObject.totalUnitCost}\n`;
           }
         }
@@ -1022,8 +1039,11 @@ class ListContainer extends React.Component {
     let content = undefined;
     if (viewFilter.type === 'add unit') {
       let r2d2Present = true;
+      let idenPresent = true;
       if (!currentList.uniques.includes('jg') && !currentList.uniques.includes('jh')) {
         r2d2Present = false;
+      } else if (!currentList.uniques.includes('kg')) {
+        idenPresent = false;
       }
       content = allIds.filter((cardId) => {
           if (allCards[cardId].cardType === 'unit') {
@@ -1048,6 +1068,7 @@ class ListContainer extends React.Component {
               isDisabled={currentList.uniques.includes(unitCardId)
                 || currentList.commanders.includes(allCards[unitCardId].cardName)
                 || (!r2d2Present && (unitCardId === 'ji' || unitCardId === 'jj'))
+                || (!idenPresent && unitCardId === 'lw')
               }
             />
           </div>

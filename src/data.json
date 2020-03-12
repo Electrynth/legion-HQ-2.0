@@ -1,5 +1,7 @@
 {
   "keywordDict": {
+    "Small": "While defending, when determining line of sight, cover, and range, ignore this mini.",
+    "Marksman": "While attacking, you can spend aim tokens to improve attack die results.",
     "Covert Ops": "When you deploy, you may treat your rank as Operative. If you do, gain INFILTRATE.",
     "Loadout": "When you deploy, you may swap any of your equipped upgrades with your set-aside upgrades.",
     "Incognito": "You cannot be attacked by enemy units beyond range 1, unless you have performed an attack or used an objective card action during this game.",
@@ -6931,6 +6933,94 @@
         "armament"
       ],
       "id": "lv"
+    },
+    "lw": {
+      "displayName": "ID10",
+      "iconLocation": "/images/unitIcons/Iden's ID10 Seeker Droid.jpeg",
+      "links": [],
+      "cardName": "Iden's ID10 Seeker Droid.jpeg",
+      "faction": "empire",
+      "isUnique": true,
+      "rank": "operative",
+      "upgradeBar": ["comms"],
+      "cardType": "unit",
+      "cost": 15,
+      "products": [],
+      "additionalTags": [],
+      "imageLocation": "/images/unitCards/Iden's ID10 Seeker Droid.jpeg",
+      "keywords": [
+        "Counterpart",
+        "Recharge",
+        "Shielded",
+        "Small"
+      ],
+      "cardSubtype": "droid trooper",
+      "id": "lw"
+    },
+    "lx": {
+      "id": "lx",
+      "displayName": "TL-50 Repeater",
+      "cardSubtype": "armament",
+      "cardName": "Iden's TL-50 Repeater",
+      "iconLocation": "/images/upgradeIcons/Iden's TL-50 Repeater.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 15,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Iden's TL-50 Repeater.jpeg",
+      "keywords": [
+        "Critical",
+        "Impact"
+      ],
+      "requirements": ["Iden Versio"]
+    },
+    "ly": {
+      "displayName": "",
+      "cardName": "Incapacitate",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "Iden Versio",
+      "iconLocation": "/images/commandIcons/Incapacitate.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Incapacitate.jpeg",
+      "keywords": [
+      ],
+      "id": "ly"
+    },
+    "lz": {
+      "displayName": "",
+      "cardName": "Concussive Blast",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "Iden Versio",
+      "iconLocation": "/images/commandIcons/Concussive Blast.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Concussive Blast.jpeg",
+      "keywords": [
+        "Blast",
+        "Scatter",
+        "Suppressive"
+      ],
+      "id": "lz"
+    },
+    "ma": {
+      "displayName": "",
+      "cardName": "Tactical Strike",
+      "cardSubtype": "3",
+      "cardType": "command",
+      "commander": "Iden Versio",
+      "iconLocation": "/images/commandIcons/Tactical Strike.jpeg",
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/commandCards/Tactical Strike.jpeg",
+      "keywords": [
+        "Steady",
+        "Tactical"
+      ],
+      "id": "ma"
     }
   }
 }
