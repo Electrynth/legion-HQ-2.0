@@ -1750,8 +1750,11 @@ class ListContainer extends React.Component {
       rightPaneWidth = 5;
     }
     const numActivations = currentList.units.reduce((activations, unitObject) => {
-      if (unitObject.unitId !== 'ji' && unitObject.unitId !== 'jj') activations += unitObject.count;
-      else if (unitObject.unitId !== 'lw') activations += unitObject.count;
+      if (
+        unitObject.unitId !== 'ji' &&
+        unitObject.unitId !== 'jj' &&
+        unitObject.unitId !== 'lw'
+      ) activations += unitObject.count;
       return activations;
     }, 0);
     const leftPane = leftPaneWidth === 0 ? undefined : (
