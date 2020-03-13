@@ -6,6 +6,7 @@ import {
   createMuiTheme,
   MuiThemeProvider
 } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Data from '../data.json';
 import DataContext from './DataContext';
 import 'typeface-roboto';
@@ -416,7 +417,9 @@ class DataProvider extends React.Component {
         }}
       >
         <MuiThemeProvider theme={theme}>
-          {this.props.children}
+          <CssBaseline>
+            {this.props.children}
+          </CssBaseline>
         </MuiThemeProvider>
       </DataContext.Provider>
     );
