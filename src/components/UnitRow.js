@@ -90,7 +90,7 @@ class UnitRow extends React.Component {
         >
           <Typography
             variant="subtitle2"
-            color="inherit"
+            color="secondary"
             style={{
               left: 2,
               top: 0,
