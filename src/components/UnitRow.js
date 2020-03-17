@@ -47,7 +47,8 @@ class UnitRow extends React.Component {
       classes,
       ranks,
       upgradeTypes,
-      allCards
+      allCards,
+      userSettings
     } = this.context;
     const {
       upgradeAnchorEl,
@@ -90,7 +91,7 @@ class UnitRow extends React.Component {
         >
           <Typography
             variant="subtitle2"
-            color="secondary"
+            color={userSettings.themeColor === 'light' ? 'primary' : 'secondary'}
             style={{
               left: 2,
               top: 0,
