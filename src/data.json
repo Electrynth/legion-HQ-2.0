@@ -7080,6 +7080,23 @@
         "comms"
       ],
       "id": "mc"
-    }
+    },
+    "md": {
+      "id": "md",
+      "displayName": "",
+      "cardSubtype": "comms",
+      "cardName": "Command Control Array",
+      "iconLocation": "/images/upgradeIcons/Command Control Array.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 2,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Command Control Array.jpeg",
+      "keywords": [
+        "Coordinate"
+      ],
+      "requirements": ["vehicle"]
+    },
   }
 }
