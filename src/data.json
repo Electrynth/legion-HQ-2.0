@@ -3807,9 +3807,7 @@
       "cardType": "battle",
       "products": [],
       "imageLocation": "/images/battleCards/War%20Weary.jpeg",
-      "keywords": [
-        "Skirmish"
-      ],
+      "keywords": [],
       "id": "Ch"
     },
     "Ci": {
@@ -4990,6 +4988,26 @@
       "keywords": [],
       "id": "Dk"
     },
+    "Dl": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Hemmed In",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Hemmed In.jpeg",
+      "keywords": [],
+      "id": "Dl"
+    },
+    "Dm": {
+      "displayName": "",
+      "cardSubtype": "deployment",
+      "cardName": "Danger Close",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Danger Close.jpeg",
+      "keywords": [],
+      "id": "Dm"
+    },
     "Dg": {
       "displayName": "",
       "cardSubtype": "deployment",
@@ -5108,6 +5126,17 @@
       ],
       "id": "Ol"
     },
+    "Om": {
+      "displayName": "",
+      "cardSubtype": "objective",
+      "cardName": "Payload",
+      "cardType": "battle",
+      "products": [],
+      "imageLocation": "/images/battleCards/Payload.jpeg",
+      "keywords": [
+      ],
+      "id": "Om"
+    },
     "Oh": {
       "displayName": "",
       "cardSubtype": "objective",
@@ -5163,19 +5192,6 @@
         "white defense",
         "hit surge",
         "block surge"
-      ],
-      "links": [
-        {
-          "titles": [
-            "Rebel Commandos - Snipers",
-            "Rebel Commandos - Saboteurs"
-          ],
-          "blogName": "The Fifth Trooper",
-          "urls": [
-            "https://thefifthtrooper.com/rebel-commandos-snipers/",
-            "https://thefifthtrooper.com/rebel-commandos-saboteurs/"
-          ]
-        }
       ],
       "cardSubtype": "trooper",
       "cardName": "Rebel Commandos Strike Team",
