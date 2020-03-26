@@ -4323,17 +4323,6 @@
         "white defense",
         "crit surge"
       ],
-      "links": [
-        {
-          "titles": [
-            "AT-RT"
-          ],
-          "blogName": "The Fifth Trooper",
-          "urls": [
-            "https://thefifthtrooper.com/at-rt/"
-          ]
-        }
-      ],
       "cardSubtype": "ground vehicle",
       "cardName": "AT-RT",
       "isUnique": false,
@@ -5467,7 +5456,7 @@
       "cardType": "upgrade",
       "cost": 20,
       "products": [],
-      "faction": "rebels",
+      "faction": "",
       "imageLocation": "/images/upgradeCards/AT-RT%20Rotary%20Blaster.jpeg",
       "keywords": [
         "Fixed"
@@ -5486,7 +5475,7 @@
       "cardType": "upgrade",
       "cost": 20,
       "products": [],
-      "faction": "rebels",
+      "faction": "",
       "imageLocation": "/images/upgradeCards/AT-RT%20Flamethrower.jpeg",
       "keywords": [
         "Blast",
@@ -5507,7 +5496,7 @@
       "cardType": "upgrade",
       "cost": 20,
       "products": [],
-      "faction": "rebels",
+      "faction": "",
       "imageLocation": "/images/upgradeCards/AT-RT%20Laser%20Cannon.jpeg",
       "keywords": [
         "Impact",
@@ -7021,6 +7010,60 @@
         "Tactical"
       ],
       "id": "ma"
+    },
+    "mb": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [],
+      "cardSubtype": "ground vehicle",
+      "cardName": "AT-RT",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/AT-RT2.jpeg",
+      "cost": 65,
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/unitCards/AT-RT2.jpeg",
+      "keywords": [
+        "Vehicle",
+        "Armor",
+        "Climbing Vehicle",
+        "Expert Climber",
+        "Impact",
+        "Critical"
+      ],
+      "upgradeBar": [
+        "hardpoint",
+        "comms"
+      ],
+      "id": "mb"
+    },
+    "mc": {
+      "cardType": "unit",
+      "displayName": "",
+      "additionalTags": [],
+      "cardSubtype": "repulsor vehicle",
+      "cardName": "STAP Riders",
+      "isUnique": false,
+      "rank": "support",
+      "iconLocation": "/images/unitIcons/STAP Riders.jpeg",
+      "cost": 73,
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/unitCards/STAP Riders.jpeg",
+      "keywords": [
+        "Agile",
+        "AI",
+        "Coordinate",
+        "Cover",
+        "Speeder",
+        "Critical",
+        "Fixed"
+      ],
+      "upgradeBar": [
+        "comms"
+      ],
+      "id": "mc"
     }
   }
 }
