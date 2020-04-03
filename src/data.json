@@ -7097,6 +7097,44 @@
         "Coordinate"
       ],
       "requirements": ["vehicle"]
+    },
+    "me": {
+      "id": "me",
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Gideon Hask",
+      "iconLocation": "/images/upgradeIcons/Gideon Hask.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 38,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Gideon Hask.jpeg",
+      "keywords": [
+        "Coordinate",
+        "Leader"
+      ],
+      "requirements": ["troopers"]
+    },
+    "mf": {
+      "id": "mf",
+      "displayName": "",
+      "cardSubtype": "heavy weapon",
+      "cardName": "Del Meeko",
+      "iconLocation": "/images/upgradeIcons/Del Meeko.jpeg",
+      "isUnique": true,
+      "cardType": "upgrade",
+      "cost": 38,
+      "products": [],
+      "faction": "empire",
+      "imageLocation": "/images/upgradeCards/Del Meeko.jpeg",
+      "keywords": [
+        "Repair",
+        "High Velocity",
+        "Lethal",
+        "Pierce"
+      ],
+      "requirements": ["troopers"]
     }
   }
 }
