@@ -7135,6 +7135,21 @@
         "Pierce"
       ],
       "requirements": ["troopers"]
+    },
+    "mg": {
+      "displayName": "",
+      "cardName": "I'm Your Worst Nightmare",
+      "cardSubtype": "1",
+      "cardType": "command",
+      "commander": "Cad Bane",
+      "iconLocation": "/images/commandIcons/I'm Your Worst Nightmare.jpeg",
+      "products": [],
+      "faction": "separatists",
+      "imageLocation": "/images/commandCards/I'm Your Worst Nightmare.jpeg",
+      "keywords": [
+        "Uncanny Luck"
+      ],
+      "id": "mg"
     }
   }
 }
