@@ -5629,6 +5629,22 @@
       "id": "jn",
       "imageLocation": "/images/commandCards/Blasting%20Off!.jpeg",
       "iconLocation": "/images/commandIcons/Blasting%20Off!.jpeg"
+    },
+    "jo": {
+      "faction": "republic",
+      "cardName": "Blasting Off!",
+      "displayName": "",
+      "cardType": "command",
+      "cardSubtype": "1",
+      "commander": "R2-D2",
+      "keywords": [
+        "Disengage",
+        "Jump"
+      ],
+      "products": [],
+      "id": "jo",
+      "imageLocation": "/images/commandCards/Blasting%20Off!.jpeg",
+      "iconLocation": "/images/commandIcons/Blasting%20Off!.jpeg"
     }
   }
 }
