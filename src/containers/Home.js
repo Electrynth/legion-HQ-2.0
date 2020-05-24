@@ -81,6 +81,19 @@ class Home extends React.Component {
               An unofficial tool and resource for Fantasy Flight Games: Star Wars™: Legion.
             </Typography>
           </Grid>
+          <Grid item style={{ maxWidth: '90vw', marginBottom: 16 }}>
+            <Typography variant="caption" color="primary" className={classes.textAlignCenter}>
+              Link to staging page for new Legion-HQ changes
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://d37xhki8rk4762.cloudfront.net/"
+                style={{ textDecoration: 'none' }}
+              >
+                {` here`}
+              </a>
+            </Typography>
+          </Grid>
           <div style={{ marginTop: 36, maxHeight: '50vh', overflowX: 'scroll' }} className={classes.factionListsContainer}>
             {Object.keys(factions).map(factionName => (
               <Grid item key={factionName} style={{ marginTop: 12 }}>
