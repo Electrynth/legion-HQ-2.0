@@ -1,5 +1,5 @@
 # Legion HQ
-Legion HQ is a web-based tool and resource for Fantasy Flight Games: Star Wars: Legion. Legion HQ 2.0 is the improved version of the [Legion HQ](https://github.com/NicholasCBrown/legion-HQ "Legion HQ 1.0 Github").
+Legion HQ is a web-based tool and resource for Fantasy Flight Games: Star Wars: Legion. Legion HQ 2.0 is the improved version of the [Legion HQ](https://github.com/NicholasCBrown/legion-HQ "Legion HQ 1.0 Github"). Beta version: https://d37xhki8rk4762.cloudfront.net/
 
 # Current Major Features
 ##### In progress
