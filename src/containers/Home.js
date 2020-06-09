@@ -161,16 +161,6 @@ class Home extends React.Component {
                 </Button>
               )}
             </Grid>
-            <Grid item style={{ marginTop: 12 }}>
-              <IconButton
-                color="primary"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/NicholasCBrown/legion-HQ-2.0"
-              >
-                <GitHubIcon />
-              </IconButton>
-            </Grid>
           </div>
           <Grid item style={{ marginBottom: 60 }} />
         </Grid>
