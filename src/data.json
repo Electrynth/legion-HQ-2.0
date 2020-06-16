@@ -7150,6 +7150,23 @@
         "Uncanny Luck"
       ],
       "id": "mg"
+    },
+    "mh": {
+      "id": "mh",
+      "displayName": "",
+      "cardSubtype": "gear",
+      "cardName": "Ascension Cables",
+      "iconLocation": "/images/upgradeIcons/Ascension Cables.jpeg",
+      "isUnique": false,
+      "cardType": "upgrade",
+      "cost": 4,
+      "products": [],
+      "faction": "",
+      "imageLocation": "/images/upgradeCards/Ascension Cables.jpeg",
+      "keywords": [
+        "Scale"
+      ],
+      "requirements": []
     }
   }
 }
