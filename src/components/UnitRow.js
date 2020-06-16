@@ -142,6 +142,7 @@ class UnitRow extends React.Component {
           <UpgradeChip
             key={equippedUpgradeId}
             classes={classes}
+            unitId={unitObject.unitId}
             equippedUpgradeId={equippedUpgradeId}
             changeViewFilter={this.changeViewFilter}
             removeUpgrade={() => removeUpgrade(unitsIndex, i)}

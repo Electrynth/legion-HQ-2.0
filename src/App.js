@@ -463,7 +463,8 @@ class App extends Component {
     const newUniques = [];
     currentList.pointTotal = 0;
     currentList.units.forEach((unitObject) => {
-      if (allCards[unitObject.unitId].isUnique) {
+      const unitCard = allCards[unitObject.unitId];
+      if (unitCard.isUnique) {
         newUniques.push(unitObject.unitId);
         unitObject.hasUniques = true;
       }
@@ -472,8 +473,12 @@ class App extends Component {
       unitCounts[allCards[unitObject.unitId].rank] += unitObject.count;
       unitObject.upgradesEquipped.forEach((upgradeCardId) => {
         if (upgradeCardId) {
+          const upgradeCard = allCards[upgradeCardId];
           if (upgradeCardId === 'lk') hasRexJetpack = true;
           if (upgradeCardId === 'lu') hasJynGun = true;
+          if (unitCard.rank === 'support' && upgradeCardId === 'li') {
+            unitObject.totalUnitCost += 4 * unitObject.count;
+          }
           unitObject.totalUnitCost += allCards[upgradeCardId].cost * unitObject.count;
           if (allCards[upgradeCardId].isUnique) {
             newUniques.push(upgradeCardId);

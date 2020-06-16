@@ -13,12 +13,14 @@ class UpgradeChip extends React.Component {
       allCards
     } = this.context;
     const {
+      unitId,
       equippedUpgradeId,
       handleClick,
       removeUpgrade,
       changeViewFilter
     } = this.props;
     let upgradeCard = allCards[equippedUpgradeId];
+    const unitCard = allCards[unitId];
     const chipAvatar = (
       <Avatar
         alt={upgradeCard.cardName}
@@ -36,7 +38,11 @@ class UpgradeChip extends React.Component {
       <Chip
         key={equippedUpgradeId}
         avatar={chipAvatar}
-        label={`${upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName} (${upgradeCard.cost})`}
+        label={
+          `${upgradeCard.displayName ?
+            upgradeCard.displayName :
+            upgradeCard.cardName} (${equippedUpgradeId === 'li' && unitCard.rank === 'support' ? upgradeCard.cost + 4 : upgradeCard.cost})`
+        }
         onClick={() => handleClick()}
         onDelete={() => removeUpgrade()}
         style={{ marginRight: 2, marginBottom: 2 }}
