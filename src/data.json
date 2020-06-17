@@ -7167,6 +7167,23 @@
         "Scale"
       ],
       "requirements": []
+    },
+    "mi": {
+      "displayName": "",
+      "cardName": "Aggressive Negotiations",
+      "cardSubtype": "2",
+      "cardType": "command",
+      "commander": "Padme Amidala",
+      "iconLocation": "/images/commandIcons/Aggressive Negotiations.jpeg",
+      "products": [],
+      "faction": "republic",
+      "imageLocation": "/images/commandCards/Aggressive Negotiations.jpeg",
+      "keywords": [
+        "Secret Mission",
+        "Reliable",
+        "Infiltrate"
+      ],
+      "id": "mi"
     }
   }
 }
