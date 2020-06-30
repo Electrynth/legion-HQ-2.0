@@ -87,7 +87,7 @@ class Home extends React.Component {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://d37xhki8rk4762.cloudfront.net/"
+                href="https://legionhq.thefifthtrooper.com/"
                 style={{ textDecoration: 'none' }}
               >
                 {` here`}
