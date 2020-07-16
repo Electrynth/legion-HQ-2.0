@@ -631,6 +631,12 @@ class App extends Component {
         </Helmet>
       );
     }
+
+
+
+    window.location = "https://legionhq.thefifthtrooper.com/";
+
+
     return (
       <div>
         <div>
