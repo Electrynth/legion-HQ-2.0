@@ -633,8 +633,12 @@ class App extends Component {
     }
 
 
-
-    window.location = "https://legionhq.thefifthtrooper.com/";
+    console.log(this.props.location.pathname);
+    if (this.props.location && this.props.location.pathname){
+       window.location = `https://legionhq.thefifthtrooper.com${this.props.location.pathname}`;
+    } else {
+      window.location = 'https://legionhq.thefifthtrooper.com';
+    }
 
 
     return (
